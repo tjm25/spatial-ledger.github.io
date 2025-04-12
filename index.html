@@ -356,7 +356,7 @@
                 searchIndex = await response.json();
 
                 // Validate index structure
-                if (!Array.isArray(searchIndex) || (searchIndex.length > 0 && (!searchIndex[0].embedding || !Array.isArray(searchIndex[0].embedding)))) {
+                if (!Array.isArray(searchIndex) || (searchIndex.length > 0 && ((!searchIndex[0].embedding || !Array.isArray(searchIndex[0].embedding)) || !Array.isArray(searchIndex[0].embedding)))) {
                     console.error("Invalid index structure detected. Expected array of objects with 'embedding' key containing an array.", searchIndex[0]);
                      throw new Error("Search index format is invalid.");
                  }
