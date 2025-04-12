@@ -17,28 +17,27 @@
         }
 
         body {
-            font-family: 'Lato', sans-serif; /* Default sans-serif font */
+            font-family: 'Lato', sans-serif;
             line-height: 1.6;
             background-color: #F8F5ED; /* Off-white/Cream */
-            color: #333; /* Dark grey for better readability */
+            color: #333;
             padding: 20px;
         }
 
         /* --- Font Styles --- */
         h1, .header-title {
-            font-family: 'Merriweather', serif; /* Serif font */
+            font-family: 'Merriweather', serif;
             color: #1A3A5F; /* Dark Blue/Navy */
-            font-weight: 700; /* Bold */
+            font-weight: 700;
             text-align: center;
             margin-bottom: 0.2em;
-            /* Removed margin-top previously for logo spacing */
-            font-size: 2em; /* Heading size */
+            font-size: 2em;
         }
 
         .tagline {
             font-family: 'Lato', sans-serif;
             text-align: center;
-            color: #555; /* Slightly lighter than main text */
+            color: #555;
             margin-bottom: 2em;
             font-size: 1.1em;
         }
@@ -56,17 +55,17 @@
         /* --- Layout --- */
         .container {
             max-width: 800px;
-            margin: 20px auto; /* Added top margin since body padding might not be enough */
-            background-color: #fff; /* White background for content area */
+            margin: 20px auto;
+            background-color: #fff;
             padding: 30px 40px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
 
         header {
             text-align: center;
             margin-bottom: 2em;
-             padding-top: 1em; /* Add some padding to the top of the header */
+            padding-top: 1em;
         }
 
         section {
@@ -78,19 +77,20 @@
             margin-bottom: 1em;
         }
 
-        ul {
+        ul { /* Default list styling */
             list-style-position: inside;
             margin-left: 1em;
             margin-bottom: 1em;
         }
 
-        li {
+        li { /* Default list item styling */
             margin-bottom: 0.5em;
         }
 
-        /* --- Search Form Styling --- */
+        /* --- Search Form & Results Styling --- */
         #search-form {
             margin-top: 1em;
+            margin-bottom: 20px; /* Space before results */
         }
 
         #search-form label {
@@ -100,7 +100,7 @@
             color: #1A3A5F;
         }
 
-        #search-form input[type="search"] {
+        #search-input { /* Renamed from search-lpa */
             width: 100%;
             padding: 12px;
             font-size: 1em;
@@ -110,14 +110,13 @@
             font-family: 'Lato', sans-serif;
         }
 
-        #search-form input[type="search"]:focus {
+        #search-input:focus {
              outline: none;
              border-color: #1A3A5F;
              box-shadow: 0 0 5px rgba(160, 206, 217, 0.5);
         }
 
-
-        #search-form button {
+        #search-button {
             display: inline-block;
             background-color: #1A3A5F;
             color: #fff;
@@ -130,15 +129,112 @@
             transition: background-color 0.2s ease;
         }
 
-        #search-form button:hover {
+        #search-button:hover {
             background-color: #2a5a8a;
         }
+
+        #search-button:disabled {
+             background-color: #ccc;
+             cursor: not-allowed;
+        }
+        #search-input:disabled {
+             background-color: #eee;
+             cursor: not-allowed;
+        }
+
+        #loading-indicator {
+            display: inline-block;
+            margin-left: 15px;
+            font-style: italic;
+            color: #555;
+            /* Optional: Add a spinner animation if desired */
+        }
+
+        #search-results {
+            margin-top: 2em;
+            padding-top: 1em;
+            /* Optional: add border-top */
+            /* border-top: 1px solid #eee; */
+        }
+
+        #search-results h3 { /* Style for the results heading */
+            font-family: 'Merriweather', serif;
+            font-size: 1.3em;
+            margin-bottom: 1em;
+            color: #1A3A5F;
+        }
+
+        #search-results ul { /* Specific styles for results list */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #search-results li { /* Specific styles for result items */
+            margin-bottom: 1.5em; /* More space between results */
+            padding-bottom: 1em;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        #search-results li:last-child {
+            border-bottom: none;
+        }
+
+        #search-results a {
+            font-weight: bold;
+            color: #1A3A5F; /* Match theme */
+            text-decoration: none;
+            font-size: 1.1em;
+            display: block; /* Make link take full width */
+            margin-bottom: 0.3em;
+        }
+
+        #search-results a:hover {
+            text-decoration: underline;
+        }
+
+        #search-results .snippet { /* Style for the result snippet */
+             display: block;
+             font-size: 0.95em;
+             color: #444;
+             line-height: 1.5;
+        }
+        #search-results .path-info { /* Optional: Style for showing path */
+             display: block;
+             font-size: 0.8em;
+             color: #777;
+             margin-top: 0.4em;
+        }
+        #search-results .similarity-score { /* Optional: Style for score */
+             display: block;
+             font-size: 0.8em;
+             color: #008000; /* Green */
+             margin-top: 0.4em;
+        }
+
+        .error-message {
+            color: #D8000C; /* Red */
+            background-color: #FFD2D2; /* Light red */
+            border: 1px solid #D8000C;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        .info-message {
+            color: #00529B; /* Blue */
+            background-color: #BDE5F8; /* Light blue */
+            border: 1px solid #00529B;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
 
         /* --- Responsive Adjustments --- */
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
-                margin: 10px auto; /* Adjust margin for smaller screens */
+                margin: 10px auto;
             }
 
             h1 {
@@ -148,19 +244,29 @@
             h2 {
                 font-size: 1.4em;
             }
+            #search-results h3 {
+                 font-size: 1.2em;
+            }
 
             body {
                  padding: 10px;
                  font-size: 15px;
             }
 
-             #search-form input[type="search"] {
+             #search-input {
                 padding: 10px;
              }
 
-             #search-form button {
+             #search-button {
                  width: 100%;
                  padding: 12px;
+                 margin-top: 5px; /* Add space above full-width button */
+             }
+              #loading-indicator {
+                  display: block; /* Make it block on small screens */
+                  text-align: center;
+                  margin-left: 0;
+                  margin-top: 10px;
              }
         }
     </style>
@@ -205,52 +311,329 @@
             </section>
 
             <section id="browse">
-                <h2>🗂 Browse the Ledger</h2>
+                <h2><span class="emoji">🗂️</span> Find a Local Plan Analysis</h2>
                 <form id="search-form">
-                     <label for="search-lpa">Enter the name of a Local Planning Authority to see their page:</label>
-                     <input type="search" id="search-lpa" name="q" placeholder="E.g., 'Bristol City Council'">
-                     <button type="submit">Search</button>
+                     <label for="search-input">Enter search terms (e.g., 'housing target', 'green belt policy', 'Leeds'):</label>
+                     <input type="text" id="search-input" placeholder="Search the ledger..." autocomplete="off" disabled>
+                     <button id="search-button" type="submit" disabled>Search</button>
+                     <span id="loading-indicator" style="display:none;">Initializing search...</span>
                 </form>
+                 <div id="search-results"></div>
             </section>
         </main>
 
         <footer>
-            <p style="text-align:center; font-size: 0.8em; color: #777; margin-top: 3em;">&copy; 2025 The Spatial Ledger</p> </footer>
+            <p style="text-align:center; font-size: 0.8em; color: #777; margin-top: 3em;">&copy; 2025 The Spatial Ledger</p>
+        </footer>
     </div>
 
+    <script src="https://unpkg.com/@xenova/transformers@2.17.1"></script>
+
     <script>
-        // Basic JavaScript file for The Spatial Ledger
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const searchResultsContainer = document.getElementById('search-results');
+        const loadingIndicator = document.getElementById('loading-indicator');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Get the form element
-            const searchForm = document.getElementById('search-form');
-            const searchInput = document.getElementById('search-lpa');
+        let model = null; // Will store the loaded model instance
+        let searchIndex = []; // Will store the fetched index data with embeddings
+        let isModelReady = false;
+        let isIndexReady = false;
 
-            // Add an event listener for form submission
-            if (searchForm) {
-                searchForm.addEventListener('submit', (event) => {
-                    event.preventDefault(); // Prevent the default form submission
+        // --- Configuration ---
+        const modelName = 'Xenova/all-MiniLM-L6-v2'; // Model for embeddings
+        const indexFileURL = 'semantic-index.json'; // Path to your generated index
+        const similarityThreshold = 0.3; // Minimum similarity score to display results
+        const maxResults = 15; // Max number of results to show
 
-                    const query = searchInput.value.trim(); // Get the search term
+        // --- 1. Initialize Model and Fetch Index ---
+        async function initializeSearch() {
+            console.log('Initializing search...');
+            loadingIndicator.textContent = 'Initializing model...';
+            loadingIndicator.style.display = 'inline-block';
 
-                    if (query) {
-                        // In a real application, you would redirect to a results page
-                        // or fetch data based on the query.
-                        // For this static example, we'll just log it to the console
-                        // and show an alert.
-                        console.log(`Search submitted for: ${query}`);
-                        alert(`Searching for: ${query}\n(Note: This is a static example, search functionality is not live)`);
+            try {
+                // Use a singleton pattern for the pipeline
+                class PipelineSingleton {
+                    static task = 'feature-extraction';
+                    static model = modelName;
+                    static instance = null;
 
-                        // Example redirect (uncomment if you build search pages):
-                        // window.location.href = `/search?q=${encodeURIComponent(query)}`;
-                    } else {
-                        alert('Please enter a Local Planning Authority name to search.');
+                    static async getInstance(progress_callback = null) {
+                        if (this.instance === null) {
+                            this.instance = await transformers.pipeline(this.task, this.model, {
+                                quantized: true, // Use quantized model for faster loading/smaller size
+                                progress_callback,
+                            });
+                        }
+                        return this.instance;
                     }
+                }
+
+                // Model loading with progress
+                model = await PipelineSingleton.getInstance(data => {
+                     if (data.status === 'progress') {
+                         const percentage = (data.progress || 0).toFixed(2);
+                         loadingIndicator.textContent = `Loading model: ${percentage}%`;
+                     } else {
+                         loadingIndicator.textContent = `Model status: ${data.status}`;
+                     }
                 });
+
+                console.log('Embedding model loaded successfully.');
+                isModelReady = true;
+                checkAndEnableSearch(); // Check if both model and index are ready
+
+                // Fetch index concurrently
+                console.log('Fetching search index...');
+                loadingIndicator.textContent = 'Fetching index...';
+                const response = await fetch(indexFileURL);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch index (${response.status}): ${response.statusText}`);
+                }
+                searchIndex = await response.json();
+
+                 // Validate index structure (basic check)
+                 if (!Array.isArray(searchIndex) || (searchIndex.length > 0 && !searchIndex[0].embedding)) {
+                     console.error("Invalid index structure:", searchIndex[0]);
+                     throw new Error("Search index format is invalid.");
+                 }
+
+                console.log(`Search index fetched successfully (${searchIndex.length} documents).`);
+                isIndexReady = true;
+                checkAndEnableSearch(); // Check if both model and index are ready
+
+            } catch (error) {
+                handleError(error, "Initialization failed. Search is unavailable.");
+                // Keep form disabled
+            } finally {
+                 // Hide indicator if successful, otherwise error message handles it
+                 if (isModelReady && isIndexReady) {
+                    loadingIndicator.style.display = 'none';
+                 }
+            }
+        }
+
+        // --- 2. Check if ready and enable form ---
+        function checkAndEnableSearch() {
+            if (isModelReady && isIndexReady) {
+                console.log('Search system ready.');
+                searchInput.disabled = false;
+                searchButton.disabled = false;
+                loadingIndicator.style.display = 'none'; // Ensure it's hidden
+                searchInput.placeholder = "Search the ledger..."; // Update placeholder
+            }
+        }
+
+        // --- 3. Perform Search ---
+        async function performSearch(query) {
+            if (!isModelReady || !isIndexReady) {
+                handleError(new Error("Search components not ready"), "Search is not yet available. Please wait.");
+                return;
             }
 
-            console.log("The Spatial Ledger page loaded.");
+            if (!query) {
+                searchResultsContainer.innerHTML = ''; // Clear results if query is empty
+                return;
+            }
+
+            console.log(`Performing search for: "${query}"`);
+            loadingIndicator.textContent = 'Searching...';
+            loadingIndicator.style.display = 'inline-block';
+            searchButton.disabled = true; // Disable button during search
+            searchResultsContainer.innerHTML = ''; // Clear previous results
+
+            try {
+                // Generate query embedding
+                 console.time('Query Embedding Generation');
+                 const queryEmbedding = await generateEmbedding(query);
+                 console.timeEnd('Query Embedding Generation');
+
+                if (!queryEmbedding) throw new Error("Could not generate query embedding.");
+
+                // Calculate similarities
+                console.time('Similarity Calculation');
+                const results = searchIndex.map(item => {
+                    // Ensure item embedding is valid array
+                    const itemEmbedding = item.embedding?.data || item.embedding; // Handle potential nesting from different versions/formats
+                    if (!Array.isArray(itemEmbedding) || itemEmbedding.length === 0) {
+                        console.warn(`Invalid embedding found for item ID: ${item.id}`);
+                        return { ...item, similarity: -1 }; // Assign low similarity
+                    }
+                    const similarity = cosineSimilarity(queryEmbedding, itemEmbedding);
+                    return { ...item, similarity };
+                }).filter(item => item.similarity > -1); // Filter out items with invalid embeddings
+                console.timeEnd('Similarity Calculation');
+
+
+                // Sort by similarity (descending)
+                results.sort((a, b) => b.similarity - a.similarity);
+
+                displayResults(results, query); // Pass query for potential highlighting
+
+            } catch (error) {
+                handleError(error, "Search failed. Please try again.");
+            } finally {
+                loadingIndicator.style.display = 'none';
+                searchButton.disabled = false; // Re-enable button
+            }
+        }
+
+         // Helper function to generate embeddings
+         async function generateEmbedding(text) {
+            if (!model) return null;
+            try {
+                const output = await model(text, { pooling: 'mean', normalize: true });
+                return output.data; // Directly access the Float32Array data
+            } catch (error) {
+                 console.error("Error generating embedding:", error);
+                 return null;
+            }
+         }
+
+        // --- 4. Display Results ---
+        function displayResults(results, query) {
+            const filteredResults = results.filter(item => item.similarity >= similarityThreshold);
+
+            if (filteredResults.length === 0) {
+                searchResultsContainer.innerHTML = `<p class="info-message">No relevant results found for "${escapeHTML(query)}". Try different search terms.</p>`;
+                return;
+            }
+
+            searchResultsContainer.innerHTML = `<h3>Found ${filteredResults.length} relevant result(s) for "${escapeHTML(query)}":</h3>`;
+            const ul = document.createElement('ul');
+
+            filteredResults.slice(0, maxResults).forEach(item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = item.path;
+                a.textContent = item.title || item.id; // Fallback to ID if title is missing
+                li.appendChild(a);
+
+                // Basic snippet - might need improvement for relevance
+                const snippet = document.createElement('p');
+                snippet.className = 'snippet';
+                 let bodyText = item.body || ''; // Use body field if it exists in your index
+                 if (bodyText) {
+                     // Very basic snippet generation (first ~200 chars)
+                     snippet.textContent = bodyText.substring(0, 200) + (bodyText.length > 200 ? '...' : '');
+                     // Basic highlighting (optional, can be slow)
+                     // snippet.innerHTML = highlightQuery(snippet.textContent, query);
+                 } else {
+                      snippet.textContent = "No preview available.";
+                 }
+                li.appendChild(snippet);
+
+                 // Optional: Display path and score for debugging/info
+                 const pathInfo = document.createElement('span');
+                 pathInfo.className = 'path-info';
+                 pathInfo.textContent = `Source: ${item.path}`;
+                 li.appendChild(pathInfo);
+
+                 const scoreInfo = document.createElement('span');
+                 scoreInfo.className = 'similarity-score';
+                 scoreInfo.textContent = `Relevance: ${(item.similarity * 100).toFixed(1)}%`;
+                 li.appendChild(scoreInfo);
+
+
+                ul.appendChild(li);
+            });
+
+            searchResultsContainer.appendChild(ul);
+
+             if (filteredResults.length > maxResults) {
+                 searchResultsContainer.innerHTML += `<p style="font-style: italic; color: #555; margin-top: 1em;">Showing top ${maxResults} results.</p>`;
+             }
+        }
+
+        // --- 5. Cosine Similarity Function ---
+        function cosineSimilarity(vecA, vecB) {
+            // Ensure vectors are valid arrays of numbers and have the same length
+             if (!Array.isArray(vecA) || !Array.isArray(vecB) || vecA.length !== vecB.length || vecA.length === 0) {
+                 // console.warn("Invalid vectors for cosine similarity:", vecA, vecB); // Log for debugging
+                 return 0;
+             }
+
+            let dotProduct = 0;
+            let magnitudeA = 0;
+            let magnitudeB = 0;
+            try {
+                for (let i = 0; i < vecA.length; i++) {
+                     const valA = Number(vecA[i]) || 0; // Coerce to number, default to 0 if NaN/undefined
+                     const valB = Number(vecB[i]) || 0;
+                     dotProduct += valA * valB;
+                     magnitudeA += valA * valA;
+                     magnitudeB += valB * valB;
+                }
+            } catch (e) {
+                 console.error("Error during similarity calculation:", e, "Vectors:", vecA, vecB);
+                 return 0;
+            }
+
+
+            magnitudeA = Math.sqrt(magnitudeA);
+            magnitudeB = Math.sqrt(magnitudeB);
+
+            if (magnitudeA && magnitudeB) {
+                const similarity = dotProduct / (magnitudeA * magnitudeB);
+                 // Clamp the result between -1 and 1 to handle potential floating point inaccuracies
+                 return Math.max(-1, Math.min(1, similarity));
+            } else {
+                return 0; // Handle zero vector case
+            }
+        }
+
+        // --- 6. Utility Functions ---
+        function handleError(error, userMessage) {
+            console.error("Search Error:", error); // Log the actual error
+            searchResultsContainer.innerHTML = `<p class="error-message">${escapeHTML(userMessage)}</p>`;
+            // Ensure loading indicator is hidden on error
+            loadingIndicator.style.display = 'none';
+            // Keep button disabled if initialization failed, re-enable if search failed
+             if (!isModelReady || !isIndexReady) {
+                 searchButton.disabled = true;
+                 searchInput.disabled = true;
+             } else {
+                  searchButton.disabled = false; // Re-enable after search failure
+             }
+        }
+
+        function escapeHTML(str) {
+            const p = document.createElement("p");
+            p.textContent = str;
+            return p.innerHTML;
+        }
+
+        // Basic highlighting (can be slow, use with caution)
+        /*
+        function highlightQuery(text, query) {
+            if (!query) return escapeHTML(text);
+            const terms = query.split(/\s+/).filter(Boolean); // Split query into terms
+            let highlightedText = escapeHTML(text);
+            terms.forEach(term => {
+                const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+                highlightedText = highlightedText.replace(regex, '<mark>$1</mark>');
+            });
+            return highlightedText;
+        }
+
+        function escapeRegExp(string) {
+          return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+        }
+        */
+
+        // --- 7. Event Listeners ---
+        searchForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+            const query = searchInput.value.trim();
+            performSearch(query);
         });
+
+        // --- 8. Initialize on page load ---
+        document.addEventListener('DOMContentLoaded', initializeSearch);
+
     </script>
+
 </body>
 </html>
