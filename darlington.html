@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Ledger Analysis: Darlington Local Plan 2016-2036</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3; /* Darlington Blue */
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .summary-box {
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .summary-box h2 {
+            margin-top: 0;
+            border-bottom: none;
+            color: #c82333; /* Reddish tone for warning */
+        }
+        .metric-flags {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .metric-flag {
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            margin: 5px;
+            min-width: 150px;
+        }
+        .metric-flag.green { background-color: #28a745; }
+        .metric-flag.amber { background-color: #ffc107; color: #333; }
+        .metric-flag.red { background-color: #dc3545; }
+
+        .infographic-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-left: 5px solid #0056b3;
+            background-color: #fdfdfd;
+        }
+        .infographic-section h3 {
+            margin-top: 0;
+            border-bottom: none;
+            color: #0056b3;
+        }
+        .policy-blocker {
+            color: #c82333;
+            font-weight: bold;
+        }
+        .callout {
+            background-color: #fff3cd; /* Light yellow */
+            border: 1px solid #ffeeba;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        blockquote {
+            border-left: 4px solid #6c757d;
+            padding-left: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #555;
+        }
+        cite {
+            display: block;
+            text-align: right;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        strong {
+            color: #0056b3;
+        }
+        .scorecard {
+             font-weight: bold;
+             padding: 3px 8px;
+             border-radius: 4px;
+             color: white;
+        }
+        .score-red { background-color: #dc3545; }
+        .score-amber { background-color: #ffc107; color: #333; }
+        .score-green { background-color: #28a745; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spatial Ledger Analysis: Darlington Local Plan (2016-2036)</h1>
+
+        <div class="summary-box">
+            <h2>Verdict: <span class="score-amber">AMBIVALENT</span> - Hindered by Constraints Despite Higher Target</h2>
+            <p>While Darlington's Local Plan adopts a housing target significantly above the minimum calculated need, its potential is undermined by a web of subjective design policies, landscape protections, and complex requirements for strategic sites, creating significant risk of under-delivery and delay.</p>
+        </div>
+
+        <div class="metric-flags">
+            <div class="metric-flag green">Target vs Need: Above Standard</div>
+            <div class="metric-flag amber">Spatial Fairness: Mostly Urban Focus</div>
+            <div class="metric-flag red">Policy Blockers: High Density</div>
+            <div class="metric-flag amber">Delivery Risk: Moderate-High</div>
+        </div>
+
+        <div class="infographic-section">
+            <h3>Housing Target: Above Minimum, But Enough? <span class="scorecard score-green">POSITIVE (ish)</span></h3>
+            <p>The Plan sets a target of <strong>492 net additional dwellings per year</strong>, totalling 9,840 over the plan period (Policy H1, p.35). This is substantially higher than the 177 dwellings per year calculated using the government's standard method (p.36, para 6.1.3). The Council rightly identified flaws in the underlying population data used for the standard method and commissioned its own Strategic Housing Market Assessment (SHMA) to justify the higher figure (p.36, para 6.1.5).</p>
+            <p>While exceeding the flawed standard method is positive, questions remain if 492/year is truly sufficient to address affordability pressures and historical under-delivery in the wider region. The Plan doesn't explicitly state the target was lowered due to constraints, but the overall supply identified (~14,800 homes potential, p.38 para 6.2.2) suggests more land *could* have been allocated to provide greater flexibility and ambition.</p>
+        </div>
+
+        <div class="infographic-section">
+            <h3>Spatial Strategy: Urban Focus, Rural Limits <span class="scorecard score-amber">MIXED</span></h3>
+            <p>The Plan correctly prioritises development within the main <strong>Darlington Urban Area</strong>, including strategic urban extensions (like Skerningham and Greater Faverdale) and identifies three 'Service Villages' (Heighington, Hurworth, Middleton St George) for some growth (Policy SH1, p.19). This generally aligns with sustainable development principles.</p>
+            <p>However, the strategy strictly defines <strong>Development Limits</strong> (Policy H3, p.44). Areas outside these limits, including smaller 'Rural Villages' (like Bishopton, Brafferton), are treated as 'countryside' where new housing is heavily restricted (Policy H7, p.51), primarily allowing only for affordable 'exception sites' (Policy H6, p.49) or specific rural worker needs. This could unnecessarily stifle organic growth in some smaller communities and concentrate development pressure, potentially missing opportunities for gentle, well-located expansion in accessible rural locations.</p>
+        </div>
+
+        <div class="infographic-section">
+            <h3>Hidden Constraints: The Policy Blocker Gauntlet <span class="scorecard score-red">NEGATIVE</span></h3>
+            <p>Despite the higher housing target, the Plan contains numerous policies that can act as significant barriers to delivery. Policy DC1 (Sustainable Design Principles and Climate Change, p.23) is a prime example, requiring development to demonstrate it:</p>
+            <ul>
+                <li>"reflects the local environment and creates an individual sense of place with distinctive character" (DC1.a.i)</li>
+                <li>"responds positively to the local context, in terms of its scale, form, height, layout, materials, colouring, fenestration and architectural detailing" (DC1.a.ii)</li>
+            </ul>
+            <p>This highly subjective language, coupled with requirements to safeguard views (DC1.a.iii), maximise natural surveillance (DC1.a.iv), and consider amenity (Policy DC4, p.32), heritage (Policy ENV1, p.86), landscape character (Policy ENV3, p.92), and green infrastructure (Policy ENV4, p.94), creates a <span class="policy-blocker">dense web of potential refusal reasons</span> based on interpretation rather than objective standards. There are no explicit density or height caps mentioned, but the emphasis on 'character' and 'local context' often serves the same purpose, limiting efficient land use on allocated sites.</p>
+            <div class="callout">
+                <strong>Watch Out!</strong> Policies demanding proposals 'respect', 'protect', 'enhance', or 'maintain' existing character often become tools to resist necessary change and new homes, regardless of the site being allocated.
+            </div>
+        </div>
+
+        <div class="infographic-section">
+            <h3>Contradictions & Trade-offs: Growth vs. Preservation <span class="scorecard score-amber">MIXED</span></h3>
+            <p>The Plan states a commitment to sustainable economic growth (p.10) and meeting housing needs (p.15, Aim 2). However, this is often juxtaposed with strong protectionist language regarding the environment, heritage, and landscape. While these are valid considerations, the Plan sometimes presents them as near-absolute constraints rather than factors to be balanced against the urgent need for housing.</p>
+            <p>For example, proposals affecting heritage assets require "great weight" to be given to conservation (Policy ENV1, p.86), and significant harm is only permitted in exceptional circumstances. Similarly, impacts on biodiversity (Policy ENV7, p.100), landscape character (ENV3), and green corridors (ENV4) require avoidance, mitigation, or compensation. While necessary, the cumulative effect of these policies can make delivering housing, especially at scale, extremely challenging and costly, potentially rendering allocated sites unviable without clear guidance on how trade-offs will be made.</p>
+            <blockquote>
+                "A positive approach to considering development proposals will be taken... Where appropriate, the Council will work proactively with applicants to find solutions which mean that proposals can be approved wherever possible..."
+                <cite>Policy SD 1 (Presumption in Favour), p.18</cite>
+            </blockquote>
+            <div class="callout">
+                <strong>Is it Proactive?</strong> While quoting the NPPF's positive approach, the Plan simultaneously layers multiple complex assessments (SA, HRA, Viability, HIA, Flood Risk, Transport Assessment, Ecological surveys) and subjective policy tests, potentially contradicting the spirit of proactive plan-making.
+            </div>
+        </div>
+
+        <div class="infographic-section">
+            <h3>Site Assessment: Strategic Sites Carry the Load <span class="scorecard score-amber">MIXED</span></h3>
+            <p>The Plan allocates a significant number of homes (Table 6.5, p.40-41), with the largest contributions expected from major urban extensions: Skerningham (1650 homes by 2036, up to 4500 total - Policy H10, p.57) and Greater Faverdale (750 homes by 2036, up to 2000 total - Policy H11, p.66). While allocating large sites is necessary, their delivery is complex.</p>
+            <p>Both require comprehensive masterplans, significant infrastructure (including distributor roads, schools, community facilities - see p.58-59 for Skerningham, p.67-68 for Faverdale), and detailed phasing plans agreed with the Council. This introduces considerable delay and delivery risk. Skerningham, in particular, has extensive requirements related to landscape, heritage, ecology, and infrastructure delivery linked to occupation triggers (p.59). Over-reliance on these complex sites, while necessary for scale, makes the overall housing target vulnerable to slippage. The Plan includes smaller sites, but the heavy lifting falls on these major allocations.</p>
+        </div>
+
+         <div class="infographic-section">
+            <h3>Trajectory & Delivery: Optimistic Assumptions? <span class="scorecard score-amber">MIXED</span></h3>
+            <p>The Housing Trajectory (Appendix A, summarised p.148-152) outlines expected delivery. Table 6.2 (p.38) shows a relatively even spread: ~2900 homes 2021-26, ~3500 homes 2026-31, ~2800 homes 2031-36. This avoids excessive backloading on paper.</p>
+            <p>However, achieving these figures relies heavily on the large strategic sites delivering consistently from the mid-plan period onwards. Given the complexities highlighted above (masterplanning, infrastructure), these delivery rates seem optimistic. The trajectory notes (p.147, para 1) acknowledge standard assumptions were used and actual delivery may vary. The inclusion of a small sites windfall allowance (25 dpa, p.38, para 6.2.3) is noted, but seems conservative compared to historic trends mentioned elsewhere (37 dpa, p.41, para 6.2.13).</p>
+            <div class="callout">
+                <strong>5-Year Supply Fallback:</strong> Policy H1 includes a provision (p.36) allowing sites beyond development limits if a 5-year supply cannot be demonstrated. This is a crucial safety valve, but relies on the Council acknowledging under-delivery promptly.
+            </div>
+        </div>
+
+        <div class="infographic-section">
+            <h3>Policy Language & Risk: Certainty Needed <span class="scorecard score-red">NEGATIVE</span></h3>
+            <p>As noted under 'Hidden Constraints', the language used in key policies (especially DC1, DC4, ENV1, ENV3, ENV4) is often subjective and open to interpretation. Phrases like "reflects local environment," "responds positively," "protects amenity," "conserve and enhance," and "minimise impact" lack clear, objective metrics.</p>
+            <p>This ambiguity creates uncertainty for developers and empowers opponents of new housing, potentially leading to lengthy negotiations, appeals, or refusals even on allocated sites. While the Plan aims to provide a framework (p.7, para 1.1.2), the lack of clear, objective standards in crucial areas means decision-makers have significant leeway, potentially hindering rather than enabling the delivery of the targeted 9,840 homes.</p>
+        </div>
+
+    </div>
+</body>
+</html>

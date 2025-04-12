@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Ledger Analysis: St Helens Borough Local Plan (2022-2037)</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 960px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #8B0000; /* Dark Red */ }
+        h1 { text-align: center; border-bottom: 2px solid #8B0000; padding-bottom: 10px; }
+        h2 { border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-top: 30px; }
+        .summary-box { background-color: #FFF8DC; /* Cornsilk */ border: 2px solid #DAA520; /* Goldenrod */ padding: 15px; margin-bottom: 20px; text-align: center; font-size: 1.1em; font-weight: bold; }
+        .metric-flags {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: space-around; /* Distribute space */
+            align-items: center; /* Vertically align flags */
+            gap: 10px; /* Add space between flags if they wrap */
+            margin-bottom: 20px;
+            padding: 15px 0; /* Increased padding */
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        .flag {
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1; /* Allow flags to grow */
+            flex-basis: 150px; /* Minimum base width before wrapping */
+            max-width: 200px; /* Optional max width */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        .flag.green { background-color: #2E8B57; /* SeaGreen */ }
+        .flag.amber { background-color: #FF8C00; /* DarkOrange */ }
+        .flag.red { background-color: #DC143C; /* Crimson */ }
+        .section { margin-bottom: 25px; }
+        .section p { margin-bottom: 10px; }
+        .callout { background-color: #f0e68c; /* Khaki */ border-left: 5px solid #DAA520; padding: 10px; margin: 15px 0; font-style: italic; }
+        .evidence { margin-left: 20px; font-size: 0.9em; color: #555; }
+        .policy-ref { font-weight: bold; color: #006400; /* DarkGreen */ }
+        .highlight { background-color: yellow; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .risk { color: #DC143C; font-weight: bold; }
+        .positive { color: #2E8B57; font-weight: bold; }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .metric-flags {
+                flex-direction: column; /* Stack flags vertically */
+                align-items: stretch; /* Make flags full width */
+            }
+            .flag {
+                 max-width: none; /* Remove max width */
+                 margin-bottom: 5px; /* Add space between stacked flags */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Spatial Ledger Analysis: St Helens Borough Local Plan (2022-2037)</h1>
+
+        <div class="summary-box">
+            Verdict: St Helens' Plan commendably meets its housing need on paper by releasing Green Belt land, but <span class="risk">delivery heavily relies on large strategic sites and faces risks from discretionary policies</span> that could hinder development in practice.
+        </div>
+
+        <div class="metric-flags">
+            <div class="flag green">Target vs Need: Meets OAN</div>
+            <div class="flag green">Spatial Strategy: Fair</div>
+            <div class="flag amber">Policy Blockers: Moderate Risk</div>
+            <div class="flag amber">Contradictions: Standard Tensions</div>
+        </div>
+
+        <div class="section" id="target-delivery">
+            <h2><span class="positive">✓</span> Housing Target: Meeting the Need (On Paper)</h2>
+            <p>The plan sets a housing target of <span class="highlight">486 homes per year</span> (10,206 total 2016-2037). Positively, this aligns with the higher end of their own evidence (SHMA Update 2018) which accounted for economic growth, rather than just using the lower standard method figure (399 dpa). Crucially, the plan acknowledges that meeting this need requires releasing land from the Green Belt, which it proceeds to do.</p>
+            <div class="evidence">
+                <ul>
+                    <li><span class="policy-ref">Policy LPA04:</span> Sets minimum target of 10,206 dwellings (2016-2037), averaging 486 dpa.</li>
+                    <li><span class="policy-ref">Para 4.15.8:</span> Justifies 486 dpa based on SHMA economic scenarios, deemed more realistic than standard method.</li>
+                    <li><span class="policy-ref">Policy LPA01 (Para 5):</span> Explicitly states Green Belt land is released "to enable the needs for housing and employment development to be met in full".</li>
+                    <li><span class="policy-ref">Table 4.9:</span> Total identified supply (7784 dwellings 2021-2037) exceeds residual need (7132 dwellings - Table 4.6). Supply includes a 20% buffer on Green Belt sites (Table 4.8).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="spatial-strategy">
+            <h2><span class="positive">✓</span> Spatial Strategy: Sensible Focus, Necessary Green Belt Release</h2>
+            <p>Development is primarily directed towards 'Key Settlements' like St Helens Core Area, Newton-le-Willows/Earlestown, and Haydock. Major housing and employment sites are located as urban extensions or on large brownfield sites, often near key transport links (M6/M62). The plan avoids over-allocating in smaller villages.</p>
+            <p>The necessary release of Green Belt land appears targeted around existing settlements, rather than isolated sprawl. Land is also safeguarded beyond the plan period for future needs, providing longer-term certainty.</p>
+             <div class="evidence">
+                <ul>
+                    <li><span class="policy-ref">Policy LPA01 (Paras 1, 3, 5):</span> Focuses on Key Settlements, prioritises brownfield, releases Green Belt strategically.</li>
+                    <li><span class="policy-ref">Para 4.3.3:</span> Defines Key Settlements and explicitly excludes smaller villages from major growth.</li>
+                     <li><span class="policy-ref">Policy LPA03.1 / Policy LPA04.1:</span> Identify large Strategic Employment Sites (Omega, Parkside, Haydock) and Strategic Housing Sites (Bold Garden Suburb, Cowley Hill, Moss Nook) at settlement edges or on major brownfield land.</li>
+                     <li><span class="policy-ref">Appendix 5 Site Profiles:</span> Detail locations, primarily extensions or major regeneration sites.</li>
+                     <li><span class="policy-ref">Policy LPA05:</span> Identifies Safeguarded Land removed from Green Belt for needs beyond 2037.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="constraints-blockers">
+            <h2><span class="risk">⚠</span> Hidden Constraints: Discretionary Policies Create Uncertainty</h2>
+            <p>While the plan sets minimum densities (good), standard policies on design, character, heritage, and amenity contain <span class="highlight">discretionary wording</span> ("respect", "enhance", "unacceptable harm"). This gives significant leeway to decision-makers and could be used to block or delay developments, even on allocated sites, based on subjective judgements.</p>
+            <p>Policy LPD05 is particularly restrictive regarding extensions and replacements of buildings in the *remaining* Green Belt, going beyond basic NPPF exceptions with specific volume caps (30%), potentially hindering appropriate rural development and adaptation.</p>
+            <div class="evidence">
+                <ul>
+                    <li><span class="policy-ref">LPD01 / LPD02:</span> Require development to "maintain or enhance character", "avoid unacceptable harm", "respect local distinctiveness".</li>
+                    <li><span class="policy-ref">LPA04 (Para 3):</span> Sets minimum densities (30/40 dph) but allows exceptions for "clear planning objective".</li>
+                    <li><span class="policy-ref">LPD05:</span> Imposes 30% volume limits on extensions/replacement dwellings in the Green Belt.</li>
+                    <li><span class="policy-ref">LPC11 / LPC09 / LPC10:</span> Standard protections for heritage, landscape, trees - implementation risk depends on how strictly harm vs benefit is weighed.</li>
+                 </ul>
+            </div>
+            <div class="callout">
+               Policy Leeway: Vague terms like "respecting character" or avoiding "unacceptable harm" lack clear definition, opening the door for subjective refusals and creating risk for developers trying to deliver needed homes.
+            </div>
+        </div>
+
+         <div class="section" id="contradictions">
+            <h2><span class="amber">~</span> Contradictions & Trade-offs: Green Belt Sacrifice Acknowledged</h2>
+            <p>The plan faces the common tension between delivering growth and protecting the environment/heritage. However, it explicitly acknowledges that meeting housing and employment needs requires releasing Green Belt land <span class="policy-ref">(Policy LPA01)</span>, demonstrating a pragmatic approach to this central trade-off at the strategic level.</p>
+            <p>Protections for remaining environmental and heritage assets are standard. The risk lies not in outright contradiction, but in whether these protections are applied disproportionately during decision-making to frustrate development on allocated sites.</p>
+             <div class="evidence">
+                <ul>
+                    <li><span class="policy-ref">Policy LPA01 (Para 5):</span> Justifies Green Belt release based on housing/employment needs.</li>
+                    <li><span class="policy-ref">Para 4.3.9 / 4.3.11:</span> States urban/brownfield supply is insufficient, necessitating Green Belt review.</li>
+                    <li><span class="policy-ref">Policies LPC06, LPA08, LPC09, LPC10, LPC11:</span> Standard policies protecting biodiversity, green infrastructure, landscape, trees, heritage.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="site-assessment">
+            <h2><span class="amber">~</span> Site Allocations: Reliance on Large Strategic Sites</h2>
+            <p>A significant portion of the housing supply relies on a few large strategic housing sites (SHS), notably 4HA (Bold Forest Garden Suburb), 6HA (Cowley Hill), and 10HA (Moss Nook). While the plan includes buffers for non-delivery, large sites often face complex infrastructure requirements and longer build-out times, posing a delivery risk.</p>
+            <p>The plan allocates sufficient sites on paper, including former Green Belt land, but the actual delivery rate will depend heavily on these major schemes progressing without significant delays.</p>
+             <div class="evidence">
+                <ul>
+                    <li><span class="policy-ref">Policy LPA04.1:</span> Designates six Strategic Housing Sites.</li>
+                    <li><span class="policy-ref">Table 4.5:</span> Shows capacity for SHS (e.g., 4HA: 2988 total, 510 pre-2037; 6HA: 1100 total, 607 pre-2037; 10HA: 802 total, 652 pre-2037).</li>
+                     <li><span class="policy-ref">Table 4.7 / 4.8:</span> Buffers applied (15% non-delivery discount on SHLAA, 20% contingency added to Green Belt requirement).</li>
+                    <li><span class="policy-ref">Appendix 5:</span> Contains profiles outlining site-specific requirements, highlighting infrastructure needs (e.g., schools, GP surgery, highway improvements for 4HA).</li>
+                </ul>
+            </div>
+        </div>
+
+         <div class="section" id="trajectory-delivery">
+            <h2><span class="risk">⚠</span> Trajectory & Delivery: Backloaded and Vulnerable</h2>
+            <p>The housing trajectory <span class="policy-ref">(Table 4.10 / Figure 4.3)</span> shows delivery peaking mid-plan and relying heavily on large sites coming forward in later years. The Bold Forest Garden Suburb (4HA) is particularly backloaded, with only 510 of nearly 3,000 homes expected by 2037, based on a cautious 7-year lead-in and 60 dpa build rate.</p>
+            <p>While the plan shows a 5.1-year housing land supply at adoption <span class="policy-ref">(Table 4.12)</span>, this could quickly erode if large strategic sites face delays. The reliance on these sites introduces significant delivery risk later in the plan period.</p>
+             <div class="evidence">
+                <ul>
+                    <li><span class="policy-ref">Table 4.10 / Figure 4.3:</span> Trajectory shows peaks around 2027-2030, lower delivery at start and end.</li>
+                     <li><span class="policy-ref">Para 4.39.6 / 4.39.8:</span> Note indicative capacity and cautious build-out assumptions for 4HA.</li>
+                     <li><span class="policy-ref">Table 4.5:</span> Shows significant capacity on sites 2HA, 4HA, 5HA, 6HA, 10HA expected *after* 31 March 2037.</li>
+                    <li><span class="policy-ref">Table 4.12:</span> Calculates 5.1 year HLS as of 31.03.2021.</li>
+                </ul>
+             <div class="callout">
+               Delivery Gamble: Relying on huge sites like the Bold Forest Garden Suburb (expecting only 17% delivery by 2037) makes the plan's overall target vulnerable to delays. Will St Helens maintain a 5-year supply throughout the plan?
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

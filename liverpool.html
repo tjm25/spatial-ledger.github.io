@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Ledger Analysis: Liverpool Local Plan 2013-2033</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; color: #333; }
+        .container { max-width: 900px; margin: auto; }
+        .headline-box { background-color: #f0ad4e; /* Amber */ color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px; text-align: center; border: 2px solid #eea236; }
+        .headline-box h1 { margin: 0; font-size: 1.8em; }
+        .headline-box p { margin: 5px 0 0; font-size: 1.1em; }
+        .metric-flags { display: flex; justify-content: space-around; margin-bottom: 30px; padding: 15px; background-color: #f9f9f9; border-radius: 5px; }
+        .flag { text-align: center; }
+        .flag span { display: inline-block; width: 30px; height: 30px; border-radius: 50%; margin-bottom: 5px; border: 1px solid #ccc; }
+        .flag .green { background-color: #5cb85c; border-color: #4cae4c; }
+        .flag .amber { background-color: #f0ad4e; border-color: #eea236; }
+        .flag .red { background-color: #d9534f; border-color: #d43f3a; }
+        .flag p { margin: 0; font-size: 0.9em; font-weight: bold; }
+        h2 { color: #0275d8; border-bottom: 2px solid #0275d8; padding-bottom: 5px; margin-top: 30px; }
+        h3 { color: #1a1a1a; margin-top: 20px; }
+        p { margin-bottom: 15px; }
+        strong { color: #d9534f; } /* Highlight potential issues */
+        .callout { background-color: #f7f7f7; border-left: 5px solid #0275d8; padding: 10px 15px; margin: 20px 0; font-style: italic; }
+        .policy-ref { font-size: 0.8em; color: #666; display: block; margin-top: -10px; margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .badge { display: inline-block; padding: 3px 8px; background-color: #5bc0de; color: white; border-radius: 4px; font-size: 0.9em; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="headline-box">
+            <h1>Liverpool Local Plan: Meets Need On Paper, But Relies Heavily on Past Permissions & Windfall</h1>
+            <p>While technically meeting its housing target, Liverpool's Plan leans significantly on existing consents and future windfall, with new allocations contributing less than expected during the plan period. Restrictive policies on heritage and character pose risks to future delivery.</p>
+        </div>
+
+        <div class="metric-flags">
+            <div class="flag">
+                <span class="amber"></span>
+                <p>Target vs Need</p>
+            </div>
+            <div class="flag">
+                <span class="green"></span>
+                <p>Spatial Strategy</p>
+            </div>
+            <div class="flag">
+                <span class="amber"></span>
+                <p>Constraint Density</p>
+            </div>
+             <div class="flag">
+                <span class="amber"></span>
+                <p>Trajectory Risk</p>
+            </div>
+        </div>
+
+        <h2>Housing Target & Delivery</h2>
+        <p>Liverpool's Plan sets an annual housing target of <strong>1,739 homes per year</strong> (34,780 total from 2013-2033). This is based directly on the 2016/2017 Strategic Housing and Employment Land Market Assessment (SHELMA) OAN figure (Para 8.3). Technically, the Plan *doesn't* lower the target due to constraints; in fact, the trajectory shows a significant surplus over the requirement (Table 8, p.135 estimates delivery exceeding need by 9,916 homes).</p>
+        <p>However, this apparent success masks a reliance on past performance and existing permissions. The trajectory (Annexe 1, Table 4, p.414) shows that completions (2013-2020) and existing commitments (permissions granted pre-plan adoption) make up the vast majority of the supply. New site allocations (Policy H2) are only projected to deliver 1,569 homes *during the plan period* (Table 8, H), despite having a total capacity of 3,981 (Table 11, p.437). There's also a reliance on 140 windfall homes per year from 2023 onwards (Para 8.9). While the OAN is met on paper, <strong>the Plan itself isn't driving the majority of delivery through *new* allocations.</strong></p>
+        <span class="policy-ref">Policies: H1, H2. Paras: 8.3, 8.4, 8.8, 8.9. Annexe 1, Table 4.</span>
+
+        <h2>Spatial Strategy & Site Allocation <span class="badge">Brownfield First</span></h2>
+        <p>The Plan strongly prioritises development on previously developed (brownfield) land (Policy STP2d, Para 1.16) and focuses economic and housing growth in sustainable locations. Key areas include the City Centre, designated Employment Areas (like North Liverpool, Stonebridge, Speke/Garston), and Enterprise Zones (Mersey Waters) (Policy STP1). District and Local centres are prioritised for retail and services.</p>
+        <p>This brownfield-first, urban-focused approach is commendable from a sustainability perspective. The City Centre receives significant attention with specific policies for different character areas (Chapter 6). However, the actual housing delivery contribution from *newly allocated sites* within the plan period is relatively modest (see above), raising questions about whether the spatial strategy fully maximises the potential of the most sustainable locations through *new* permissions enabled by *this* plan.</p>
+         <span class="policy-ref">Policies: STP1, STP2, EC1, EC2, EC6, Chapter 6 Policies (CC1-CC18).</span>
+
+        <h2>Hidden Constraints & Policy Blockers</h2>
+        <p>While promoting growth, the Plan contains policies that could act as significant blockers. Urban Design policies (Chapter 10) place heavy emphasis on local character, context, scale, and distinctiveness (Policy UD1). While important, such subjective criteria can be used to resist development, especially denser schemes. Policy UD2 ('Development Layout and Form') includes 15 criteria, many of which are open to interpretation (e.g., 'adequate responses to issues of skyline impact', 'appropriate to the function of the building and its context').</p>
+        <p>Heritage protection is very strong, particularly concerning the World Heritage Site (WHS) and its buffer zone (Policy HD2, Policy CC10). Policy HD1 requires conservation and enhancement, with substantial harm only permitted in exceptional circumstances. Tall building policy (UD6) requires rigorous justification and assessment against key views (Appendix 3), potentially limiting density in central areas. <strong>While necessary, the cumulative weight and potential subjectivity of design, heritage, and character policies create uncertainty and risk for housing delivery.</strong></p>
+        <span class="policy-ref">Policies: UD1, UD2, UD6, HD1, HD2, CC10. Appendix 3.</span>
+
+        <h2>Contradictions & Trade-offs</h2>
+        <p>The Plan presents the classic tension between enabling development and protecting existing character, heritage, and environmental assets. Policy STP3 ('Protecting Environmentally Sensitive Areas') requires avoidance/mitigation of impacts on European sites (Natura 2000/Ramsar) and references the need for HRA and mitigation measures (detailed in Annexe 2), adding cost and complexity. Policy GI 6 provides strong protection for biodiversity and designated sites.</p>
+        <p>While the Plan aims for sustainable growth (Policy STP2), the detailed requirements for heritage impact assessments (HD1, HD2), specific design criteria (UD policies), and environmental protection (GI policies, R policies) could cumulatively outweigh the push for housing delivery, particularly if interpreted restrictively. The Plan doesn't explicitly state trade-offs, but <strong>the emphasis on conservation and context suggests these values may often take precedence over maximising housing numbers on suitable sites.</strong></p>
+        <span class="policy-ref">Policies: STP2, STP3, HD1, HD2, GI6, R1-R10, UD1-UD9. Annexe 2.</span>
+
+        <h2>Site-by-Site Assessment</h2>
+        <p>Appendix 1 details the 'Housing Site Development Criteria' for the 14 main allocated sites (H1-H14). A review reveals numerous constraints and specific requirements for many sites:</p>
+        <ul>
+            <li><strong>H1 (Aintree Hospital):</strong> Noise/air pollution mitigation, heritage assets (Edwardian buildings), flood risk (surface/groundwater), requires health/elderly provision.</li>
+            <li><strong>H2 (Great Mersey St):</strong> Sound insulation needed, flood risk, setting of Listed Buildings.</li>
+            <li><strong>H4 (Prescot Rd Market):</strong> Flood risk, contamination, adjacent Conservation Area/Registered Park.</li>
+            <li><strong>H8 (Stanhope St):</strong> Flood risk, adjacent railway/A-road noise, adjacent Conservation Area/Listed Church.</li>
+            <li><strong>H10 (Head St):</strong> Adjacent Listed Chapel, flood risk, noise/air pollution.</li>
+            <li><strong>H13 (Banks Rd, Garston):</strong> Flood risk, adjacent LWS, Ramsar, SSSI, SPA.</li>
+            <li><strong>H14 (Margaret Beavan School):</strong> Mature trees, setting of Listed Building, adjacent LWS, located *within* Conservation Area, HER monument.</li>
+        </ul>
+        <p>While sites are allocated, <strong>significant hurdles exist for many, requiring specific mitigation or sympathetic design</strong>. The density and deliverability assumptions in the trajectory need to be viewed against these site-specific challenges. The plan relies more heavily on permissions already granted (commitments) where viability and constraints were presumably resolved under the previous planning regime.</p>
+        <span class="policy-ref">Appendix 1 (pp. 279-285). Policy H2.</span>
+
+        <h2>Trajectory & Delivery Expectations</h2>
+        <p>The Housing Delivery Trajectory (Annexe 1, Table 4, p.414) shows a front-loaded delivery profile based largely on completions (2013-20) and existing commitments. Delivery dips significantly after 2025/26. Newly allocated sites (Table 11, p.437) make a relatively small contribution *within the plan period*, with much of their capacity expected post-2033. For example, H1 (Aintree, 500 homes) delivers fully by 2025/26, but H8 (Stanhope St, 155 homes) only delivers in 2024/25, H10 (Head St, 180 homes) in 2024/25, and H13 (Banks Rd, 84 homes) is backloaded to 2028-2031.</p>
+        <p>The reliance on 140 windfall units per year from 2023 (Para 8.9, Table 4 p.414 'Windfall Allowance') adds uncertainty. While past trends might support this, future delivery depends on unidentifed sites coming forward smoothly. <strong>The trajectory suggests the Plan isn't proactively driving *new* large-scale delivery through its own allocations within the 2033 timeframe; it's managing existing supply and banking on windfall.</strong></p>
+        <span class="policy-ref">Annexe 1, Table 4 (p.134 & p.414), Table 5 (p.134 & p.415), Tables 6-12 (pp. 417-438). Para 8.9.</span>
+
+        <h2>Policy Language & Implementation Risk</h2>
+        <p>The Plan uses a mixture of directive language ("will be granted," "must comply") and more discretionary terms ("should demonstrate," "contribute to," "where appropriate," "have regard to"). Policies relating to design (UD), heritage (HD), and environmental protection often rely on demonstrating compliance with principles rather than hard metrics.</p>
+        <p>For example, Policy UD1 requires development to consider numerous aspects of local character without defining how potential conflicts between character and, say, density should be resolved. Policy H3 requires proposals for 10+ homes to provide an "appropriate mix" reflecting SHMA findings, but the final mix is "subject to negotiation". Policy HD1 allows harm to heritage assets if outweighed by "public benefits". <strong>This level of discretion, particularly around subjective issues like character and design, creates risk. It empowers decision-makers to potentially resist development even on allocated sites if proposals are deemed not to sufficiently 'respect' or 'enhance' the existing context.</strong></p>
+        <span class="policy-ref">Policies: UD1, UD2, HD1, H3, STP2, STP3, GI1, R1.</span>
+
+        <div class="callout">
+            <strong>Key Concern:</strong> While Liverpool's Local Plan presents a picture of meeting housing need, its reliance on past permissions and windfall, combined with potentially restrictive design and heritage policies subject to discretionary interpretation, poses risks to future housing delivery actually being enabled *by this plan*. The plan's own allocations deliver relatively little within the period to 2033.
+        </div>
+
+    </div>
+</body>
+</html>

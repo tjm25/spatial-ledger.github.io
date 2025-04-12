@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Ledger Analysis: Places for Everyone Plan (GM)</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #0056b3; }
+        h1 { text-align: center; border-bottom: 2px solid #0056b3; padding-bottom: 10px; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 30px; }
+        h3.flags-title { margin-top: 0; margin-bottom: 15px; text-align: center; color: #495057; font-weight: normal;}
+
+        .summary-box { background-color: #e9f5ff; border: 1px solid #a8d0ff; padding: 15px; margin-bottom: 20px; border-radius: 5px; text-align: center; font-weight: bold; color: #003f7d; } /* Adjusted color */
+
+        /* Flags Container */
+        .metric-flags-container { margin-bottom: 30px; padding: 15px; background-color: #f0f4f8; border-radius: 5px; border: 1px solid #d6e0ea; }
+        .metric-flags {
+            display: flex;
+            justify-content: space-around; /* Distributes space */
+            flex-wrap: wrap; /* Allows items to wrap */
+            gap: 10px; /* Adds space between flags if they wrap */
+        }
+        .flag {
+            text-align: center;
+            padding: 12px 15px; /* Slightly more padding */
+            border-radius: 4px;
+            color: #fff;
+            font-weight: bold;
+            min-width: 130px; /* Ensure readability */
+            flex-basis: 180px; /* Base width before growing/shrinking */
+            flex-grow: 1; /* Allow flags to take up space */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow */
+            font-size: 0.95em;
+        }
+        .flag.green { background-color: #28a745; border: 1px solid #1e7e34; }
+        .flag.amber { background-color: #ffc107; color: #333; border: 1px solid #d39e00; }
+        .flag.red { background-color: #dc3545; border: 1px solid #a71d2a;}
+
+        .section { margin-bottom: 30px; }
+        .callout { background-color: #f8f9fa; border-left: 5px solid #007bff; padding: 15px; margin: 20px 0; font-style: italic; border-radius: 0 4px 4px 0; }
+        .callout strong { color: #dc3545; font-weight: bold; }
+        .scorecard { border: 1px solid #e0e0e0; padding: 12px; margin-top: 10px; border-radius: 4px; background-color: #f8f8f8; }
+        .scorecard strong { display: block; margin-bottom: 6px; color: #0056b3; font-size: 1.05em; }
+        code { background-color: #e9ecef; padding: 2px 5px; border-radius: 3px; font-family: monospace; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; font-size: 0.95em;}
+        th { background-color: #f2f2f2; font-weight: bold; }
+        .evidence { font-size: 0.85em; color: #666; margin-top: 8px; font-style: italic;}
+        .bold-highlight { font-weight: bold; color: #c82333; } /* Reddish highlight for concerning text */
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Spatial Ledger Analysis: Places for Everyone Plan (GM)</h1>
+        <p style="text-align:center; font-style:italic;">Adopted 21 March 2024 | Plan Period 2022-2039</p>
+
+        <div class="summary-box">
+             This Plan meets the minimum housing need on paper and allocates significant sites (including Green Belt release), but faces <span class="bold-highlight">major delivery risks</span> due to complex site requirements, backloaded phasing, and highly discretionary policies that could hinder development.
+        </div>
+
+        <div class="metric-flags-container">
+             <h3 class="flags-title">At a Glance: Plan Performance</h3>
+            <div class="metric-flags">
+                <div class="flag green">Target Meets Need ✅</div>
+                <div class="flag amber">Spatial Strategy Balance ⚠️</div>
+                <div class="flag red">Policy Blocker Risk ❌</div>
+                <div class="flag amber">Contradiction Score ⚠️</div>
+            </div>
+        </div>
+
+        <!-- Housing Target & Delivery -->
+        <div class="section">
+            <h2><span style="color: #dc3545;">1.</span> Housing Target: Hitting the Minimum, Relying on the Future</h2>
+            <p>The PfE plan sets a housing target of <strong>175,185 net additional homes</strong> between 2022 and 2039, averaging 10,305 per year. Commendably, this aligns directly with the minimum figure derived from the Government's standard methodology (LHN), with the Plan explicitly stating no 'exceptional circumstances' were found to justify a lower target (para 1.36, Policy JP-H1).</p>
+            <p>While recent peak delivery hit over 12,000 homes (para 7.16), the Plan acknowledges risks from economic shocks and the complexity of its own strategic sites. The housing trajectory (Table 7.2) reflects this by <span class="bold-highlight">planning for lower delivery initially</span> (avg. 9,063/yr until 2025) and ramping up significantly later (avg. 10,719/yr post-2030). This backloading, while perhaps realistic about site lead-in times, shifts delivery risk heavily onto the later years of the plan.</p>
+            <div class="scorecard">
+                <strong>Verdict: Target Met (Standard Method)</strong>
+                Target: 175,185 (10,305/yr avg) <br>
+                Basis: LHN Standard Method <br>
+                Constraint Adjustment: None cited for target reduction <br>
+                <span class="bold-highlight">Delivery Risk: High (due to backloading & site complexity)</span>
+            </div>
+            <p class="evidence">Evidence: Policy JP-H1, Table 7.2 (p.140), Para 1.36, 7.16, 7.18</p>
+        </div>
+
+        <!-- Spatial Strategy & Site Allocation -->
+        <div class="section">
+            <h2><span style="color: #dc3545;">2.</span> Where Will Homes Go? Core Focus & Northern Boost (Requires Green Belt)</h2>
+            <p>The plan attempts a balancing act. It prioritises the 'Core Growth Area' (Manchester/Salford/Trafford) and Inner Areas for around 50% of housing, leveraging existing infrastructure and brownfield potential (para 1.28, 4.18, 4.25). This aligns with sustainable development principles.</p>
+            <p>However, a key aim is 'Boosting Northern Competitiveness' (para 4.19, 4.44). This translates into significant allocations in Bolton, Bury, Oldham, Rochdale, Tameside, and Wigan, including <span class="bold-highlight">substantial Green Belt releases</span> like the Northern Gateway (JPA1.1/1.2), Elton Reservoir (JPA7), and sites in the Wigan-Bolton Growth Corridor (JP-Strat8). While 90% of planned housing is within the existing 'urban area' (para 1.42), the crucial remaining 10% relies heavily on Green Belt land (net release 2,210 ha / 4.1%, para 1.49).</p>
+             <div class="callout">
+                <strong>Necessary Trade-Off?</strong> Para 1.47 explicitly states Green Belt release is needed: "Given the lack of sufficient land... it is considered that there is a strategic exceptional circumstances case to be made to release Green Belt for development."
+            </div>
+            <div class="scorecard">
+                <strong>Verdict: Balanced Intent, Green Belt Reality</strong>
+                Priority: Core Growth Area & Transport Hubs (Good) <br>
+                Northern Boost: Significant Allocations (Good Intent) <br>
+                Urban Focus: 90% Housing (Good) <br>
+                <span class="bold-highlight">Green Belt Reliance: High (Significant release needed for strategic goals)</span>
+            </div>
+            <p class="evidence">Evidence: Para 1.28, 1.42, 1.47, 1.49, 4.18, 4.19, 4.44, Chapter 11 Allocations, Policy JP-H4</p>
+        </div>
+
+        <!-- Hidden Constraints & Policy Blockers -->
+        <div class="section">
+            <h2><span style="color: #dc3545;">3.</span> Policy Blockers: The Danger of Discretion</h2>
+            <p>While the plan allocates sites, its thematic policies contain significant <span class="bold-highlight">'wriggle room'</span> that could frustrate housing delivery. Policies on Sustainable Places (JP-P1), Landscape Character (JP-G1), Heritage (JP-P2), and Housing Design (JP-H3) use subjective and discretionary language like:</p>
+            <ul>
+                <li><code>'reflect and respond to special qualities'</code> (JP-G1)</li>
+                <li><code>'conserve and enhance'</code> heritage/landscape (JP-P1, JP-P2)</li>
+                <li><code>'respects and acknowledges the character and identity'</code> (JP-P1)</li>
+                <li><code>'appropriate mix'</code> of housing (JP-H3)</li>
+                <li><code>'sensitively designed'</code> (multiple policies)</li>
+            </ul>
+            <p>Crucially, Policy JP-H4 allows deviation from minimum densities if justified by 'local housing market issues' or 'site-specific issues' like <span class="bold-highlight">'design context'</span>, <span class="bold-highlight">'landscape'</span>, or <span class="bold-highlight">'heritage assets'</span>. While intended for flexibility, these vague criteria create loopholes that can be exploited to argue for lower densities or block viable schemes, undermining the plan's housing targets.</p>
+             <div class="scorecard">
+                <strong>Verdict: High Risk of Policy Blockage</strong>
+                Discretionary Wording: High (Character, Landscape, Heritage, Design) <br>
+                Density Policy: Minimums set, but <span class="bold-highlight">justification loopholes exist</span> <br>
+                Implementation Certainty: Low (Reliant on interpretation)
+            </div>
+            <p class="evidence">Evidence: Policy JP-P1, JP-G1, JP-P2, JP-H3, JP-H4</p>
+        </div>
+
+        <!-- Contradictions & Trade-offs -->
+        <div class="section">
+            <h2><span style="color: #dc3545;">4.</span> Balancing Act or Tug-of-War? Competing Priorities</h2>
+             <p>The plan juggles multiple, often competing, objectives. Delivering 175,000 homes inherently clashes with absolute protection of all landscape, heritage, and environmental assets. While the plan acknowledges the need for Green Belt release as a trade-off for meeting housing need (para 1.47), other tensions remain:</p>
+            <ul>
+                <li><strong>Growth vs Character:</strong> Boosting northern economies via large developments vs. protecting the existing 'character' and landscapes of those same areas (para 4.44, 4.46).</li>
+                <li><strong>Carbon vs Viability:</strong> Ambitious targets for net zero carbon homes by 2028 (Policy JP-S2) vs. acknowledged viability challenges on brownfield sites (para 1.45) and potentially complex Green Belt sites.</li>
+                <li><strong>Infrastructure vs Delivery Speed:</strong> Reliance on major new transport and utility upgrades (Policy JP-D1, site policies) creates dependencies that can delay housing delivery.</li>
+            </ul>
+            <p>While these tensions are common in planning, the PfE's success depends on whether trade-offs are made pragmatically to enable housing, or if constraints (especially subjective ones like 'character') are allowed to become insurmountable barriers.</p>
+            <div class="scorecard">
+                <strong>Verdict: Tensions Require Pro-Housing Prioritisation</strong>
+                Green Belt Trade-off: Explicitly Acknowledged <br>
+                Growth vs Character: High Tension <br>
+                Sustainability Goals: Potential Viability/Delivery Conflicts <br>
+                Transparency: Reasonable for strategic plan, but implementation is key.
+            </div>
+             <p class="evidence">Evidence: Para 1.45, 1.47, 4.44, 4.46, Policy JP-S2, JP-G1, JP-P1, JP-D1</p>
+        </div>
+
+         <!-- Site Delivery & Trajectory -->
+        <div class="section">
+            <h2><span style="color: #dc3545;">5.</span> Delivery Doubts: Complex Sites & Backloaded Promises</h2>
+            <p>The plan identifies enough land supply (198,888 homes) to meet its target (175,185 homes) on paper (Table 7.1). However, a significant portion relies on large, complex strategic allocations, many on Green Belt land requiring major infrastructure investment and lengthy masterplanning (e.g., Northern Gateway, Elton Reservoir, New Carrington, Timperley Wedge).</p>
+            <p>The housing trajectory (Table 7.2) acknowledges this by phasing delivery, with <span class="bold-highlight">lower rates expected in the early years</span> (2022-2025) and higher rates later (post-2030). Several site justifications explicitly state delivery extending beyond the plan period (e.g., para 11.20, 11.76). This heavy reliance on complex, long-term sites and a backloaded trajectory creates a <span class="bold-highlight">high risk of under-delivery</span> against the plan's stated targets, mirroring issues seen in previous strategic plans.</p>
+            <div class="scorecard">
+                <strong>Verdict: Significant Delivery Risk</strong>
+                Supply vs Target: Sufficient on Paper (+13% buffer) <br>
+                Site Complexity: High (Large sites, Green Belt, Infrastructure needs) <br>
+                Trajectory: Backloaded (Lower initial delivery, ramps up later) <br>
+                <span class="bold-highlight">Risk of Shortfall: High (Optimism bias on large site delivery)</span>
+            </div>
+             <p class="evidence">Evidence: Table 7.1, Table 7.2, Para 7.16, 7.18, Site Justifications in Chapter 11 (e.g., 11.20, 11.76, 11.121, 11.143, 11.358, 11.377)</p>
+        </div>
+
+         <!-- Conclusion -->
+        <div class="section">
+            <h2><span style="color: #dc3545;">6.</span> Overall Verdict: Ambition Tempered by Risk</h2>
+            <p>The Places for Everyone plan sets an objectively derived housing target and identifies major strategic sites intended to rebalance growth across Greater Manchester, including making the difficult decision to release Green Belt land. This ambition is welcome.</p>
+            <p>However, its success hinges on overcoming significant hurdles. The reliance on large, complex, infrastructure-hungry sites, coupled with a backloaded delivery trajectory, creates substantial risk of under-delivery. Furthermore, discretionary policies related to character, landscape, heritage, and density provide ample opportunity for development to be slowed or blocked during implementation, especially when detailed local plans and planning applications come forward. </p>
+            <p><span class="bold-highlight">Vigilance and a consistently pro-delivery interpretation of policies by all nine councils will be essential</span> if PfE is to genuinely deliver the homes Greater Manchester needs.</p>
+        </div>
+
+    </div>
+</body>
+</html>

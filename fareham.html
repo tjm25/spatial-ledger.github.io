@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spatial Ledger Analysis: Fareham Local Plan 2037</title>
+<style>
+  body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: auto; background-color: #f8f9fa; }
+  h1, h2, h3 { color: #0056b3; }
+  h1 { text-align: center; margin-bottom: 30px; }
+  h2 { border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 30px;}
+  .summary-box { background-color: #e9ecef; border: 1px solid #ced4da; padding: 15px; margin-bottom: 20px; border-radius: 5px; text-align: center; }
+  .summary-box h2 { margin-top: 0; border-bottom: none; }
+  .metric-flags { display: flex; flex-wrap: wrap; /* Allow wrapping on smaller screens */ justify-content: center; /* Center flags */ gap: 10px; /* Add space between flags */ margin-bottom: 30px; padding: 15px; background-color: #fff; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .flag { padding: 8px 12px; border-radius: 20px; color: white; text-align: center; font-weight: bold; font-size: 0.9em; flex-grow: 1; /* Allow flags to grow */ flex-basis: 200px; /* Minimum base width */ max-width: 250px; /* Max width */ }
+  .flag.green { background-color: #28a745; }
+  .flag.amber { background-color: #ffc107; color: #333; }
+  .flag.red { background-color: #dc3545; }
+  .section { background-color: #ffffff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  .section h3 { color: #007bff; margin-top: 0; border-bottom: 1px dotted #007bff; padding-bottom: 3px;}
+  .callout { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 10px 15px; margin: 15px 0; font-style: italic; }
+  .callout strong { color: #856404; font-style: normal; } /* Callout emphasis */
+  table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+  th, td { border: 1px solid #dee2e6; padding: 8px; text-align: left; font-size: 0.95em; }
+  th { background-color: #f2f2f2; }
+  strong.constraint { color: #d9534f; } /* Highlight potentially problematic elements */
+  cite { font-size: 0.8em; color: #6c757d; display: block; margin-top: 5px; }
+  .trajectory-note { font-weight: bold; color: #fd7e14; }
+  .subjective-policy { background-color: #f8d7da; padding: 2px 5px; border-radius: 3px; color: #721c24; font-family: monospace; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Spatial Ledger Analysis: Fareham Local Plan 2037</h1>
+
+<div class="summary-box">
+  <h2>The Verdict</h2>
+  <p>This Local Plan meets its minimum housing requirement *on paper*, boosted by contributions to neighbours' unmet need. However, its heavy reliance on large, backloaded edge-of-settlement sites (including the separate Welborne plan), coupled with restrictive countryside/gap policies and a suite of subjective design and character rules, creates <strong class="constraint">significant risk of under-delivery</strong> and embeds constraints that prioritise 'character' over meeting housing need in a timely manner.</p>
+</div>
+
+<div class="metric-flags">
+  <div class="flag amber">Target vs Need: Meets OAN + Unmet Need (Delivery heavily backloaded)</div>
+  <div class="flag amber">Spatial Strategy: Favours Edge/New Town (Urban potential underplayed?)</div>
+  <div class="flag red">Policy Blockers: High Risk (Subjective design, character, landscape, gap policies)</div>
+  <div class="flag amber">Contradictions: Moderate (Tension between numbers and strong protectionism)</div>
+</div>
+
+<div class="section">
+  <h3>Housing Target & Delivery: Meeting the Minimum, But When?</h3>
+  <p>The plan sets a target of <strong>9,556 net new homes</strong> between 2021 and 2037 (Policy H1). This figure incorporates Fareham's own standard methodology need (541 dpa or 8,656 total) *plus* a contribution of 900 homes towards neighbours' unmet need (para 4.5), mainly for Portsmouth. While technically exceeding its own minimum OAN, the delivery plan raises serious questions about timing.</p>
+  <p>The housing trajectory (Appendix B) reveals a dramatically stepped delivery profile: a mere 210 dpa planned for the first two years (2021/22-2022/23), before rocketing to an average of 653 dpa thereafter (Policy H1). This acknowledges initial delays (like nitrates, para 4.17) but creates a <strong class="trajectory-note">high-risk, extremely backloaded profile</strong>. It depends heavily on large sites delivering consistently and at scale later in the plan period. The stated 7.5% supply buffer (712 homes, para 4.12) appears <strong class="constraint">optimistic</strong> given this reliance on a few major sites (Welborne, HA55, HA56) coming good exactly as planned.</p>
+  <table>
+    <tr><th>Metric</th><th>Value</th><th>Source</th></tr>
+    <tr><td>Plan Period</td><td>2021 - 2037 (16 years)</td><td>Para 1.13</td></tr>
+    <tr><td>Total Housing Requirement</td><td>9,556 dwellings</td><td>Policy H1, Table 4.1</td></tr>
+    <tr><td>Average Annual Requirement</td><td>~597 dpa</td><td>Calculation</td></tr>
+    <tr><td>Planned Supply</td><td>10,268 dwellings</td><td>Table 4.2</td></tr>
+    <tr><td>Supply Buffer</td><td>712 dwellings (7.5%)</td><td>Para 4.12, Table 4.3</td></tr>
+    <tr><td>Trajectory 2021-23</td><td>210 dpa (average)</td><td>Policy H1</td></tr>
+    <tr><td>Trajectory 2023-37</td><td>653 dpa (average)</td><td>Policy H1</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h3>Spatial Strategy: Edge-Focused Growth, Gaps Preserved</h3>
+  <p>The stated strategy aims to focus development in urban or sustainable edge-of-settlement locations (Foreword, para 2.10) and maximise development within the urban area first (Strategic Priority 2). Some town centre sites are allocated (FTC5-9), and a Broad Location (BL1) identifies later-plan potential for around 620 town centre homes.</p>
+  <p>However, the *scale* of planned growth is overwhelmingly dominated by large edge-of-settlement strategic sites (HA55 Land South of Longfield Avenue - 1250 homes; HA56 Land West of Downend Road - 550 homes) and the crucial contribution from the separate Welborne Plan (3,050 homes assumed in trajectory, Table 4.2). While general countryside development is restricted (Policy DS1), the strategy clearly relies on major suburban expansion. <strong class="constraint">Strategic Gaps (Policy DS2) are explicitly maintained</strong> to prevent settlement coalescence, functioning as hard constraints on land supply in potentially logical expansion areas.</p>
+   <div class="callout">
+     <p>"In order to prevent the coalescence of urban areas and to maintain the separate identity of settlements, Strategic Gaps are identified..."</p>
+     <cite>Policy DS2: Development in Strategic Gaps</cite>
+     <p><strong>Delivery Perspective:</strong> While local identity is important, rigidly protecting these extensive gaps significantly restricts the supply of land in locations that might otherwise be sustainable, intensifying pressure on the allocated large sites.</p>
+   </div>
+</div>
+
+<div class="section">
+  <h3>Hidden Constraints & Policy Blockers: The Subjectivity Gauntlet</h3>
+  <p>Securing permission even on allocated sites requires navigating a complex web of detailed policies. Fareham's plan is laden with policies containing subjective criteria that can significantly slow down or block housing delivery:</p>
+  <ul>
+    <li><strong>Design & Character (Policy D1):</strong> Demands 'high quality' design and an <span class="subjective-policy">'appropriate response'</span> to context, identity, built form etc. These terms are inherently open to interpretation and challenge.</li>
+    <li><strong>Landscape (Policy DS3):</strong> Protects designated 'Areas of Special Landscape Quality' and requires development in the countryside to recognise <span class="subjective-policy">'intrinsic character and beauty'</span>. Defining and defending 'intrinsic character' objectively is a major hurdle for applicants.</li>
+    <li><strong>Strategic Gaps (Policy DS2):</strong> Development must not <span class="subjective-policy">'significantly affect the integrity of the gap'</span> or the <span class="subjective-policy">'distinctive nature of settlement characters'</span>. What constitutes 'significant' or 'distinctive' is subjective.</li>
+    <li><strong>Heritage (Policies HE1-HE6):</strong> Comprehensive protection for designated and non-designated assets and their settings. Necessary, but adds layers of assessment, cost, and potential points of refusal.</li>
+    <li><strong>Small Sites (Policy HP2):</strong> While notionally allowing some small-scale development outside urban areas, it imposes highly restrictive criteria on location (adjacency, transport links), form, scale, design, and frontage impact, severely limiting its practical application and contribution.</li>
+  </ul>
+  <p>The cumulative burden of proof rests on applicants to demonstrate compliance with these often ambiguous terms (<span class="subjective-policy">'appropriate'</span>, <span class="subjective-policy">'sensitive'</span>, <span class="subjective-policy">'respect'</span>, <span class="subjective-policy">'enhance'</span>, <span class="subjective-policy">'proportionate'</span>). This grants considerable discretionary power, increasing uncertainty and the risk of delays or refusals, even for policy-compliant schemes. Common height restrictions (e.g., max 2/2.5 storeys) further limit efficient land use on allocated sites.</p>
+</div>
+
+<div class="section">
+  <h3>Contradictions & Trade-offs: Protectionism vs. Timely Delivery</h3>
+  <p>The plan attempts to balance housing targets with environmental and character protection. It rightly acknowledges the necessity of using Greenfield land, including Best and Most Versatile agricultural land (para 3.35), to meet the identified need. However, the operational weight given to protectionist policies appears disproportionately high relative to the housing need.</p>
+  <p>Policies rigorously protecting Strategic Gaps (DS2), specific landscapes (DS3), and the general 'countryside' (DS1) create direct conflicts with delivering nearly 10,000 homes, the majority of which *must* be located on the edge of settlements due to limited brownfield land. While HRA protections for European sites (NE3, NE4, NE5) are legally mandated, the plan elevates local landscape and gap designations to a level that could unduly constrain housing supply. The 'flexibility' policy (HP4), allowing housing outside the urban area *only* if the 5-year supply fails, is weak sauce – it still requires navigating the same subjective landscape and gap criteria that likely contribute to supply failure in the first place.</p>
+</div>
+
+<div class="section">
+  <h3>Site Allocations & Trajectory: Large Sites Carry the Load (and the Delivery Risk)</h3>
+  <p>The plan's delivery strategy is overwhelmingly reliant on a small number of very large sites delivering substantial numbers over the plan period:</p>
+  <ul>
+    <li>Welborne Garden Village (Separate Plan): Accounts for ~30% of planned supply (3,050 homes in trajectory)</li>
+    <li>HA55 Land South of Longfield Avenue: 1,250 homes (~12% of supply)</li>
+    <li>HA56 Land West of Downend Road: 550 homes (~5% of supply)</li>
+    <li>HA1 North and South of Greenaway Lane: 824 homes (~8% of supply)</li>
+  </ul>
+  <p>The housing trajectory (Appendix B) confirms these sites, especially Welborne and HA55/HA56, are expected to deliver the lion's share of housing from 2025/26 onwards. <strong class="constraint">Any significant delay, planning complication, or reduction in annual delivery rates on *any* of these key sites will seriously undermine the overall housing target and trigger early failure of the 5-year land supply.</strong> The plan's success is critically dependent on the timely, large-scale, and consistent delivery of these few major, complex developments.</p>
+  <div class="callout">
+      <p>"The Council will make provision for at least 9,560 net new homes... phased as follows, At least 420 dwellings... between 2021/22 and 2022/23, At least 9,140 dwellings... between 2023/24 and 2036/37."</p>
+      <cite>Policy H1: Housing Provision</cite>
+      <p><strong>Delivery Perspective:</strong> This phasing is explicit confirmation of the extreme backloading. Only 4.4% of the total 16-year requirement is planned in the first 2 years (12.5% of the plan period), deferring the vast majority of delivery.</p>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Conclusion: A Plan High on Targets, Higher on Risk?</h3>
+  <p>The Fareham Local Plan 2037 presents a housing target that, on the surface, meets its obligations, including contributing to the wider sub-region's needs. However, the delivery strategy is fraught with risk. It funnels the vast majority of growth into a few very large peripheral sites, while simultaneously deploying a powerful arsenal of protectionist policies for gaps and landscape, bolstered by highly subjective design criteria.</p>
+  <p>The extremely backloaded housing trajectory is the most significant warning sign, placing enormous pressure on complex strategic sites to deliver consistently high numbers from the mid-plan period onwards. Given typical delays in large site delivery and the multiple policy hurdles embedded in the plan, the risk of failing to meet the annualised targets, particularly from 2023/24 onwards, appears substantial. While appearing to plan positively for growth, the underlying policy machinery seems geared towards constraint and control, potentially hindering rather than facilitating the timely delivery of needed homes.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Ledger Analysis: B&NES Local Plan Partial Update</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2c3e50; /* Darker Blue-Grey */
+            margin-bottom: 0.8em;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #c0392b; /* Darker Red */
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        h2 {
+            color: #c0392b; /* Darker Red */
+            margin-top: 0;
+            font-size: 1.6em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background-color: #c0392b; /* Darker Red */
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .summary-box p {
+            margin: 0;
+            font-size: 1.3em;
+            font-weight: 600; /* Slightly bolder */
+        }
+
+        /* Metric Flags */
+        .metric-flags {
+            display: flex;
+            justify-content: space-around;
+            align-items: center; /* Vertically align flags */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 15px; /* Space between flags */
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #ecf0f1; /* Light Grey */
+            border-radius: 6px;
+        }
+        .flag {
+            padding: 12px 25px; /* More padding */
+            border-radius: 25px; /* Pill shape */
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.9em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .flag:hover {
+             transform: translateY(-2px); /* Slight lift on hover */
+        }
+        .flag.red { background-color: #e74c3c; /* Alizarin Red */ }
+        .flag.amber { background-color: #f39c12; /* Orange */ }
+        .flag.green { background-color: #2ecc71; /* Emerald Green */ }
+
+        /* Sections */
+        .section {
+            margin-bottom: 35px;
+            border-left: 5px solid #bdc3c7; /* Mid Grey */
+            padding-left: 20px;
+        }
+        .section p {
+            margin-bottom: 1em;
+            color: #555;
+        }
+
+        /* Evidence & Callouts */
+        .evidence {
+            font-style: italic;
+            color: #7f8c8d; /* Grey */
+            font-size: 0.9em;
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 3px solid #ecf0f1; /* Light Grey */
+        }
+        .evidence strong {
+            color: #34495e; /* Darker Blue */
+            font-style: normal; /* Keep evidence marker normal */
+        }
+        .callout {
+            background-color: #fff9e6; /* Lighter Lemon */
+            border: 1px dashed #f1c40f; /* Sunflower Yellow */
+            padding: 18px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+        .callout p {
+            margin: 0;
+            color: #555;
+        }
+        .callout strong {
+            color: #c0392b; /* Darker Red */
+        }
+
+        /* General Formatting */
+        strong, b {
+            color: #c0392b; /* Darker Red */
+            font-weight: 600;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 25px;
+            padding-left: 0;
+            margin-bottom: 1em;
+        }
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+            color: #333;
+        }
+        /* Policy Reference Span */
+        .policy-ref {
+            font-weight: bold;
+            font-family: monospace;
+            background-color: #e8e8e8; /* Lighter grey */
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Spatial Ledger Analysis: B&NES Local Plan Partial Update (Adopted Jan 2023)</h1>
+
+        <div class="summary-box">
+            <p>VERDICT: This 'update' doubles down on delay, layering complex new green rules onto an outdated strategy without tackling the fundamental need for more homes.</p>
+        </div>
+
+        <div class="metric-flags">
+            <div class="flag red">Target vs Need: POOR</div>
+            <div class="flag amber">Spatial Strategy: STALLED</div>
+            <div class="flag red">Policy Blockers: HIGH RISK</div>
+            <div class="flag red">Contradictions: SIGNIFICANT</div>
+        </div>
+
+        <div class="section">
+            <h2>Housing Target: Stuck in the Past</h2>
+            <p>This isn't a real update – it's tinkering. The LPPU deliberately avoids reviewing the core housing target set years ago (around 13,000 homes by 2029), before the housing crisis deepened and before B&NES declared climate/ecological emergencies. While it adds some new sites (<span class="policy-ref">Policy DW1</span>, Table 1C shows 940 new allocations), the document states this is primarily to <strong>'replenish housing supply'</strong> to meet the <strong>existing</strong> target, not increase ambition.</p>
+            <p>By refusing to update the target or the overall spatial strategy, the LPPU locks in likely under-delivery relative to actual housing need. It acknowledges a full new Local Plan (2022-2042) is underway (p.3, para 5d), effectively admitting this 'update' is a stop-gap measure that fails to address the scale of the challenge.</p>
+            <div class="evidence">
+                <strong>Evidence:</strong> LPPU Introduction (p.3, para 5b) explicitly states the scope was confined <em>'without significantly changing the strategic policy framework... i.e. the spatial priorities; the spatial strategy; or the strategic housing and job growth requirements'</em>. The housing target (~13,000 homes) dates back to the original Core Strategy/Placemaking Plan (pre-2017). <span class="policy-ref">Policy DW1</span> (p.6) outlines delivery against this old target.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Spatial Strategy: No Meaningful Change</h2>
+            <p>Where should homes go? This update doesn't ask the hard questions. It explicitly avoids changing the 'spatial strategy' (p.3, para 5b). While some Green Belt land is released/reallocated (East Keynsham <span class="policy-ref">KE3c/KE3d</span>, Park & Ride sites <span class="policy-ref">SB26</span>), this is done within the constraints of the old plan, not as part of a fresh assessment of where sustainable development should occur.</p>
+            <p>The refusal to revisit the spatial strategy means opportunities in accessible locations might be missed, while pressure could remain on less suitable areas. The justification seems to be the pending <strong>full</strong> Local Plan, but this delays necessary strategic decisions.</p>
+             <div class="evidence">
+                <strong>Evidence:</strong> Para 5b (p.3) confirms no change to spatial strategy. Green Belt changes mentioned (p.5 para 50 for E. Keynsham; p.8 policy <span class="policy-ref">DW1(4)</span> & p.111 policy <span class="policy-ref">SB26</span> for P&R sites). East Keynsham allocations <span class="policy-ref">KE3c</span> (p.210) & <span class="policy-ref">KE3d</span> (p.215) replace previously safeguarded land.
+            </div>
+        </div>
+
+        <div class="callout">
+            <p><strong>Contradiction Alert:</strong> The LPPU states (p.3, para 5b) its scope was confined <em>'without significantly changing the strategic... housing... requirements'</em>. How can this be reconciled with addressing urgent climate/ecological emergencies declared <strong>after</strong> those requirements were set?</p>
+        </div>
+
+        <div class="section">
+            <h2>Policy Blockers: Layering on Constraints</h2>
+            <p>This LPPU significantly increases the policy burden on new development. While environmental goals are important, adding demanding new standards <strong>without</strong> a full plan review risks stifling delivery. Key blockers include:</p>
+            <ul>
+                <li><strong>Zero Carbon & Energy Metrics (<span class="policy-ref">SCR6</span>):</strong> Requires very high energy performance (Space Heating <30kWh/m², Total Energy <40kWh/m²) and matching renewables, or costly off-site financial contributions (p.31).</li>
+                <li><strong>Embodied Carbon (<span class="policy-ref">SCR8</span>):</strong> Requires assessment and demanding targets (<900kgCO₂e/m²) for large sites, adding complexity and cost (p.32).</li>
+                <li><strong>Biodiversity Net Gain (<span class="policy-ref">NE3a</span>):</strong> Mandates a minimum 10% BNG using DEFRA metrics, secured for 30 years. While legally required soon, its imposition here adds another hurdle without strategic context (p.44).</li>
+                <li><strong>Irreplaceable Habitats (<span class="policy-ref">NE3</span>):</strong> Development <em>'will not be permitted'</em> unless <em>'wholly exceptional circumstances'</em> exist (p.41). This is a very high bar.</li>
+                <li><strong>Landscape & Heritage:</strong> Existing strong protections remain (e.g., <span class="policy-ref">HE1</span>, <span class="policy-ref">NE2</span> 'Great weight' for AONB), with the new burdens layered on top.</li>
+                <li><strong>Accessibility (<span class="policy-ref">H7</span>):</strong> Specific % requirements for M4(2)/M4(3) standards add further build costs (p.66).</li>
+            </ul>
+            <p>The cumulative impact of these policies, added in a <strong>partial</strong> update without assessing overall viability impacts on the (old) housing target, creates significant risk of slowing down or stopping needed development.</p>
+        </div>
+
+        <div class="section">
+            <h2>Contradictions: Green Goals vs. Housing Reality?</h2>
+            <p>The LPPU presents a fundamental contradiction. It champions the Climate and Ecological Emergency declarations (p.3, 11) and introduces ambitious green policies (<span class="policy-ref">SCR6</span>, <span class="policy-ref">SCR8</span>, <span class="policy-ref">NE3a</span>). However, it simultaneously refuses to update the housing target or spatial strategy (p.3) to reflect these new realities or assess the trade-offs.</p>
+            <p>Can B&NES realistically deliver even its outdated housing target while imposing these new standards, especially on limited, constrained land supply? The LPPU doesn't provide the evidence. It risks using laudable environmental aims as a shield for inaction on housing supply, making development harder and more expensive without a clear plan for how the numbers will still be met.</p>
+             <div class="evidence">
+                <strong>Evidence:</strong> Climate Emergency declaration referenced p.3, p.11. New sustainability policies <span class="policy-ref">SCR6-9</span>, <span class="policy-ref">NE3a</span> detailed pp.30-37, 44. Explicit statement of <strong>not</strong> changing strategic housing targets/strategy p.3 para 5b.
+            </div>
+        </div>
+
+         <div class="callout">
+            <p><strong>Performative Policy?</strong> Para 23b (p.4) states <em>"new homes and development need to be zero carbon or net positive carbon from now”</em>. Yet the LPPU fails to provide the updated strategic plan or viability evidence to show how this can be delivered alongside sufficient housing numbers.</p>
+        </div>
+
+        <div class="section">
+            <h2>Site Allocations: Incremental Changes, Increased Hurdles</h2>
+            <p>The LPPU allocates several new sites, mainly repurposing safeguarded land (East Keynsham <span class="policy-ref">KE3c/d</span>), adding small village sites (Treetops <span class="policy-ref">KE5</span>, Silver St <span class="policy-ref">SSV21</span>), and confirming new uses (Locksbrook Hub <span class="policy-ref">SB22</span>, Weston Island <span class="policy-ref">SB23</span>, St Martins <span class="policy-ref">SB25</span>, Sion Hill <span class="policy-ref">SB24</span>). Park & Ride sites (<span class="policy-ref">SB26</span>) are removed from Green Belt for 'Interchange Hub' uses.</p>
+            <p>While some allocations are positive (e.g., utilising safeguarded land), the total number of homes added seems modest (~1000-1200 across all new allocations) relative to the likely need. Crucially, <strong>all</strong> sites now face the tougher <span class="policy-ref">SCR</span> and <span class="policy-ref">NE3a</span> policy requirements, potentially impacting their deliverability and pace without updated viability testing published as part of this LPPU.</p>
+            <div class="evidence">
+                <strong>Evidence:</strong> New allocations listed in Vol 6 Appendix 1 (Table 11 implies K2, NR2, V8, V3 deleted/replaced). New policies <span class="policy-ref">SB22-26</span>, <span class="policy-ref">KE3c/d</span>, <span class="policy-ref">KE5</span>, <span class="policy-ref">SSV21</span> introduced. Policy <span class="policy-ref">DW1</span> Table 1C (p.6) claims 940 new homes via LPPU. Specific site policies (e.g. <span class="policy-ref">KE3c</span> p.210) detail numbers.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Delivery & Certainty: More Risk, Less Clarity</h2>
+            <p>By adding complex new policies (<span class="policy-ref">SCR6</span>, <span class="policy-ref">SCR8</span>, <span class="policy-ref">NE3a</span>, updated <span class="policy-ref">NE3</span>, <span class="policy-ref">H7</span>) in a partial update, the LPPU increases uncertainty for developers and decision-makers. The plan relies on an old trajectory ending in 2029. The cumulative burden of policy requirements risks slowing delivery and making the planning process more contentious.</p>
+            <p>The frequent references to needing further detailed assessments (Transport Assessments, Heritage Impact Assessments, LVIAs, ecological surveys, BNG calculations, Embodied Carbon Assessments) at the application stage, while standard practice, highlight the significant hurdles developers must overcome, potentially deterring investment or leading to delays.</p>
+             <div class="evidence">
+                <strong>Evidence:</strong> Plan period ends 2029 (p.3). Multiple new assessment requirements introduced (<span class="policy-ref">SCR6-8</span>, <span class="policy-ref">NE3a</span>, site policies). Lack of LPPU-specific viability assessment covering cumulative policy impact.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

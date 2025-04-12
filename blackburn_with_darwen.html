@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spatial Ledger Analysis: Blackburn with Darwen Local Plan 2021-2037</title>
+<style>
+  body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
+  .container { max-width: 960px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  .header-box { background-color: #e63946; color: #fff; padding: 15px; text-align: center; margin-bottom: 20px; border-radius: 5px; }
+  .header-box h1 { margin: 0; font-size: 1.8em; }
+  .header-box p { margin: 5px 0 0; font-size: 1.1em; font-weight: bold; }
+  .metric-flags { display: flex; justify-content: space-around; margin-bottom: 30px; padding: 15px; background-color: #f1f1f1; border-radius: 5px; }
+  .flag { padding: 10px 15px; border-radius: 20px; color: #fff; font-weight: bold; text-align: center; }
+  .flag.green { background-color: #2a9d8f; }
+  .flag.amber { background-color: #e9c46a; }
+  .flag.red { background-color: #e63946; }
+  .section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; }
+  .section h2 { color: #1d3557; border-bottom: 2px solid #457b9d; padding-bottom: 5px; margin-top: 0; }
+  .section h3 { color: #457b9d; margin-top: 15px; font-size: 1.1em; }
+  .section ul { padding-left: 20px; }
+  .section li { margin-bottom: 8px; }
+  strong { color: #e63946; font-weight: bold; /* Ensure strong has visual weight */ }
+  .callout { background-color: #fdf0f1; border-left: 5px solid #e63946; padding: 10px 15px; margin: 15px 0; font-style: italic; }
+  .callout strong { color: #e63946; font-style: normal; }
+  cite { display: block; text-align: right; font-size: 0.9em; color: #555; margin-top: 5px; }
+  .scorecard { border-collapse: collapse; width: 100%; margin-top: 10px; }
+  .scorecard th, .scorecard td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+  .scorecard th { background-color: #f2f2f2; }
+  .low-density { background-color: #fff5e6; } /* Light orange background for low density sites */
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header-box">
+    <h1>Blackburn with Darwen Local Plan: Spatial Ledger Verdict</h1>
+    <p>This Local Plan aims to meet identified housing need based on economic growth hopes, but faces delivery risks through reliance on a single large strategic site, low densities in key areas, and potentially restrictive policies that could hinder building the homes Blackburn needs.</p>
+  </div>
+
+  <div class="metric-flags">
+    <div class="flag amber">Target vs Need: AMBER</div>
+    <div class="flag amber">Spatial Strategy: AMBER</div>
+    <div class="flag red">Policy Blockers: RED</div>
+    <div class="flag amber">Delivery Risk: AMBER</div>
+  </div>
+
+  <div class="section">
+    <h2>Housing Target & Delivery: Meeting Need, But Which Need?</h2>
+    <p>The Plan sets a target of <strong>447 homes per year (7,152 total)</strong>. This aligns with the need identified in their 2021 Housing and Economic Needs Assessment (HENA), which adopted a 'realistic economic growth scenario'. Encouragingly, this is an increase from the 411 dpa identified in 2018. However, the HENA also noted that baseline demographic projections actually suggested a <em>population decline</em> (pg 14). While planning for growth is positive, the reliance on this specific scenario needs scrutiny.</p>
+    <p>Evidence points to <strong>suppressed household formation</strong> (pg 40) and existing health inequalities and deprivation (pg 14), suggesting underlying unmet need might be higher than the target reflects. While the plan <em>technically</em> meets its chosen OAN, the crucial question is whether this target is ambitious enough to address the Borough's challenges and reverse potential decline.</p>
+    <ul>
+      <li><strong>Annual Target:</strong> 447 dwellings per annum (dpa) (CP4, pg 37).</li>
+      <li><strong>OAN Alignment:</strong> Target matches the HENA's 'economic growth scenario' need (pg 40), but baseline projections suggested decline (pg 14).</li>
+      <li><strong>Constraints Impact:</strong> Green Belt release was primarily for employment (J5 site, pg 31), not explicitly stated as constraining the housing target itself. The major housing site (H195) is on former Safeguarded Land (pg 29).</li>
+      <li><strong>Land Supply:</strong> The Plan claims sufficient land allocation, including a buffer (CP4, pg 37). However, the trajectory (Appendix B) shows heavy reliance on later phases and windfalls.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Spatial Strategy: Urban Focus, But Questionable Densities</h2>
+    <p>The Plan correctly prioritises development in the urban areas of Blackburn and Darwen, followed by rural villages, with tight restrictions on countryside development (CP2, pg 29). Key growth is directed towards the North East Blackburn Strategic Housing Site (H195), the Junction 5 Strategic Employment Site (E179), and town centre regeneration in both Blackburn and Darwen (pg 28). This broad strategy aligns with sustainable development principles.</p>
+    <p>However, while Policy DM03 sets positive <strong>minimum density standards</strong> (45dph in accessible areas, 30-35dph elsewhere, pg 83), the allocated densities on some major strategic sites appear <strong>disappointingly low</strong>. This potentially wastes capacity on large greenfield extensions, undermining the efficiency aims.</p>
+    <table class="scorecard">
+      <thead><tr><th>Site Ref</th><th>Site Name</th><th>Area (ha)</th><th>Indicative Units</th><th>Approx. Density (dph)</th><th>Comment</th></tr></thead>
+      <tbody>
+        <tr class="low-density"><td>H195</td><td>NE Blackburn Strategic Site</td><td>97.52</td><td>~1500 (total)</td><td>~15</td><td>Very low density for a major strategic urban extension.</td></tr>
+        <tr class="low-density"><td>H042</td><td>Land at Bank Hey</td><td>33.13</td><td>600</td><td>~18</td><td>Low density greenfield release.</td></tr>
+        <tr class="low-density"><td>H044</td><td>Land at Holden Fold</td><td>17.99</td><td>433 (total)</td><td>~24</td><td>Relatively low density.</td></tr>
+        <tr><td>H039</td><td>Fishmoor Reservoir</td><td>6.74</td><td>310</td><td>~46</td><td>Good density, meeting minimum standard.</td></tr>
+      </tbody>
+    </table>
+    <cite>Density calculations based on figures from Site Allocation policies (pg 168-196)</cite>
+  </div>
+
+  <div class="section">
+    <h2>Hidden Constraints & Policy Blockers: A Minefield of Discretion?</h2>
+    <p>While setting a housing target, the plan introduces numerous Development Management (DM) policies and Core Policies that could act as significant barriers. Policies covering Heritage (CP7, DM26), Design Quality (CP8, DM27), Landscape (DM22), Natural Environment (CP6, DM15, DM16, DM17), and Amenity (DM02) contain subjective language like 'appropriate', 'unacceptable impact', 'conserve and enhance', and 'significant harm'. This gives considerable <strong>discretion to decision-makers</strong> and can be used to frustrate housing delivery, even on allocated sites.</p>
+    <p>The introduction of a mandatory 'Climate Impacts Framework' (CIF) assessment for major schemes (CP5, pg 45) adds another layer of process, potentially increasing costs and delays. Most concerning is the <strong>blanket ban on any new Houses in Multiple Occupation (HMOs)</strong> across the entire Borough (DM06, pg 90). This is an extremely restrictive approach that directly contradicts the aim of meeting diverse housing needs (CP4) and providing affordable options, likely worsening housing pressure for single people and lower-income households.</p>
+    <div class="callout">
+      <strong>Policy Blocker Alert: HMO BAN</strong>
+      "Proposals for new HMOs, including hostel accommodation, <strong>will not be permitted in any part of the Borough</strong> during the plan period. This applies to both new build development and proposed conversions of existing dwellings or buildings."
+      <cite>Policy DM06: Houses in Multiple Occupation (HMOs), pg 90</cite>
+    </div>
+    <ul>
+      <li><strong>Subjective Policies:</strong> Design (DM27), Heritage (DM26), Landscape (DM22), Amenity (DM02) rely on interpretation.</li>
+      <li><strong>Process Hurdles:</strong> Climate Impacts Framework (CIF) adds complexity (pg 45-47).</li>
+      <li><strong>Outright Ban:</strong> Policy DM06 prohibits <em>all</em> new HMOs borough-wide (pg 90).</li>
+      <li><strong>Minimum Densities:</strong> Policy DM03 (pg 83) sets welcome minimums, but see Spatial Strategy section for application concerns.</li>
+    </ul>
+  </div>
+
+   <div class="section">
+    <h2>Contradictions & Trade-offs: Is 'Balance' a Euphemism for 'Block'?</h2>
+    <p>The Plan frequently emphasizes a 'balanced growth' strategy (Foreword pg 2, CP1 pg 27), acknowledging the need to weigh economic growth, social well-being, and environmental protection. While laudable, the sheer weight of protective policies (heritage, landscape, biodiversity, Green Belt, amenity, climate) raises concerns about whether housing delivery will be unduly compromised in practice.</p>
+    <p>The absolute restriction on new HMOs (DM06) seems directly contradictory to meeting the full diversity of housing need (Strategic Objective SO3, pg 23; Policy CP4). Treating Green Belt as almost entirely off-limits for housing (CP2, pg 29), despite releasing a large area for employment (E179), suggests an inconsistent approach to strategic needs versus constraints. While trade-offs are necessary, the plan needs to demonstrate that housing, a critical social and economic need, isn't consistently losing out.</p>
+     <ul>
+      <li><strong>'Balanced Growth':</strong> Central theme (CP1), but implementation is key – does it enable or restrict?</li>
+      <li><strong>HMO Ban vs Housing Need:</strong> Policy DM06 clashes with stated aims to meet diverse needs (CP4, SO3).</li>
+       <li><strong>Green Belt Approach:</strong> Significant release for jobs (E179), but seemingly near-absolute protection from housing release raises questions about prioritisation.</li>
+      <li><strong>Climate vs Growth:</strong> Ambition for carbon neutrality by 2030 (pg 18) adds constraints to development, requiring careful management to avoid stifling delivery.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Trajectory & Delivery Risks: Backloading and Reliance on the Big One</h2>
+    <p>The Housing Trajectory (Appendix B, pg 253-257) shows that while cumulative delivery is projected to stay ahead of the cumulative target, the <strong>annual delivery rate is forecast to fall below the 447 dpa target from 2031/32 onwards.</strong> This indicates a significant reliance on earlier over-delivery and meeting the total number only just over the whole period.</p>
+    <p>Delivery heavily depends on the large North East Blackburn Strategic Housing Site (H195) delivering substantial numbers (300-360 dpa) consistently in the mid-to-late plan period. Any delays or issues with this single site pose a <strong>major risk to the overall housing target.</strong> There's also a standard, but notable, reliance on windfall sites contributing 70 dpa throughout the period. This backloading and concentration of risk onto one site is concerning.</p>
+    <div class="callout">
+      <strong>Delivery Alert: Falling Short Annually?</strong>
+      The Council's own trajectory graph (Fig B.1, pg 253) shows projected annual completions dipping below the required 447 homes target line for the last 6 years of the plan.
+    </div>
+     <ul>
+      <li><strong>Annual Shortfall Risk:</strong> Projected delivery falls below 447 dpa from 2031/32 (pg 254).</li>
+      <li><strong>Strategic Site Reliance:</strong> H195 is critical for delivery post-2026 (pg 254).</li>
+      <li><strong>Backloading:</strong> Significant housing numbers are pushed to the later years of the plan.</li>
+       <li><strong>Windfall Dependence:</strong> Assumes 70 dpa from unspecified windfall sites (pg 254).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Overall Spatial Ledger Assessment</h2>
+    <p>The Blackburn with Darwen Local Plan 2021-2037 presents a mixed picture. It sets a housing target aligned with its economic growth ambitions and includes positive policies like minimum density standards. However, the plan's deliverability is potentially undermined by:</p>
+    <ol>
+      <li><strong>Significant reliance on one large strategic site (H195)</strong> delivering consistently in the later plan period, creating a major point of failure.</li>
+      <li><strong>Relatively low densities</strong> allocated on key large housing sites (H195, H042, H044), which fails to make the most efficient use of land released for development.</li>
+      <li>A suite of <strong>subjective Development Management policies</strong> (particularly concerning design, heritage, and landscape) that provide significant scope for blocking development.</li>
+      <li>An <strong>extreme borough-wide ban on all new HMOs (DM06)</strong>, which directly hinders the provision of affordable and diverse housing types.</li>
+      <li>A housing trajectory indicating <strong>annual delivery falling below target</strong> in the later years, increasing reliance on windfalls and the buffer.</li>
+    </ol>
+    <p>While the plan aims for 'balanced growth', the weight of potentially restrictive policies and the concentration of delivery risk suggest that achieving the housing target, let alone exceeding it to address underlying needs and affordability pressures, will be challenging. The HMO ban, in particular, appears unnecessarily punitive and counter-productive.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

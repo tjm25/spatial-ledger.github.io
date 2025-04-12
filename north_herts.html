@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Ledger Analysis: North Hertfordshire Local Plan 2011-2031</title>
+    <style>
+        /* Basic Reset & Defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            background-color: #f8f9fa; /* Lighter grey background */
+            color: #343a40; /* Darker grey text */
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 960px; /* Slightly wider */
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #5a2d81; /* Keep primary purple */
+            margin-bottom: 0.75em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #5a2d81;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        h2 {
+            border-bottom: 2px solid #e8dff5; /* Lighter purple underline */
+            padding-bottom: 8px;
+            margin-top: 40px; /* More space between sections */
+            font-size: 1.6em;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin-top: 15px;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background-color: #f1eafa; /* Lighter purple background */
+            border: 1px solid #d1c4e9;
+            border-left: 6px solid #5a2d81; /* Strong left border */
+            padding: 20px 25px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .summary-box h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #5a2d81;
+            border-bottom: none; /* Remove underline inside box */
+            text-align: left;
+            font-size: 1.5em;
+        }
+
+        .summary-box p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .verdict {
+            font-size: 1.5em;
+            font-weight: 600; /* Slightly less bold */
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: inline-block; /* Center alignment */
+        }
+
+        .verdict.positive { color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; }
+        .verdict.amber { color: #856404; background-color: #fff3cd; border: 1px solid #ffeeba; }
+        .verdict.negative { color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; }
+
+        /* Metric Flags */
+         .metrics-section {
+             margin-bottom: 30px;
+             padding: 20px;
+             background-color: #e9ecef; /* Light grey background for contrast */
+             border-radius: 5px;
+         }
+         .metrics-section h3 {
+             text-align: center;
+             margin-top: 0;
+             margin-bottom: 20px;
+             color: #495057; /* Dark grey heading */
+             font-size: 1.2em;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+         }
+         .metric-flags {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            gap: 15px; /* Add gap between flags */
+        }
+
+        .flag {
+            text-align: center;
+            padding: 12px 15px; /* More padding */
+            border-radius: 5px;
+            color: #fff;
+            font-weight: 600;
+            flex: 1; /* Allow flags to grow */
+            min-width: 180px; /* Minimum width before wrapping */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .flag:hover {
+            transform: translateY(-3px); /* Slight lift on hover */
+        }
+
+        .flag.red { background: linear-gradient(145deg, #e53935, #c62828); } /* Gradient */
+        .flag.amber { background: linear-gradient(145deg, #ffb300, #ffa000); color: #333; } /* Gradient */
+        .flag.green { background: linear-gradient(145deg, #43a047, #388e3c); } /* Gradient */
+
+        .flag span { /* Flag title */
+            display: block;
+            font-size: 1.1em; /* Larger title */
+            margin-bottom: 5px;
+        }
+        .flag .details { /* Flag details/description */
+             font-size: 0.85em;
+             font-weight: normal;
+             opacity: 0.9;
+        }
+
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6; /* Slightly darker border */
+        }
+        .section:first-of-type {
+            border-top: none; /* No border above the first section */
+            padding-top: 0;
+        }
+
+
+        .section-summary {
+            font-style: italic;
+            color: #6c757d; /* Greyer italic text */
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #ced4da;
+        }
+
+        .evidence {
+            margin-left: 0; /* Remove left margin */
+            padding: 15px; /* Add padding */
+            border: 1px solid #e9ecef; /* Subtle border */
+            background-color: #fdfdff; /* Very light background */
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        .evidence p, .evidence ul {
+            margin-bottom: 10px; /* Space between evidence points */
+        }
+        .evidence p:last-child, .evidence ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .bold { font-weight: 600; color: #4a1a6f; /* Darker purple for bold text */}
+
+        /* Callout Boxes */
+        .callout {
+            background-color: #fff9e6; /* Lighter yellow */
+            border-left: 5px solid #ffc107; /* Amber border */
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .callout strong { color: #856404; }
+        .callout .our-view { font-weight: 600; color: #856404; margin-top: 8px; display: block; }
+
+        .citation {
+            font-size: 0.85em;
+            color: #6c757d;
+            /* display: block; Put citation on new line */
+            /* margin-top: 5px; */
+            margin-left: 3px; /* Add small space before citation */
+            display: inline-block; /* Keep inline but allow margin */
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 10px 12px; /* More padding */
+            text-align: left;
+            vertical-align: top; /* Align content top */
+        }
+        th {
+            background-color: #f1f3f5; /* Lighter header */
+            font-weight: 600;
+            color: #495057;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa; /* Subtle striping */
+        }
+
+        /* Lists */
+        ul {
+            margin-top: 5px;
+            padding-left: 25px;
+            list-style: disc;
+        }
+        li { margin-bottom: 5px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.4em; }
+            .metric-flags { flex-direction: column; align-items: center; }
+            .flag { width: 80%; min-width: unset; }
+             .container { padding: 20px; }
+        }
+         @media (max-width: 480px) {
+            body { font-size: 15px; }
+            h1 { font-size: 1.6em; }
+            h2 { font-size: 1.3em; }
+            .flag { width: 95%; }
+             .container { padding: 15px; margin: 15px auto; }
+             .summary-box { padding: 15px; }
+             .verdict { font-size: 1.3em; }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spatial Ledger Analysis: North Hertfordshire Local Plan (2011-2031)</h1>
+
+        <div class="summary-box">
+            <h2>The Verdict</h2>
+            <p>This Local Plan meets its <span class="bold">revised (lowered)</span> housing need on paper by making significant Green Belt releases, but relies on a <span class="bold">highly ambitious, backloaded delivery trajectory</span> that poses a high risk of failure. Layers of subjective design, character, and heritage policies create further uncertainty and potential blockages.</p>
+            <div class="verdict amber">VERDICT: Delivering on Paper, High Risk in Practice</div>
+        </div>
+
+        <div class="metrics-section">
+              <h3>Key Metrics</h3>
+              <div class="metric-flags">
+                  <div class="flag amber">
+                      <span>Target vs Need</span>
+                      <span class="details">Meets lowered target, below original OAN</span>
+                  </div>
+                  <div class="flag amber">
+                      <span>Spatial Strategy</span>
+                      <span class="details">Town focus, but major site only 'safeguarded'</span>
+                  </div>
+                  <div class="flag red">
+                      <span>Policy Blockers</span>
+                      <span class="details">High density of subjective 'character' policies</span>
+                  </div>
+                   <div class="flag red">
+                      <span>Contradictions</span>
+                      <span class="details">Housing vs Green Belt, Heritage, Character aims</span>
+                  </div>
+              </div>
+        </div>
+
+
+        <!-- Housing Target & Delivery -->
+        <div class="section">
+            <h2><span class="bold">1.</span> Housing Target: Meeting Need or Managing Decline?</h2>
+            <p class="section-summary">The plan sets a target just above its revised need, but this 'need' figure itself was lowered during the plan-making process. Compared to past delivery dips and high affordability pressures, the target seems unambitious, likely constrained by Green Belt protectionism.</p>
+            <div class="evidence">
+                <h3>Evidence:</h3>
+                <p><span class="bold">Total Housing Requirement (2011-2031):</span> <span class="bold">13,550 homes</span>. This comprises <span class="bold">11,600</span> for North Herts' own needs and <span class="bold">1,950</span> contribution to Luton's unmet need.<span class="citation">(Policy SP8, p.62)</span></p>
+                <p><span class="bold">Annual Average:</span> 677.5 homes per year (hpy) over 20 years.</p>
+                <p><span class="bold">Objectively Assessed Need (OAN):</span> The Plan meets a <span class="bold">revised OAN of 11,500</span>,<span class="citation">(para 4.93, p.64)</span> which is lower than the initial SHMA's finding of 13,800.<span class="citation">(para 2.39, p.22)</span></p>
+                <div class="callout">Lowering the target based on newer projections can look convenient when facing significant constraints like the Green Belt.</div>
+                <p><span class="bold">Past Delivery vs Future Ambition:</span> Averaged over 600 hpy (2001-08) but fell to ~330 hpy post-2008.<span class="citation">(para 2.24, p.19)</span> The plan uses a sharply <span class="bold">stepped trajectory</span>: 350 hpy (2011-20), 500 hpy (2020-24), soaring to <span class="bold">1,120 hpy</span> (2024-31).<span class="citation">(Policy IMR1, p.284)</span> This massive future increase looks highly optimistic and risky.</p>
+                <p><span class="bold">Green Belt Constraint:</span> Green Belt is explicitly cited as a major constraint, requiring "exceptional circumstances" for release.<span class="citation">(Policy SP5, p.53)</span> While land *is* released, the target could likely have been higher without this overriding protection.</p>
+            </div>
+        </div>
+
+        <!-- Spatial Strategy & Site Allocation -->
+        <div class="section">
+            <h2><span class="bold">2.</span> Spatial Strategy: Town Focus, Village Growth, Missed Opportunities?</h2>
+            <p class="section-summary">The strategy directs most growth to towns and their edges, aligning with sustainability goals. However, significant growth is also planned for larger villages, and a major potential urban extension (West of Stevenage) is only 'safeguarded' for the future, deferring delivery rather than allocating it now.</p>
+            <div class="evidence">
+                 <h3>Evidence:</h3>
+                 <p><span class="bold">Primary Focus:</span> ~80% of housing directed to the four main towns (Hitchin, Letchworth, Baldock, Royston) and edges of Stevenage/Luton.<span class="citation">(Policy SP2, p.41)</span> This is generally positive.</p>
+                 <p><span class="bold">Village Growth:</span> ~13% planned in 5 larger 'Category A+' villages (Barkway, Codicote, Ickleford, Knebworth, Little Wymondley).<span class="citation">(Policy SP2, p.42)</span> Significant growth for villages.</p>
+                 <p><span class="bold">Green Belt Releases:</span> Necessary to accommodate growth, focused around towns and selected villages.<span class="citation">(Policy SP5, p.53)</span></p>
+                 <p><span class="bold">Key Safeguarded Land:</span> Land West of the A1(M) at Stevenage is identified as a sustainable location but only <span class="bold">safeguarded</span> for potential long-term development post-2026, subject to review.<span class="citation">(Policy SP8e(iii), p.63; para 4.112, p.66)</span></p>
+                 <div class="callout">Safeguarding land instead of allocating it pushes difficult decisions into the future and creates uncertainty, delaying a major strategic opportunity for housing.</div>
+            </div>
+        </div>
+
+        <!-- Hidden Constraints & Policy Blockers -->
+        <div class="section">
+            <h2><span class="bold">3.</span> Policy Blockers: Death by a Thousand Cuts?</h2>
+            <p class="section-summary">Beyond site allocation, a dense network of subjective policies on design, character, heritage, and landscape provides ample opportunity for delay, downscaling, or refusal of schemes. This introduces significant uncertainty and potential blockages to housing delivery, even on allocated land.</p>
+            <div class="evidence">
+                <h3>Evidence:</h3>
+                 <p><span class="bold">Subjective Policy Hurdles:</span> The plan is replete with policies requiring subjective judgement:</p>
+                    <ul>
+                        <li><span class="bold">Design/Character:</span> Must "respond positively to its local context" (SP9a, p.69), "positively reflect and respond to the local landscape, townscape and historic character"<span class="citation">(SP9c(i), p.69)</span>, be "sympathetic"<span class="citation">(D2, p.142)</span>, avoid "unacceptable harm to the character and appearance".<span class="citation">(NE2b, p.150)</span></li>
+                        <li><span class="bold">Landscape:</span> Must "Respect the sensitivities".<span class="citation">(NE2a, p.150)</span> AONB policies are strict.<span class="citation">(NE3, p.151)</span></li>
+                        <li><span class="bold">Heritage:</span> "Great weight" for designated assets;<span class="citation">(HE1, p.168)</span> balanced judgement required for non-designated assets.<span class="citation">(HE3, p.170)</span></li>
+                        <li><span class="bold">Letchworth Specifics:</span> Adherence to Garden City Principles adds another layer.<span class="citation">(Appendix 5, p.315; Policy D1d, p.139)</span></li>
+                    </ul>
+                <p><span class="bold">Density Implications:</span> While no explicit caps exist, the constant emphasis on "appropriate" density/scale and context<span class="citation">(HS3b, p.132; para 8.22, p.132)</span> allows for densities to be suppressed, particularly on edge-of-settlement sites.</p>
+                <p><span class="bold">Discretionary Language:</span> Widespread use of terms like "appropriate", "respect", "sensitive", "sympathetic", "where possible", "unacceptable harm" grants significant interpretive power to decision-makers, reducing certainty for applicants.</p>
+                 <div class="callout">
+                    <strong>Quote:</strong> Policy SP1 states planning permission will be granted for proposals that "create high-quality developments that <span class="bold">respect and improve</span> their surroundings". <span class="citation">(p.40)</span><br>
+                    <span class="our-view">Our View:</span> Who defines 'respect' and 'improve'? Such inherently subjective tests are easily used to obstruct necessary development based on personal taste or local opposition, rather than objective need.
+                </div>
+            </div>
+        </div>
+
+        <!-- Contradictions & Trade-offs -->
+        <div class="section">
+            <h2><span class="bold">4.</span> Contradictions: Balancing Act or Stalling Tactic?</h2>
+            <p class="section-summary">The plan fundamentally attempts to reconcile significant housing need (boosted by unmet need from Luton) with deeply ingrained protections for Green Belt, heritage, and landscape character. While Green Belt release is accepted as a necessity, the sheer weight and subjectivity of other protective policies create unavoidable tensions and potential paralysis.</p>
+            <div class="evidence">
+                 <h3>Evidence:</h3>
+                 <p><span class="bold">Housing vs. Constraints:</span> A core conflict exists between the target of 13,550 homes (requiring major Green Belt release) and policies giving "great weight" to heritage (HE1), protecting landscape character (NE2), and conserving AONB qualities (NE3).</p>
+                 <p><span class="bold">Green Belt Trade-off:</span> The plan acknowledges "exceptional circumstances" necessitate Green Belt review and release.<span class="citation">(Policy SP5, para 4.58, p.53)</span> This is a necessary step.</p>
+                 <p><span class="bold">Absolute Protections?:</span> While Green Belt has specific national tests, the local emphasis on 'character', 'setting', and 'landscape sensitivity' can be applied in a near-absolute manner, potentially overriding the strategic need for housing even where national policy might permit it.</p>
+                 <p><span class="bold">Transparency:</span> The plan states balances will be struck, but the *how* remains opaque. Decision-making on individual sites risks prioritising local character preservation over meeting strategic housing needs, without this trade-off being explicit.</p>
+            </div>
+        </div>
+
+         <!-- Site-by-Site Assessment -->
+         <div class="section">
+            <h2><span class="bold">5.</span> Site Allocations: Deliverable Plans or Paper Promises?</h2>
+            <p class="section-summary">Six large Strategic Housing Sites (SHS) are allocated to provide the bulk of future supply, but much delivery is backloaded. Significant numbers also rely on numerous smaller 'Local Housing Allocations' (LHA), increasing complexity and risk.</p>
+            <div class="evidence">
+                 <h3>Evidence:</h3>
+                 <p><span class="bold">Strategic Housing Sites (SHS):</span> 6 sites allocated for 7,700 homes total. Only ~5,560 expected by 2031.<span class="citation">(Policy SP8c(ii), p.62)</span> Examples of phased delivery:</p>
+                    <ul>
+                        <li>BA1 North of Baldock: 2,800 homes total, only 1,400 expected by 2031.</li>
+                        <li>EL1/2/3 East of Luton: 2,100 homes total, only 1,500 expected by 2031.</li>
+                        <li>LG1 North of Letchworth: 900 homes total, only 600 expected by 2031.</li>
+                    </ul>
+                 <p><span class="bold">Local Housing Allocations (LHA):</span> Critical for meeting targets, providing 4,000 homes across towns and larger villages.<span class="citation">(Policy SP8c(iii), p.62-63)</span> Delivery relies on many smaller schemes coming forward.</p>
+                 <p><span class="bold">Viability & Deliverability:</span> Assumed viable.<span class="citation">(para 4.90, p.60)</span> However, the SHS policies<span class="citation">(SP14-SP19, p.84-101)</span> contain extensive criteria (infrastructure, masterplans, design, heritage, ecology) that could easily delay or complicate delivery.</p>
+                 <p><span class="bold">Small Site Reliance:</span> Relying on ~4,000 homes from LHAs adds complexity compared to fewer, larger strategic sites.</p>
+            </div>
+        </div>
+
+        <!-- Trajectory & Delivery Expectations -->
+        <div class="section">
+            <h2><span class="bold">6.</span> Housing Trajectory: A Perilous 'Hockey Stick'</h2>
+            <p class="section-summary">The plan's housing delivery trajectory is its biggest weakness. It shows significant past underdelivery and relies on an <span class="bold">unprecedented, highly optimistic, and arguably unrealistic</span> surge in completions from 2024 onwards, more than tripling recent rates. This 'hockey stick' projection is a classic sign of a plan likely to fail in practice.</p>
+            <div class="evidence">
+                 <h3>Evidence:</h3>
+                 <p><span class="bold">Stepped Targets (IMR1, p.284):</span></p>
+                    <ul>
+                        <li>2011-2020: Target 350 hpy (Actual avg delivery: 313 hpy <span class="citation">(para 4.107, p.66)</span> - <span class="bold">SHORTFALL</span>)</li>
+                        <li>2020-2024: Target 500 hpy</li>
+                        <li><span class="bold">2024-2031: Target 1,120 hpy</span> (<span class="bold">HUGE JUMP</span>)</li>
+                    </ul>
+                 <p><span class="bold">Trajectory Graph Analysis (Fig 6, p.286):</span> The graph starkly illustrates the problem. Delivery flatlines early on, then requires completions to leap from ~400-500 p.a. to over 1,100 p.a. sustained for 7 years, peaking near 1,500 p.a. This is vastly higher than any historic delivery rate mentioned.</p>
+                 <p><span class="bold">Backloading Risk:</span> Delivery is heavily reliant on complex Strategic Sites coming online simultaneously and delivering at maximum capacity in the later years.</p>
+                 <p><span class="bold">Sedgefield vs Liverpool:</span> The plan adopts the 'Liverpool' approach, spreading the backlog over the remaining plan period, but the sheer scale of the required uplift makes this look undeliverable.<span class="citation">(para 14.34, p.285)</span></p>
+                 <div class="callout">
+                    <strong>Warning:</strong> Relying on housing delivery rates to triple or quadruple in the latter half of the plan period is a recipe for under-delivery. Market capacity, infrastructure bottlenecks, and planning delays make such trajectories notoriously unreliable. The requirement for an early review by end 2023<span class="citation">(Policy IMR2, p.287)</span> is essential given this high risk.
+                 </div>
+            </div>
+        </div>
+
+        <!-- Policy Language & Implementation Risk -->
+        <div class="section">
+            <h2><span class="bold">7.</span> Policy Language: Enabling Growth or Inviting Obstruction?</h2>
+            <p class="section-summary">Despite allocating sites, the Plan's reliance on subjective and discretionary language, particularly concerning design, heritage, and local character, creates significant implementation risk. It provides ample opportunity for policies to be used to hinder rather than facilitate the delivery of needed homes.</p>
+            <div class="evidence">
+                 <h3>Evidence:</h3>
+                 <p><span class="bold">Discretionary Power:</span> Terms like "appropriate", "sensitive", "respect", "contribute positively", "unacceptable harm", "sympathetic" permeate policies related to design<span class="citation">(SP9, D1, D2)</span>, landscape<span class="citation">(NE2, NE3)</span>, and heritage<span class="citation">(HE1, HE3)</span>. These terms lack objective metrics.</p>
+                 <p><span class="bold">Reduced Certainty:</span> Layering these qualitative tests onto allocated sites undermines the principle of allocation providing certainty. Applicants face multiple subjective hurdles beyond demonstrating compliance with basic standards.</p>
+                 <p><span class="bold">Potential for Obstruction:</span> Vague wording empowers officers and councillors to interpret policies narrowly, potentially blocking or delaying schemes based on subjective aesthetic preferences or localised opposition, even if a scheme meets core requirements and contributes to strategic targets.</p>
+                 <div class="callout">
+                    <strong>Overall Risk:</strong> While North Herts has allocated sufficient land *on paper*, the combination of highly subjective 'blocker' policies and an extremely ambitious, backloaded trajectory makes achieving the planned housing numbers <span class="bold">highly uncertain</span> in practice. The early review is critical.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

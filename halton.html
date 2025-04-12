@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Ledger Analysis: Halton Local Plan</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 20px auto; padding: 15px; background-color: #f9f9f9; }
+        h1, h2, h3 { color: #005689; }
+        h1 { text-align: center; border-bottom: 2px solid #005689; padding-bottom: 10px; }
+        .summary-box { background-color: #e0f2f7; border: 2px solid #005689; padding: 15px; margin-bottom: 20px; text-align: center; font-size: 1.2em; font-weight: bold; }
+
+        /* --- Updated Flag CSS --- */
+        .metric-flags {
+            display: flex;
+            justify-content: space-around; /* Distributes space around items */
+            flex-wrap: wrap; /* Allows flags to wrap on very small screens */
+            gap: 10px; /* Adds space between items */
+            margin-bottom: 25px;
+            padding: 15px 0; /* Increased padding slightly */
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .flag {
+            padding: 10px 15px; /* Slightly more padding */
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            min-width: 130px; /* Slightly increased min-width */
+            flex-grow: 1; /* Allow flags to grow to fill space */
+            flex-basis: 0; /* Start from a base of 0 before growing */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        .flag.red { background-color: #d9534f; }
+        .flag.amber { background-color: #f0ad4e; }
+        .flag.green { background-color: #5cb85c; }
+        /* --- End of Updated Flag CSS --- */
+
+        .section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; background-color: #fff; border-radius: 5px;}
+        .section h2 { margin-top: 0; color: #006847; }
+        .section h3 { color: #005689; border-bottom: 1px dashed #ccc; padding-bottom: 5px;}
+        .callout { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 10px 15px; margin: 15px 0; font-style: italic; }
+        .policy-ref { font-weight: bold; color: #555; font-size: 0.9em; }
+        .bold-text { font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .verdict {font-size: 1.1em; font-weight: bold; margin-top: 10px;}
+        .evidence {margin-top: 5px; font-size: 0.95em;}
+    </style>
+</head>
+<body>
+
+    <h1>Halton Local Plan: A Spatial Ledger Perspective</h1>
+
+    <div class="summary-box">
+        This Local Plan accepts the need for Green Belt release but risks under-delivery through a housing target below economic need and restrictive, subjective design policies.
+    </div>
+
+    <div class="metric-flags">
+        <span class="flag amber">Target vs Need: AMBER</span>
+        <span class="flag amber">Spatial Strategy: AMBER</span>
+        <span class="flag red">Policy Blockers: RED</span>
+        <span class="flag amber">Delivery Risk: AMBER</span>
+    </div>
+
+    <div class="section">
+        <h2>Housing Target: Setting the Bar Too Low?</h2>
+        <p>The plan aims for <span class="bold-text">350 homes per year</span> (8,050 total 2014-2037). While this beats the bare minimum suggested by the government's 'Standard Method' (296 dpa based on 2014 figures), it falls significantly short of Halton's own identified economic needs (466 dpa baseline in 2016 SHMA, up to 565 dpa growth scenario in 2017 SHELMA).</p>
+        <p>The Council explicitly acknowledges (<span class="policy-ref">Para 7.24</span>) that meeting even this lowered target requires building on Green Belt land. This suggests a compromise driven by constraints rather than ambition, potentially hindering economic growth and worsening affordability (unmet affordable need estimated at 119 dpa, <span class="policy-ref">Para 2.31</span>).</p>
+        <div class="verdict">Verdict: Amber</div>
+        <div class="evidence">The target meets the minimum requirement but ignores higher local economic needs, accepting under-provision from the outset.</div>
+        <div class="evidence"><span class="policy-ref">Policies: CS(R)1, CS(R)3. Justification: Paras 7.14-7.24</span></div>
+    </div>
+
+    <div class="section">
+        <h2>Spatial Strategy: Urban Focus or Greenfield Necessity?</h2>
+        <p>The plan prioritises regenerating urban areas (<span class="policy-ref">CS(R)1</span>), particularly brownfield sites (<span class="policy-ref">CS(R)3</span> aims for 30%). However, it simultaneously plans for significant greenfield expansion in East Runcorn (Sandymoor/Daresbury) and North Widnes.</p>
+        <p>While a brownfield focus is positive, the heavy reliance on greenfield sites (many explicitly released from the Green Belt - <span class="policy-ref">Policy RD1</span> sites marked 'GBM') suggests either urban capacity is exhausted/constrained, or the target (even the lowered one) simply cannot be met otherwise. The plan seems resigned to Green Belt release as a necessity (<span class="policy-ref">Para 7.24</span>).</p>
+        <div class="verdict">Verdict: Amber</div>
+        <div class="evidence">A stated brownfield focus is undermined by the practical necessity of large greenfield and Green Belt releases to meet targets.</div>
+        <div class="evidence"><span class="policy-ref">Policies: CS(R)1, CS(R)3, CS(R)6, RD1, GB1</span></div>
+    </div>
+
+    <div class="section">
+        <h2>Hidden Constraints: Is 'Character' the New Blocker?</h2>
+        <p>Numerous policies contain subjective language that can hinder development. Policies <span class="policy-ref">CS(R)18</span> (High Quality Design) and <span class="policy-ref">GR1</span> (Design of Development) require proposals to be 'appropriate', 'respect', 'respond positively' to setting and character, and 'enhance and reinforce positive elements'. Policy <span class="policy-ref">RD3</span> demands extensions 'Retain the character' of the existing property and area.</p>
+        <p>These terms lack objective definition, giving huge discretion to decision-makers and creating uncertainty for applicants. While minimum densities are set (<span class="policy-ref">CS(R)3</span> - 30 dph, 40 dph near centres), there's an opt-out if higher densities would be <span class="bold-text">"detrimental to local character or amenity"</span> – a classic blocker clause.</p>
+        <div class="callout">
+            Policy <span class="policy-ref">CS(R)18</span> Expectation: Development must "<span class="bold-text">enhance and reinforce positive elements</span> of an area’s character contributing to a ‘sense of place’..." and "<span class="bold-text">respect and respond positively</span> to their setting..." - Vague terms that invite subjective refusal.
+        </div>
+        <div class="verdict">Verdict: Red</div>
+        <div class="evidence">Subjective design and character policies create uncertainty and provide ammunition for blocking viable schemes, even on allocated sites.</div>
+        <div class="evidence"><span class="policy-ref">Policies: CS(R)18, GR1, GR2, RD3</span></div>
+    </div>
+
+     <div class="section">
+        <h2>Contradictions: Green Belt vs Homes</h2>
+        <p>The plan explicitly acknowledges the fundamental conflict between protecting the Green Belt and meeting housing need (<span class="policy-ref">Para 7.24</span>). It resolves this by formally releasing Green Belt land for housing (<span class="policy-ref">CS(R)6, RD1</span> sites marked 'GBM').</p>
+        <p>While this demonstrates a necessary trade-off, the strength of protective policies for landscape (<span class="policy-ref">CS(R)20, HE5</span>), nature (<span class="policy-ref">HE1</span>), and heritage (<span class="policy-ref">HE2</span>) alongside the subjective design policies (<span class="policy-ref">CS(R)18, GR1</span>) could still be used to frustrate development on these released sites if not carefully balanced during decision-making.</p>
+        <div class="verdict">Verdict: Amber</div>
+        <div class="evidence">The plan makes the difficult Green Belt trade-off but retains potentially conflicting protective policies that could hinder delivery on released sites.</div>
+        <div class="evidence"><span class="policy-ref">Policies: CS(R)6, CS(R)18, CS(R)20, RD1, GB1, HE1, HE2, HE5</span></div>
+    </div>
+
+    <div class="section">
+        <h2>Site Allocations: Land Identified, But Will It Be Built?</h2>
+        <p>Policy <span class="policy-ref">RD1</span> allocates numerous sites, including several large Strategic Residential Locations (SRLs) and sites removed from the Green Belt ('GBM'). On paper, the allocated land appears sufficient to meet the 8,050 dwelling target over the plan period.</p>
+        <p>Key large sites driving future supply include E-Scape (P1), Preston-on-the-Hill (P2), land near Keckwick Brook (R30), Delph Lane West (R33), Wharford Farm (R38/R67), Chapel Lane (W4), Mill Green Farm (W9), Boundary Farm (W11) and West of Hale Gate Rd (W24). Many of these are greenfield or ex-Green Belt.</p>
+        <div class="verdict">Verdict: Amber</div>
+        <div class="evidence">Sufficient land appears allocated, but delivery depends heavily on large, complex greenfield/ex-Green Belt sites coming forward without policy obstruction.</div>
+        <div class="evidence"><span class="policy-ref">Policies: RD1, CS(R)3</span></div>
+    </div>
+
+    <div class="section">
+        <h2>Delivery Trajectory: A Risky Gamble on Future Growth?</h2>
+        <p>The housing trajectory (<span class="policy-ref">Figure 7, p.45</span>) shows a significant reliance on delivery ramping up substantially from the mid-2020s onwards. This increase is almost entirely dependent on the allocated sites (large blue bars in the chart) securing permission and starting construction quickly.</p>
+        <p>This back-loading creates a high risk of under-delivery if these sites face delays due to infrastructure constraints, viability issues, or planning challenges (potentially stemming from the subjective policies highlighted earlier). The 30% brownfield target (<span class="policy-ref">CS(R)3</span>) also looks questionable going forward, given the plan admits future supply is mainly greenfield (<span class="policy-ref">Para 7.33</span>).</p>
+        <div class="verdict">Verdict: Red</div>
+        <div class="evidence">Delivery is heavily back-loaded and relies on optimistic assumptions about large, potentially contentious sites delivering on time. High risk of shortfall.</div>
+        <div class="evidence"><span class="policy-ref">Policies: CS(R)3. Justification: Figure 7, Para 7.28, 7.33</span></div>
+    </div>
+
+     <div class="section">
+        <h2>Overall Spatial Ledger Scorecard</h2>
+        <p>Halton's DALP makes the necessary, though likely controversial, decision to release Green Belt land for housing. However, its ambition is capped by a housing target below economic need. Crucially, the widespread use of subjective policy language around design, character, and amenity poses a significant risk, potentially allowing allocated sites to be delayed or refused, undermining the plan's delivery aims.</p>
+        <table>
+            <thead>
+                <tr><th>Category</th><th>Rating</th><th>Comment</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Housing Target</td><td>Amber</td><td>Above minimum Std Method, but below economic need.</td></tr>
+                <tr><td>Spatial Strategy</td><td>Amber</td><td>Acknowledges need for greenfield/GB release, but urban potential perhaps underplayed?</td></tr>
+                <tr><td>Policy Blockers</td><td>Red</td><td>Highly subjective design/character policies create significant implementation risk.</td></tr>
+                <tr><td>Contradictions</td><td>Amber</td><td>GB release accepted, but potential conflict remains with other protective/subjective policies.</td></tr>
+                <tr><td>Site Allocation</td><td>Green</td><td>Sufficient land appears allocated on paper.</td></tr>
+                 <tr><td>Delivery Trajectory</td><td>Red</td><td>Heavily back-loaded and reliant on timely delivery of large/complex sites.</td></tr>
+                <tr><td>Certainty</td><td>Red</td><td>Vague policy language undermines certainty for investment and permissions.</td></tr>
+            </tbody>
+        </table>
+         <div class="verdict">Overall Verdict: Amber/Red - The plan identifies land but lacks ambitious targets and uses risky policy language that could easily frustrate its own delivery goals.</div>
+    </div>
+
+</body>
+</html>

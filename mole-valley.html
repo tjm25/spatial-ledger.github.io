@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spatial Ledger Analysis: Mole Valley Local Plan 2020-2039</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    padding: 25px;
+    max-width: 950px;
+    margin: auto;
+    color: #333;
+    background-color: #fdfdfd;
+  }
+  .headline-box {
+    background-color: #fff3cd; /* Lighter warning yellow */
+    border: 1px solid #ffeeba;
+    border-left: 5px solid #ffc107; /* Amber accent */
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .headline-box h1 {
+    color: #856404; /* Darker warning text */
+    margin: 0 0 10px 0;
+    font-size: 1.7em;
+    font-weight: 600;
+  }
+  .headline-box p {
+    color: #555;
+    margin: 0;
+    font-size: 1.15em;
+  }
+  .metric-flags {
+    display: flex;
+    justify-content: center; /* Center flags */
+    gap: 20px; /* Spacing between flags */
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #e9ecef; /* Light grey background */
+    border-radius: 8px;
+    flex-wrap: wrap; /* Allow flags to wrap on smaller screens */
+  }
+  .flag {
+    padding: 12px 20px;
+    border-radius: 25px; /* Pill shape */
+    color: white;
+    font-weight: 600; /* Bolder text */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 0.95em;
+    transition: transform 0.2s ease; /* Subtle hover effect */
+  }
+  .flag:hover {
+      transform: translateY(-2px); /* Lift on hover */
+  }
+  .flag-red { background-color: #c82333; border: 1px solid #bd2130; } /* Darker red */
+  .flag-amber { background-color: #e0a800; color: #333; border: 1px solid #d39e00;} /* Darker amber */
+  .flag-green { background-color: #218838; border: 1px solid #1e7e34;} /* Darker green */
+
+  h2 {
+    color: #0056b3; /* Primary blue */
+    border-bottom: 3px solid #0056b3;
+    padding-bottom: 8px;
+    margin-top: 45px; /* More space above section headings */
+    margin-bottom: 20px; /* More space below section headings */
+    font-size: 1.6em;
+    font-weight: 600;
+  }
+  h3 {
+    color: #17a2b8; /* Teal accent */
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  .section {
+    margin-bottom: 40px; /* Increased spacing between sections */
+    padding: 25px; /* More padding within sections */
+    border: 1px solid #e0e0e0; /* Softer border */
+    border-radius: 8px;
+    background-color: #ffffff; /* White background for sections */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .section p {
+    margin-bottom: 15px; /* Better paragraph spacing */
+    color: #444;
+  }
+  .callout {
+    background-color: #f8f9fa; /* Very light grey */
+    border-left: 5px solid #6c757d; /* Grey accent */
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    border-radius: 0 5px 5px 0;
+    color: #495057;
+  }
+  .callout strong {
+    color: #dc3545; /* Red highlight remains */
+    font-style: normal; /* Don't italicize the highlight */
+  }
+  .evidence {
+    font-size: 1em; /* Slightly larger evidence text */
+    color: #5a5a5a;
+    margin-top: 10px;
+    padding-left: 15px;
+    border-left: 3px solid #e0e0e0; /* Softer evidence border */
+  }
+  .evidence strong {
+    color: #0056b3;
+    font-weight: 600;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0; /* More spacing around tables */
+    font-size: 0.95em;
+  }
+  th, td {
+    border: 1px solid #dee2e6; /* Slightly lighter table borders */
+    padding: 10px 12px; /* More padding in cells */
+    text-align: left;
+  }
+  th {
+    background-color: #f1f3f5; /* Lighter grey table header */
+    font-weight: 600;
+  }
+  .red-text { color: #c82333; font-weight: bold; }
+  .amber-text { color: #e0a800; font-weight: bold; } /* Darker amber text */
+  .green-text { color: #218838; font-weight: bold; }
+
+  ul { padding-left: 20px; margin-top: 10px;}
+  li { margin-bottom: 8px; }
+
+</style>
+</head>
+<body>
+
+<div class="headline-box">
+  <h1>Mole Valley Local Plan: Falling Short on Housing Need by Design</h1>
+  <p>This Plan explicitly adopts a housing target <strong>26% lower</strong> than the government's assessment of local need, citing Green Belt and landscape constraints, while layering on potentially restrictive policies that risk further stifling delivery.</p>
+</div>
+
+<div class="metric-flags">
+  <div class="flag flag-red">Target vs Need: FAILS</div>
+  <div class="flag flag-amber">Spatial Strategy: MIXED</div>
+  <div class="flag flag-red">Policy Blockers: HIGH RISK</div>
+  <div class="flag flag-red">Contradictions: SIGNIFICANT</div>
+</div>
+
+<div class="section">
+  <h2>Housing Target & Delivery: Planning for Underdelivery</h2>
+  <p>Mole Valley faces significant affordability pressures, yet this Plan deliberately aims low. Instead of tackling the housing crisis head-on, it uses constraints as a reason to plan for fewer homes than needed, locking out future residents and exacerbating the affordability crisis.</p>
+  <p class="evidence">
+    <strong>Annual Housing Target:</strong> <span class="red-text">336 homes</span> per year (Policy H1).<br>
+    <strong>Objectively Assessed Need (OAN):</strong> Acknowledged as <span class="red-text">456 homes</span> per year (using the standard method, Para 4.2).<br>
+    <strong>The Shortfall:</strong> The Plan aims for <strong>120 fewer homes each year</strong> than the assessed need – a <span class="red-text">26% reduction</span>.<br>
+    <strong>Reason Given:</strong> Explicitly stated that "protected areas and assets of particular importance... provide a strong reason for restricting the overall scale of development" (Para 4.1, 4.2, Policy S1). Green Belt covers 76% and National Landscape (AONB) 37% of the District (Para 1.13).<br>
+    <strong>Deliverability vs Need:</strong> The council claims it can meet its *reduced* target with a 5-year supply (Para 4.7), but this sidesteps the fundamental failure to plan for the *actual need*. The plan relies on allocated sites, including Green Belt releases, coming forward consistently (Appendix 1).
+  </p>
+  <div class="callout">
+    <strong>Quote (Para 4.2):</strong> "For Mole Valley, the Government's 2020 local housing need calculation is 456 homes per annum but the protected areas and assets... provide a strong reason for restricting the overall scale of development as set out in Policy S1."
+  </div>
+   <div class="callout">
+    <strong>Quote (Policy S1, Para 2):</strong> "...The Council will undertake an early review of the plan... to ascertain whether more housing capacity is deliverable or developable." <span class="red-text">(Acknowledges the shortfall but defers the solution).</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Spatial Strategy: Urban Focus Undermined by Constraints</h2>
+  <p>While the Plan directs some growth towards town centres (Leatherhead, Dorking) and suburban villages, its overall strategy is heavily constrained by the retention of <span class="red-text">99.35% of the Green Belt</span> (Para 1.19). Significant housing relies on contentious Green Belt releases around towns and villages, while policies limit the potential for densification even in accessible urban locations.</p>
+  <p class="evidence">
+    <strong>Prioritised Locations:</strong> Leatherhead (30%), Dorking (23%), Hookwood (15%), Ashtead (11%), Bookham (7%), Rest of District (14%) (Policy S1, Para 4; Key Diagram p.23).
+    <strong>Urban Utilisation:</strong> Policy S1 promotes town centre (3a) and brownfield redevelopment (3b, 3c). Policy H2 designates 'Development Opportunity Areas' in accessible locations, encouraging minimum densities of 50 dwellings per hectare (Policy H2, Para 3a). <span class="green-text">(Positive intent)</span>.
+    <strong>Constraints Impact:</strong> However, Policy H2 also limits height increases (Para 5) and requires high design quality and parking sufficiency (Para 3c, 3d), potentially capping density in practice. Widespread Green Belt (EN1), Landscape (EN8), Heritage (EN6), and Special Character Area (EN7) policies limit options elsewhere.
+    <strong>Green Belt Release:</strong> Modest Green Belt releases occur around Ashtead, Bookham, Dorking, Leatherhead, and Hookwood (Policy S1, Para 3d, 3e). Village boundaries are adjusted for infill (Policy S1, Para 3f, 3g; Policy EN3). This strategy accepts Green Belt boundaries *can* be changed but limits it drastically, directly causing the housing target shortfall.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Hidden Constraints & Policy Blockers: Death by Discretion</h2>
+  <p>Beyond the headline target, numerous policies introduce subjective criteria that risk blocking or delaying housing. Vague requirements around 'character', 'design quality', 'setting', and 'amenity' provide ample opportunity for refusal or downscaling, even on allocated sites, creating uncertainty for developers.</p>
+  <p class="evidence">
+    <strong>Design & Character Policies:</strong>
+    <ul>
+      <li><strong>Policy EN4 (Character and Design):</strong> Requires development to "complement the character", "respect the prevailing pattern", be of "appropriate scale, height, massing", protect views, and ensure amenity is not "significantly affected" by subjective factors like overlooking, visual impact, or loss of outlook. <span class="red-text">(Highly discretionary)</span>.</li>
+      <li><strong>Policy EN7 (Residential Areas of Special Character):</strong> Imposes *additional* constraints in designated areas, focusing on density, spacing, landscaping, and avoiding back-garden development.</li>
+      <li><strong>Policy H2 (Development Opportunity Areas):</strong> Despite aiming for density, still demands "high architectural design quality and standards, supported by a full design justification" (Para 3c).</li>
+    </ul>
+    <strong>Density/Height Caps:</strong> Explicit height limits are generally avoided, but EN4/EN7 controls on 'scale/massing' and respecting 'prevailing pattern' act as implicit caps. H2 limits height increases in Residential Opportunity Areas to one storey (Para 5).
+    <strong>Discretionary Wording:</strong> Phrases like "respect", "complement", "appropriate", "minimise impact", "where practicable", "not significantly affected" are prevalent, particularly in environmental and design policies (EN4, EN6, EN8).
+    <strong>Biodiversity Net Gain:</strong> Policy EN9 requires a <span class="amber-text">20% Biodiversity Net Gain</span> (Para 3a), double the national mandatory requirement (10%), adding significant cost and complexity to development.
+  </p>
+  <div class="callout">
+    <strong>Quote (Policy EN4, Para 1):</strong> "All new development must be of high-quality design that makes a positive contribution to its local character. All development proposals must demonstrate a thorough understanding of the site... including features of local distinctiveness..." <span class="red-text">(Subjective hurdle requiring extensive justification).</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Contradictions & Trade-offs: Green Belt Trumps Housing Need</h2>
+  <p>The most glaring contradiction is the Council acknowledging the housing need calculated by the government's method but then choosing to plan for significantly fewer homes due to self-imposed constraint levels, primarily Green Belt retention. The Plan promises an early review to find more capacity, implicitly admitting the current plan is insufficient but delaying the difficult decisions.</p>
+  <p class="evidence">
+    <strong>Target vs Need:</strong> The core contradiction (Policy S1, H1). The Plan prioritises landscape and Green Belt protection over meeting objectively assessed housing need.
+    <strong>Early Review Clause:</strong> Policies S1 (Para 2) and D2 (Para 2) commit to an early review within 3 years because the target is below need. This is an admission of inadequacy but offers no certainty that the shortfall will be addressed.
+    <strong>Economic Growth vs Housing Limits:</strong> The Plan aims to support economic growth (Policy EC1) but restricts the housing needed to support that growth and provide homes for workers.
+    <strong>Constraint Absolutism:</strong> While Green Belt has strong national protection, it's not legally absolute ('very special circumstances' allow development). The Plan *does* release <1% but treats the remaining 99.35% as sacrosanct (Para 1.19), preventing the OAN from being met. AONB/National Landscape constraints are similarly used to justify the lower target (Para 4.2).
+  </p>
+</div>
+
+<div class="section">
+  <h2>Site-by-Site Assessment: Complexity and Deliverability Risks</h2>
+  <p>The Plan allocates numerous sites (DS1-DS63), ranging from large strategic Green Belt releases (e.g., DS1, DS8, DS41) to small village infill plots (e.g., DS6, DS15, DS59). While some allocations are in sustainable locations, many rely on Green Belt release or are small/peripheral. Crucially, each site comes with a long list of specific requirements (access, heritage, noise, landscape, biodiversity, infrastructure contributions), increasing complexity and potential viability/delivery risks.</p>
+  <p class="evidence">
+    <strong>Viability & Deliverability:</strong> The sheer number of site-specific criteria listed for each allocation (e.g., DS1 requires 15 specific actions, DS8 requires 19) raises questions about deliverability and whether cumulative burdens might render some sites unviable or slow them down.
+    <strong>Site Mix:</strong> There's a heavy reliance on large, complex sites (often involving Green Belt release and major infrastructure) alongside numerous small sites which individually contribute little but collectively require significant planning effort.
+    <strong>Density vs Target:</strong> Densities vary (See matrix p.119). While Opportunity Areas target 50dph (H2), Greenfield sites are lower (20-30dph). It's questionable if the allocated site densities, when factoring in all constraints, realistically add up to the already-reduced target of 336 p.a.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Trajectory & Delivery Expectations: Flying Below the Radar</h2>
+  <p>The housing trajectory (Appendix 1) aims to meet the *reduced* target of 6,381 homes but clearly shows delivery running significantly below the objectively assessed need throughout the plan period. While claiming a 5-year supply against its own low target might be technically possible initially, the plan embeds under-delivery from the start.</p>
+  <p class="evidence">
+    <strong>Visual Trajectory (p.217):</strong> The 'Annual Completions' and 'Cumulative Completions' lines consistently track towards the 'Local Plan Target' line, which is far below the indicative 'Local Housing Need' line. <span class="red-text">(Clear graphical evidence of planned underdelivery).</span>
+    <strong>Reliance on Allocations:</strong> Delivery ramps up significantly from 2024/25 onwards, heavily dependent on allocated sites coming forward as planned, despite the complexities noted above. Any delays on major sites will quickly derail even the reduced target.
+    <strong>Planned Shortfall:</strong> The trajectory confirms the Plan is structurally designed *not* to meet OAN.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Policy Language & Implementation Risk: Uncertainty by Default?</h2>
+  <p>The Plan uses standard planning language, but the frequent reliance on subjective and discretionary terms ("respect character", "appropriate scale", "conserve and enhance setting", "minimise impact") creates significant implementation risk. This empowers officers and councillors to resist or modify proposals based on interpretation, undermining the certainty the planning system should provide.</p>
+  <p class="evidence">
+    <strong>Key Policies:</strong> Policies like EN4 (Design), EN6 (Heritage), EN7 (Special Character), and EN8 (Landscape) are particularly reliant on qualitative judgements rather than clear, objective standards.
+    <strong>Site Allocations:</strong> While allocations provide a principle of development, the long lists of requirements often include subjective elements (e.g., "well-integrated landscape strategy", "appropriate to the character", "mitigate any potential harm").
+    <strong>Overall Impact:</strong> This wording increases risk, cost, and time for applicants, potentially deterring investment or leading to schemes being scaled back, further impacting housing delivery against the already low target.
+  </p>
+   <div class="callout">
+    <strong>Example (Policy EN8, Para 7):</strong> Proposals impacting non-designated landscapes require demonstration of considering "key characteristics, attributes and sensitivities". <span class="red-text">(Open-ended requirement with high potential for subjective refusal).</span>
+  </div>
+</div>
+
+</body>
+</html>

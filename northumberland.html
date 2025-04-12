@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YIMBY Analysis: Northumberland Local Plan 2016-2036</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #005689; } /* Northumberland Council Blue */
+        h1 { text-align: center; border-bottom: 2px solid #e87722; padding-bottom: 10px; } /* Northumberland Council Orange */
+        h2 { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        strong { font-weight: bold; } /* Keep strong for semantic emphasis */
+        .strong-blue { color: #005689; font-weight: bold; } /* Use for specific blue strong text if needed */
+        .summary-box { background-color: #e7f0f7; border: 2px solid #005689; padding: 15px; margin-bottom: 20px; text-align: center; font-size: 1.1em; font-weight: bold; }
+        .metric-flags { display: flex; justify-content: space-around; margin-bottom: 20px; padding: 10px; background-color: #eee; border-radius: 5px; flex-wrap: wrap; }
+        .flag { padding: 8px 15px; border-radius: 15px; font-weight: bold; margin: 5px; text-align: center; display: inline-block; }
+        .flag.green { background-color: #28a745; color: #ffffff; } /* White text on green */
+        .flag.amber { background-color: #ffc107; color: #333333; } /* Black/dark text on amber */
+        .flag.red { background-color: #dc3545; color: #ffffff; } /* White text on red */
+        .flag strong { font-weight: bold; } /* Ensure strong tags inside flags are bold but inherit color */
+        .section { margin-bottom: 25px; }
+        .section p { margin-bottom: 10px; }
+        .callout { background-color: #f8f9fa; border-left: 5px solid #e87722; padding: 10px 15px; margin: 15px 0; font-style: italic; }
+        .policy-ref { font-size: 0.9em; color: #666; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .scorecard { border: 1px solid #ccc; padding: 10px; margin-top: 15px; }
+        .scorecard h3 { margin-top: 0; }
+        /* Keep these for text outside flags if needed, or remove if only used for flags */
+        .bold-red { color: #dc3545; font-weight: bold;}
+        .bold-amber { color: #E87722; font-weight: bold;} /* Use the orange for amber text emphasis */
+        .bold-green { color: #28a745; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YIMBY Analysis: Northumberland Local Plan (2016-2036)</h1>
+
+        <div class="summary-box">
+            Verdict: <span class="bold-amber">A Plan of Two Halves</span> – Sets an ambitious housing target driven by economic goals but simultaneously entrenches constraints like the Green Belt for housing, potentially hindering delivery in high-demand areas while relying heavily on existing commitments.
+        </div>
+
+        <div class="metric-flags">
+            <div class="flag green">Target vs Need: <strong>Higher</strong></div>
+            <div class="flag amber">Spatial Strategy: <strong>Constrained</strong></div>
+            <div class="flag red">Policy Blockers: <strong>High Risk</strong></div>
+            <div class="flag amber">Delivery Certainty: <strong>Mixed</strong></div>
+        </div>
+
+        <div class="section" id="target-delivery">
+            <h2><span class="bold-green">Target Exceeds Need, But Why?</span> Housing Target & Delivery</h2>
+            <p>The Plan sets a minimum housing requirement of <strong class="strong-blue">17,700 net additional dwellings</strong> between 2016 and 2036, averaging <strong class="strong-blue">885 homes per year</strong> (Policy HOU 2). This is significantly higher than the minimum 'Local Housing Need' calculated using the government's standard methodology, which the plan identifies as 717 dwellings per year for the initial 10-year period (para 7.8, 4.19 footnote 12).</p>
+            <p>While exceeding the minimum target looks positive, the Plan justifies this higher figure based on supporting economic growth ambitions (delivering 15,000 jobs) and aligning with regional strategies (para 4.7, 4.19). However, analysis of completions and commitments (Table 7.2) reveals that <strong class="strong-blue">over 21,300 homes were already completed or committed by March 2020</strong>. This significantly exceeds the 17,700 target, suggesting the plan's allocations may not be strictly necessary to meet the stated *numerical* target, although they might be needed for distribution or specific types of housing. The reliance on economic aspirations rather than pure housing need raises questions about the target's robustness if the economic growth doesn't fully materialise.</p>
+            <div class="scorecard">
+                <h3>Target Scorecard:</h3>
+                <ul>
+                    <li>Annual Target: <strong class="bold-green">885 homes</strong> (Policy HOU 2)</li>
+                    <li>Standard Method Minimum (at adoption): ~717 homes p.a.</li>
+                    <li>Target vs Minimum Need: <strong class="bold-green">Higher</strong></li>
+                    <li>Constraint Impact: Green Belt explicitly <strong class="bold-red">not</strong> released for housing (para 4.28).</li>
+                    <li>Land Allocation vs Target: Commitments already <strong class="bold-amber">exceed</strong> target (Table 7.2).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="spatial-strategy">
+            <h2><span class="bold-amber">Predictable Strategy, Shackled by Green Belt:</span> Spatial Strategy & Site Allocation</h2>
+            <p>The Plan follows a conventional hierarchical approach, focusing development primarily in the Main Towns and Service Centres (Policy STP 1, Table 4.1). The South East Delivery Area, closest to Tyneside, is targeted for over half the proposed housing (para 4.31). Central areas like Morpeth and Hexham also take significant allocations (para 4.32), with less in the more rural North and West (para 4.33, 4.34).</p>
+            <p>This broadly directs homes towards existing services and jobs. However, the strategy is significantly constrained by the <strong class="strong-blue">extensive Green Belt</strong> surrounding the Tyneside conurbation and enveloping key towns like Hexham, Ponteland, and Prudhoe (para 2.61, 4.27). The Plan explicitly states that <strong class="strong-blue">no Green Belt land will be released for housing</strong> (Foreword, para 4.28). This forces development pressures elsewhere and prevents expansion around some of the most economically connected and high-demand settlements, likely exacerbating affordability issues noted in these areas (para 2.70). While promoting development in the most sustainable locations is stated as a goal (para 4.23), refusing to review Green Belt boundaries for housing in high-demand areas appears contradictory.</p>
+            <div class="callout">
+                "Given that Northumberland already has a significant amount of housing committed across the County, it is not considered that exceptional circumstances exist to justify the alteration of Green Belt boundaries for residential development." <span class="policy-ref">(para 4.28)</span> - This pre-judges the outcome and avoids assessing specific sustainable locations near towns like Hexham for potential release.
+            </div>
+        </div>
+
+         <div class="section" id="constraints-blockers">
+            <h2><span class="bold-red">Death by Discretion?</span> Hidden Constraints & Policy Blockers</h2>
+            <p>Beyond the Green Belt, the Plan contains numerous policies that risk hindering housing delivery through subjective criteria and discretionary language. Policies place strong emphasis on conserving and enhancing landscape character, biodiversity, and heritage assets (Chapter 10, Policies ENV 1-9). While important, vague requirements to "respect," "enhance," or ensure development is "compatible" can be easily used to resist development, particularly in sensitive locations.</p>
+            <p>Design policies (Chapter 8, QOP 1-6) are comprehensive but also rely on subjective judgements about "local character," "sense of place," and "visual amenity" (e.g., QOP 1, QOP 2). Policy HOU 9 (Residential development management) requires extensions to be "subordinate" and "well-related," terms open to wide interpretation. Policy HOU 10 introduces principal residency requirements in coastal parishes with high second home ownership, directly limiting the market for new homes, albeit to address a specific social issue (para 7.56). The cumulative effect of these policies provides ample opportunity for resistance and delays, even on allocated sites.</p>
+         </div>
+
+        <div class="section" id="contradictions-tradeoffs">
+            <h2><span class="bold-red">Green Belt: Sacred for Homes, Sacrificial for Jobs?</span> Contradictions & Trade-offs</h2>
+            <p>A major contradiction lies in the treatment of the Green Belt. While presented as inviolable for housing (para 4.28), the Plan <strong class="strong-blue">does allow Green Belt releases for employment land</strong> around Hexham, Ponteland, and Prudhoe, citing "exceptional circumstances" linked to economic demand (para 5.41-5.45, Policy ECN 6). This suggests a hierarchy where job space trumps home space in the Green Belt, undermining the consistency of its protection.</p>
+            <p>The Plan aims for economic growth and skilled jobs (Foreword, Chapter 5) but restricts housing supply in the accessible, high-demand southern and central areas through Green Belt policy, potentially limiting the labour pool attraction. Furthermore, the strong protective stance on landscape and heritage (Chapter 10) could clash with the delivery of the 17,700 homes, requiring careful balancing which the policy language doesn't always explicitly guide.</p>
+            <div class="callout">
+                "For this reason, it is considered that exceptional circumstances warrant the deletion of an area of Green Belt to the east of the Egger Plant, at Harwood Meadows [Hexham], totalling about 10 hectares." <span class="policy-ref">(para 5.41, regarding employment land)</span>. Compare with para 4.28 stating no exceptional circumstances for housing release.
+            </div>
+        </div>
+
+        <div class="section" id="site-assessment">
+            <h2><span class="bold-amber">Allocations Spread, Density Unclear:</span> Site-by-Site Assessment</h2>
+            <p>Policy HOU 4 lists the specific housing allocations intended to meet the residual requirement, spread across the Delivery Areas (para 7.22). The sites vary significantly in size, from small village plots to larger urban extensions (e.g., Land east of Allerburn Lea, Alnwick - 270 homes; Land at Crofton Mill, Blyth - 45-50 homes). Neighbourhood Plans also contribute sites (Appendix B).</p>
+            <p>The Plan encourages efficient use of land and higher densities in accessible locations (Policy STP 3h) but doesn't set specific density requirements for allocations. Without site-by-site viability assessment details, it's hard to judge deliverability definitively. However, the reliance on numerous smaller sites alongside larger ones, particularly in constrained areas or those requiring significant infrastructure (as identified in the IDP, though not fully detailed here), suggests potential delivery risks. The plan acknowledges the need for masterplanning on larger sites (para 7.24).</p>
+        </div>
+
+        <div class="section" id="trajectory-delivery">
+            <h2><span class="bold-amber">Trajectory Puzzle: Commitments Exceed Target?</span> Trajectory & Delivery Expectations</h2>
+            <p>The housing trajectory charts in Appendix C visually present the expected delivery path towards the 17,700 target by 2036. However, Table 7.2 (Distribution of housing requirements and commitments) is revealing. As of March 2020, completions (6,580) plus outstanding permissions (12,957) and 'minded to approve' (1,810) totalled <strong class="strong-blue">21,347 homes</strong>. This already surpasses the entire plan target of 17,700.</p>
+            <p>This suggests that the *additional* need to be met through *new allocations* in this Plan (Policy HOU 4) is numerically small or even negative across most areas, except potentially the rural West (Table 7.2 shows a +327 residual need here). While the Plan aims to rebalance supply and provide specific housing types (para 7.21), the headline target appears largely met by the pipeline existing at adoption. This questions the necessity of the 885 p.a. figure *throughout* the plan period and might indicate planned under-delivery relative to the *actual* pipeline capacity, perhaps due to anticipated lapse rates or slow build-out, although the Plan claims "reasonably high degree of confidence that the majority... will come forward" (para 7.20).</p>
+             <div class="scorecard">
+                <h3>Delivery Scorecard (as at March 2020):</h3>
+                <ul>
+                    <li>Plan Target 2016-2036: 17,700</li>
+                    <li>Completions 2016-2020: 6,580</li>
+                    <li>Permissions + Minded to Approve: 14,767</li>
+                    <li>Total Pipeline: <strong class="bold-green">21,347</strong></li>
+                    <li>Pipeline vs Target: <strong class="bold-green">+3,647</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="language-risk">
+            <h2><span class="bold-red">Vague Language, Implementation Risk:</span> Policy Language & Implementation Risk</h2>
+            <p>While strategic policies often use firm language ("will"), many detailed policies related to design, amenity, landscape, and character employ softer, more discretionary terms ("should," "seek to," "contribute to," "appropriate," "respect"). Examples include Policy STP 3 (Principles of sustainable development), QOP 1 (Design principles), and ENV 3 (Landscape).</p>
+            <p>This ambiguity creates significant implementation risk. It allows for subjective interpretation by decision-makers and can empower objectors, potentially slowing down or blocking acceptable development, even on allocated sites. While flexibility is needed, the lack of clear, objective standards in some areas makes it harder to provide certainty for developers and ensure consistent decision-making that actively facilitates housing delivery in line with the Plan's targets.</p>
+        </div>
+
+    </div>
+</body>
+</html>

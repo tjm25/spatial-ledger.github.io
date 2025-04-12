@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Ledger Analysis: RBKC Local Plan Review 2024</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: auto; }
+        .summary-box { border: 3px solid #d9534f; background-color: #f2dede; padding: 15px; margin-bottom: 20px; text-align: center; }
+        .summary-box h1 { color: #a94442; margin-top: 0; }
+        .metric-flags { display: flex; justify-content: space-around; margin-bottom: 30px; flex-wrap: wrap; }
+        .flag { padding: 10px 15px; color: white; font-weight: bold; border-radius: 4px; text-align: center; margin: 5px; min-width: 150px; }
+        .flag-red { background-color: #d9534f; } /* Red */
+        .flag-amber { background-color: #f0ad4e; } /* Amber */
+        .flag-green { background-color: #5cb85c; } /* Green */
+        h2 { color: #337ab7; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        h3 { color: #555; }
+        .section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9;}
+        .callout { border-left: 5px solid #f0ad4e; background-color: #fcf8e3; padding: 10px 15px; margin: 15px 0; font-style: italic; }
+        strong { color: #d9534f; } /* Highlight negative aspects */
+        cite { font-size: 0.9em; color: #777; display: block; margin-top: 5px;}
+        .policy-ref { font-weight: bold; color: #337ab7; }
+        .chart-container { margin-top: 20px; }
+    </style>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="summary-box">
+    <h1>RBKC Local Plan Review: Planning for Preservation, Not People</h1>
+    <p>This Local Plan sets unambitious housing targets far below identified need and relies heavily on complex, delayed major sites, while deploying highly restrictive design and heritage policies that will likely <strong style="color: #a94442;">continue the borough's record of under-delivery</strong> and exacerbate the housing crisis.</p>
+</div>
+
+<div class="metric-flags">
+    <div class="flag flag-red">Target vs Need: FAILURE</div>
+    <div class="flag flag-amber">Spatial Strategy: CONCENTRATED RISK</div>
+    <div class="flag flag-red">Policy Blockers: HIGH DENSITY</div>
+    <div class="flag flag-red">Contradiction Score: SEVERE</div>
+</div>
+
+<div class="section">
+    <h2><span style="color: #d9534f;">🚨</span> The Target Trap: Aiming Low, Missing Badly</h2>
+    <p>The Plan adopts the London Plan target of 4,480 homes over 10 years (448 per year). This target itself is questionable given the scale of need, but RBKC's plan aims to deliver even fewer (1,250 homes or 250/year) in the first five years <span class="policy-ref">(Policy HO1 A1)</span>. This 'stepped trajectory' comes after RBKC delivered only <strong>43% of its target</strong> in the 2021 Housing Delivery Test.<cite>(Para 5.6)</cite></p>
+    <p>Crucially, the Council's own evidence (LHNA 2022) identifies an annual need for <strong>1,018 *affordable* (community) homes alone</strong> – more than double the *total* target the Plan aims for.<cite>(Para 5.26)</cite> Setting a target so far below identified affordable need, in one of the world's least affordable areas, signals a profound lack of ambition to tackle the housing crisis.</p>
+</div>
+
+<div class="section">
+    <h2><span style="color: #f0ad4e;">🚧</span> Growth Ghettos? Putting All Eggs in Two Baskets</h2>
+    <p>The spatial strategy <span class="policy-ref">(Policy V2)</span> funnels almost all significant growth into just two Opportunity Areas (OAs): Kensal Canalside and Earl’s Court. While developing large brownfield sites makes sense in principle, these are highly complex, require significant infrastructure and decontamination, and have long delivery timescales.<cite>(Para 2.5, 3.6, 3.11)</cite> The Plan's housing trajectory confirms delivery from these sites is heavily backloaded.<cite>(Fig 5.1, Para 5.8)</cite></p>
+    <p>Outside these OAs, the Plan offers little prospect for significant housing growth. Employment Zones, town centres, and neighbourhoods are largely protected from major change, with policies prioritising existing character, employment uses, or 'vibrancy' over housing delivery. This creates a risky delivery strategy dependent on two complex sites, while underutilising potential across the rest of this highly accessible borough.</p>
+</div>
+
+<div class="section">
+    <h2><span style="color: #d9534f;">⛔</span> Death by a Thousand Cuts: Hidden Policy Blockers</h2>
+    <p>While paying lip service to housing need, the Plan is saturated with restrictive policies, particularly in Chapter 6 (Conservation and Design). Policies demand development is 'beautiful', 'respects context', is 'sensitive', 'preserves or enhances', 'relates well', and is 'subordinate'.<cite>(e.g., Policy CD1, CD2, CD3, CD13)</cite> Over <strong>73% of the borough is covered by Conservation Areas</strong>, and there are over 4,000 listed buildings.<cite>(Para 6.2)</cite></p>
+    <p>These subjective criteria give enormous discretion to refuse development, even on allocated sites. Height is explicitly restricted outside specific locations <span class="policy-ref">(Policy CD8)</span>, effectively capping density. Even seemingly minor policies like restricting loss of existing homes to amalgamation <span class="policy-ref">(Policy HO1 B)</span> or protecting HMOs <span class="policy-ref">(Policy HO1 D)</span> add further constraints. The cumulative effect is to create <strong>significant uncertainty and risk</strong> for housing delivery.</p>
+    <div class="callout">
+        <p>"Require development to preserve or enhance the character or appearance and significance of the conservation area..."</p>
+        <cite>Policy CD4: Heritage Assets – Conservation Areas</cite>
+    </div>
+    <div class="callout">
+        <p>"Resist development which results in the damage or loss of trees of townscape or amenity value..."</p>
+        <cite>Policy GB16: Trees</cite>
+    </div>
+</div>
+
+<div class="section">
+    <h2><span style="color: #d9534f;">❓</span> Heritage vs Homes: An Uneven Battle</h2>
+    <p>The Plan presents a fundamental conflict between the stated need for homes (especially affordable ones) and the overwhelming priority given to preserving heritage and character. Policy CD3 gives <strong>"great weight" to heritage conservation</strong>, a high bar for any development to overcome. Even sustainable retrofitting is constrained if it might 'harm' historic fabric <span class="policy-ref">(Policy GB1 B)</span>.</p>
+    <p>While acknowledging the housing crisis and past failures, the Plan consistently defaults to prioritising preservation. The trade-offs are not made explicit – how many homes are *not* being built because of these stringent heritage constraints? This lack of transparency suggests heritage is being used as a convenient, albeit legally powerful, tool to <strong>block meaningful housing delivery</strong> across most of the borough.</p>
+</div>
+
+<div class="section">
+    <h2><span style="color: #f0ad4e;">⏳</span> The Hopeful Hockey Stick: Jam Tomorrow?</h2>
+    <p>The housing trajectory is alarming. It shows past failure followed by a plan for continued low delivery (250 homes/year) for the first five years, requiring a <strong>dramatic and highly questionable surge</strong> in delivery from Year 6 onwards to meet even the low official target. This relies almost entirely on the complex OA sites coming online exactly as planned.<cite>(Fig 5.1)</cite></p>
+    <p>This 'hockey stick' trajectory is a common feature of plans that struggle with delivery, pushing the difficult part into the future. Given RBKC's track record and the inherent risks of the OA sites, there is a <strong>high probability of continued under-delivery</strong> against this already inadequate target.</p>
+    <div class="chart-container">
+        <canvas id="housingTrajectoryChart"></canvas>
+    </div>
+</div>
+
+<div class="section">
+    <h2><span style="color: #d9534f;">📜</span> Policy Pitfalls: Vague Language, High Risk</h2>
+    <p>The Plan is riddled with vague, subjective, and discretionary language ('appropriate', 'sensitive', 'respect', 'enhance', 'harm'). This creates significant implementation risk. It empowers decision-makers to refuse schemes based on subjective judgements about character or design, rather than providing clear rules for development.</p>
+    <p>This lack of certainty undermines the plan-led system. Developers face higher risks and costs navigating these policies, potentially making schemes unviable or leading to drawn-out appeals. Policies that should enable good development instead become <strong>potential tools for obstruction</strong>.</p>
+    <div class="callout">
+        <p>"Opportunities should be taken to contribute positively and respond to the local townscape through its architecture and urban form by: Addressing matters such as scale, height, bulk, mass and proportion... Considering how materials are used and how they relate to any historic fabric..."</p>
+        <cite>Policy CD1: Context and Character</cite>
+    </div>
+</div>
+
+<script>
+    const ctx = document.getElementById('housingTrajectoryChart').getContext('2d');
+    const housingTrajectoryChart = new Chart(ctx, {
+        type: 'bar', // Base type is bar
+        data: {
+            labels: ['2019/20', '2020/21', '2021/22', '2022/23', '2023/24', '2024/25', '2025/26', '2026/27', '2027/28', '2028/29', '2029/30', '2030/31', '2031/32', '2032/33', '2033/34', '2034/35', '2035/36', '2036/37', '2037/38', '2038/39'],
+            datasets: [
+                {
+                    label: 'Completions',
+                    data: [446, 312, 191, 281, 160, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+                    backgroundColor: 'rgba(255, 159, 64, 0.8)', // Orange
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1,
+                    order: 2 // Render bars behind lines if overlapping
+                },
+                {
+                    label: 'Projected Future Completions',
+                    data: [null, null, null, null, null, 318, 501, 464, 728, 573, 762, 921, 759, 803, 589, 589, 439, 439, 439, 129],
+                    backgroundColor: 'rgba(54, 162, 235, 0.8)', // Blue
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    order: 2
+                },
+                 {
+                    label: 'London Plan Target (448)',
+                    data: Array(20).fill(448), // Fill all years with the target value
+                    borderColor: 'rgb(217, 83, 79)', // Red
+                    backgroundColor: 'rgba(217, 83, 79, 0.1)',
+                    type: 'line', // Override base type to line
+                    borderWidth: 2,
+                    pointRadius: 0, // No points on the line
+                    fill: false,
+                    tension: 0.1,
+                    order: 1 // Render lines on top
+                 },
+                 {
+                     label: 'Target + Shortfall + Buffer (504)',
+                     // Apply only to the first 5 plan years (index 5 to 9)
+                     data: [null, null, null, null, null, 504, 504, 504, 504, 504, null, null, null, null, null, null, null, null, null, null],
+                     borderColor: 'rgb(92, 184, 92)', // Green
+                     backgroundColor: 'rgba(92, 184, 92, 0.1)',
+                     type: 'line',
+                     borderDash: [5, 5], // Dashed line
+                     borderWidth: 2,
+                     pointRadius: 0,
+                     fill: false,
+                     tension: 0.1,
+                     order: 0 // Render lines on top
+                 }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'RBKC Housing Trajectory vs Targets'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                }
+            },
+            scales: {
+                x: {
+                    stacked: false, // Bars side-by-side, not stacked
+                    title: {
+                        display: true,
+                        text: 'Year'
+                    }
+                },
+                y: {
+                    stacked: false,
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Homes'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

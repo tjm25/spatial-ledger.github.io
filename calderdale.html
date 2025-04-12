@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spatial Ledger Analysis: Calderdale Local Plan 2018/19-2032/33</title>
+<style>
+  body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; }
+  .container { max-width: 960px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  h1, h2, h3 { color: #333; }
+  h1 { text-align: center; margin-bottom: 20px; }
+  h2 { border-bottom: 2px solid #8dc63f; padding-bottom: 5px; margin-top: 30px; }
+  .summary-box { background-color: #eef8e6; border: 2px solid #8dc63f; padding: 15px; margin-bottom: 20px; text-align: center; border-radius: 5px; }
+  .summary-box h2 { border-bottom: none; margin-top: 0; color: #5cb85c; }
+  .summary-box p { font-size: 1.1em; font-weight: bold; color: #555; }
+  .metric-flags { display: flex; flex-wrap: wrap; justify-content: space-around; padding: 15px 0; margin-bottom: 20px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; gap: 10px; }
+  .flag { padding: 8px 15px; color: #fff; font-weight: bold; border-radius: 4px; text-align: center; flex-grow: 1; min-width: 150px; /* Adjust as needed */ }
+  .flag.red { background-color: #d9534f; }
+  .flag.amber { background-color: #f0ad4e; }
+  .flag.green { background-color: #5cb85c; }
+  .section { margin-bottom: 25px; padding: 15px; border: 1px solid #eee; border-radius: 5px; background-color: #f9f9f9;}
+  .section h3 { color: #8dc63f; margin-bottom: 10px; margin-top: 0; }
+  .section p { margin-bottom: 10px; }
+  .callout { background-color: #fcf8e3; border: 1px solid #faebcc; color: #8a6d3b; padding: 15px; margin: 15px 0; border-radius: 4px; }
+  .callout blockquote { margin: 0; padding: 0; font-style: italic; }
+  .callout cite { display: block; text-align: right; font-size: 0.9em; margin-top: 5px; }
+  strong { color: #d9534f; font-weight: bold;} /* Highlight potentially problematic elements */
+  code { background-color: #eee; padding: 2px 4px; border-radius: 3px; font-size: 0.95em; font-family: monospace; }
+  .policy-ref { font-size: 0.85em; color: #777; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+  th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+  th { background-color: #f2f2f2; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Spatial Ledger Analysis: Calderdale Local Plan (Adopted March 2023)</h1>
+
+  <div class="summary-box">
+    <h2>Plan Verdict</h2>
+    <p>This Local Plan sets housing targets below levels needed for economic growth, relies heavily on complex, backloaded Green Belt sites, and contains potentially restrictive policies, posing a <strong>significant risk of under-delivery</strong> and failing to fully address Calderdale's housing needs.</p>
+  </div>
+
+  <div class="metric-flags">
+    <div class="flag amber">Target vs Need: Falls Short</div>
+    <div class="flag amber">Spatial Strategy: Constrained</div>
+    <div class="flag red">Hidden Blockers: High Risk</div>
+    <div class="flag amber">Contradictions: Acknowledged but Present</div>
+    <div class="flag red">Delivery Risk: Very High</div>
+  </div>
+
+  <div class="section" id="target-delivery">
+    <h3>Housing Target & Delivery: Ambition vs Reality</h3>
+    <p>The Plan sets an average annual target of <strong>997 net new homes</strong> (Policy SD2, p37), totalling 14,950 over the 2018/19-2032/33 period. While presented as ambitious compared to past delivery (averaging ~440 dpa 2009-19, p37), this figure is notably <strong>lower than the 1,040 dpa</strong> identified in the Council's own evidence as needed to support economic growth aspirations (para 6.2, p34).</p>
+    <p>The justification blends different economic scenarios and acknowledges uncertainty, but the outcome is a target constrained by factors like Green Belt (explicitly acknowledged in Foreword, p2 & para 6.49, p46). The Plan required releasing Green Belt land (62.5% of Borough area, p20) even to meet this lower target, admitting sufficient brownfield land isn't available (para 6.49, p46). While Table 6.9 (p47) suggests allocated sites (11,399 capacity) cover the need from allocations (10,661, Table 6.2, p36), the plan's own trajectory table (Table 6.2) shows a <strong>shortfall of 1,422 homes within the plan period</strong>, relying on delivery after 2033 from allocated sites.</p>
+  </div>
+
+  <div class="section" id="spatial-strategy">
+    <h3>Spatial Strategy: Eastward Focus, Western Constraints</h3>
+    <p>Growth is heavily concentrated in the east, particularly Halifax and Brighouse, including major 'Garden Suburb' allocations in Brighouse (para 6.47, p45; Policy SD6, p62). This aligns with previous regional strategies and leverages potential transport improvements (p47, p103). Areas like Northowram and Shelf are also identified for significant growth, cited as relatively unconstrained (para 6.47, p45).</p>
+    <p>Development in the west (Upper Calder Valley) is significantly constrained by topography, flood risk (p45), and extensive environmental designations (SPA/SAC covering upland moors, p20, p45). While acknowledging the need to support valley towns, the lack of suitable, constraint-free sites means <strong>minimal housing allocation occurs here</strong>, potentially exacerbating spatial inequalities and commuting patterns.</p>
+  </div>
+
+  <div class="section" id="hidden-constraints">
+    <h3>Hidden Constraints & Policy Blockers: Design, Density, Discretion</h3>
+    <p>While the Plan aims for high-quality design (Policy BT1, p164), policies requiring development to 'respect character', 'enhance landscape', or protect 'heritage assets and their setting' (Policy HE1, p175; GN4, p189) introduce significant subjectivity. Words like <code>unacceptable impact</code>, <code>significant harm</code>, and <code>appropriate</code> appear frequently, giving decision-makers wide discretion and potentially blocking viable schemes.</p>
+    <p>Density policy (HS2, p144) sets a minimum of 30 dph but explicitly allows lower densities based on character, topography, or viability arguments. While higher densities are encouraged in sustainable locations, the explicit allowance for lower densities creates a loophole that could undermine efficient land use, especially on scarce Green Belt release sites. The cumulative impact of these discretionary policies risks <strong>slowing down or preventing housing delivery</strong>, even on allocated sites.</p>
+    <div class="callout">
+      <blockquote>"The design style proposed in new developments should respect or enhance the character and appearance of existing buildings and surroundings, taking account of its local context and distinctiveness, in particular any heritage assets."</blockquote>
+      <cite>Policy BT1.II (p164)</cite>
+    </div>
+  </div>
+
+  <div class="section" id="contradictions">
+    <h3>Contradictions & Trade-offs: Balancing Act or Roadblock?</h3>
+    <p>The Plan openly acknowledges the tension between meeting housing needs and protecting Calderdale's extensive environmental and heritage assets (Foreword, p2). The release of Green Belt land is presented as a necessary, albeit minimal, trade-off (para 6.49, p46). However, the Plan dedicates significant policy weight to protecting landscape (Policy GN4, p189), biodiversity (including SPA/SAC buffers - Policy GN3, p185-186), heritage (Policy HE1, p175), and avoiding flood risk (Policy CC2, p81).</p>
+    <p>While these are legitimate planning considerations, the <strong>strength and number of protective policies</strong>, combined with discretionary wording, risk creating a situation where constraints are treated as near-absolutes, potentially <strong>undermining the delivery of the housing target</strong>, especially the higher number needed for economic growth. The balance appears tilted towards protection over enabling delivery.</p>
+  </div>
+
+  <div class="section" id="site-assessment">
+    <h3>Site Allocations: Viable Delivery or Wishful Thinking?</h3>
+    <p>Meeting the housing target hinges heavily on large, complex strategic sites, particularly the Brighouse Garden Suburbs (Policy SD6, p62) and other Green Belt releases (Table 6.11 shows 88.8% of allocated housing land is Greenfield, p48). The Plan acknowledges finding large sites was difficult (para 6.36, p43). While some smaller brownfield sites are included, the scale suggests <strong>reliance on greenfield/Green Belt was unavoidable</strong> to meet even the constrained target.</p>
+    <p>The deliverability of these large strategic sites, often requiring significant infrastructure and masterplanning (Policy IM7, p119), is crucial but inherently uncertain and explicitly backloaded in the trajectory. There's a risk that <strong>over-reliance on a few large, complex sites</strong> makes overall housing delivery vulnerable to delays or viability issues on those specific schemes.</p>
+  </div>
+
+  <div class="section" id="trajectory">
+    <h3>Trajectory & Delivery: A Steep Climb Ahead</h3>
+    <p>The Plan's housing trajectory (Policy SD2, p37; Fig 6.1, p38) is starkly backloaded. It starts with 500 dpa for 8 years (already above recent delivery of ~390-440 dpa), steps up to 950 dpa for 2 years, then requires a massive leap to <strong>1,810 dpa</strong> for the final 5 years (Years 11-15).</p>
+    <p>This final rate is <strong>over four times recent delivery levels</strong>. Achieving it relies on the large strategic/Garden Suburb sites coming online at scale and delivering rapidly and concurrently. This represents an <strong>extremely high delivery risk</strong>. Furthermore, Table 6.2 (p36) indicates a delivery shortfall within the plan period itself, pushing reliance onto post-2033 delivery from allocated sites. This suggests the plan anticipates, or at least risks, failing to meet its own target within the timeframe.</p>
+    <div class="callout">
+      <blockquote>"The figure of 500 dpa for the early part of the plan period is ambitious... Setting the first period at the proposed level is therefore ambitious but demonstrates the Council’s commitment to delivery."</blockquote>
+      <cite>Para 6.6 (p37) - Raises questions about the realism of the later 1,810 dpa target.</cite>
+    </div>
+  </div>
+
+  <div class="section" id="policy-language">
+    <h3>Policy Language & Implementation: Certainty Undermined?</h3>
+    <p>While the Plan includes the standard 'presumption in favour' policy (SD1, p33), its effectiveness is potentially diluted by numerous criteria-based policies laden with subjective tests. Policies covering design (BT1), heritage (HE1), landscape (GN4), natural environment (GN3), pollution (EN1/EN3), and flood risk (CC2) all contain phrases requiring judgement on significance, acceptability, or character.</p>
+    <p>This creates <strong>multiple hurdles for development proposals</strong> and gives significant scope for refusal based on interpretation, rather than providing clear certainty for applicants seeking to deliver needed housing. The requirement for numerous assessments (HIA, EIA, FRA, Transport Assessment, Heritage Impact Assessment, Ecological Assessment, Landscape Impact Assessment etc.) adds further complexity and potential delay. The overall impression is a plan that, while allocating land, <strong>makes securing permission potentially difficult and uncertain</strong>.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
