@@ -66,8 +66,7 @@ async function generateEmbeddings() {
             });
 
             // The output is an array of arrays.  We want the first one.
-            const embedding = output.data;
-
+            const embedding = Array.from(output.data); // Convert Float32Array to standard Array
             // 5. Add to index
             searchIndex.push({
                 id: file,
