@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Spatial Ledger (Hybrid Search)</title>
+    <title>The Spatial Ledger</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
@@ -11,241 +11,121 @@
     <script src="https://unpkg.com/lunr/lunr.min.js"></script>
     <style>
         /* --- Basic Reset & Defaults --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            line-height: 1.6;
-            background-color: #F8F5ED; /* Off-white/Cream */
-            color: #333;
-            padding: 20px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; line-height: 1.6; background-color: #F8F5ED; color: #333; padding: 20px; }
 
         /* --- Font Styles --- */
-        h1 {
-            font-family: 'Merriweather', serif;
-            color: #1A3A5F; /* Dark Blue/Navy */
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 0.2em;
-            font-size: 2em;
-        }
-
-        .tagline {
-            font-family: 'Lato', sans-serif;
-            text-align: center;
-            color: #555;
-            margin-bottom: 2em;
-            font-size: 1.1em;
-        }
-
-        h2 {
-            font-family: 'Merriweather', serif;
-            color: #1A3A5F;
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            border-bottom: 2px solid #A0CED9; /* Light Blue/Teal accent */
-            padding-bottom: 0.3em;
-            font-size: 1.5em;
-        }
-         /* Ensure emoji spans don't add extra margin/padding */
-         h2 .emoji {
-            display: inline-block;
-            margin-right: 0.3em;
-         }
+        h1 { font-family: 'Merriweather', serif; color: #1A3A5F; font-weight: 700; text-align: center; margin-bottom: 0.2em; font-size: 2em; }
+        .tagline { font-family: 'Lato', sans-serif; text-align: center; color: #555; margin-bottom: 2em; font-size: 1.1em; }
+        h2 { font-family: 'Merriweather', serif; color: #1A3A5F; margin-top: 1.5em; margin-bottom: 0.8em; border-bottom: 2px solid #A0CED9; padding-bottom: 0.3em; font-size: 1.5em; }
+        h2 .emoji { display: inline-block; margin-right: 0.3em; }
 
         /* --- Layout --- */
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 30px 40px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 2em;
-            padding-top: 1em;
-        }
-
-        section {
-            margin-bottom: 2em;
-        }
+        .container { max-width: 800px; margin: 20px auto; background-color: #fff; padding: 30px 40px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border-radius: 5px; }
+        header { text-align: center; margin-bottom: 0; padding-top: 1em; }
+        section { margin-bottom: 1em; }
+        main > section:last-of-type { margin-bottom: 0; }
 
         /* --- Elements Styling --- */
-        p {
-            margin-bottom: 1em;
-        }
+        p { margin-bottom: 1em; }
+        .accordion-content p:last-child { margin-bottom: 0; }
+        ul { list-style-position: outside; margin-left: 1.5em; margin-bottom: 1em; padding-left: 0.5em; }
+        .accordion-content ul { margin-bottom: 1em; }
+        .accordion-content ul:last-child { margin-bottom: 0; }
+        li { margin-bottom: 0.5em; }
 
-        ul { /* Default list styling */
-            list-style-position: inside;
-            margin-left: 1em;
-            margin-bottom: 1em;
+        /* --- Search Section Styling --- */
+        #browse {
+            margin-top: 1.5em; margin-bottom: 2.5em; padding: 20px;
+            background-color: #fdfcf9; border: 1px solid #eee; border-radius: 4px;
         }
-
-        li { /* Default list item styling */
-            margin-bottom: 0.5em;
+        #browse h2 {
+             margin-top: 0; margin-bottom: 1em; font-size: 1.3em;
+             border-bottom: none; text-align: center;
         }
+        #browse h2 .emoji { display: inline-block; margin-right: 0.3em; }
 
-        /* --- Search Form & Results Styling --- */
-        #search-form {
-            margin-top: 1em;
-            margin-bottom: 20px;
-        }
+        #search-form { margin-top: 0; margin-bottom: 20px; }
+        #search-form label { display: block; margin-bottom: 0.5em; font-weight: bold; color: #1A3A5F; }
 
-        #search-form label {
-            display: block;
-            margin-bottom: 0.5em;
-            font-weight: bold;
-            color: #1A3A5F;
+        /* NEW: Wrapper for input and button */
+        .search-input-wrapper {
+            display: flex;
+            align-items: stretch; /* Make input/button same height */
+            gap: 0.5em; /* Space between input and button */
         }
 
         #search-input {
-            width: 100%;
-            padding: 12px;
-            font-size: 1em;
-            border: 1px solid #A0CED9;
-            border-radius: 4px;
-            margin-bottom: 1em;
-            font-family: 'Lato', sans-serif;
+            flex-grow: 1; /* Input takes remaining space */
+            padding: 12px; font-size: 1em; border: 1px solid #A0CED9;
+            border-radius: 4px; font-family: 'Lato', sans-serif;
+            margin-bottom: 0; /* Removed bottom margin */
         }
-
-        #search-input:focus {
-             outline: none;
-             border-color: #1A3A5F;
-             box-shadow: 0 0 5px rgba(160, 206, 217, 0.5);
-        }
+        #search-input:focus { outline: none; border-color: #1A3A5F; box-shadow: 0 0 5px rgba(160, 206, 217, 0.5); }
 
         #search-button {
-            display: inline-block;
-            background-color: #1A3A5F;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1em;
-            font-family: 'Lato', sans-serif;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
+            flex-shrink: 0; /* Prevent button shrinking */
+            width: auto; /* Allow button to size based on content/padding */
+            background-color: #1A3A5F; color: #fff; padding: 10px 20px;
+            border: none; border-radius: 4px; font-size: 1em; font-family: 'Lato', sans-serif;
+            cursor: pointer; transition: background-color 0.2s ease;
+            /* Adjust line-height or padding if vertical alignment looks off */
+             line-height: 1.6; /* Match body line-height */
         }
+        #search-button:hover { background-color: #2a5a8a; }
+        #search-button:disabled { background-color: #ccc; cursor: not-allowed; }
+        #search-input:disabled { background-color: #eee; cursor: not-allowed; }
 
-        #search-button:hover {
-            background-color: #2a5a8a;
-        }
+        #loading-indicator { display: inline-block; margin-left: 15px; font-style: italic; color: #555; }
 
-        #search-button:disabled {
-             background-color: #ccc;
-             cursor: not-allowed;
-        }
-        #search-input:disabled {
-             background-color: #eee;
-             cursor: not-allowed;
-        }
+        /* --- Search Results Styling --- */
+        #search-results { margin-top: 1.5em; padding-top: 0; }
+        #search-results h3 { font-family: 'Merriweather', serif; font-size: 1.2em; margin-bottom: 1em; color: #1A3A5F; text-align: left; border-bottom: 1px solid #eee; padding-bottom: 0.5em; }
+        #search-results ul { list-style: none; padding: 0; margin: 0; }
+        #search-results li { margin-bottom: 1.5em; padding-bottom: 1em; border-bottom: 1px dotted #ccc; }
+        #search-results li:last-child { border-bottom: none; }
+        #search-results a { font-weight: bold; color: #1A3A5F; text-decoration: none; font-size: 1.1em; display: block; margin-bottom: 0.3em; }
+        #search-results a:hover { text-decoration: underline; }
+        #search-results .snippet { display: block; font-size: 0.95em; color: #444; line-height: 1.5; margin-top: 0.3em; }
+        #search-results .path-info { display: block; font-size: 0.8em; color: #777; margin-top: 0.4em; }
+        #search-results .similarity-score { display: block; font-size: 0.8em; color: #008000; margin-top: 0.4em; }
 
-        #loading-indicator {
-            display: inline-block;
-            margin-left: 15px;
-            font-style: italic;
-            color: #555;
-        }
+        /* --- Accordion Styling --- */
+        .accordion-group { border-top: 1px solid #ddd; margin-top: 2em; }
+        .accordion { border-bottom: 1px solid #ddd; }
+        .accordion-button { font-family: 'Merriweather', serif; background: #fff; color: #1A3A5F; border: none; padding: 1rem 1.5rem; width: 100%; text-align: left; font-size: 1.2em; font-weight: 700; cursor: pointer; transition: background-color 0.2s ease; position: relative; margin: 0; }
+        .accordion-button .emoji { display: inline-block; margin-right: 0.5em; }
+        .accordion-button::after { content: '▼'; font-size: 0.8em; color: #A0CED9; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); transition: transform 0.2s ease; }
+        .accordion.open .accordion-button::after { transform: translateY(-50%) rotate(180deg); }
+        .accordion-button:hover, .accordion-button:focus { background-color: #f8f5ed; outline: none; }
+        .accordion-content { display: none; padding: 1rem 1.5rem 1.5rem; background-color: #fdfcf9; }
+        .accordion.open .accordion-content { display: block; }
 
-        #search-results {
-            margin-top: 2em;
-            padding-top: 1em;
-        }
-
-        #search-results h3 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.3em;
-            margin-bottom: 1em;
-            color: #1A3A5F;
-        }
-
-        #search-results ul { /* Specific styles for results list */
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #search-results li { /* Specific styles for result items */
-            margin-bottom: 1.5em;
-            padding-bottom: 1em;
-            border-bottom: 1px dotted #ccc;
-        }
-        #search-results li:last-child {
-             border-bottom: none;
-        }
-
-        #search-results a {
-            font-weight: bold;
-            color: #1A3A5F;
-            text-decoration: none;
-            font-size: 1.1em;
-            display: block;
-            margin-bottom: 0.3em;
-        }
-
-        #search-results a:hover {
-            text-decoration: underline;
-        }
-
-        #search-results .snippet {
-             display: block;
-             font-size: 0.95em;
-             color: #444;
-             line-height: 1.5;
-             margin-top: 0.3em;
-        }
-        #search-results .path-info {
-             display: block;
-             font-size: 0.8em;
-             color: #777;
-             margin-top: 0.4em;
-        }
-        #search-results .similarity-score { /* Can repurpose for RRF score */
-             display: block;
-             font-size: 0.8em;
-             color: #008000; /* Green */
-             margin-top: 0.4em;
-        }
-
-        .error-message {
-            color: #D8000C;
-            background-color: #FFD2D2;
-            border: 1px solid #D8000C;
-            padding: 10px;
-            margin-top: 15px;
-            border-radius: 5px;
-        }
-        .info-message {
-            color: #00529B;
-            background-color: #BDE5F8;
-            border: 1px solid #00529B;
-            padding: 10px;
-            margin-top: 15px;
-            border-radius: 5px;
-        }
-        mark { /* Style for keyword highlighting */
-            background-color: #a0ced9;
-            padding: 0.1em;
-            border-radius: 2px;
-        }
+        /* --- Utility & Message Styles --- */
+        .error-message { color: #D8000C; background-color: #FFD2D2; border: 1px solid #D8000C; padding: 10px; margin-top: 15px; border-radius: 5px; }
+        .info-message { color: #00529B; background-color: #BDE5F8; border: 1px solid #00529B; padding: 10px; margin-top: 15px; border-radius: 5px; }
+        mark { background-color: #a0ced9; padding: 0.1em; border-radius: 2px; }
 
         /* --- Responsive Adjustments --- */
         @media (max-width: 600px) {
-            .container { padding: 20px; margin: 10px auto; }
+            .container { padding: 15px; margin: 10px auto; }
             h1 { font-size: 1.8em; }
             h2 { font-size: 1.4em; }
-            #search-results h3 { font-size: 1.2em; }
-            body { padding: 10px; font-size: 15px; }
+            .accordion-button { font-size: 1.1em; padding: 0.8rem 1rem; }
+            .accordion-button::after { right: 1rem; }
+            .accordion-content { padding: 0.8rem 1rem 1rem; }
+            body { padding: 5px; font-size: 15px; }
+            #browse { padding: 15px; margin-top: 1em; margin-bottom: 1.5em;}
+            #browse h2 { font-size: 1.2em; }
+            #search-results h3 { font-size: 1.1em; }
             #search-input { padding: 10px; }
-            #search-button { width: 100%; padding: 12px; margin-top: 5px; }
+            .search-input-wrapper { gap: 0.3em; } /* Less gap on mobile */
+             /* Remove fixed width, adjust padding */
+             #search-button {
+                  width: auto; /* Ensure button is not full width */
+                  padding: 10px 15px; /* Adjust padding if needed */
+                  margin-top: 0; /* Remove top margin */
+             }
             #loading-indicator { display: block; text-align: center; margin-left: 0; margin-top: 10px; }
         }
     </style>
@@ -257,49 +137,126 @@
             <p class="tagline">Holding the planning system to its word.</p>
         </header>
 
-        <main>
-            <section id="what-is-it">
-                <h2><span class="emoji">🔍</span> What is it?</h2>
-                <p>Every Local Plan makes promises — about how many homes will be built, where they’ll go, and what priorities will shape growth.</p>
-                <p>But promises aren't always kept.</p>
-                <p>The Spatial Ledger examines Local Plans across England and highlights what they say, what they don’t, and where the policies quietly pull in different directions.</p>
-                <p>We ask simple questions:</p>
-                <ul>
-                    <li>Is the housing target enough to meet local needs?</li>
-                    <li>Are the biggest towns doing their fair share?</li>
-                    <li>Are constraints treated as fixed facts or policy choices?</li>
-                    <li>Do site allocations actually add up to the vision set out?</li>
-                </ul>
-                <p>Then we show the answers — clearly, publicly, and with citations.</p>
-            </section>
-
-            <section id="why-it-matters">
-                <h2><span class="emoji">🧾</span> Why it matters</h2>
-                <p>Planning shapes everything: where people live, how much they pay, who gets included or left out.</p>
-                <p>Yet much of it is hidden in lengthy documents and technical language, easy to ignore — until a crisis makes the consequences obvious.</p>
-                <p>The Spatial Ledger makes the system easier to understand — and harder to ignore.</p>
-            </section>
-
-            <section id="how-it-works">
-                <h2><span class="emoji">🔦</span> How it works</h2>
-                <p>We read Local Plans line by line.</p>
-                <p>We flag contradictions, vague promises, and policies that block more than they build.</p>
-                <p>We compare targets to delivery, ambitions to allocations, principles to outcomes.</p>
-                <p>Then we publish our findings — one page per Local Planning Authority.</p>
-                <p>No paywall. No spin. Just a clear public record.</p>
-            </section>
-
-            <section id="browse">
-                <h2><span class="emoji">🗂️</span> Find a Local Plan Analysis</h2>
-                <form id="search-form">
-                     <label for="search-input">Enter search terms (e.g., 'housing target', 'green belt policy', 'Leeds'):</label>
-                     <input type="text" id="search-input" placeholder="Initializing search..." autocomplete="off" disabled>
+        <section id="browse">
+            <h2><span class="emoji">🗂️</span> Find a Local Plan Analysis</h2>
+            <form id="search-form">
+                 <label for="search-input">Enter search terms (e.g., 'housing target', 'green belt policy', 'Leeds'):</label>
+                 <div class="search-input-wrapper">
+                     <input type="search" id="search-input" placeholder="Initializing search..." autocomplete="off" disabled>
                      <button id="search-button" type="submit" disabled>Search</button>
-                     <span id="loading-indicator" style="display:none;">Initializing...</span>
-                </form>
-                 <div id="search-results"></div>
-            </section>
-        </main>
+                 </div>
+                 <span id="loading-indicator" style="display:none;">Initializing...</span>
+            </form>
+            <div id="search-results"></div>
+        </section>
+
+        <main>
+            <div class="accordion-group">
+
+                <section class="accordion" id="what-is-it">
+                    <button class="accordion-button" aria-expanded="false">
+                         <span class="emoji">🔍</span> What is it?
+                    </button>
+                    <div class="accordion-content">
+                        <p>Every Local Plan makes promises — about how many homes will be built, where they’ll go, and what priorities will shape growth.</p>
+                        <p>But promises aren't always kept.</p>
+                        <p>The Spatial Ledger examines Local Plans across England and highlights what they say, what they don’t, and where the policies quietly pull in different directions.</p>
+                        <p>We ask simple questions:</p>
+                        <ul>
+                            <li>Is the housing target enough to meet local needs?</li>
+                            <li>Are the biggest towns doing their fair share?</li>
+                            <li>Are constraints treated as fixed facts or policy choices?</li>
+                            <li>Do site allocations actually add up to the vision set out?</li>
+                        </ul>
+                        <p>Then we show the answers — clearly, publicly, and with citations.</p>
+                    </div>
+                </section>
+
+                <section class="accordion" id="why-it-matters">
+                    <button class="accordion-button" aria-expanded="false">
+                         <span class="emoji">🧾</span> Why it matters
+                    </button>
+                    <div class="accordion-content">
+                        <p>Planning shapes everything: where people live, how much they pay, who gets included or left out.</p>
+                        <p>Yet much of it is hidden in lengthy documents and technical language, easy to ignore — until a crisis makes the consequences obvious.</p>
+                        <p>The Spatial Ledger makes the system easier to understand — and harder to ignore.</p>
+                    </div>
+                </section>
+
+                <section class="accordion" id="how-it-works">
+                     <button class="accordion-button" aria-expanded="false">
+                          <span class="emoji">🔦</span> How it works
+                     </button>
+                     <div class="accordion-content">
+                          <p>We read Local Plans line by line.</p>
+                          <p>We flag contradictions, vague promises, and policies that block more than they build.</p>
+                          <p>We compare targets to delivery, ambitions to allocations, principles to outcomes.</p>
+                          <p>Then we publish our findings — one page per Local Planning Authority.</p>
+                          <p>No paywall. No spin. Just a clear public record.</p>
+                     </div>
+                </section>
+
+                <section class="accordion" id="whats-included">
+                     <button class="accordion-button" aria-expanded="false">
+                          <span class="emoji">📊</span> What we analyse
+                     </button>
+                     <div class="accordion-content">
+                          <p>Each Local Plan page includes:</p>
+                          <ul>
+                               <li><span class="emoji">📌</span> Housing target vs need (local + NPPF benchmark)</li>
+                               <li><span class="emoji">📍</span> Spatial distribution of growth (towns, villages, greenfield)</li>
+                               <li><span class="emoji">⛔</span> Constraints and their justification</li>
+                               <li><span class="emoji">📐</span> Site allocations: quantity, location, mix</li>
+                               <li><span class="emoji">🔁</span> Policy contradictions and trade-offs</li>
+                               <li><span class="emoji">🧩</span> Missing pieces or implementation gaps</li>
+                          </ul>
+                          <p>Where possible, we link to source paragraphs or policies directly.</p>
+                     </div>
+                </section>
+
+                <section class="accordion" id="methodology">
+                     <button class="accordion-button" aria-expanded="false">
+                          <span class="emoji">🧪</span> How we analyse plans
+                     </button>
+                     <div class="accordion-content">
+                          <p>We use a combination of AI and manual review to examine published Local Plans, sustainability appraisals, and housing evidence bases.</p>
+                          <p>We prioritise clarity, fairness, and traceability. Every finding is linked to its source, and no conclusions are drawn without supporting text.</p>
+                          <p>If you think we’ve made a mistake — tell us. We’ll check and update accordingly.</p>
+                     </div>
+                </section>
+
+                <section class="accordion" id="audience">
+                     <button class="accordion-button" aria-expanded="false">
+                          <span class="emoji">🧭</span> Who it’s for
+                     </button>
+                     <div class="accordion-content">
+                          <p>The Spatial Ledger is for:</p>
+                          <ul>
+                               <li><span class="emoji">📎</span> Planning officers trying to make fair, balanced decisions</li>
+                               <li><span class="emoji">🗣️</span> Campaigners demanding accountability and transparency</li>
+                               <li><span class="emoji">🏘️</span> Citizens who want to understand how their area is changing</li>
+                               <li><span class="emoji">🧠</span> Researchers and policymakers tracking trends across England</li>
+                          </ul>
+                          <p>If you care about how places grow — this is for you.</p>
+                     </div>
+                </section>
+
+                <section class="accordion" id="what-you-can-do">
+                     <button class="accordion-button" aria-expanded="false">
+                          <span class="emoji">✊</span> What you can do
+                     </button>
+                     <div class="accordion-content">
+                         <p>The Spatial Ledger isn’t just for reading — it’s for using.</p>
+                         <ul>
+                             <li><span class="emoji">📨</span> Share your Local Plan’s page with councillors, journalists, or campaigners</li>
+                             <li><span class="emoji">🧾</span> Use the findings in consultations, FOI requests, or planning objections</li>
+                             <li><span class="emoji">🏘️</span> Build your case for a fairer housing strategy — with evidence</li>
+                         </ul>
+                         <p>Planning shouldn't be a closed loop. This is one way to open it up.</p>
+                     </div>
+                </section>
+
+            </div> </main>
 
         <footer>
             <p style="text-align:center; font-size: 0.8em; color: #777; margin-top: 3em;">&copy; 2025 The Spatial Ledger</p>
@@ -316,365 +273,60 @@
         const searchButton = document.getElementById('search-button');
         const searchResultsContainer = document.getElementById('search-results');
         const loadingIndicator = document.getElementById('loading-indicator');
+        const accordionGroup = document.querySelector('.accordion-group');
 
         // --- State Variables ---
-        let embeddingModel = null;
-        let semanticIndexDocs = []; // Stores {id, title, path, embedding, body_snippet}
-        let lunrIndex = null;
-        let docMap = new Map(); // To easily access doc details by ID {id -> {id, title, path, body_snippet}}
-
-        let isModelReady = false;
-        let isSemanticIndexReady = false;
-        let isLunrIndexReady = false;
+        let embeddingModel = null, semanticIndexDocs = [], lunrIndex = null, docMap = new Map();
+        let isModelReady = false, isSemanticIndexReady = false, isLunrIndexReady = false;
 
         // --- Configuration ---
         const modelName = 'Xenova/all-MiniLM-L6-v2';
-        const semanticIndexURL = 'semantic-index.json'; // Expects { documents: [...] }
-        const lunrIndexURL = 'lunr-index.json';
-        const similarityThreshold = 0.25; // Semantic relevance threshold
-        const maxResults = 20;
-        const rrf_k = 60; // Reciprocal Rank Fusion constant
+        const semanticIndexURL = 'semantic-index.json'; const lunrIndexURL = 'lunr-index.json';
+        const similarityThreshold = 0.25; const maxResults = 20; const rrf_k = 60;
 
-        // --- 1. Initialization ---
-        async function initializeSearch() {
-            console.log('Initializing hybrid search...');
-            loadingIndicator.textContent = 'Initializing search...';
-            loadingIndicator.style.display = 'inline-block';
-            searchInput.disabled = true;
-            searchButton.disabled = true;
-
-            try {
-                const modelPromise = loadEmbeddingModel();
-                const semanticPromise = loadSemanticIndex();
-                const lunrPromise = loadLunrIndex();
-
-                await Promise.all([modelPromise, semanticPromise, lunrPromise]);
-
-                checkAndEnableSearch();
-
-            } catch (error) {
-                handleError(error, "Initialization failed. Search is unavailable.");
-            } finally {
-                if (isModelReady && isSemanticIndexReady && isLunrIndexReady) {
-                    loadingIndicator.style.display = 'none';
-                }
-            }
-        }
-
-        async function loadEmbeddingModel() {
-             if (isModelReady) return;
-             console.log(`Loading embedding model: ${modelName}...`);
-             loadingIndicator.textContent = 'Loading model...';
-             embeddingModel = await pipeline('feature-extraction', modelName, {
-                 quantized: true,
-                 progress_callback: data => {
-                     if (data.status === 'progress') {
-                         const percentage = (data.progress || 0).toFixed(2);
-                         loadingIndicator.textContent = `Loading model: ${percentage}%`;
-                     } else {
-                          loadingIndicator.textContent = `Model status: ${data.status}`;
-                     }
-                 }
-             });
-             console.log('Embedding model loaded successfully.');
-             isModelReady = true;
-        }
-
-        async function loadSemanticIndex() {
-            if (isSemanticIndexReady) return;
-            console.log('Fetching semantic index...');
-            loadingIndicator.textContent = 'Fetching semantic index...';
-            const response = await fetch(semanticIndexURL);
-            if (!response.ok) throw new Error(`Failed to fetch semantic index (${response.status})`);
-            const data = await response.json();
-
-            if (!data || !Array.isArray(data.documents)) {
-                throw new Error("Semantic index format invalid (expected { documents: [...] }).");
-            }
-            semanticIndexDocs = data.documents;
-
-            // Build the docMap and validate embeddings
-            docMap.clear();
-            let validEmbeddings = 0;
-            semanticIndexDocs.forEach(doc => {
-                 // Store basic info for lookup
-                 docMap.set(doc.id, {
-                     id: doc.id,
-                     title: doc.title,
-                     path: doc.path,
-                     body_snippet: doc.body_snippet || ""
-                 });
-                 // Basic validation of embedding structure
-                 if (doc.embedding && Array.isArray(doc.embedding) && doc.embedding.length > 0) {
-                     validEmbeddings++;
-                 } else {
-                      // console.warn(`Document ${doc.id} has missing or invalid embedding.`);
-                      // Ensure it has an empty array if missing/invalid, for safety
-                      doc.embedding = [];
-                 }
+        // --- Accordion Functionality ---
+        if (accordionGroup) {
+            accordionGroup.addEventListener('click', (event) => {
+                 const button = event.target.closest('.accordion-button');
+                 if (!button) return;
+                 const accordion = button.parentElement;
+                 const isOpening = !accordion.classList.contains('open');
+                 accordion.classList.toggle('open');
+                 button.setAttribute('aria-expanded', isOpening);
             });
-            console.log(`Semantic index fetched successfully (${semanticIndexDocs.length} docs, ${validEmbeddings} valid embeddings).`);
-            isSemanticIndexReady = true;
         }
 
-        async function loadLunrIndex() {
-            if (isLunrIndexReady) return;
-            console.log('Fetching Lunr index...');
-            loadingIndicator.textContent = 'Fetching keyword index...';
-            const response = await fetch(lunrIndexURL);
-            if (!response.ok) throw new Error(`Failed to fetch Lunr index (${response.status})`);
-            const serializedIndex = await response.text();
-            lunrIndex = lunr.Index.load(JSON.parse(serializedIndex));
-            console.log('Lunr index loaded successfully.');
-            isLunrIndexReady = true;
+        // --- Search Initialization ---
+        async function initializeSearch() { /* ... (same as previous JS) ... */
+            console.log('Initializing hybrid search...'); loadingIndicator.textContent = 'Initializing search...'; loadingIndicator.style.display = 'inline-block'; searchInput.disabled = true; searchButton.disabled = true;
+            try { const modelPromise = loadEmbeddingModel(); const semanticPromise = loadSemanticIndex(); const lunrPromise = loadLunrIndex(); await Promise.all([modelPromise, semanticPromise, lunrPromise]); checkAndEnableSearch(); } catch (error) { handleError(error, "Initialization failed. Search is unavailable."); } finally { if (isModelReady && isSemanticIndexReady && isLunrIndexReady) { loadingIndicator.style.display = 'none'; } }
         }
+        async function loadEmbeddingModel() { /* ... (same as previous JS) ... */ if (isModelReady) return; console.log(`Loading embedding model: ${modelName}...`); loadingIndicator.textContent = 'Loading model...'; embeddingModel = await pipeline('feature-extraction', modelName, { quantized: true, progress_callback: data => { if (data.status === 'progress') { loadingIndicator.textContent = `Loading model: ${(data.progress||0).toFixed(2)}%`; } else { loadingIndicator.textContent = `Model status: ${data.status}`; } } }); console.log('Embedding model loaded successfully.'); isModelReady = true; }
+        async function loadSemanticIndex() { /* ... (same as previous JS) ... */ if (isSemanticIndexReady) return; console.log('Fetching semantic index...'); loadingIndicator.textContent = 'Fetching semantic index...'; const response = await fetch(semanticIndexURL); if (!response.ok) throw new Error(`Failed to fetch semantic index (${response.status})`); const data = await response.json(); if (!data || !Array.isArray(data.documents)) { throw new Error("Semantic index format invalid."); } semanticIndexDocs = data.documents; docMap.clear(); let validEmbeddings = 0; semanticIndexDocs.forEach(doc => { docMap.set(doc.id, { id: doc.id, title: doc.title, path: doc.path, body_snippet: doc.body_snippet || "" }); if (doc.embedding && Array.isArray(doc.embedding) && doc.embedding.length > 0) { validEmbeddings++; } else { doc.embedding = []; } }); console.log(`Semantic index fetched successfully (${semanticIndexDocs.length} docs, ${validEmbeddings} valid embeddings).`); isSemanticIndexReady = true; }
+        async function loadLunrIndex() { /* ... (same as previous JS) ... */ if (isLunrIndexReady) return; console.log('Fetching Lunr index...'); loadingIndicator.textContent = 'Fetching keyword index...'; const response = await fetch(lunrIndexURL); if (!response.ok) throw new Error(`Failed to fetch Lunr index (${response.status})`); const serializedIndex = await response.text(); if (typeof lunr === 'undefined') { throw new Error("Lunr library is not loaded."); } lunrIndex = lunr.Index.load(JSON.parse(serializedIndex)); console.log('Lunr index loaded successfully.'); isLunrIndexReady = true; }
+        function checkAndEnableSearch() { /* ... (same as previous JS) ... */ if (isModelReady && isSemanticIndexReady && isLunrIndexReady) { console.log('Hybrid search system ready.'); searchInput.disabled = false; searchButton.disabled = false; loadingIndicator.style.display = 'none'; searchInput.placeholder = "Search the ledger..."; } else { if (!isModelReady) loadingIndicator.textContent = 'Loading model...'; else if (!isSemanticIndexReady) loadingIndicator.textContent = 'Loading semantic index...'; else if (!isLunrIndexReady) loadingIndicator.textContent = 'Loading keyword index...'; } }
 
+        // --- Search Execution & Combination ---
+        async function performSearch(query) { /* ... (same as previous JS) ... */
+             if (!isModelReady || !isSemanticIndexReady || !isLunrIndexReady) { handleError(new Error("Search components not ready"), "Search is not yet available. Please wait."); return; } if (!query) { searchResultsContainer.innerHTML = ''; return; } console.log(`Performing hybrid search for: "${query}"`); loadingIndicator.textContent = 'Searching...'; loadingIndicator.style.display = 'inline-block'; searchButton.disabled = true; searchResultsContainer.innerHTML = ''; try { const semanticSearchPromise = (async () => { console.time('Semantic Search'); const queryEmbedding = await generateEmbedding(query); let results = []; if (queryEmbedding) { results = semanticIndexDocs.map(item => ({ id: item.id, similarity: (Array.isArray(item.embedding) && item.embedding.length > 0) ? cosineSimilarity(queryEmbedding, item.embedding) : -1 })).filter(item => item.similarity >= similarityThreshold); results.sort((a, b) => b.similarity - a.similarity); } else { console.warn("Could not generate query embedding."); } console.timeEnd('Semantic Search'); return results; })(); const keywordSearchPromise = (async () => { console.time('Keyword Search'); const keywordResults = lunrIndex.search(query); console.timeEnd('Keyword Search'); return keywordResults; })(); const [semanticResultsRanked, keywordResults] = await Promise.all([semanticSearchPromise, keywordSearchPromise]); console.time('Result Combination (RRF)'); const combinedResults = combineResultsRRF(keywordResults, semanticResultsRanked, rrf_k); console.timeEnd('Result Combination (RRF)'); displayResults(combinedResults, query, keywordResults); } catch (error) { handleError(error, "Search failed. Please try again."); } finally { loadingIndicator.style.display = 'none'; searchButton.disabled = false; } }
+        function combineResultsRRF(keywordResults, semanticResults, k = 60) { /* ... (same as previous JS) ... */ const rankedScores = new Map(); keywordResults.forEach((result, index) => { const rank = index + 1; const score = 1 / (k + rank); rankedScores.set(result.ref, (rankedScores.get(result.ref) || 0) + score); }); semanticResults.forEach((result, index) => { const rank = index + 1; const score = 1 / (k + rank); rankedScores.set(result.id, (rankedScores.get(result.id) || 0) + score); }); const combined = Array.from(rankedScores.entries()).map(([id, score]) => ({ id, score })).sort((a, b) => b.score - a.score); console.log("Combined RRF Scores (Top 10):", combined.slice(0, 10)); return combined; }
 
-        // --- 2. Check if ready and enable form ---
-        function checkAndEnableSearch() {
-            if (isModelReady && isSemanticIndexReady && isLunrIndexReady) {
-                console.log('Hybrid search system ready.');
-                searchInput.disabled = false;
-                searchButton.disabled = false;
-                loadingIndicator.style.display = 'none';
-                searchInput.placeholder = "Search the ledger...";
-            } else {
-                 // Provide more specific loading status
-                 if (!isModelReady) loadingIndicator.textContent = 'Loading model...';
-                 else if (!isSemanticIndexReady) loadingIndicator.textContent = 'Loading semantic index...';
-                 else if (!isLunrIndexReady) loadingIndicator.textContent = 'Loading keyword index...';
-            }
-        }
+        // --- Display Results ---
+        function displayResults(combinedResults, query, keywordResultsRaw) { /* ... (same as previous JS, includes highlighting) ... */
+             const keywordMatchData = new Map(); keywordResultsRaw.forEach(res => keywordMatchData.set(res.ref, res.matchData)); const resultCount = combinedResults.length; searchResultsContainer.innerHTML = `<h3>Found ${resultCount} result${resultCount !== 1 ? 's' : ''} for "${escapeHTML(query)}":</h3>`; if (resultCount === 0) { searchResultsContainer.innerHTML += `<p class="info-message">No relevant results found. Try different search terms.</p>`; return; } const ul = document.createElement('ul'); combinedResults.slice(0, maxResults).forEach(item => { const doc = docMap.get(item.id); if (doc) { const li = document.createElement('li'); const a = document.createElement('a'); a.href = doc.path; a.textContent = doc.title || doc.id; li.appendChild(a); const snippetP = document.createElement('p'); snippetP.className = 'snippet'; let snippetText = doc.body_snippet || "No preview available."; let highlighted = false; const matchData = keywordMatchData.get(doc.id); if (matchData && query) { const terms = Object.keys(matchData.metadata); for (const term of terms) { if (query.toLowerCase().includes(term.toLowerCase())) { const escapedTerm = escapeRegExp(term); const regex = new RegExp(`(${escapedTerm})`, 'gi'); if (snippetText.toLowerCase().includes(term.toLowerCase())) { snippetP.innerHTML = escapeHTML(snippetText).replace(regex, '<mark>$1</mark>'); highlighted = true; break; } } } } if (!highlighted) snippetP.textContent = snippetText + (snippetText.length >= 200 ? '...' : ''); li.appendChild(snippetP); const pathInfo = document.createElement('span'); pathInfo.className = 'path-info'; pathInfo.textContent = `Source: ${doc.path}`; li.appendChild(pathInfo); const scoreInfo = document.createElement('span'); scoreInfo.className = 'similarity-score'; scoreInfo.textContent = `Score: ${item.score.toFixed(4)}`; li.appendChild(scoreInfo); ul.appendChild(li); } else { console.warn("Document details not found in docMap for ID:", item.id); } }); searchResultsContainer.appendChild(ul); if (combinedResults.length > maxResults) { searchResultsContainer.innerHTML += `<p style="font-style: italic; color: #555; margin-top: 1em;">Showing top ${maxResults} results.</p>`; } }
 
-        // --- 3. Perform Search ---
-        async function performSearch(query) {
-             if (!isModelReady || !isSemanticIndexReady || !isLunrIndexReady) {
-                 handleError(new Error("Search components not ready"), "Search is not yet available. Please wait.");
-                 return;
-             }
-             if (!query) {
-                 searchResultsContainer.innerHTML = ''; return;
-             }
+        // --- Helper Functions ---
+         async function generateEmbedding(text) { /* ... (same as previous JS) ... */ if (!embeddingModel) return null; try { console.time(`Embedding: ${text.substring(0,20)}...`); const output = await embeddingModel(text, { pooling: 'mean', normalize: true }); console.timeEnd(`Embedding: ${text.substring(0,20)}...`); if (output && (output.data instanceof Float32Array || Array.isArray(output.data))) { return Array.from(output.data); } return null; } catch (error) { console.error("Error generating embedding:", error); return null; } }
+         function cosineSimilarity(vecA, vecB) { /* ... (same as previous JS) ... */ if (!Array.isArray(vecA) || !Array.isArray(vecB) || vecA.length !== vecB.length || vecA.length === 0) { return 0; } let dotProduct = 0, magnitudeA = 0, magnitudeB = 0; try { for (let i = 0; i < vecA.length; i++) { const valA = Number(vecA[i]) || 0; const valB = Number(vecB[i]) || 0; dotProduct += valA * valB; magnitudeA += valA * valA; magnitudeB += valB * valB; } } catch (e) { return 0; } magnitudeA = Math.sqrt(magnitudeA); magnitudeB = Math.sqrt(magnitudeB); if (magnitudeA && magnitudeB) { return Math.max(-1, Math.min(1, dotProduct / (magnitudeA * magnitudeB))); } else { return 0; } }
+         function handleError(error, userMessage) { /* ... (same as previous JS) ... */ console.error("Search Error Details:", error); searchResultsContainer.innerHTML = `<p class="error-message">${escapeHTML(userMessage)} (See console for details)</p>`; loadingIndicator.style.display = 'none'; if (!isModelReady || !isSemanticIndexReady || !isLunrIndexReady) { searchButton.disabled = true; searchInput.disabled = true; searchInput.placeholder = "Search unavailable"; } else { searchButton.disabled = false; } }
+         function escapeHTML(str) { /* ... (same as previous JS) ... */ const p = document.createElement("p"); p.textContent = str; return p.innerHTML; }
+         function escapeRegExp(string) { /* ... (same as previous JS) ... */ return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
-            console.log(`Performing hybrid search for: "${query}"`);
-            loadingIndicator.textContent = 'Searching...';
-            loadingIndicator.style.display = 'inline-block';
-            searchButton.disabled = true;
-            searchResultsContainer.innerHTML = '';
+        // --- Event Listeners ---
+        searchForm.addEventListener('submit', (event) => { event.preventDefault(); const query = searchInput.value.trim(); performSearch(query); });
+         let debounceTimer; searchInput.addEventListener('input', () => { clearTimeout(debounceTimer); debounceTimer = setTimeout(() => { const query = searchInput.value.trim(); if (query.length > 2 || query.length === 0) { performSearch(query); } }, 350); });
 
-            try {
-                // --- Semantic Search (Promise) ---
-                 const semanticSearchPromise = (async () => {
-                     console.time('Semantic Search');
-                     const queryEmbedding = await generateEmbedding(query);
-                      let results = [];
-                      if (queryEmbedding) {
-                          results = semanticIndexDocs
-                              .map(item => ({
-                                  id: item.id,
-                                  similarity: (Array.isArray(item.embedding) && item.embedding.length > 0)
-                                                ? cosineSimilarity(queryEmbedding, item.embedding)
-                                                : -1 // Penalize items with bad embeddings
-                              }))
-                              .filter(item => item.similarity >= similarityThreshold); // Filter by threshold
-                          results.sort((a, b) => b.similarity - a.similarity);
-                      } else {
-                           console.warn("Could not generate query embedding.");
-                      }
-                      console.timeEnd('Semantic Search');
-                      return results; // Returns [{id, similarity}, ...] sorted
-                 })();
-
-
-                // --- Keyword Search (Promise) ---
-                 const keywordSearchPromise = (async () => {
-                     console.time('Keyword Search');
-                     // Add wildcards for better matching? Example: query + '*' or query.split(' ').map(t=>t+'*').join(' ')
-                     const keywordResults = lunrIndex.search(query);
-                     console.timeEnd('Keyword Search');
-                     return keywordResults; // Returns [{ref: id, score: num, matchData: {...}}, ...]
-                 })();
-
-
-                // --- Wait for both searches and Combine ---
-                const [semanticResultsRanked, keywordResults] = await Promise.all([semanticSearchPromise, keywordSearchPromise]);
-
-                console.time('Result Combination (RRF)');
-                const combinedResults = combineResultsRRF(keywordResults, semanticResultsRanked, rrf_k);
-                console.timeEnd('Result Combination (RRF)');
-
-                displayResults(combinedResults, query, keywordResults); // Pass raw keyword results for highlighting data
-
-            } catch (error) {
-                handleError(error, "Search failed. Please try again.");
-            } finally {
-                loadingIndicator.style.display = 'none';
-                searchButton.disabled = false;
-            }
-        }
-
-        // --- 4. Combine Results (Reciprocal Rank Fusion) ---
-        function combineResultsRRF(keywordResults, semanticResults, k = 60) {
-            const rankedScores = new Map();
-
-            keywordResults.forEach((result, index) => {
-                const rank = index + 1;
-                const score = 1 / (k + rank);
-                rankedScores.set(result.ref, (rankedScores.get(result.ref) || 0) + score);
-            });
-
-             semanticResults.forEach((result, index) => {
-                 const rank = index + 1;
-                 const score = 1 / (k + rank); // Semantic gets equal weight here, adjust multiplier if needed (e.g., * 0.8)
-                 rankedScores.set(result.id, (rankedScores.get(result.id) || 0) + score);
-             });
-
-             const combined = Array.from(rankedScores.entries())
-                 .map(([id, score]) => ({ id, score }))
-                 .sort((a, b) => b.score - a.score);
-
-            console.log("Combined RRF Scores (Top 10):", combined.slice(0, 10));
-            return combined;
-        }
-
-
-        // --- 5. Display Results ---
-        function displayResults(combinedResults, query, keywordResultsRaw) {
-             const keywordMatchData = new Map();
-             keywordResultsRaw.forEach(res => keywordMatchData.set(res.ref, res.matchData));
-
-            const resultCount = combinedResults.length;
-            searchResultsContainer.innerHTML = `<h3>Found ${resultCount} result${resultCount !== 1 ? 's' : ''} for "${escapeHTML(query)}":</h3>`;
-
-            if (resultCount === 0) {
-                searchResultsContainer.innerHTML += `<p class="info-message">No relevant results found. Try different search terms.</p>`;
-                return;
-            }
-
-            const ul = document.createElement('ul');
-             combinedResults.slice(0, maxResults).forEach(item => {
-                 const doc = docMap.get(item.id);
-                 if (doc) {
-                     const li = document.createElement('li');
-                     const a = document.createElement('a');
-                     a.href = doc.path;
-                     a.textContent = doc.title || doc.id;
-                     li.appendChild(a);
-
-                      const snippetP = document.createElement('p');
-                      snippetP.className = 'snippet';
-                      let snippetText = doc.body_snippet || "No preview available."; // Use snippet from index
-
-                      // Keyword highlighting logic
-                       const matchData = keywordMatchData.get(doc.id);
-                       let highlighted = false;
-                       if (matchData && query) {
-                           const terms = Object.keys(matchData.metadata);
-                           for (const term of terms) {
-                               // Check if term is relevant to the query (simple substring match for demo)
-                                if (query.toLowerCase().includes(term.toLowerCase())) {
-                                     const escapedTerm = escapeRegExp(term);
-                                     const regex = new RegExp(`(${escapedTerm})`, 'gi');
-                                     if (snippetText.toLowerCase().includes(term.toLowerCase())) {
-                                          snippetP.innerHTML = escapeHTML(snippetText).replace(regex, '<mark>$1</mark>');
-                                          highlighted = true;
-                                          break; // Highlight first query term match found
-                                     }
-                                }
-                           }
-                       }
-                       if (!highlighted) snippetP.textContent = snippetText + (snippetText.length >= 200 ? '...' : ''); // Show plain snippet if no highlight term found
-                       li.appendChild(snippetP);
-
-                     const pathInfo = document.createElement('span');
-                     pathInfo.className = 'path-info';
-                     pathInfo.textContent = `Source: ${doc.path}`;
-                     li.appendChild(pathInfo);
-
-                      const scoreInfo = document.createElement('span');
-                      scoreInfo.className = 'similarity-score';
-                      scoreInfo.textContent = `Score: ${item.score.toFixed(4)}`; // Show RRF score
-                      li.appendChild(scoreInfo);
-
-                     ul.appendChild(li);
-                 } else {
-                     console.warn("Document details not found in docMap for ID:", item.id);
-                 }
-             });
-            searchResultsContainer.appendChild(ul);
-
-             if (combinedResults.length > maxResults) {
-                 searchResultsContainer.innerHTML += `<p style="font-style: italic; color: #555; margin-top: 1em;">Showing top ${maxResults} results.</p>`;
-             }
-        }
-
-        // --- 6. Helper Functions ---
-         async function generateEmbedding(text) {
-             if (!embeddingModel) return null;
-             try {
-                  console.time(`Embedding: ${text.substring(0,20)}...`);
-                  const output = await embeddingModel(text, { pooling: 'mean', normalize: true });
-                  console.timeEnd(`Embedding: ${text.substring(0,20)}...`);
-                  if (output && (output.data instanceof Float32Array || Array.isArray(output.data))) {
-                       return Array.from(output.data);
-                  }
-                  return null;
-             } catch (error) {
-                  console.error("Error generating embedding:", error);
-                  return null;
-             }
-          }
-
-         function cosineSimilarity(vecA, vecB) {
-             if (!Array.isArray(vecA) || !Array.isArray(vecB) || vecA.length !== vecB.length || vecA.length === 0) { return 0; }
-             let dotProduct = 0, magnitudeA = 0, magnitudeB = 0;
-             for (let i = 0; i < vecA.length; i++) {
-                  const valA = Number(vecA[i]) || 0; const valB = Number(vecB[i]) || 0;
-                  dotProduct += valA * valB; magnitudeA += valA * valA; magnitudeB += valB * valB;
-             }
-             magnitudeA = Math.sqrt(magnitudeA); magnitudeB = Math.sqrt(magnitudeB);
-             if (magnitudeA && magnitudeB) {
-                  return Math.max(-1, Math.min(1, dotProduct / (magnitudeA * magnitudeB)));
-             } else { return 0; }
-         }
-
-         function handleError(error, userMessage) {
-             console.error("Search Error Details:", error);
-             searchResultsContainer.innerHTML = `<p class="error-message">${escapeHTML(userMessage)} (See console for details)</p>`;
-             loadingIndicator.style.display = 'none';
-              if (!isModelReady || !isSemanticIndexReady || !isLunrIndexReady) {
-                  searchButton.disabled = true; searchInput.disabled = true;
-                  searchInput.placeholder = "Search unavailable";
-              } else { searchButton.disabled = false; } // Re-enable only if init was complete
-         }
-
-         function escapeHTML(str) {
-             const p = document.createElement("p"); p.textContent = str; return p.innerHTML;
-         }
-         function escapeRegExp(string) {
-           return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-         }
-
-        // --- 7. Event Listeners ---
-        searchForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const query = searchInput.value.trim();
-            performSearch(query);
-        });
-
-         // Optional: Debounced search on input
-         let debounceTimer;
-         searchInput.addEventListener('input', () => {
-              clearTimeout(debounceTimer);
-              debounceTimer = setTimeout(() => {
-                   const query = searchInput.value.trim();
-                   if (query.length > 2 || query.length === 0) { // Trigger on longer queries or clearing
-                       performSearch(query);
-                   }
-              }, 350); // 350ms delay
-         });
-
-        // --- 8. Initialize ---
+        // --- Initialize ---
         initializeSearch();
 
     </script>
