@@ -1,0 +1,201 @@
+/* --- Basic Reset & Defaults --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: #F8F5ED; /* Off-white/Cream */
+    color: #333;
+    padding: 20px;
+}
+
+/* --- Font Styles --- */
+h1 {
+    font-family: 'Merriweather', serif;
+    color: #1A3A5F; /* Dark Blue/Navy */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.2em;
+    font-size: 2em;
+}
+
+.tagline {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #555;
+    margin-bottom: 2em; /* Space below tagline before search */
+    font-size: 1.1em;
+}
+
+h2 { /* Default styles for non-accordion H2s if any are added later */
+    font-family: 'Merriweather', serif;
+    color: #1A3A5F;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    border-bottom: 2px solid #A0CED9; /* Light Blue/Teal accent */
+    padding-bottom: 0.3em;
+    font-size: 1.5em;
+}
+h2 .emoji {
+    display: inline-block;
+    margin-right: 0.3em;
+}
+
+/* --- Layout --- */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 1em;
+}
+
+section {
+    margin-bottom: 1em; /* Default bottom margin for sections */
+}
+main > .accordion-group {
+    margin-top: 0; /* Remove top margin if accordion is first in main */
+}
+main > .accordion-group > section:last-of-type {
+     margin-bottom: 0; /* Remove margin from last main section */
+}
+
+/* --- Elements Styling --- */
+p {
+    margin-bottom: 1em;
+}
+.accordion-content p:last-child {
+     margin-bottom: 0;
+}
+
+ul { /* Default list styling */
+    list-style-position: outside; /* Use outside for better indent */
+    margin-left: 1.5em; /* Adjust indent */
+    margin-bottom: 1em;
+     padding-left: 0.5em;
+}
+.accordion-content ul {
+      margin-bottom: 1em;
+ }
+ .accordion-content ul:last-child {
+      margin-bottom: 0;
+ }
+.accordion-content li .emoji {
+    display: inline-block;
+    width: 1.5em; /* Align emojis */
+    margin-right: 0.2em;
+}
+
+li { /* Default list item styling */
+    margin-bottom: 0.5em;
+}
+
+/* --- Search Section Styling --- */
+#browse {
+    margin-top: 1.5em;
+    margin-bottom: 2.5em;
+    padding: 20px;
+    background-color: #fdfcf9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+#browse h2 { /* H2 within search section */
+     margin-top: 0;
+     margin-bottom: 1em;
+     font-size: 1.3em;
+     border-bottom: none;
+     text-align: center;
+}
+#browse h2 .emoji { display: inline-block; margin-right: 0.3em; }
+
+#search-form {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#search-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #1A3A5F;
+}
+.search-input-wrapper {
+    display: flex;
+    align-items: stretch; /* Make input/button same height */
+    gap: 0.5em; /* Space between input and button */
+}
+#search-input {
+    flex-grow: 1; /* Input takes remaining space */
+    padding: 12px; font-size: 1em; border: 1px solid #A0CED9;
+    border-radius: 4px; font-family: 'Lato', sans-serif;
+    margin-bottom: 0; /* Removed bottom margin */
+}
+#search-input:focus { outline: none; border-color: #1A3A5F; box-shadow: 0 0 5px rgba(160, 206, 217, 0.5); }
+#search-button {
+    flex-shrink: 0; /* Prevent button shrinking */
+    width: auto; /* Allow button to size based on content/padding */
+    background-color: #1A3A5F; color: #fff; padding: 10px 20px;
+    border: none; border-radius: 4px; font-size: 1em; font-family: 'Lato', sans-serif;
+    cursor: pointer; transition: background-color 0.2s ease;
+    line-height: 1.6; /* Match body line-height */
+}
+#search-button:hover { background-color: #2a5a8a; }
+#search-button:disabled { background-color: #ccc; cursor: not-allowed; }
+#search-input:disabled { background-color: #eee; cursor: not-allowed; }
+#loading-indicator { display: inline-block; margin-left: 15px; font-style: italic; color: #555; }
+
+/* --- Search Results Styling --- */
+#search-results { margin-top: 1.5em; padding-top: 0; }
+#search-results h3 { font-family: 'Merriweather', serif; font-size: 1.2em; margin-bottom: 1em; color: #1A3A5F; text-align: left; border-bottom: 1px solid #eee; padding-bottom: 0.5em; }
+#search-results ul { list-style: none; padding: 0; margin: 0; }
+#search-results li { margin-bottom: 1.5em; padding-bottom: 1em; border-bottom: 1px dotted #ccc; }
+#search-results li:last-child { border-bottom: none; }
+#search-results a { font-weight: bold; color: #1A3A5F; text-decoration: none; font-size: 1.1em; display: block; margin-bottom: 0.3em; }
+#search-results a:hover { text-decoration: underline; }
+#search-results .snippet { display: block; font-size: 0.95em; color: #444; line-height: 1.5; margin-top: 0.3em; }
+#search-results .path-info { display: block; font-size: 0.8em; color: #777; margin-top: 0.4em; }
+#search-results .similarity-score { display: block; font-size: 0.8em; color: #008000; margin-top: 0.4em; }
+
+/* --- Accordion Styling --- */
+.accordion-group { border-top: 1px solid #ddd; margin-top: 0; }
+.accordion { border-bottom: 1px solid #ddd; }
+.accordion-button { font-family: 'Merriweather', serif; background: #fff; color: #1A3A5F; border: none; padding: 1rem 1.5rem; width: 100%; text-align: left; font-size: 1.2em; font-weight: 700; cursor: pointer; transition: background-color 0.2s ease; position: relative; margin: 0; }
+.accordion-button .emoji { display: inline-block; margin-right: 0.5em; }
+.accordion-button::after { content: '▼'; font-size: 0.8em; color: #A0CED9; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); transition: transform 0.2s ease; }
+.accordion.open .accordion-button::after { transform: translateY(-50%) rotate(180deg); }
+.accordion-button:hover, .accordion-button:focus { background-color: #f8f5ed; outline: none; }
+.accordion-content { display: none; padding: 1rem 1.5rem 1.5rem; background-color: #fdfcf9; }
+.accordion.open .accordion-content { display: block; }
+
+/* --- Utility & Message Styles --- */
+.error-message { color: #D8000C; background-color: #FFD2D2; border: 1px solid #D8000C; padding: 10px; margin-top: 15px; border-radius: 5px; }
+.info-message { color: #00529B; background-color: #BDE5F8; border: 1px solid #00529B; padding: 10px; margin-top: 15px; border-radius: 5px; }
+mark { background-color: #a0ced9; padding: 0.1em; border-radius: 2px; }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .container { padding: 15px; margin: 10px auto; }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    .accordion-button { font-size: 1.1em; padding: 0.8rem 1rem; }
+    .accordion-button::after { right: 1rem; }
+    .accordion-content { padding: 0.8rem 1rem 1rem; }
+    body { padding: 5px; font-size: 15px; }
+    #browse { padding: 15px; margin-top: 1em; margin-bottom: 1.5em;}
+    #browse h2 { font-size: 1.2em; }
+    #search-results h3 { font-size: 1.1em; }
+    #search-input { padding: 10px; }
+    .search-input-wrapper { gap: 0.3em; }
+    #search-button { width: auto; padding: 10px 15px; margin-top: 0; }
+    #loading-indicator { display: block; text-align: center; margin-left: 0; margin-top: 10px; }
+}
