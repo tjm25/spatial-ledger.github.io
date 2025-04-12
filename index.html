@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Spatial Ledger</title>
+    <title>The Spatial Ledger (Hybrid Search)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 
+    <script src="https://unpkg.com/lunr/lunr.min.js"></script>
     <style>
         /* --- Basic Reset & Defaults --- */
         * {
@@ -51,6 +52,11 @@
             padding-bottom: 0.3em;
             font-size: 1.5em;
         }
+         /* Ensure emoji spans don't add extra margin/padding */
+         h2 .emoji {
+            display: inline-block;
+            margin-right: 0.3em;
+         }
 
         /* --- Layout --- */
         .container {
@@ -90,7 +96,7 @@
         /* --- Search Form & Results Styling --- */
         #search-form {
             margin-top: 1em;
-            margin-bottom: 20px; /* Space before results */
+            margin-bottom: 20px;
         }
 
         #search-form label {
@@ -104,7 +110,7 @@
             width: 100%;
             padding: 12px;
             font-size: 1em;
-            border: 1px solid #A0CED9; /* Light Blue/Teal border */
+            border: 1px solid #A0CED9;
             border-radius: 4px;
             margin-bottom: 1em;
             font-family: 'Lato', sans-serif;
@@ -161,20 +167,19 @@
             color: #1A3A5F;
         }
 
-        #search-results ul {
+        #search-results ul { /* Specific styles for results list */
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        #search-results li {
+        #search-results li { /* Specific styles for result items */
             margin-bottom: 1.5em;
             padding-bottom: 1em;
             border-bottom: 1px dotted #ccc;
         }
-
         #search-results li:last-child {
-            border-bottom: none;
+             border-bottom: none;
         }
 
         #search-results a {
@@ -195,6 +200,7 @@
              font-size: 0.95em;
              color: #444;
              line-height: 1.5;
+             margin-top: 0.3em;
         }
         #search-results .path-info {
              display: block;
@@ -202,7 +208,7 @@
              color: #777;
              margin-top: 0.4em;
         }
-        #search-results .similarity-score {
+        #search-results .similarity-score { /* Can repurpose for RRF score */
              display: block;
              font-size: 0.8em;
              color: #008000; /* Green */
@@ -210,29 +216,30 @@
         }
 
         .error-message {
-            color: #D8000C; /* Red */
-            background-color: #FFD2D2; /* Light red */
+            color: #D8000C;
+            background-color: #FFD2D2;
             border: 1px solid #D8000C;
             padding: 10px;
             margin-top: 15px;
             border-radius: 5px;
         }
         .info-message {
-            color: #00529B; /* Blue */
-            background-color: #BDE5F8; /* Light blue */
+            color: #00529B;
+            background-color: #BDE5F8;
             border: 1px solid #00529B;
             padding: 10px;
             margin-top: 15px;
             border-radius: 5px;
         }
+        mark { /* Style for keyword highlighting */
+            background-color: #a0ced9;
+            padding: 0.1em;
+            border-radius: 2px;
+        }
 
         /* --- Responsive Adjustments --- */
         @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-                margin: 10px auto;
-            }
-
+            .container { padding: 20px; margin: 10px auto; }
             h1 { font-size: 1.8em; }
             h2 { font-size: 1.4em; }
             #search-results h3 { font-size: 1.2em; }
@@ -252,7 +259,7 @@
 
         <main>
             <section id="what-is-it">
-                <h2>🔍 What is it?</h2>
+                <h2><span class="emoji">🔍</span> What is it?</h2>
                 <p>Every Local Plan makes promises — about how many homes will be built, where they’ll go, and what priorities will shape growth.</p>
                 <p>But promises aren't always kept.</p>
                 <p>The Spatial Ledger examines Local Plans across England and highlights what they say, what they don’t, and where the policies quietly pull in different directions.</p>
@@ -267,14 +274,14 @@
             </section>
 
             <section id="why-it-matters">
-                <h2>🧾 Why it matters</h2>
+                <h2><span class="emoji">🧾</span> Why it matters</h2>
                 <p>Planning shapes everything: where people live, how much they pay, who gets included or left out.</p>
                 <p>Yet much of it is hidden in lengthy documents and technical language, easy to ignore — until a crisis makes the consequences obvious.</p>
                 <p>The Spatial Ledger makes the system easier to understand — and harder to ignore.</p>
             </section>
 
             <section id="how-it-works">
-                <h2>🔦 How it works</h2>
+                <h2><span class="emoji">🔦</span> How it works</h2>
                 <p>We read Local Plans line by line.</p>
                 <p>We flag contradictions, vague promises, and policies that block more than they build.</p>
                 <p>We compare targets to delivery, ambitions to allocations, principles to outcomes.</p>
@@ -303,123 +310,200 @@
         // Import the pipeline function directly from the CDN module
         import { pipeline } from 'https://unpkg.com/@xenova/transformers@latest';
 
-        // Get DOM elements
+        // --- DOM Elements ---
         const searchForm = document.getElementById('search-form');
         const searchInput = document.getElementById('search-input');
         const searchButton = document.getElementById('search-button');
         const searchResultsContainer = document.getElementById('search-results');
         const loadingIndicator = document.getElementById('loading-indicator');
 
-        // State variables
-        let model = null; // Will store the loaded pipeline instance
-        let searchIndex = []; // Will store the fetched index data
+        // --- State Variables ---
+        let embeddingModel = null;
+        let semanticIndexDocs = []; // Stores {id, title, path, embedding, body_snippet}
+        let lunrIndex = null;
+        let docMap = new Map(); // To easily access doc details by ID {id -> {id, title, path, body_snippet}}
+
         let isModelReady = false;
-        let isIndexReady = false;
+        let isSemanticIndexReady = false;
+        let isLunrIndexReady = false;
 
-        // Configuration
+        // --- Configuration ---
         const modelName = 'Xenova/all-MiniLM-L6-v2';
-        const indexFileURL = 'semantic-index.json';
-        const similarityThreshold = 0.3;
-        const maxResults = 15;
+        const semanticIndexURL = 'semantic-index.json'; // Expects { documents: [...] }
+        const lunrIndexURL = 'lunr-index.json';
+        const similarityThreshold = 0.25; // Semantic relevance threshold
+        const maxResults = 20;
+        const rrf_k = 60; // Reciprocal Rank Fusion constant
 
-        // --- 1. Initialize Model and Fetch Index ---
+        // --- 1. Initialization ---
         async function initializeSearch() {
-            console.log('Initializing search (module)...');
-            loadingIndicator.textContent = 'Initializing model...';
+            console.log('Initializing hybrid search...');
+            loadingIndicator.textContent = 'Initializing search...';
             loadingIndicator.style.display = 'inline-block';
+            searchInput.disabled = true;
+            searchButton.disabled = true;
 
             try {
-                // Load the model directly using the imported pipeline function
-                console.log(`Loading model: ${modelName}...`);
-                model = await pipeline('feature-extraction', modelName, {
-                    quantized: true, // Use quantized model for faster loading
-                    progress_callback: data => {
-                        if (data.status === 'progress') {
-                            const percentage = (data.progress || 0).toFixed(2);
-                            loadingIndicator.textContent = `Loading model: ${percentage}%`;
-                        } else {
-                            loadingIndicator.textContent = `Model status: ${data.status}`;
-                        }
-                    }
-                });
-                console.log('Embedding model loaded successfully.');
-                isModelReady = true;
-                checkAndEnableSearch();
+                const modelPromise = loadEmbeddingModel();
+                const semanticPromise = loadSemanticIndex();
+                const lunrPromise = loadLunrIndex();
 
-                // Fetch index concurrently
-                console.log('Fetching search index...');
-                loadingIndicator.textContent = 'Fetching index...';
-                const response = await fetch(indexFileURL);
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch index (${response.status}): ${response.statusText}`);
-                }
-                searchIndex = await response.json();
+                await Promise.all([modelPromise, semanticPromise, lunrPromise]);
 
-                // Validate index structure
-                if (!Array.isArray(searchIndex) || (searchIndex.length > 0 && ((!searchIndex[0].embedding || !Array.isArray(searchIndex[0].embedding)) || !Array.isArray(searchIndex[0].embedding)))) {
-                    console.error("Invalid index structure detected. Expected array of objects with 'embedding' key containing an array.", searchIndex[0]);
-                     throw new Error("Search index format is invalid.");
-                 }
-
-                console.log(`Search index fetched successfully (${searchIndex.length} documents).`);
-                isIndexReady = true;
                 checkAndEnableSearch();
 
             } catch (error) {
                 handleError(error, "Initialization failed. Search is unavailable.");
             } finally {
-                if (isModelReady && isIndexReady) {
+                if (isModelReady && isSemanticIndexReady && isLunrIndexReady) {
                     loadingIndicator.style.display = 'none';
                 }
             }
         }
 
+        async function loadEmbeddingModel() {
+             if (isModelReady) return;
+             console.log(`Loading embedding model: ${modelName}...`);
+             loadingIndicator.textContent = 'Loading model...';
+             embeddingModel = await pipeline('feature-extraction', modelName, {
+                 quantized: true,
+                 progress_callback: data => {
+                     if (data.status === 'progress') {
+                         const percentage = (data.progress || 0).toFixed(2);
+                         loadingIndicator.textContent = `Loading model: ${percentage}%`;
+                     } else {
+                          loadingIndicator.textContent = `Model status: ${data.status}`;
+                     }
+                 }
+             });
+             console.log('Embedding model loaded successfully.');
+             isModelReady = true;
+        }
+
+        async function loadSemanticIndex() {
+            if (isSemanticIndexReady) return;
+            console.log('Fetching semantic index...');
+            loadingIndicator.textContent = 'Fetching semantic index...';
+            const response = await fetch(semanticIndexURL);
+            if (!response.ok) throw new Error(`Failed to fetch semantic index (${response.status})`);
+            const data = await response.json();
+
+            if (!data || !Array.isArray(data.documents)) {
+                throw new Error("Semantic index format invalid (expected { documents: [...] }).");
+            }
+            semanticIndexDocs = data.documents;
+
+            // Build the docMap and validate embeddings
+            docMap.clear();
+            let validEmbeddings = 0;
+            semanticIndexDocs.forEach(doc => {
+                 // Store basic info for lookup
+                 docMap.set(doc.id, {
+                     id: doc.id,
+                     title: doc.title,
+                     path: doc.path,
+                     body_snippet: doc.body_snippet || ""
+                 });
+                 // Basic validation of embedding structure
+                 if (doc.embedding && Array.isArray(doc.embedding) && doc.embedding.length > 0) {
+                     validEmbeddings++;
+                 } else {
+                      // console.warn(`Document ${doc.id} has missing or invalid embedding.`);
+                      // Ensure it has an empty array if missing/invalid, for safety
+                      doc.embedding = [];
+                 }
+            });
+            console.log(`Semantic index fetched successfully (${semanticIndexDocs.length} docs, ${validEmbeddings} valid embeddings).`);
+            isSemanticIndexReady = true;
+        }
+
+        async function loadLunrIndex() {
+            if (isLunrIndexReady) return;
+            console.log('Fetching Lunr index...');
+            loadingIndicator.textContent = 'Fetching keyword index...';
+            const response = await fetch(lunrIndexURL);
+            if (!response.ok) throw new Error(`Failed to fetch Lunr index (${response.status})`);
+            const serializedIndex = await response.text();
+            lunrIndex = lunr.Index.load(JSON.parse(serializedIndex));
+            console.log('Lunr index loaded successfully.');
+            isLunrIndexReady = true;
+        }
+
+
         // --- 2. Check if ready and enable form ---
         function checkAndEnableSearch() {
-            if (isModelReady && isIndexReady) {
-                console.log('Search system ready.');
+            if (isModelReady && isSemanticIndexReady && isLunrIndexReady) {
+                console.log('Hybrid search system ready.');
                 searchInput.disabled = false;
                 searchButton.disabled = false;
                 loadingIndicator.style.display = 'none';
                 searchInput.placeholder = "Search the ledger...";
+            } else {
+                 // Provide more specific loading status
+                 if (!isModelReady) loadingIndicator.textContent = 'Loading model...';
+                 else if (!isSemanticIndexReady) loadingIndicator.textContent = 'Loading semantic index...';
+                 else if (!isLunrIndexReady) loadingIndicator.textContent = 'Loading keyword index...';
             }
         }
 
         // --- 3. Perform Search ---
         async function performSearch(query) {
-            if (!isModelReady || !isIndexReady) {
-                handleError(new Error("Search components not ready"), "Search is not yet available. Please wait.");
-                return;
-            }
-            if (!query) {
-                searchResultsContainer.innerHTML = ''; return;
-            }
+             if (!isModelReady || !isSemanticIndexReady || !isLunrIndexReady) {
+                 handleError(new Error("Search components not ready"), "Search is not yet available. Please wait.");
+                 return;
+             }
+             if (!query) {
+                 searchResultsContainer.innerHTML = ''; return;
+             }
 
-            console.log(`Performing search for: "${query}"`);
+            console.log(`Performing hybrid search for: "${query}"`);
             loadingIndicator.textContent = 'Searching...';
             loadingIndicator.style.display = 'inline-block';
             searchButton.disabled = true;
             searchResultsContainer.innerHTML = '';
 
             try {
-                console.time('Query Embedding Generation');
-                const queryEmbedding = await generateEmbedding(query);
-                console.timeEnd('Query Embedding Generation');
-                if (!queryEmbedding) throw new Error("Could not generate query embedding.");
+                // --- Semantic Search (Promise) ---
+                 const semanticSearchPromise = (async () => {
+                     console.time('Semantic Search');
+                     const queryEmbedding = await generateEmbedding(query);
+                      let results = [];
+                      if (queryEmbedding) {
+                          results = semanticIndexDocs
+                              .map(item => ({
+                                  id: item.id,
+                                  similarity: (Array.isArray(item.embedding) && item.embedding.length > 0)
+                                                ? cosineSimilarity(queryEmbedding, item.embedding)
+                                                : -1 // Penalize items with bad embeddings
+                              }))
+                              .filter(item => item.similarity >= similarityThreshold); // Filter by threshold
+                          results.sort((a, b) => b.similarity - a.similarity);
+                      } else {
+                           console.warn("Could not generate query embedding.");
+                      }
+                      console.timeEnd('Semantic Search');
+                      return results; // Returns [{id, similarity}, ...] sorted
+                 })();
 
-                console.time('Similarity Calculation');
-                const results = searchIndex.map(item => {
-                    const itemEmbedding = item.embedding?.data || item.embedding; // Handle potential nesting
-                    if (!Array.isArray(itemEmbedding) || itemEmbedding.length === 0) {
-                        return { ...item, similarity: -1 };
-                    }
-                    const similarity = cosineSimilarity(queryEmbedding, itemEmbedding);
-                    return { ...item, similarity };
-                }).filter(item => item.similarity > -1);
-                console.timeEnd('Similarity Calculation');
 
-                results.sort((a, b) => b.similarity - a.similarity);
-                displayResults(results, query);
+                // --- Keyword Search (Promise) ---
+                 const keywordSearchPromise = (async () => {
+                     console.time('Keyword Search');
+                     // Add wildcards for better matching? Example: query + '*' or query.split(' ').map(t=>t+'*').join(' ')
+                     const keywordResults = lunrIndex.search(query);
+                     console.timeEnd('Keyword Search');
+                     return keywordResults; // Returns [{ref: id, score: num, matchData: {...}}, ...]
+                 })();
+
+
+                // --- Wait for both searches and Combine ---
+                const [semanticResultsRanked, keywordResults] = await Promise.all([semanticSearchPromise, keywordSearchPromise]);
+
+                console.time('Result Combination (RRF)');
+                const combinedResults = combineResultsRRF(keywordResults, semanticResultsRanked, rrf_k);
+                console.timeEnd('Result Combination (RRF)');
+
+                displayResults(combinedResults, query, keywordResults); // Pass raw keyword results for highlighting data
 
             } catch (error) {
                 handleError(error, "Search failed. Please try again.");
@@ -429,107 +513,147 @@
             }
         }
 
-        // Helper function to generate embeddings using the loaded 'model' instance
-        async function generateEmbedding(text) {
-           if (!model) return null;
-           try {
-               const output = await model(text, { pooling: 'mean', normalize: true });
-               // Check if output.data exists and is the expected type (Float32Array or Array)
-               if (output && (output.data instanceof Float32Array || Array.isArray(output.data))) {
-                   // Convert Float32Array to regular array if needed for consistency,
-                   // although cosineSimilarity function can handle typed arrays.
-                   return Array.from(output.data);
-               } else {
-                   console.warn("Unexpected embedding output format:", output);
-                   return null;
-               }
-           } catch (error) {
-                console.error("Error generating embedding:", error);
-                return null;
-           }
+        // --- 4. Combine Results (Reciprocal Rank Fusion) ---
+        function combineResultsRRF(keywordResults, semanticResults, k = 60) {
+            const rankedScores = new Map();
+
+            keywordResults.forEach((result, index) => {
+                const rank = index + 1;
+                const score = 1 / (k + rank);
+                rankedScores.set(result.ref, (rankedScores.get(result.ref) || 0) + score);
+            });
+
+             semanticResults.forEach((result, index) => {
+                 const rank = index + 1;
+                 const score = 1 / (k + rank); // Semantic gets equal weight here, adjust multiplier if needed (e.g., * 0.8)
+                 rankedScores.set(result.id, (rankedScores.get(result.id) || 0) + score);
+             });
+
+             const combined = Array.from(rankedScores.entries())
+                 .map(([id, score]) => ({ id, score }))
+                 .sort((a, b) => b.score - a.score);
+
+            console.log("Combined RRF Scores (Top 10):", combined.slice(0, 10));
+            return combined;
         }
 
 
-        // --- 4. Display Results ---
-        function displayResults(results, query) {
-            const filteredResults = results.filter(item => item.similarity >= similarityThreshold);
+        // --- 5. Display Results ---
+        function displayResults(combinedResults, query, keywordResultsRaw) {
+             const keywordMatchData = new Map();
+             keywordResultsRaw.forEach(res => keywordMatchData.set(res.ref, res.matchData));
 
-            if (filteredResults.length === 0) {
-                searchResultsContainer.innerHTML = `<p class="info-message">No relevant results found for "${escapeHTML(query)}". Try different search terms.</p>`;
+            const resultCount = combinedResults.length;
+            searchResultsContainer.innerHTML = `<h3>Found ${resultCount} result${resultCount !== 1 ? 's' : ''} for "${escapeHTML(query)}":</h3>`;
+
+            if (resultCount === 0) {
+                searchResultsContainer.innerHTML += `<p class="info-message">No relevant results found. Try different search terms.</p>`;
                 return;
             }
 
-            searchResultsContainer.innerHTML = `<h3>Found ${filteredResults.length} relevant result(s) for "${escapeHTML(query)}":</h3>`;
             const ul = document.createElement('ul');
+             combinedResults.slice(0, maxResults).forEach(item => {
+                 const doc = docMap.get(item.id);
+                 if (doc) {
+                     const li = document.createElement('li');
+                     const a = document.createElement('a');
+                     a.href = doc.path;
+                     a.textContent = doc.title || doc.id;
+                     li.appendChild(a);
 
-            filteredResults.slice(0, maxResults).forEach(item => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = item.path;
-                a.textContent = item.title || item.id;
-                li.appendChild(a);
+                      const snippetP = document.createElement('p');
+                      snippetP.className = 'snippet';
+                      let snippetText = doc.body_snippet || "No preview available."; // Use snippet from index
 
-                const snippet = document.createElement('p');
-                snippet.className = 'snippet';
-                let bodyText = item.body || ''; // Use body field if it exists
-                snippet.textContent = bodyText.substring(0, 200) + (bodyText.length > 200 ? '...' : '');
-                li.appendChild(snippet);
+                      // Keyword highlighting logic
+                       const matchData = keywordMatchData.get(doc.id);
+                       let highlighted = false;
+                       if (matchData && query) {
+                           const terms = Object.keys(matchData.metadata);
+                           for (const term of terms) {
+                               // Check if term is relevant to the query (simple substring match for demo)
+                                if (query.toLowerCase().includes(term.toLowerCase())) {
+                                     const escapedTerm = escapeRegExp(term);
+                                     const regex = new RegExp(`(${escapedTerm})`, 'gi');
+                                     if (snippetText.toLowerCase().includes(term.toLowerCase())) {
+                                          snippetP.innerHTML = escapeHTML(snippetText).replace(regex, '<mark>$1</mark>');
+                                          highlighted = true;
+                                          break; // Highlight first query term match found
+                                     }
+                                }
+                           }
+                       }
+                       if (!highlighted) snippetP.textContent = snippetText + (snippetText.length >= 200 ? '...' : ''); // Show plain snippet if no highlight term found
+                       li.appendChild(snippetP);
 
-                const pathInfo = document.createElement('span');
-                pathInfo.className = 'path-info';
-                pathInfo.textContent = `Source: ${item.path}`;
-                li.appendChild(pathInfo);
+                     const pathInfo = document.createElement('span');
+                     pathInfo.className = 'path-info';
+                     pathInfo.textContent = `Source: ${doc.path}`;
+                     li.appendChild(pathInfo);
 
-                const scoreInfo = document.createElement('span');
-                scoreInfo.className = 'similarity-score';
-                scoreInfo.textContent = `Relevance: ${(item.similarity * 100).toFixed(1)}%`;
-                li.appendChild(scoreInfo);
+                      const scoreInfo = document.createElement('span');
+                      scoreInfo.className = 'similarity-score';
+                      scoreInfo.textContent = `Score: ${item.score.toFixed(4)}`; // Show RRF score
+                      li.appendChild(scoreInfo);
 
-                ul.appendChild(li);
-            });
+                     ul.appendChild(li);
+                 } else {
+                     console.warn("Document details not found in docMap for ID:", item.id);
+                 }
+             });
             searchResultsContainer.appendChild(ul);
 
-            if (filteredResults.length > maxResults) {
-                searchResultsContainer.innerHTML += `<p style="font-style: italic; color: #555; margin-top: 1em;">Showing top ${maxResults} results.</p>`;
-            }
-        }
-
-        // --- 5. Cosine Similarity Function ---
-        function cosineSimilarity(vecA, vecB) {
-            if (!Array.isArray(vecA) || !Array.isArray(vecB) || vecA.length !== vecB.length || vecA.length === 0) {
-                 return 0;
+             if (combinedResults.length > maxResults) {
+                 searchResultsContainer.innerHTML += `<p style="font-style: italic; color: #555; margin-top: 1em;">Showing top ${maxResults} results.</p>`;
              }
-            let dotProduct = 0, magnitudeA = 0, magnitudeB = 0;
-            try {
-                for (let i = 0; i < vecA.length; i++) {
-                     const valA = Number(vecA[i]) || 0;
-                     const valB = Number(vecB[i]) || 0;
-                     dotProduct += valA * valB;
-                     magnitudeA += valA * valA;
-                     magnitudeB += valB * valB;
-                }
-            } catch (e) { return 0; }
-            magnitudeA = Math.sqrt(magnitudeA);
-            magnitudeB = Math.sqrt(magnitudeB);
-            if (magnitudeA && magnitudeB) {
-                return Math.max(-1, Math.min(1, dotProduct / (magnitudeA * magnitudeB)));
-            } else { return 0; }
         }
 
-        // --- 6. Utility Functions ---
-        function handleError(error, userMessage) {
-            console.error("Search Error:", error);
-            searchResultsContainer.innerHTML = `<p class="error-message">${escapeHTML(userMessage)}</p>`;
-            loadingIndicator.style.display = 'none';
-            if (!isModelReady || !isIndexReady) {
-                 searchButton.disabled = true; searchInput.disabled = true;
-            } else { searchButton.disabled = false; }
-        }
+        // --- 6. Helper Functions ---
+         async function generateEmbedding(text) {
+             if (!embeddingModel) return null;
+             try {
+                  console.time(`Embedding: ${text.substring(0,20)}...`);
+                  const output = await embeddingModel(text, { pooling: 'mean', normalize: true });
+                  console.timeEnd(`Embedding: ${text.substring(0,20)}...`);
+                  if (output && (output.data instanceof Float32Array || Array.isArray(output.data))) {
+                       return Array.from(output.data);
+                  }
+                  return null;
+             } catch (error) {
+                  console.error("Error generating embedding:", error);
+                  return null;
+             }
+          }
 
-        function escapeHTML(str) {
-            const p = document.createElement("p");
-            p.textContent = str; return p.innerHTML;
-        }
+         function cosineSimilarity(vecA, vecB) {
+             if (!Array.isArray(vecA) || !Array.isArray(vecB) || vecA.length !== vecB.length || vecA.length === 0) { return 0; }
+             let dotProduct = 0, magnitudeA = 0, magnitudeB = 0;
+             for (let i = 0; i < vecA.length; i++) {
+                  const valA = Number(vecA[i]) || 0; const valB = Number(vecB[i]) || 0;
+                  dotProduct += valA * valB; magnitudeA += valA * valA; magnitudeB += valB * valB;
+             }
+             magnitudeA = Math.sqrt(magnitudeA); magnitudeB = Math.sqrt(magnitudeB);
+             if (magnitudeA && magnitudeB) {
+                  return Math.max(-1, Math.min(1, dotProduct / (magnitudeA * magnitudeB)));
+             } else { return 0; }
+         }
+
+         function handleError(error, userMessage) {
+             console.error("Search Error Details:", error);
+             searchResultsContainer.innerHTML = `<p class="error-message">${escapeHTML(userMessage)} (See console for details)</p>`;
+             loadingIndicator.style.display = 'none';
+              if (!isModelReady || !isSemanticIndexReady || !isLunrIndexReady) {
+                  searchButton.disabled = true; searchInput.disabled = true;
+                  searchInput.placeholder = "Search unavailable";
+              } else { searchButton.disabled = false; } // Re-enable only if init was complete
+         }
+
+         function escapeHTML(str) {
+             const p = document.createElement("p"); p.textContent = str; return p.innerHTML;
+         }
+         function escapeRegExp(string) {
+           return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+         }
 
         // --- 7. Event Listeners ---
         searchForm.addEventListener('submit', (event) => {
@@ -538,9 +662,19 @@
             performSearch(query);
         });
 
-        // --- 8. Initialize on page load ---
-        // No need for DOMContentLoaded listener when using type="module" for the main script,
-        // as module scripts execution is deferred by default.
+         // Optional: Debounced search on input
+         let debounceTimer;
+         searchInput.addEventListener('input', () => {
+              clearTimeout(debounceTimer);
+              debounceTimer = setTimeout(() => {
+                   const query = searchInput.value.trim();
+                   if (query.length > 2 || query.length === 0) { // Trigger on longer queries or clearing
+                       performSearch(query);
+                   }
+              }, 350); // 350ms delay
+         });
+
+        // --- 8. Initialize ---
         initializeSearch();
 
     </script>
