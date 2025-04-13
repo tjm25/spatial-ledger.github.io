@@ -1,0 +1,67 @@
+[
+    {
+      "id": "shropshire",
+      "name": "Shropshire Council",
+      "plan_status": "Adopted 2011 (CS) / 2015 (SAMDev)",
+      "up_to_date": false,
+      "last_adoption_year": 2015,
+      "update_in_progress": true,
+      "status_code": "adopted_outdated_reviewing",
+      "years_since_adoption": null,
+      "nppf_defaulting": true,
+      "plan_risk_score": 7,
+      "notes_short": "Shropshire’s existing plan is a 2011 Core Strategy and 2015 Site Allocations document, now aging. A comprehensive Local Plan Review (2016-2038) was submitted in 2021 but has faced delays (particularly over river phosphate neutrality) and is still not adopted. This delay prolongs reliance on older policies, though the council has mostly managed supply via interim measures."
+    },
+    {
+      "id": "barnet",
+      "name": "Barnet London Borough",
+      "plan_status": "Adopted 2022",
+      "up_to_date": true,
+      "last_adoption_year": 2022,
+      "update_in_progress": false,
+      "status_code": "adopted_ok",
+      "years_since_adoption": null,
+      "nppf_defaulting": false,
+      "plan_risk_score": 3,
+      "notes_short": "Barnet adopted its Local Plan relatively recently (2022), covering the period to 2036. It is generally considered up-to-date against current NPPF requirements."
+    },
+    {
+      "id": "epping-forest",
+      "name": "Epping Forest District Council",
+      "plan_status": "Adopted 2022",
+      "up_to_date": true,
+      "last_adoption_year": 2022,
+      "update_in_progress": false,
+      "status_code": "adopted_ok",
+      "years_since_adoption": null,
+      "nppf_defaulting": false,
+      "plan_risk_score": 4,
+      "notes_short": "Local Plan (2011-2033) adopted in 2022 after significant delays during examination, addressing previous soundness concerns."
+    },
+     {
+      "id": "generic-emerging",
+      "name": "Example Council (Emerging)",
+      "plan_status": "Emerging (Reg 19)",
+      "up_to_date": false,
+      "last_adoption_year": 2010,
+      "update_in_progress": true,
+      "status_code": "emerging_submitted",
+      "years_since_adoption": null,
+      "nppf_defaulting": true,
+      "plan_risk_score": 8,
+      "notes_short": "Plan currently under examination following Regulation 19 consultation. Adoption anticipated next year."
+    },
+    {
+      "id": "generic-stalled",
+      "name": "Example Council (Stalled)",
+      "plan_status": "Review Stalled",
+      "up_to_date": false,
+      "last_adoption_year": 2014,
+      "update_in_progress": false,
+      "status_code": "update_stalled",
+      "years_since_adoption": null,
+      "nppf_defaulting": true,
+      "plan_risk_score": 9,
+      "notes_short": "Attempted plan review paused indefinitely due to political disagreement / resource issues. Relies on significantly outdated policies."
+    }
+  ]

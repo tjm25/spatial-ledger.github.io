@@ -31,6 +31,20 @@ h1 {
     font-size: 1.1em;
 }
 
+h2 { /* Default styles for non-accordion H2s if any are added later */
+    font-family: 'Merriweather', serif;
+    color: #1A3A5F;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    border-bottom: 2px solid #A0CED9; /* Light Blue/Teal accent */
+    padding-bottom: 0.3em;
+    font-size: 1.5em;
+}
+h2 .emoji {
+    display: inline-block;
+    margin-right: 0.3em;
+}
+
 /* --- Layout --- */
 .container {
     max-width: 800px;
@@ -47,8 +61,11 @@ header {
     padding-top: 1em;
 }
 
+section {
+    margin-bottom: 1em; /* Default bottom margin for sections */
+}
 main > .accordion-group {
-    margin-top: 0; /* Remove top margin as search/status link is above */
+    margin-top: 0; /* Remove top margin if accordion is first in main */
 }
 main > .accordion-group > section:last-of-type {
      margin-bottom: 0; /* Remove margin from last main section */
@@ -84,10 +101,9 @@ li { /* Default list item styling */
     margin-bottom: 0.5em;
 }
 
-/* --- Search Section Styling --- */
+/* --- Search Section Styling (#browse on index.html) --- */
 #browse {
     margin-top: 1.5em;
-    /* margin-bottom: 2.5em; REMOVED - Handled by status-link-section now */
     margin-bottom: 1.5em; /* Reduced bottom margin */
     padding: 20px;
     background-color: #fdfcf9;
@@ -135,7 +151,7 @@ li { /* Default list item styling */
 #search-input:disabled { background-color: #eee; cursor: not-allowed; }
 #loading-indicator { display: inline-block; margin-left: 15px; font-style: italic; color: #555; }
 
-/* --- Status Link Section --- */
+/* --- Status Link Section (Below Search on index.html) --- */
 .status-link-section {
     text-align: center;
     margin-top: -0.5em; /* Pull slightly closer to search */
@@ -148,8 +164,7 @@ li { /* Default list item styling */
 .status-link-section a { color: #1A3A5F; font-weight: bold; text-decoration: underline; transition: color 0.2s ease; }
 .status-link-section a:hover { color: #2a5a8a; text-decoration: none; }
 
-
-/* --- Search Results Styling --- */
+/* --- Search Results Styling (#search-results on index.html) --- */
 #search-results { margin-top: 1.5em; padding-top: 0; }
 #search-results h3 { font-family: 'Merriweather', serif; font-size: 1.2em; margin-bottom: 1em; color: #1A3A5F; text-align: left; border-bottom: 1px solid #eee; padding-bottom: 0.5em; }
 #search-results ul { list-style: none; padding: 0; margin: 0; }
@@ -161,27 +176,60 @@ li { /* Default list item styling */
 #search-results .path-info { display: block; font-size: 0.8em; color: #777; margin-top: 0.4em; }
 #search-results .similarity-score { display: block; font-size: 0.8em; color: #008000; margin-top: 0.4em; }
 
-/* --- Accordion Styling --- */
+/* --- Accordion Styling (index.html) --- */
 .accordion-group { border-top: 1px solid #ddd; margin-top: 0; }
-.accordion { border-bottom: 1px solid #ddd; margin-bottom: 0; } /* Removed margin, border provides separation */
+.accordion { border-bottom: 1px solid #ddd; margin-bottom: 0; }
 .accordion-button { font-family: 'Merriweather', serif; background: #fff; color: #1A3A5F; border: none; padding: 1rem 1.5rem; width: 100%; text-align: left; font-size: 1.2em; font-weight: 700; cursor: pointer; transition: background-color 0.2s ease; position: relative; margin: 0; }
 .accordion-button .emoji { display: inline-block; margin-right: 0.5em; }
 .accordion-button::after { content: '▼'; font-size: 0.8em; color: #A0CED9; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%) rotate(0deg); transition: transform 0.3s ease-out; }
 .accordion.open .accordion-button::after { transform: translateY(-50%) rotate(180deg); }
 .accordion-button:hover, .accordion-button:focus { background-color: #f8f5ed; outline: none; }
+.accordion-content { max-height: 0; overflow: hidden; padding: 0 1.5rem; background-color: #fdfcf9; transition: max-height 0.35s ease-out, padding 0.35s ease-out; }
+.accordion.open .accordion-content { max-height: 1000px; /* Adjust if needed */ padding: 1rem 1.5rem 1.5rem; }
 
-.accordion-content {
-    max-height: 0; /* Initially hidden */
-    overflow: hidden;
-    padding: 0 1.5rem; /* Horizontal padding only when closed */
-    background-color: #fdfcf9;
-    transition: max-height 0.35s ease-out, padding 0.35s ease-out; /* Animate */
-}
-.accordion.open .accordion-content {
-    max-height: 1000px; /* Large value allowing content to expand */
-    padding: 1rem 1.5rem 1.5rem; /* Restore full padding when open */
-}
+/* --- DASHBOARD PAGE STYLES (status.html) --- */
+.dashboard-controls { margin: 2em 0; padding: 15px; background-color: #fdfcf9; border: 1px solid #eee; border-radius: 4px; }
+.dashboard-controls label { font-weight: bold; margin-right: 0.5em; color: #1A3A5F; }
+#status-filter { padding: 8px 10px; border: 1px solid #A0CED9; border-radius: 4px; font-size: 1em; min-width: 250px; }
+#status-filter:focus { outline: none; border-color: #1A3A5F; box-shadow: 0 0 5px rgba(160, 206, 217, 0.5); }
+.dashboard-table-container .table-wrapper { overflow-x: auto; margin-top: 1em; }
+.dashboard-table-container table { width: 100%; border-collapse: collapse; font-size: 0.9em; white-space: nowrap; }
+.dashboard-table-container th, .dashboard-table-container td { padding: 10px 12px; border: 1px solid #ddd; text-align: left; vertical-align: middle; }
+.dashboard-table-container thead th { background-color: #eef7fa; font-family: 'Merriweather', serif; font-weight: bold; color: #1A3A5F; position: sticky; top: 0; z-index: 1; }
+.dashboard-table-container tbody tr { cursor: pointer; transition: background-color 0.15s ease; }
+.dashboard-table-container tbody tr:nth-child(even) { background-color: #f9f9f9; }
+.dashboard-table-container tbody tr:hover { background-color: #f0f8ff; }
+.dashboard-table-container td.center, .dashboard-table-container th.center { text-align: center; }
 
+/* --- Status Code "Blobs" (Updated) --- */
+.status-cell { font-weight: bold; text-align: center; padding: 8px 10px; border-radius: 15px; color: #333; min-width: 140px; white-space: normal; font-size: 0.9em; }
+.status-cell::before { margin-right: 0.5em; font-size: 1.1em; vertical-align: middle; }
+/* adopted_recent */
+.status-adopted_recent { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+.status-adopted_recent::before { content: '✅'; }
+/* adopted_outdated */
+.status-adopted_outdated { background-color: #fff3cd; border: 1px solid #ffeeba; color: #856404; }
+.status-adopted_outdated::before { content: '⚠️'; }
+/* emerging_in_progress */
+.status-emerging_in_progress { background-color: #cce5ff; border: 1px solid #b8daff; color: #004085; }
+.status-emerging_in_progress::before { content: '⏳'; }
+/* withdrawn_or_vacuum */
+.status-withdrawn_or_vacuum { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+.status-withdrawn_or_vacuum::before { content: '❌'; }
+/* just_adopted_updating */
+.status-just_adopted_updating { background-color: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+.status-just_adopted_updating::before { content: '🔄'; }
+/* Unknown (Fallback) */
+.status-unknown { background-color: #e2e3e5; border: 1px solid #d6d8db; color: #383d41; }
+.status-unknown::before { content: '❓'; }
+
+/* --- Notes Display Area (status.html) --- */
+.notes-display { margin-top: 2em; padding: 20px; border: 1px solid #A0CED9; border-radius: 5px; background-color: #f0f8ff; position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.notes-display h3 { margin-top: 0; margin-bottom: 0.8em; font-family: 'Merriweather', serif; color: #1A3A5F; border-bottom: 1px solid #A0CED9; padding-bottom: 0.5em; }
+#notes-lpa-name { font-style: italic; }
+#notes-content { font-size: 0.95em; line-height: 1.6; }
+.notes-display .close-button { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 1.8em; font-weight: bold; color: #aaa; cursor: pointer; line-height: 1; padding: 0; }
+.notes-display .close-button:hover { color: #333; }
 
 /* --- Footer --- */
 footer { margin-top: 3em; padding-top: 1.5em; border-top: 1px solid #eee; text-align: center; }
@@ -195,10 +243,16 @@ footer { margin-top: 3em; padding-top: 1.5em; border-top: 1px solid #eee; text-a
 mark { background-color: #a0ced9; padding: 0.1em; border-radius: 2px; }
 
 /* --- Responsive Adjustments --- */
+@media (max-width: 768px) { /* Combined mobile rules */
+    .dashboard-table-container th, .dashboard-table-container td { padding: 8px 10px; font-size: 0.85em; }
+    .status-cell { min-width: 110px; white-space: normal; font-size: 0.85em; }
+    #status-filter { min-width: 0; width: 100%; margin-top: 0.5em; }
+    .dashboard-controls label { display: block; margin-bottom: 0.2em; }
+}
 @media (max-width: 600px) {
     .container { padding: 15px; margin: 10px auto; }
     h1 { font-size: 1.8em; }
-    h2 { font-size: 1.4em; }
+    h2 { font-size: 1.4em; } /* Keep main section H2 size */
     .accordion-button { font-size: 1.1em; padding: 0.8rem 1rem; }
     .accordion-button::after { right: 1rem; }
     .accordion-content { padding-left: 1rem; padding-right: 1rem; }
@@ -212,6 +266,6 @@ mark { background-color: #a0ced9; padding: 0.1em; border-radius: 2px; }
     .search-input-wrapper { gap: 0.3em; }
     #search-button { width: auto; padding: 10px 15px; margin-top: 0; }
     #loading-indicator { display: block; text-align: center; margin-left: 0; margin-top: 10px; }
-    .footer-text, .footer-text.disclaimer { font-size: 0.75em; }
-    footer { margin-top: 2em; padding-top: 1em; }
+     .footer-text, .footer-text.disclaimer { font-size: 0.75em; }
+     footer { margin-top: 2em; padding-top: 1em; }
 }
