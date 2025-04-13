@@ -2350,5 +2350,403 @@
     ],
     "region": "East Midlands",
     "plan_risk_score": 2
+  },
+  {
+    "id": "E60000297",
+    "name": "Swindon Borough Council",
+    "plan_status": "Adopted 2015",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Swindon’s Local Plan (2015) allocated major growth (e.g., Wichelstowe) which is now largely in progress. A Local Plan Review to 2036 began with a submission draft in 2021, but examination was suspended due to uncertainty over national changes. Adoption is now expected in 2024. The 2015 plan was sufficient until recently, but as its allocations build out, Swindon needs the new plan (with additional sites and updated policies) to avoid future land supply gaps. Currently, supply remains decent and the plan delay hasn’t yet led to severe speculative pressure.",
+    "notes": "Swindon’s 2015 Local Plan (to 2026) enabled large urban extensions like Wichelstowe, Kingsdown, and New Eastern Villages (NEV), totalling over 20,000 homes. These projects are well underway: Wichelstowe and parts of NEV have homes occupied and infrastructure (like the Wichelstowe Southern Access) delivered. As such, Swindon’s housing delivery has been strong. However, the plan’s end date looms and some later phases (e.g., the rest of NEV and Kingsdown) will extend beyond 2026. The Council prepared a Local Plan Review (to 2036) and submitted it in April 2022. Examination was paused at the council’s request in Sept 2022, likely due to awaiting clarity on government planning reforms and to consider higher housing numbers. As of late 2023, the examination is set to resume with Main Modifications. If all goes well, adoption could occur by mid-2024. During this pause, Swindon has fortunately maintained about a 5-year supply, thanks to the continued build-out of the big allocations. Thus, the tilted balance has been mostly avoided, although the Council has faced pressure to approve some additional small sites to keep supply on track (e.g., a recent appeal for 70 homes on a non-allocated site was allowed, citing looming shortfalls). The risk will rise if the new plan were further delayed because by late decade many allocated sites will be complete, and without new ones, supply would drop. The emerging plan adds some new allocations (including expanding some existing sites and possibly a new village at Redlands Airfield) to top up supply. Given Swindon’s track record of proactive planning, it’s likely to get the plan over the line soon, minimizing any gap. In essence, while the 2015 plan is aging, Swindon hasn’t yet hit a crisis due to the strategic sites carrying it through. Plan risk is moderate; timely adoption of the new plan will ensure Swindon can transition seamlessly and continue its major growth projects (like completing NEV) without a policy vacuum.",
+    "references": [
+      "https://www.swindon.gov.uk/info/20113/local_plan_and_planning_policy/635/swindon_local_plan_review"
+    ],
+    "region": "South West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000261",
+    "name": "Swale Borough Council",
+    "plan_status": "Adopted 2017",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "Swale’s Local Plan was adopted in 2017 (covering 2014-2031) and by 2022 was under review with a draft proposing significant further allocations. That review was halted by a new administration in 2022 over concerns about overdevelopment. The 2017 plan is now getting dated and certain sites (mainly around Sittingbourne) are built out. Swale risks supply shortfalls without a new plan, and its ability to resist new proposals is weakening – the borough needs to resume the plan process to avoid falling into a tilted balance scenario again.",
+    "notes": "Swale’s 2017 Local Plan (“Bearing Fruits 2031”) allocated large urban extensions around Sittingbourne and Faversham, many of which are now completed or nearly. The Borough saw strong housing delivery in the late 2010s as those sites progressed, but by 2021, to keep pace with rising targets (~1,100 homes/yr under standard method), Swale launched a Local Plan Review. A Regulation 19 draft in 2021 proposed further major allocations, including a new garden village at South East Faversham (~2,500 homes). However, following local elections in 2022, the new council leadership pulled back the plan amid objections to so much growth, and it sought to challenge national housing numbers. As a result, examination of the 2021 draft never occurred. Now in 2025, Swale is without a new plan and is effectively continuing under the 2017 plan – which is out-of-date on housing (it planned for ~776/yr). The Borough’s housing land supply has dropped to barely 5 years (and likely below if using current need figures). This precarious position means the tilted balance may soon apply if it doesn’t already. In fact, several speculative proposals in villages not allocated in the 2017 plan have come forward, and some have been allowed at appeal or by officers to bolster supply. The council’s pause on the plan is supposed to reconsider locations and maybe reduce numbers, but unless policy changes nationally, Swale will eventually need to adopt a plan meeting a similar need figure. In the meantime, the lack of an updated plan creates uncertainty – developers are targeting Faversham especially, given demand and its infrastructure like the M2. Swale’s plan risk is climbing the longer the review is paused: it currently staves off worst-case by showing some supply from the 2017 allocations that are still finishing, but once those are done, without new allocations the cupboard will be bare. The council will likely have to restart the plan process in 2024 to avoid losing control entirely. In summary, Swale had achieved plan-led growth but is now at risk due to the halted review; reactivating and completing the Local Plan update is critical to regain certainty and fend off planning by appeal.",
+    "references": [
+      "https://swale.gov.uk/planning-and-regeneration/local-plans/local-plan-2021"
+    ],
+    "region": "South East",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000277",
+    "name": "Surrey Heath Borough Council",
+    "plan_status": "Adopted 2012 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2012,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 13,
+    "nppf_defaulting": true,
+    "notes_short": "Surrey Heath’s Core Strategy (2012) is out-of-date and the borough struggles to meet housing need due to extensive Green Belt and SPA constraints. A new Local Plan 2019–2038 was submitted in Dec 2024 after delays (a 2022 draft was contentious). Until adoption, Surrey Heath relies on the NPPF and has resorted to approving some Green Belt sites to maintain minimal supply. Plan risk is high until the new plan is in force, as unmet need remains high and the tilted balance often applies.",
+    "notes": "Surrey Heath’s planning challenges mirror those of neighbors like Spelthorne and Woking – high demand, majority Green Belt/SPA, and limited urban capacity. Its Core Strategy dates to 2012, planning for just 3,240 homes (191/yr) mostly on brownfield in Camberley and Deepcut (Princess Royal Barracks redevelopment). Current need is double that, and Surrey Heath has consistently under-delivered; it has no five-year supply and failed the Housing Delivery Test (55% in 2022). A new draft Local Plan was consulted in 2022 proposing some Green Belt release (e.g., at West End and Lightwater) and increased densities in Camberley, aiming to meet roughly 80% of need, with the rest possibly unmet or to be exported. This faced local opposition, contributing to delays. The plan was submitted in Dec 2024. Meanwhile, with the 2012 plan obsolete, the tilted balance is essentially in effect. The Council has taken the pragmatic approach of permitting a number of out-of-plan sites – including a large one at Fairoaks (previously a draft new settlement idea) for housing under very special circumstances – to reduce short-term pressure. Still, housing delivery remains low and speculative proposals can cite the lack of a plan. Appeals in recent years have forced Surrey Heath to allow extra housing on Green Belt and within 5 km of the Thames Basin Heaths SPA beyond what its old plan allowed, just to try to meet need. Until the new plan is adopted (likely in 2025), the borough will continue to face this balancing act. Plan risk is high because without an adopted strategy, Surrey Heath has limited grounds to refuse developments that can argue they’re the only way to address housing need (subject to Habitats regs compliance for the SPA). If the new plan is adopted with agreed growth allocations, that will significantly strengthen the Council’s hand by clearly delineating where development should go (and SANG solutions for SPA mitigation). Thus, the next 1-2 years are critical: the longer the plan is not in place, the more developers may push the envelope. Surrey Heath’s situation, like others in west Surrey, underscores the tension between Green Belt protection and unmet housing need in the absence of an up-to-date plan.",
+    "references": [
+      "https://www.surreyheath.gov.uk/residents/planning/planning-policy/surrey-heath-local-plan-2040"
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000012",
+    "name": "Sunderland City Council",
+    "plan_status": "Adopted 2020 (Core Strategy)",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Sunderland adopted a Core Strategy in 2020 (covering most strategic needs to 2033), and a follow-on Allocations Plan is being developed (examined in 2023). The plan is up-to-date: it allocates significant housing (e.g., South Sunderland Growth Area) and the city has a healthy supply. With the Allocations Plan adoption expected in late 2023, all pieces will be in place, keeping speculative development in check and risk low.",
+    "notes": "Sunderland’s Core Strategy and Development Plan (CSDP) was adopted in January 2020, setting out the strategic framework to 2033. It released some areas from the otherwise tight Green Belt, notably for the South Sunderland Growth Area (around Ryhope) with 3,000 homes and for an urban extension at Chapelgarth. The CSDP also established employment growth zones like the International Advanced Manufacturing Park (IAMP) by Nissan, a joint project with South Tyneside. Since adoption, these strategic sites have progressed - Chapelgarth is under construction, and IAMP is delivering large manufacturing units. Sunderland has thus been able to demonstrate a robust five-year supply and has not faced significant challenges to its plan strategy. A secondary part, the Allocations and Designations Plan, which allocates smaller sites and town centre uses, has been at examination through 2023 and is expected to be adopted by early 2024. This will fully replace the remaining saved UDP policies. Because the strategy plan is recent and the allocations plan is almost complete, Sunderland’s policy suite is essentially up-to-date. The city is meeting its housing targets (around 745 homes/year) primarily through regeneration and planned urban extensions, so the tilted balance is not engaged. One area of note: like many cities, Sunderland aims to increase city centre living (the Riverside Sunderland masterplan), and the plan provides supportive policies for that, which are being used to guide consents for new city centre apartments. With the near-finalization of the Allocations Plan, Sunderland will have a complete, modern local plan, placing it in a very strong position to manage development effectively through to the 2030s. Therefore, plan risk in Sunderland is low - it has embraced plan-making and followed through, insulating itself from speculative development and ensuring that growth (including any necessary Green Belt changes) is addressed via the local plan process rather than by appeal.",
+    "references": [
+      "https://www.sunderland.gov.uk/article/15989/Local-Plan"
+    ],
+    "region": "North East",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000312",
+    "name": "Stroud District Council",
+    "plan_status": "Adopted 2015",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Stroud’s current Local Plan (2015) is overdue for replacement. A review to 2040 was submitted in Oct 2021 and is in the final stages of examination (with Main Modifications published 2023). Adoption is likely in 2024. In the interim, housing supply has been tight – Stroud narrowly avoided tilted balance by using reserve sites. Once the new plan (with additional allocations including a new town at Wisloe) is adopted, plan-led control will be secure; until then risk is moderate but managed.",
+    "notes": "Stroud’s Local Plan 2006-2031 was adopted in November 2015, focusing growth on strategic sites like North East Cam (Cambridge), Hunts Grove (south of Gloucester), and an eco-village at Sharpness. By the early 2020s, several of these sites were completed or well advanced, and Stroud began running low on readily available housing land. The Council prepared a Local Plan Review (up to 2040) with new allocations (notably a proposed new settlement at Wisloe near Slimbridge for 1,500 homes and an expanded growth area at Sharpness for 2,400 homes). This review was **submitted in October 2021. Examination has been lengthy, partly due to objections to Wisloe and infrastructure questions; Main Modifications were consulted in mid-2023, suggesting the inspector supports most of the plan with some reductions in Sharpness new town scale and phasing changes. Adoption is expected by early 2024. During this gap, Stroud managed to maintain just over a five-year supply by approving some “contingency” sites from its 2015 plan and a couple of additional edge-of-settlement schemes to prevent shortfall. It thus avoided the tilted balance scenario (though it was close – at one point supply was around 5.2 years). Appeals have generally been dismissed as the pending new allocations carry weight and the short-term need is being met. Once the new plan is adopted, Stroud will have a refreshed land supply pipeline likely pushing its five-year supply well above requirement (Wisloe and other sites will count). That will firmly shut the door on speculative arguments. Therefore, current plan risk is moderate and diminishing: the Council navigated the latter stages of the old plan without major unplanned approvals, and the imminent new plan will restore complete plan-led confidence. The key will be promptly implementing the new allocations, particularly delivering Wisloe Garden Village with necessary transport improvements, to ensure the housing trajectory stays on track. Provided that happens, Stroud’s planning position will be strong, moving from a slightly precarious period into a secure new plan era.",
+    "references": [
+      "https://www.stroud.gov.uk/localplan-review"
+    ],
+    "region": "South West",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000128",
+    "name": "Stratford-on-Avon District Council",
+    "plan_status": "Adopted 2016 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 9,
+    "nppf_defaulting": true,
+    "notes_short": "Stratford’s Core Strategy was adopted in 2016 and has been largely built out (including a new town at Meon Vale). It is now due for replacement. The District is working with Warwick District on a joint South Warwickshire Local Plan to 2050, with a consultation draft expected in 2024. The current plan’s policies still hold, and a five-year supply exists, but new strategic direction (possibly a new settlement at Long Marston Airfield) is needed soon. Moderate risk until the joint plan is in place.",
+    "notes": "Stratford-on-Avon’s 2011-2031 Core Strategy was adopted in July 2016. It delivered significant growth: notably, the Long Marston Airfield Garden Village (3,500 homes) was allocated and is in early phases, a large urban extension at Gaydon/Lighthorne Heath (now the new village of Upper Lighthorne) to meet adjacent Warwick District’s need is underway, plus dispersed housing and employment across many villages and Stratford-upon-Avon town. By 2023, many of these allocations are progressing or complete – Stratford has maintained healthy delivery and a five-year land supply. However, being five+ years since adoption and with most strategic sites spoken for, focus turned to planning beyond 2031. Stratford District teamed up with neighbouring Warwick District to create a South Warwickshire Joint Plan looking to 2050; an Issues consultation ran in 2020. This plan will likely incorporate the remaining long-term phase of Long Marston and potentially another new settlement or major expansion, as well as economic growth tied to the M40 corridor. Until this joint plan is adopted (target around 2025/26), Stratford’s 2016 plan remains the operative framework. It’s somewhat outdated (e.g., it didn't foresee all climate change policy shifts or the full extent of housing pressures), but crucially the district can still show a sufficient supply and has not been subject to aggressive speculative proposals – partly because the 2016 plan comprehensively allocated a lot of land including reserve sites. The risk of “planning by appeal” is relatively low at the moment; appeals have generally been decided in line with the existing plan (one exception was an allowed appeal for 210 homes at Alderminster in 2021, where the inspector weighed housing need, but that was before Upper Lighthorne got fully underway). The main risk is if the joint plan stalls, by late 2020s Stratford could start to run short on developable land and then face more speculative pressure, especially given Coventry and Birmingham’s overspill could redirect toward South Warwickshire. For now, though, the Council is bridging the gap with supplementary planning guidance and focusing on securing delivery of allocated sites. Overall, moderate risk – well-managed currently but dependent on timely progression of the South Warwickshire Plan to ensure the next wave of growth is plan-led.",
+    "references": [
+      "https://www.southwarwickshire.org.uk/"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000115",
+    "name": "Stoke-on-Trent City Council",
+    "plan_status": "Adopted 2009 (Joint Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2009,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 16,
+    "nppf_defaulting": true,
+    "notes_short": "Stoke’s current plan is the 2009 Stoke/Newcastle Core Strategy and a 2013 Site Allocations document – both outdated. A new Stoke Local Plan 2020–2040 is in preparation (Reg18 draft 2022) after joint planning with Newcastle-under-Lyme was abandoned. The city has focused on urban regeneration, but housing delivery has lagged targets and suburban extensions are needed. Without an updated plan yet, Stoke faces a partial policy vacuum – though lower market pressure has limited speculative sprawl, the council is eager to adopt a new plan by 2025 to reestablish full control.",
+    "notes": "Stoke-on-Trent’s last comprehensive plan was the Joint Core Strategy 2006-2026 with Newcastle-under-Lyme, adopted in 2009, plus a 2013 Stoke City Centre/Inner Urban Plan. These are out-of-date now. Stoke and Newcastle started a new Joint Local Plan around 2017 but progress stalled and in 2022 each decided to do separate plans (as Newcastle moved faster). Stoke published a Preferred Options in late 2022 for its own Local Plan 2020-2040. Stoke’s strategy remains regeneration-heavy – focusing development into the urban core and existing suburbs, and seeking to avoid large-scale Green Belt release on its fringes (unlike Newcastle which has released some Green Belt for housing). However, Stoke has struggled with low viability in parts of the city, resulting in under-delivery of housing (especially compared to its need of ~600 homes/yr). The old plan’s targets were modest and often unmet; thus, by NPPF measures, Stoke lacks a five-year supply and the tilted balance could apply. In reality, market interest in speculative greenfield development in Stoke is limited (due to its post-industrial economic challenges), so the absence of an updated plan hasn’t led to a flood of rogue planning applications as seen in some southern districts. Most development continues on brownfield via Council intervention (e.g., the City Council partnering to build homes in Burslem, etc.). Nonetheless, to secure long-term growth – including any more prosperous outer areas – the new Local Plan is crucial. It likely will allocate some sustainable urban extensions (e.g., around Trentham Lakes or Meir) to ensure a pipeline of deliverable sites with viability, while continuing to push brownfield (a new housing zone near the railway station is proposed). Until the new plan is adopted (target 2025), Stoke remains somewhat in limbo: it uses the old strategy for decision rationale but often has to rely on NPPF directly for housing supply justification. Plan risk is moderate: the lack of high developer pressure mitigates immediate risk of unplanned large sites, but on the flip side means Stoke must proactively zone land to attract investment (or else stagnation continues). The new plan’s adoption and execution will be key to breaking that cycle – providing certainty and incentives (through site allocations and possibly relaxed policies in growth areas) to spur the housing market. In sum, Stoke needs its new plan to regain momentum, but in the meantime the outdated plan hasn’t caused chaos, just a slow pace of development.",
+    "references": [
+      "https://www.stoke.gov.uk/localplan"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000007",
+    "name": "Stockton-on-Tees Borough Council",
+    "plan_status": "Adopted 2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Stockton’s Local Plan was adopted in Jan 2019 and is current, guiding growth to 2032. It allocates major housing (e.g., West Stockton, Wynyard) and Stockton has a comfortable land supply. Development is largely plan-compliant, so speculative pressure is low. No review is needed yet, as delivery is on track and the plan provides flexibility for the coming years.",
+    "notes": "Stockton-on-Tees adopted its Local Plan 2017-2032 in January 2019, replacing a 2010 Core Strategy. The plan sets out significant housing allocations including a Western Extension to Stockton, ongoing development at Wynyard Garden Village, and regeneration in Stockton and Thornaby town centres. It also allocates large employment sites along the A19 corridor (e.g., growth at Durham Lane Industrial Park). Since adoption, Stockton has maintained strong housing delivery – often exceeding its annual target (around 720 units/year) thanks to progress at Wynyard and market sites in Yarm and Eaglescliffe. With this up-to-date plan, the Council has a robust five-year supply and clear policy basis to determine applications. It has generally been successful in defending against proposals outside the plan; few appeals have challenged the plan given its recency. Notably, Stockton was able to incorporate flexibility for the Teesside Airport area via the plan and supportive policies for catalytic projects like the new freeport, thus adapting well to changing economic initiatives. As of 2025, there is no immediate need to review the plan – it’s performing well, and the borough has capacity into the late 2020s without issue. A review might commence around 2026 to extend beyond 2032, possibly to adjust for any new economic growth surges (e.g., if net zero industries on Teesworks lead to significant in-migration). But that would be a proactive update, not due to any failure of the existing plan. Plan risk is low: Stockton’s development is firmly plan-led under the 2019 framework, the tilted balance does not apply, and stakeholders have certainty. The focus remains on implementation – such as delivering the Stockton Waterfront regeneration – under the guidance of the adopted plan, with any new opportunities or needs to be captured in a timely future review.",
+    "references": [
+      "https://www.stockton.gov.uk/local-plan"
+    ],
+    "region": "North East",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000031",
+    "name": "Stockport Metropolitan Borough Council",
+    "plan_status": "Adopted 2011 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Stockport’s local plan consists of a 2011 Core Strategy and saved UDP policies – now well out-of-date. The borough chose to leave the Greater Manchester joint plan in 2020 over Green Belt concerns, and is now drafting its own Local Plan (Reg 18 done) which still needs Green Belt release to meet needs. Adoption is hoped for 2025. In the interim, Stockport lacks a five-year supply and relies on aggressive brownfield development plus the NPPF presumption – a precarious balance given its huge unmet housing need and constrained land supply.",
+    "notes": "Stockport’s planning policy gap has been a significant Greater Manchester outlier. Its Core Strategy 2011 and 2006 UDP are outdated, especially as the borough’s housing need is very high (~1,000 homes/yr) but it has insisted on protecting most of its Green Belt. Stockport pulled out of the GM “Places for Everyone” joint plan process in 2020 specifically to avoid mandated Green Belt release for housing, opting to make a local plan instead. However, preparing its own plan has taken time: a first full draft was consulted on in 2023, which does finally propose some Green Belt release (around 5% of Stockport’s Green Belt) to provide for about 5,000 homes – still short of the need, but Stockport hopes to argue exceptional circumstances. The plan is not yet at examination. Meanwhile, development in Stockport has been predominantly apartments in the town centre and some mills converted – not enough to meet targets. The Council currently cannot demonstrate a five-year housing land supply; its delivery test results are low. Thus, the tilted balance is in effect. Interestingly, the lack of available non-Green Belt sites has meant fewer major housing proposals (developers see planning risk), but it’s led to appeals for smaller infills being harder to refuse. Also, unmet need from Stockport is spilling over: Cheshire East has seen appeals where developers cite Stockport’s shortfall as justification for building near the border. Stockport is at risk of “planning by appeal” if it doesn’t get a new plan in place: pressure is mounting from government and the development sector to address its housing issues. The new local plan aims to be submitted in 2024 and adopted by 2025; if successful, it will finally allocate specific Green Belt parcels and brownfield intensification areas, providing a defensible strategy. Until then, Stockport lives in a delicate state – trying to encourage as much brownfield development as possible (including via the Mayoral Development Corporation in central Stockport) to compensate, and hoping to fend off major unwanted proposals (so far, it has avoided any massive appeal losses for Green Belt, but that luck may not hold indefinitely). Plan risk remains high, but with a potential end in sight if the local plan proceeds to adoption.",
+    "references": [
+      "https://www.stockport.gov.uk/stockport-local-plan"
+    ],
+    "region": "North West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000172",
+    "name": "Stevenage Borough Council",
+    "plan_status": "Adopted 2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Stevenage’s Local Plan (adopted 2019) is up-to-date and guides growth to 2031, including significant housing and a new neighbourhood west of the A1(M). The plan is delivering robustly – Stevenage is regenerating its town centre and expanding – so the council maintains control and faces little risk of unplanned development. A review will be needed by 2024, but likely will roll forward without issues given strong performance.",
+    "notes": "The Stevenage Borough Local Plan 2011-2031 was adopted in May 2019, after overcoming a government holding direction due to Green Belt release at Stevenage’s edge. The plan allocates around 7,600 homes, including a major urban extension at Stevenage West (around 1,350 homes on former Green Belt), and promotes comprehensive town centre regeneration (with mixed-use redevelopment of ageing shopping precincts). Since adoption, Stevenage has seen a marked uptick in development: multiple town centre high-rise residential schemes have broken ground (at Queensway, etc.), and the first phases of Stevenage West have detailed permission aligning with the new infrastructure (schools, roads) schedule. The plan’s policies are current and effective in negotiating good outcomes (e.g., high affordable housing percentages on brownfield sites). The council can demonstrate a five-year supply comfortably due to these allocations coming forward. Thus, the tilted balance does not apply; rather, decisions are firmly per the local plan. Because the plan was adopted under the 2012 NPPF, it committed to an early review – due by 2024 – to align with later household projections. However, given Stevenage’s successful delivery and the fact that a large chunk of its need is met by the plan (and some unmet need is reliant on North Herts), the urgency of a full review is mild. The Council is expected to commence a modest update in 2024/25 mainly to extend the plan to 2040 and adjust any allocations if needed (possibly increasing town centre capacity further given high demand for station-adjacent living). Meanwhile, the adopted plan gives it strong ground to refuse developments outside planned areas (no significant appeals of that nature have occurred since 2019). Plan risk is thus low – Stevenage is in an enviable position of active growth entirely within a plan-led framework. Keeping the momentum will just require the timely planned review and continued partnership with North Herts for any cross-boundary issues.",
+    "references": [
+      "https://www.stevenage.gov.uk/planning-and-building-control/planning-policy/local-plan"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000050",
+    "name": "St Helens Metropolitan Borough Council",
+    "plan_status": "Adopted 2022",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "St Helens adopted its Local Plan (2020-2037) in July 2022, establishing an up-to-date strategy including selective Green Belt release for employment and housing (e.g., at Bold and Omega South). With this fresh plan, St Helens has ample land supply and clear policies, significantly lowering development risk and ending a long period of defaulting to the presumption due to earlier plan gaps.",
+    "notes": "After operating on a 2012 Core Strategy and encountering issues with five-year supply (leading to several appeal losses around 2018), St Helens now has an adopted Local Plan 2020-2037 as of July 2022. This plan took bold steps to boost growth: it released Green Belt for two strategic employment sites (Parkside – a former colliery earmarked for a rail freight interchange, and Omega South – an extension of the Warrington logistics park spilling into St Helens) and for several urban extensions delivering about 2,200 homes (notably at Bold Forest Garden Suburb and around Garswood). With this plan in place, St Helens is planning for around 10,000 new homes and substantial job creation by 2037. Already, we see implementation: planning applications for Parkside Phase 1 and Bold are approved, and housing developers are moving onto allocated sites rather than speculating elsewhere. The plan is up-to-date, so the Council is firmly in control – it can point developers to allocated opportunities and has strong policy to refuse developments outside them. The housing land supply is healthy (the plan front-loaded some sites to address earlier undersupply, so a five-year supply exists again). The previous era – where St Helens lacked allocations and had to grant large schemes on appeal (like Florida Farm warehouse park) – is over. There is no need for an immediate review; the council will likely focus on delivery and monitoring for a few years. Plan risk is thus low: the main things to manage are ensuring infrastructure (like new roads at Bold and Parkside rail connection) keeps pace, but those are built into the plan conditions. Unplanned development pressure has essentially evaporated now that the plan provides clear direction and confidence to investors about where to go. St Helens’ example shows how adopting a long-delayed plan has moved it from a high-risk footing (constant tilted balance in early 2020s) to a low-risk, plan-led regime in 2025.",
+    "references": [
+      "https://www.sthelens.gov.uk/planning-building-control/planning-policy/local-plan"
+    ],
+    "region": "North West",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000123",
+    "name": "Staffordshire Moorlands District Council",
+    "plan_status": "Adopted 2020",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Staffordshire Moorlands adopted a new Local Plan in Sept 2020 (after a long delay) covering 2014-2033. It is up-to-date and allocates sufficient housing (focused on Leek, Biddulph, Cheadle) after resolving Green Belt changes. The plan is delivering, with recent permissions in towns, so the council has control of development and no immediate need to review yet.",
+    "notes": "The Staffordshire Moorlands Local Plan was adopted in September 2020, replacing an earlier Core Strategy. This plan allocates around 6000 homes to 2033, primarily in the three market towns: Leek (with several greenfield extensions), Biddulph (with a contentious but approved Green Belt release at Gillow Heath), and Cheadle (urban extensions). It took a while to adopt due to debates over those Green Belt revisions, but since adoption, the District has moved to implementation. Many housing sites in Leek and Cheadle have planning permission or are going through, and a larger mixed-use allocation at Biddulph is in progress with infrastructure planning. Being only a few years old, the plan’s policies are up-to-date (including those on the Peak District fringe and town centre regeneration) and the Council can robustly use them to guide decisions. Staffordshire Moorlands has a five-year land supply (it slightly dipped in 2021 but recovered after the plan adoption unlocked sites). Therefore, the tilted balance is not engaged; indeed appeals have been decided in the council’s favor post-2020 citing the adopted allocations. There is no rush for a plan review; likely around 2025 they will begin considering extending the plan beyond 2033, but given modest growth pressure and some headroom in current allocations (some towns haven’t taken all identified capacity yet), plan risk is low. One watchpoint is if any major site fails to deliver (e.g., if a large Leek site stalled, that could temporarily affect supply, but so far so good). Additionally, the plan relies on Stoke-on-Trent’s urban area taking some demand (for Biddulph), but collaborative work with Stoke ensures alignment. Overall, with a current plan in place, Staffordshire Moorlands enjoys a stable planning environment – development is happening as planned and speculative development outside settlement boundaries is generally deterred by the valid framework. The next plan update in a few years will further strengthen continuity, but at present the planning risks are minimal.",
+    "references": [
+      "https://www.staffsmoorlands.gov.uk/localplan"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000122",
+    "name": "Stafford Borough Council",
+    "plan_status": "Adopted 2014 (Plan for 2011-2031)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Stafford’s current Plan was adopted in 2014 and many allocations (e.g., Stafford’s urban extensions) are built or underway. It is past its mid-point and due for review. A new Stafford Borough Local Plan 2020–2040 is in preparation (Reg 18 published 2022) to identify fresh growth, potentially a new garden village. The existing plan has served well, but housing supply is tightening as sites build out, raising the importance of an updated plan to avoid falling into presumption by the later 2020s.",
+    "notes": "The Plan for Stafford Borough 2011-2031 was adopted in June 2014 (Part 2 in 2017). It allocated major sustainable urban extensions north and west of Stafford town (around 5,000 homes in total), an extension at Stone, and several new settlements (e.g., Meecebrook was considered but not allocated; instead, modest village expansions were included). Over the last decade, Stafford has seen these sites progress well – thousands of homes have been delivered in the new communities of Marston Grange, Burleyfields, etc., and Stafford’s employment areas (e.g., Redhill business park) have been successful. As of 2023, the borough has largely met its core strategy targets, and while it maintains a five-year supply, that surplus is eroding as the plan heads towards its end date. Recognizing this, the Council is working on a new Local Plan 2020-2040, with a Preferred Option consulted in 2022. This new plan likely includes a Meecebrook Garden Community (about 3,000 homes near Cold Meece, leveraging HS2’s proximity) as well as further growth at Stafford and perhaps Stone. However, the new plan is not expected to be adopted until 2024/25. In the interim, the 2014 plan is aging but still mostly effective – appeals are generally dismissed as the council can show a supply and an active plan review in train. The risk will heighten if adoption drags on and the existing allocations near full completion, which could cause a supply gap. Moreover, without the new plan, ad hoc proposals for a garden village or large logistics parks (Stafford’s location on the M6 makes it a target for warehousing) might come forward outside the plan, though the Council has resisted these so far. The window for risk is relatively short: if the new plan proceeds on schedule, the borough should smoothly transition to a new strategy without a tilted balance scenario. Thus, current plan risk is moderate and mostly tied to timing – the quicker the new allocations (like Meecebrook) are confirmed and can count towards supply, the more Stafford secures its plan-led approach for the future.",
+    "references": [
+      "https://www.staffordbc.gov.uk/new-local-plan"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000276",
+    "name": "Spelthorne Borough Council",
+    "plan_status": "Adopted 2009 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2009,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 16,
+    "nppf_defaulting": true,
+    "notes_short": "Spelthorne’s Core Strategy (2009) is out-of-date and significantly underestimates current housing needs. A new Local Plan 2022–2037 was submitted in Nov 2022, aiming to meet needs with some Green Belt release, but examination stalled amid political shifts. The plan adoption is now delayed, prolonging reliance on a 2009 strategy that doesn’t meet NPPF tests – hence Spelthorne is often subject to the tilted balance and at high risk of speculative proposals until the new plan is resolved.",
+    "notes": "Spelthorne’s situation epitomizes plan-making difficulties in constrained boroughs. Its 2009 Core Strategy set a very low housing target (~166 homes/yr) suited to a then largely built-out borough, with almost all open land designated Green Belt. Modern assessments show a need of 600+ homes/yr. The Council prepared a new Local Plan to try to meet about 80-85% of that need by releasing a few Green Belt parcels (e.g., sites at Staines and Sunbury) while still relying on high-density redevelopments in Staines town centre. This plan was controversial locally for its Green Belt proposals; it was submitted in November 2022 and examination hearings began mid-2023. However, after local elections, the new administration attempted to withdraw the plan in summer 2023 – the Planning Inspectorate paused examination while legal advice was sought. Ultimately the Council in late 2023 decided to continue with examination, but this process has delayed potential adoption to late 2024 or 2025. In the interim, Spelthorne’s planning vacuum persists. The 2009 strategy is far from meeting current needs; indeed, Spelthorne has delivered well below its requirement for years and is regularly failing the Housing Delivery Test. The tilted balance has been invoked repeatedly by developers, and appeals have succeeded (one notable case allowed housing on a Green Belt site in Stanwell in 2021, with the Inspector citing the acute shortfall as very special circumstances). The Council has also taken the unusual step of effectively halting new major housing permissions pending the plan outcome, but that runs the risk of more appeals. Overall, without an adopted new plan, Spelthorne is at high risk of planning by appeal – caught between protecting Green Belt and needing housing. Every refusal on unmet-need grounds is challengeable. If the new plan is adopted in 2024/25 with its allocations, that will greatly firm up the Council’s position by showing how needs will be met, thus removing the justification for speculative non-plan proposals. Until then, Spelthorne remains in a precarious position, trying to defend an out-of-date plan in one of the most housing-pressured parts of the country.",
+    "references": [
+      "https://www.spelthorne.gov.uk/localplan"
+    ],
+    "region": "South East",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000011",
+    "name": "South Tyneside Council",
+    "plan_status": "Adopted 2007 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2007,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 18,
+    "nppf_defaulting": true,
+    "notes_short": "South Tyneside’s Core Strategy (2007) is very outdated, and the borough has lacked an allocations plan for years. A new Local Plan (2016–2036) was finally submitted in March 2025 after multiple delays. In the long gap, South Tyneside has fallen short on housing supply and relies heavily on brownfield windfalls and the NPPF’s tilted balance. The new plan is urgently needed to allocate deliverable sites (potentially including some Green Belt changes) to regain plan-led control.",
+    "notes": "South Tyneside’s planning policy is effectively operating on a 2007 Core Strategy and saved UDP policies from 1999. The Council has struggled for over a decade to progress a new plan; attempts in the mid-2010s stalled. Consequently, the borough has had no up-to-date land allocations, and development has been largely reactive – focused on regenerating former industrial sites along the Tyne (e.g., Holborn Riverside) and small infill. The housing need in South Tyneside (around 350-400 homes/yr) has not been met; the Council has repeatedly undershot its requirement and thus the presumption in favor of development is effectively triggered. In practice, South Tyneside’s dense urban character means there haven’t been large greenfield speculative proposals (most open land is Green Belt along the borough’s fringes). However, it has missed opportunities to direct growth strategically – many young families have simply moved out to neighboring areas due to lack of new housing estates in South Tyneside. The Council finally pulled together a Draft Local Plan for 2016–2036, which includes some Green Belt releases (for example, around Boldon) and a focus on town centre living in South Shields. This plan was **submitted in March 2025. If adopted by 2026, it will allocate sufficient sites to meet needs and provide clear development management policies (e.g., on design and the coastal zone) that align with current NPPF. Until then, decision-making remains heavily reliant on the NPPF and tilted balance: the Council often has to approve borderline schemes to avoid appeals, given its lack of five-year supply. One recent instance saw the Council approve homes on a safeguarded open space, citing housing need. This underscores the high-risk situation – balancing community desires to protect green areas against the imperative to show progress on housing. The forthcoming plan is critical to resolve this tension by explicitly designating what greenfield can be sacrificed and what is sacrosanct. In summary, South Tyneside’s lack of an updated plan has put it in a vulnerable position, but with the new plan now submitted, there is light at the end of the tunnel to restore plan-led development in the near future.",
+    "references": [
+      "https://www.southtyneside.gov.uk/article/1275/Local-Plan"
+    ],
+    "region": "North East",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000121",
+    "name": "South Staffordshire District Council",
+    "plan_status": "Adopted 2012 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2012,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 13,
+    "nppf_defaulting": true,
+    "notes_short": "South Staffordshire’s Core Strategy (2012) is out-of-date. A new Local Plan (2018–2037) was submitted in 2022, proposing significant Green Belt releases for housing near the Black Country. However, in Oct 2023 the examination was paused due to West Midlands Green Belt issues, leaving adoption delayed. In the meantime, the 2012 plan gives limited guidance, and with a serious housing shortfall (linked to unmet West Midlands need), the tilted balance may apply – putting this Green Belt authority in a precarious position until the new plan is resolved.",
+    "notes": "South Staffordshire is a rural Green Belt district bordering the West Midlands conurbation. Its 2012 Core Strategy and 2018 Site Allocations focused on modest growth in villages and new employment sites along the M54/M6 corridor. Since then, the District has been under pressure to help meet the Greater Birmingham housing shortfall. The Council prepared a new Local Plan Review (2018–2037) with proposals for around 4,000 new homes, including releasing Green Belt land on the edge of the Black Country (at sites like Landywood and east of Brownhills). This plan was submitted in 2022, but examination is stalled (the Inspector flagged concerns in Oct 2023 about the scale of Green Belt release relative to demonstrated need, partly because the Black Country authorities withdrew their joint plan) – the examination is effectively on hold pending more evidence or regional agreement. This leaves South Staffs in limbo: the 2012 plan is obsolete (it did not account for any major duty-to-cooperate uplift), and the new plan is delayed. Meanwhile, the district cannot show a five-year supply against current need figures; it has openly acknowledged a substantial shortfall. Thus, developers have been targeting Green Belt sites, arguing \"very special circumstances\" due to housing need. The Council has resisted pending the plan outcome, but appeals are likely. The tilted balance alone cannot override Green Belt designation (since Green Belt policies are protected), but the housing need adds pressure for release. Essentially, without an adopted new plan to selectively direct Green Belt release, decisions risk being made piecemeal by appeal inspectors. This is a high-risk scenario for the Council – either it gets its plan back on track (perhaps by scaling back or firming up the evidence for its allocations and getting it adopted in 2024/25), or it faces potentially losing control of where and how Green Belt is breached. In the interim, South Staffs has leaned on temporary measures like a 2020 Memorandum of Understanding with the West Midlands on housing apportionment, but that’s tenuous after the Black Country plan collapse. Until the Local Plan is resolved, the district’s development management is precariously balanced between unmet needs and Green Belt protection, making it one of the more vulnerable planning situations currently.",
+    "references": [
+      "https://www.sstaffs.gov.uk/planning/planning-policy/local-plan-review"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000337",
+    "name": "South Somerset District Council (now Somerset)",
+    "plan_status": "Adopted 2015",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "South Somerset’s Local Plan (2015) is out-of-date and was due for review by 2020, but the process halted as the district merged into Somerset Council in 2023. Yeovil and market towns have seen growth from the 2015 plan, but key sites (like the urban extension) lagged, causing some housing shortfall. Until Somerset’s new unitary plan addresses this, South Somerset relies on the old policies and often the NPPF presumption to decide applications.",
+    "notes": "The South Somerset Local Plan 2006-2028 was adopted in March 2015 after a partial withdrawal and re-examination (the Yeovil Sustainable Urban Extension was re-evaluated at that time). It set a strategy focusing major growth at Yeovil (including an urban extension of around 1,500 homes), and significant allocations at market towns like Chard, Wincanton, and Crewkerne. While many housing sites in Yeovil and other towns have been built, some strategic projects (Chard’s urban extension with relief road, and the Yeovil extension) have progressed slowly or stalled. By the late 2010s, South Somerset struggled to maintain a five-year supply, dipping to about 4 years at worst, which triggered the tilted balance in a number of appeal decisions. The Council had begun a Local Plan Review with Issues consultation in 2020 to plan to 2040, but with local government reorganization, that work ceased and will fold into the new Somerset-wide plan eventually. Now under Somerset Council, the South Somerset area still uses the 2015 plan policies – which are outdated, especially on housing numbers (based on old targets). Consequently, decisions in 2023-2024 have often had to lean on NPPF para.11(d). For instance, some speculative proposals on Yeovil’s edge or in rural settlements have been allowed to make up for the lagging strategic sites. The risk here is relatively high until a new plan allocates alternative or additional sites to meet the shortfall. However, the recent uptick in housing delivery (South Somerset approved many homes in the past couple of years to address the deficit) means the five-year supply is improving, which should help mitigate presumption issues in the short term. Still, without an updated plan beyond 2028, the area lacks a forward strategy for growth, affordable housing, and infrastructure planning (especially important as Yeovil’s economy diversifies post-AgustaWestland). The forthcoming Somerset Council Local Plan will need to identify new solutions – possibly a new settlement along the A303 corridor or bolstering growth at stronger market towns – to pick up where the 2015 plan leaves off. Until then, South Somerset remains vulnerable to ad hoc development driven by the absence of an up-to-date local framework.",
+    "references": [
+      "https://www.southsomerset.gov.uk/planning-and-building-control/planning-policy/local-plan/local-plan-2006-2028/"
+    ],
+    "region": "South West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000044",
+    "name": "South Ribble Borough Council",
+    "plan_status": "Adopted 2012 (Central Lancs Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2012,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 13,
+    "nppf_defaulting": true,
+    "notes_short": "South Ribble’s strategic planning is via the 2012 Central Lancashire Core Strategy (and a 2015 Sites DPD). These are now old, though a Memorandum of Understanding on housing supply between Preston, South Ribble, and Chorley has helped manage tilted balance issues. A new Central Lancs Local Plan is in advanced drafting (Publication Feb 2025), which will replace the 2012 strategy by 2025. The current framework, while dated, has largely held thanks to inter-authority coordination.",
+    "notes": "South Ribble shares the **Central Lancashire Core Strategy 2012 with Preston and Chorley, and has its own Local Plan (Sites & Development Management) adopted in 2015. Together, these guided significant growth in South Ribble, notably the Buckshaw Village new town (joint with Chorley) and major employment expansion at Cuerden (Lancashire Central). By late 2010s, housing delivery across Central Lancs was running ahead of plan, leading to debates on whether the Core Strategy’s housing requirement was still applicable. To avoid speculative appeals exploiting “outdated” figures, the Central Lancs authorities agreed a Memorandum of Understanding in 2020 to use increased housing targets and apportion them – effectively staving off the tilted balance argument successfully in recent appeals. South Ribble has consistently maintained over 5 years supply under these higher numbers. Meanwhile, the councils have been working on a new Central Lancashire Local Plan (2023-2038), with a Publication Draft issued in Feb 2025 (for submission later in 2025). For South Ribble, the new plan will allocate further growth likely around Penwortham and Leyland (building on the success of Buckshaw and new infrastructure like the Penwortham bypass), and refresh employment land supply to capitalize on the Preston City Deal. Until this new plan is adopted (expected by 2025/26), South Ribble’s development management relies on the 2012/2015 plans plus the agreed interim housing requirement approach. This has so far prevented major unplanned developments – most applications are coming on allocated or brownfield urban sites. The risk of plan-led control loss is moderate: if the new plan were significantly delayed or one of the partner councils diverged from the MoU, tilted balance issues could re-emerge. However, the joint working has been strong and is on track to deliver the updated plan. In essence, while South Ribble’s formal plan is “old,” proactive cooperation and buffer in land supply have kept speculative development at bay, and with a new local plan imminent, the borough’s planning risk is being managed effectively.",
+    "references": [
+      "https://centrallocalplan.lancashire.gov.uk"
+    ],
+    "region": "North West",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000267",
+    "name": "South Oxfordshire District Council",
+    "plan_status": "Adopted 2020",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "South Oxfordshire’s Local Plan was adopted in Dec 2020 under a government direction and is up-to-date, providing for large developments (Chalgrove, Didcot Garden Town). It runs to 2035. The district is now working jointly with Vale of White Horse on a new combined plan to 2041, submitted in Dec 2024. The current plan remains effective in guiding growth, so risk of unplanned development is low.",
+    "notes": "After a controversial process, South Oxfordshire’s Local Plan 2011-2035 was adopted in December 2020. It allocates significant housing growth, including a strategic new community at Chalgrove Airfield (3,000 homes, though this has faced delivery uncertainties due to Ministry of Defence land issues) and major expansions at Didcot (Garden Town) and around Thame and Wallingford. The plan was imposed with high housing targets to assist Oxford City’s unmet need (South Oxon agreed to take ~4,000 of Oxford’s overflow). With adoption, the plan is up-to-date and the Council has been granting permissions accordingly – Didcot’s Valley Park and Culham sites are moving ahead, for example. The district currently can demonstrate a five-year supply, bolstered by these strategic sites in the pipeline (though Chalgrove’s timing is still in question, alternative sites can backfill if needed). To look beyond 2035 and cement cooperation, South Oxfordshire is now preparing a Joint Local Plan 2041 with Vale of White Horse District; that joint plan was submitted for examination in Dec 2024. Until the new joint plan is adopted (likely 2025/26), the 2020 plan continues to apply and is largely sufficient. There have been few successful speculative proposals since adoption – developers know large commitments are already in place and the Council can robustly refuse departures (backed by the SoS’s firm stance in getting this plan through). The main risk factor is if any big allocation falters (e.g., if Chalgrove ultimately cannot proceed, the council might lack a portion of supply in the late 2020s). However, the emerging joint plan is poised to adjust for that by possibly identifying contingency growth areas. In summary, the present Local Plan gives South Oxfordshire a strong grip on development – the tilted balance is not currently in play – and with the proactive step of a joint plan underway, the district’s planning framework is in a good position, minimizing risk of unwanted speculative development.",
+    "references": [
+      "https://www.southoxon.gov.uk/south-oxfordshire-district-council/planning-and-development/local-plan-and-planning-policies/local-plan-2035/"
+    ],
+    "region": "South East",
+    "plan_risk_score": 3
+  },
+  {
+    "id": "E60000182",
+    "name": "South Norfolk District Council",
+    "plan_status": "Adopted 2022 (Greater Norwich Joint Plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "South Norfolk, as part of Greater Norwich, has an up-to-date Local Plan. The Greater Norwich Joint Core Strategy was supplemented by the new Greater Norwich Local Plan (GNLP) adopted in early 2022, allocating growth to 2038. South Norfolk also has a separate Village Clusters plan in progress. The planning framework is sound, with ample housing sites (including the new settlement at Hethel) identified, so speculative development risk is low.",
+    "notes": "South Norfolk’s strategic planning is now covered by the Greater Norwich Local Plan 2018–2038, which was adopted in January 2022 (except for one deferred site). This joint plan with Broadland and Norwich updated the earlier Joint Core Strategy (2011). For South Norfolk, it means allocations for major growth around the Norwich fringe (e.g., at Cringleford, Hethersett), expansion of market towns like Wymondham and Long Stratton (where a bypass is planned alongside housing), and a new settlement at Hethel later in the plan period. Additionally, South Norfolk is finalizing a separate Village Clusters plan (to manage small-scale housing in rural villages) due in 2024. With this comprehensive framework, South Norfolk has an up-to-date plan and a healthy land supply; it can comfortably demonstrate more than five years’ worth of deliverable sites, given the many allocations and broad distribution of growth. The Council is therefore well-armed to resist proposals contrary to the plan – indeed, appeals for unplanned large sites have dropped post-GNLP adoption. The tilted balance isn’t engaged, since housing delivery in Greater Norwich has been meeting targets. As of now, no immediate plan review is required (the GNLP will be reviewed by 2027 per policy but likely only minor tweaks). The only slight risk factor is ensuring infrastructure keeps pace (the Long Stratton bypass is key to unlocking allocated homes there – any delay could bottleneck those allocations, but contingency sites exist elsewhere if needed). Overall, South Norfolk’s planning regime is robust: the area’s growth is being channeled through an up-to-date joint strategy, leaving little room or incentive for speculative development.",
+    "references": [
+      "https://www.southnorfolkandbroadland.gov.uk/planning/planning-policy"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000335",
+    "name": "South Lakeland District Council (now Westmorland & Furness)",
+    "plan_status": "Adopted 2010/2013 (Core Strategy & Land Allocations)",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 12,
+    "nppf_defaulting": true,
+    "notes_short": "South Lakeland’s planning documents (Core Strategy 2010, Land Allocations 2013) are outdated. A Local Plan review began but was overtaken by local government reorg: in 2023 South Lakeland merged into Westmorland & Furness Council. Its areas (Kendal, Ulverston, etc.) now await the new Westmorland & Furness Local Plan due by 2026. Until then, development in these areas relies on old policies and the NPPF, with modest growth continuing but some policy gaps (e.g., limited provision for newer housing needs) evident.",
+    "notes": "The former South Lakeland District’s Core Strategy was adopted in 2010 and its Land Allocations in 2013. These provided for growth mainly in Kendal and Ulverston up to 2025. By 2022, South Lakeland District Council had started reviewing its plan (Issues & Options consulted) to extend to 2040, but the process paused due to the abolition of the district in 2023. Now, planning for Kendal, Ulverston, and surrounding villages falls to Westmorland & Furness Council, which will create a new unitary-wide plan (as noted, likely by 2026). In the interim, the 2010/2013 policies remain in effect. They are clearly out-of-date – for instance, housing targets were low (based on an era of constrained assumptions) and many allocated sites are built or have permission. That said, the area’s development pressure is moderate (South Lakeland’s population is relatively stable, and part of the district lies in the Lake District National Park which has its own plan). Kendal and Ulverston have seen ongoing housing development on allocated and windfall sites, sufficient so far to generally maintain a five-year supply. There have been a few instances where developers pushed for unallocated edge-of-town sites citing the aged plan, but the Council (now Westmorland & Furness) has managed to defer major decisions pending the new plan, without a flood of appeals – partly because market demand is not as intense as in commuter belts elsewhere. The main risk is that certain needs (like affordable housing for local young people or specific employment land for new industries) aren’t being fully met under the old plan’s framework. The NPPF’s tilted balance could come into play if supply slips; careful monitoring is needed. Westmorland & Furness Council will likely incorporate much of the work done by South Lakeland into its new plan (ensuring Kendal’s future expansion or Ulverston’s infrastructure are addressed coherently). In summary, while the plan for this area is outdated, the relatively modest development environment has prevented serious unmanaged growth so far. However, a modern plan is needed soon to give clarity, especially as economic initiatives (like the Britain’s Energy Coast or increased tourism) could spark development interest that the old plan wasn’t designed to handle.",
+    "references": [
+      "https://www.southlakeland.gov.uk/planning-and-building/south-lakeland-local-plan/",
+      "https://www.westmorlandandfurness.gov.uk/planning/planning-policy"
+    ],
+    "region": "North West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000097",
+    "name": "South Kesteven District Council",
+    "plan_status": "Adopted 2020",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "South Kesteven’s Local Plan was adopted in January 2020 (covering 2011–2036) and is up-to-date. It allocates major growth to Grantham and new garden villages. A review is underway (Reg 18 consulted in 2022) to extend to 2041, but the current plan is sufficient to direct development and maintain supply in the interim.",
+    "notes": "The South Kesteven Local Plan 2011-2036 was adopted in January 2020. It sets out significant development, notably a Garden Village at Spitalgate Heath, Grantham, urban extensions in Stamford and Bourne, and substantial housing in the market town of Grantham to support its growth as a sub-regional centre. Since adoption, the district has made progress: Grantham’s Southern Relief Road is under construction (facilitating the Spitalgate development), and housing delivery has been robust, exceeding targets. The plan is current, and the Council has a comfortable five-year land supply. Nevertheless, by policy, a review was to be considered within 5 years – the Council initiated that process with Issues & Options consultation in late 2022. The review (to plan to 2041) will consider if further sites are needed (possibly expanding the new village at Spitalgate or another at Barrowby) and update policies on climate change and design. However, progress of the review has been measured, partly due to awaiting the outcome of national planning reforms. In the meantime, the 2020 plan is solidly in force. Developers are largely focusing on the allocated sites (demand is strong in this area, including commuter demand for Peterborough and London via the A1/ECML). With supply ample, the tilted balance hasn’t been invoked in recent decisions – appeals have mostly been dismissed if not in line with the plan’s spatial strategy. One area of note: Stamford’s growth is somewhat constrained by cross-boundary issues with Rutland (which withdrew its plan in 2021), but South Kesteven’s plan has contingencies to accommodate needed growth if Rutland doesn’t. This has been managed via a Duty-to-Cooperate addendum rather than needing to re-open the plan. In summary, South Kesteven faces low planning risk: an up-to-date plan underpins decision-making, speculative development is minimal, and the Council is proactively working on a next plan to avoid any future gaps – all of which keeps development plan-led and in line with local objectives.",
+    "references": [
+      "https://www.southkesteven.gov.uk/newlocalplan",
+      "https://www.southkesteven.gov.uk/CHttpHandler.ashx?id=26258&p=0"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 3
   }
 ]
