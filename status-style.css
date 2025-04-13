@@ -1,0 +1,558 @@
+/* --- Basic Reset & Defaults --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: #F8F5ED; /* Off-white/Cream */
+    color: #333;
+    padding: 15px;
+}
+
+/* --- Font Styles --- */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: #1A3A5F; /* Dark Blue/Navy */
+    margin-bottom: 0.6em; /* Consistent bottom margin */
+}
+h4 { /* Keep for Notes/References */
+     font-family: 'Lato', sans-serif;
+     font-weight: bold;
+     color: #1A3A5F;
+     margin-top: 1.2em;
+     margin-bottom: 0.4em;
+     font-size: 1em;
+}
+
+
+h1 {
+    font-weight: 700;
+    font-size: 1.8em; /* Slightly reduced */
+    text-align: left;
+}
+
+h2 { /* Less common now, maybe used elsewhere later */
+    font-size: 1.5em;
+    border-bottom: 2px solid #A0CED9;
+    padding-bottom: 0.3em;
+    margin-top: 1em;
+}
+
+h3 { /* Used for panel titles */
+    font-size: 1.25em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+}
+/* Remove border from stats panel title if preferred */
+.stats-panel h3 {
+    border-bottom: none;
+    margin-bottom: 0.8em;
+     text-align: left; /* Align left */
+}
+
+/* --- Layout --- */
+.container {
+    max-width: 1400px;
+    margin: 15px auto;
+    background-color: transparent; /* Container is just for max-width now */
+    padding: 0; /* Remove container padding */
+    box-shadow: none; /* Remove container shadow */
+    border-radius: 0;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+    padding-bottom: 0; /* Remove padding */
+    border-bottom: none; /* Remove border */
+     padding: 0 15px; /* Add padding to header content */
+}
+
+.export-button {
+    background-color: #1A3A5F;
+    color: #fff;
+    padding: 8px 15px; /* Slightly smaller padding */
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85em; /* Slightly smaller font */
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+.export-button:hover {
+    background-color: #2a5a8a;
+}
+
+/* --- Filters --- */
+.dashboard-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 20px; /* Row gap, Column gap */
+    margin-bottom: 1.5em;
+    padding: 15px 20px; /* Add padding */
+    background-color: #fff; /* White background for filter bar */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.filter-item {
+    display: flex;
+    align-items: center; /* Align label and input horizontally */
+    flex-grow: 1;
+    min-width: 200px; /* Adjust as needed */
+}
+
+.filter-item label {
+    font-weight: normal; /* Less emphasis on label */
+    margin-right: 8px; /* Space between label and input */
+    margin-bottom: 0; /* Reset bottom margin */
+    font-size: 0.9em;
+    color: #555; /* Lighter label color */
+    white-space: nowrap;
+}
+
+.filter-item input[type="search"],
+.filter-item select {
+    padding: 8px 10px;
+    border: 1px solid #ccc; /* Slightly darker border */
+    border-radius: 4px;
+    font-size: 0.95em;
+    font-family: 'Lato', sans-serif;
+    width: 100%; /* Fill remaining space */
+    background-color: #f9f9f9; /* Light background for inputs */
+}
+
+.filter-item input[type="search"]:focus,
+.filter-item select:focus {
+    outline: none;
+    border-color: #1A3A5F;
+    box-shadow: 0 0 0 2px rgba(160, 206, 217, 0.3); /* Focus ring */
+    background-color: #fff;
+}
+
+/* --- Main Dashboard Area (2 Columns) --- */
+.dashboard-main {
+    display: grid;
+    /* Adjust ratio - map slightly narrower */
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 20px; /* Space between panels */
+    margin-bottom: 2em;
+}
+
+.map-panel, .summary-panel {
+    background-color: #fff; /* White background for panels */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 6px;
+    padding: 20px; /* Consistent padding */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06); /* Subtle shadow */
+}
+
+/* --- Map Panel --- */
+#map-container {
+    height: 450px; /* Maintain height */
+    width: 100%;
+    background-color: #f0f0f0; /* Lighter grey placeholder */
+    border-radius: 4px;
+    margin-bottom: 1.5em; /* Space before legend */
+    position: relative; /* Needed for placeholder visual */
+    overflow: hidden; /* Hide overflow from placeholder */
+    display: flex; /* Keep flex for text centering */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hatched background placeholder */
+.map-placeholder-visual {
+     position: absolute;
+     top: 0; left: 0; right: 0; bottom: 0;
+     background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.05) 10px,
+        transparent 10px,
+        transparent 20px
+     );
+     z-index: 1;
+}
+
+.map-placeholder-text {
+    color: #6c757d;
+    font-style: italic;
+    font-weight: bold;
+    z-index: 2; /* Ensure text is above visual */
+     background-color: rgba(255, 255, 255, 0.7); /* Make text readable */
+     padding: 5px 10px;
+     border-radius: 3px;
+}
+
+.map-legend {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #eee; /* Separator above legend */
+}
+
+.map-legend label { /* Use labels instead of li */
+    display: block; /* Stack legend items */
+    margin-bottom: 0.6em;
+    font-size: 0.9em;
+    line-height: 1.4;
+    display: flex; /* Align color box and text */
+    align-items: center;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 16px; /* Slightly smaller */
+    height: 16px;
+    margin-right: 10px; /* More space */
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Wireframe colors */
+.legend-color.adopted_recent { background-color: #329c85; } /* Soft green */
+.legend-color.just_adopted_updating { background-color: #5bc0de; } /* Calm teal - INFO color */
+.legend-color.adopted_outdated { background-color: #f5c315; } /* Yellow */
+.legend-color.emerging_in_progress { background-color: #f0ad4e; } /* Orange - WARNING color */
+.legend-color.withdrawn_or_vacuum { background-color: #d9534f; } /* Red - DANGER color */
+
+/* --- Summary Panel (Stats + Details + Table) --- */
+.summary-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between stats, details, table */
+}
+
+/* --- Stats Panel --- */
+.stats-panel {
+    margin-bottom: 0; /* Remove bottom margin, gap handles spacing */
+    padding-bottom: 15px; /* Add padding below title */
+    border-bottom: 1px solid #eee; /* Separator line */
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust min width */
+    gap: 15px;
+    text-align: center;
+}
+
+.stat-item {
+    background-color: #f9f9f9; /* Lighter background for stats */
+    padding: 12px 8px; /* Adjust padding */
+    border-radius: 5px;
+    border: 1px solid #eee; /* Subtle border */
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.9em; /* Adjust size */
+    font-weight: bold;
+    color: #1A3A5F;
+    line-height: 1.1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8em; /* Smaller label */
+    color: #555;
+    margin-top: 3px; /* Reduced space */
+    line-height: 1.3;
+}
+
+/* --- Selected Authority Details Panel --- */
+.details-panel {
+    /* Now part of summary-panel, remove specific background/border */
+    padding: 0; /* Remove padding, handled by summary-panel */
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    position: relative; /* Keep for close button positioning */
+    box-shadow: none;
+    margin-top: 0; /* Reset margin */
+}
+
+.details-panel h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #eee; /* Keep separator */
+}
+
+#details-content-wrapper {
+    /* Style the content area */
+     padding-left: 5px; /* Slight indent */
+}
+
+/* Style for label/value pairs */
+.detail-item {
+    display: flex;
+    align-items: baseline; /* Align baselines of label and value */
+    margin-bottom: 0.8em; /* Space between items */
+    font-size: 0.95em; /* Adjust font size */
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #333; /* Darker label */
+    width: 160px; /* Fixed width for labels */
+    flex-shrink: 0; /* Prevent shrinking */
+    padding-right: 10px; /* Space between label and value */
+}
+
+.detail-value {
+    color: #555; /* Slightly lighter value */
+    flex-grow: 1;
+}
+
+.detail-notes-text { /* Style for the notes paragraph */
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 5px; /* Indent notes slightly */
+    color: #444;
+    white-space: pre-wrap; /* Preserve line breaks */
+}
+
+.detail-references-links {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    padding-left: 5px; /* Indent links */
+}
+.detail-references-links a {
+    color: #1A3A5F;
+    text-decoration: underline;
+    margin-right: 15px;
+    display: inline-block; /* Ensure margin works */
+    margin-bottom: 5px; /* Space if links wrap */
+}
+.detail-references-links a:hover {
+    text-decoration: none;
+}
+.detail-references-links p { /* Style for 'no references' text */
+    color: #666;
+    font-style: italic;
+    margin: 0; /* Reset paragraph margin */
+}
+
+.details-panel .close-button {
+    position: absolute;
+    top: -5px; /* Position relative to the h3 */
+    right: 0px; /* Align to the right */
+    background: none;
+    border: none;
+    font-size: 1.7em; /* Adjust size */
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px; /* Add padding */
+}
+.details-panel .close-button:hover {
+    color: #333;
+}
+
+/* --- Table Panel --- */
+.table-panel {
+    margin-top: 10px; /* Add some space above the table title */
+}
+
+.table-panel h3 {
+     margin-bottom: 0.5em; /* Space below title */
+}
+
+.table-panel .table-instructions {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 0.8em;
+    font-style: italic;
+}
+
+.table-panel .table-wrapper {
+    max-height: 350px; /* Adjust height as needed */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Rounded corners for table wrapper */
+}
+
+.table-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.table-panel th, .table-panel td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee; /* Lighter border */
+    text-align: left;
+    vertical-align: middle;
+    white-space: normal;
+    border-left: none; /* Remove vertical borders */
+    border-right: none;
+}
+/* Add border back to the top of the first body row */
+ .table-panel tbody tr:first-child td {
+     border-top: 1px solid #ddd;
+ }
+
+
+.table-panel thead th {
+    background-color: #f5f5f5; /* Lighter header */
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: #333; /* Darker header text */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+     border-bottom-width: 2px; /* Thicker border below header */
+     border-bottom-color: #ddd;
+}
+
+.table-panel tbody tr {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.table-panel tbody tr:nth-child(even) {
+    background-color: transparent; /* Remove zebra striping if preferred */
+}
+.table-panel tbody tr:last-child td {
+    border-bottom: none; /* Remove border from last row */
+}
+
+
+.table-panel tbody tr:hover {
+    background-color: #e8f4fa; /* Keep light blue hover */
+}
+
+.table-panel td.center, .table-panel th.center {
+    text-align: center;
+}
+
+
+/* --- Footer --- */
+footer {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid #eee;
+    text-align: center;
+    clear: both; /* Ensure footer clears floated/grid elements */
+     padding-left: 15px; /* Match header padding */
+     padding-right: 15px;
+}
+.footer-text {
+    font-size: 0.85em;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+.footer-text.copyright {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+.footer-text.disclaimer {
+    font-size: 0.8em;
+    font-style: italic;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+/* --- Utility & Message Styles --- */
+.error-message {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.info-message { /* Used for 'no results' in table */
+    color: #555;
+    background-color: #f9f9f9;
+    border: none;
+    padding: 15px;
+    margin: 0;
+    border-radius: 0;
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .dashboard-main {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 15px;
+    }
+    .map-panel, .summary-panel {
+         padding: 15px;
+     }
+    #map-container {
+        height: 350px;
+    }
+    .table-panel .table-wrapper {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 1.5em; }
+    h3 { font-size: 1.15em; }
+    .dashboard-header {
+         padding: 0 10px; /* Reduce padding */
+         margin-bottom: 1em;
+    }
+    .dashboard-filters {
+         padding: 10px 15px;
+         gap: 10px;
+     }
+    .filter-item { min-width: 180px; }
+    .filter-item label { font-size: 0.85em;}
+    .filter-item input, .filter-item select { font-size: 0.9em; }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; } /* Force 3 columns */
+    .stat-value { font-size: 1.6em; }
+    .stat-label { font-size: 0.75em; }
+    .detail-item { flex-direction: column; align-items: flex-start; margin-bottom: 1em; }
+    .detail-label { width: auto; font-weight: bold; margin-bottom: 2px; }
+    .detail-value { padding-left: 5px; }
+    .table-panel th, .table-panel td { font-size: 0.8em; padding: 8px 10px; }
+    footer { margin-top: 2em; padding: 1em 10px 0; }
+     .footer-text, .footer-text.disclaimer { font-size: 0.8em; }
+}
+
+@media (max-width: 480px) {
+    body { padding: 0; background-color: #fff; } /* Simpler background on mobile */
+    .container { margin: 0; }
+    .dashboard-header { padding: 10px 15px; }
+    h1 { font-size: 1.3em; }
+    .export-button { padding: 6px 10px; font-size: 0.8em; }
+    .dashboard-filters { flex-direction: column; align-items: stretch; padding: 10px; }
+    .filter-item { flex-direction: column; align-items: stretch; }
+    .filter-item label { margin-bottom: 5px; margin-right: 0; }
+    .map-panel, .summary-panel { padding: 10px; border-radius: 0; border-left: none; border-right: none; box-shadow: none; }
+    .dashboard-main { gap: 10px; }
+    #map-container { height: 200px; }
+    .legend-color { width: 14px; height: 14px; margin-right: 8px;}
+    .map-legend label { font-size: 0.85em; margin-bottom: 0.4em;}
+    .stats-grid { grid-template-columns: repeat(3, 1fr); } /* Keep 3 columns */
+    .stat-value { font-size: 1.4em; }
+    .stat-label { font-size: 0.7em; }
+    .details-panel .close-button { top: -8px; right: -2px; font-size: 1.6em; }
+    .table-panel th, .table-panel td { font-size: 0.75em; padding: 6px 8px; }
+    footer { padding: 1em 10px 0.5em; }
+     .footer-text, .footer-text.disclaimer { font-size: 0.75em; }
+}

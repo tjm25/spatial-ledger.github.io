@@ -8,55 +8,161 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <!-- Add Leaflet CSS for map placeholder -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🏛️ Local Plan Status Dashboard</h1>
-            <p class="tagline">Tracking the progress and health of Local Plans across England.</p>
-            <p><a href="index.html">&laquo; Back to Main Page</a></p>
+        <header class="dashboard-header">
+            <h1>Local Plan Status Dashboard</h1>
+            <button id="export-csv-btn" class="export-button">📥 Export CSV</button>
         </header>
 
-        <section class="dashboard-controls">
-            <label for="status-filter">Filter by LPA Name:</label>
-            <input type="search" id="status-filter" placeholder="Start typing name...">
-        </section>
-
-        <section class="dashboard-table-container">
-            <div class="table-wrapper"> <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">LPA Name</th>
-                            <th scope="col">Plan Status Text</th>
-                            <th scope="col">Status Code</th>
-                            <th scope="col" class="center">Up-to-date?</th>
-                            <th scope="col" class="center">Last Adopted</th>
-                            <th scope="col" class="center">Years Since</th>
-                            <th scope="col" class="center">Update?</th>
-                            <th scope="col" class="center">NPPF Default?</th>
-                            <th scope="col" class="center">Risk Score</th>
-                        </tr>
-                    </thead>
-                    <tbody id="status-table-body">
-                        <tr><td colspan="9">Loading plan status data...</td></tr>
-                    </tbody>
-                </table>
+        <section class="dashboard-filters">
+            <div class="filter-item">
+                <label for="search-lpa">🔍 Search LPA...</label> {/* Changed label text slightly */}
+                <input type="search" id="search-lpa" placeholder="Enter LPA name...">
+            </div>
+            <div class="filter-item">
+                <label for="region-filter">Region Filter</label> {/* Changed label text slightly */}
+                <select id="region-filter">
+                    <option value="">All Regions</option>
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="status-filter">Status Filter</label> {/* Changed label text slightly */}
+                <select id="status-filter">
+                    <option value="">All Statuses</option>
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="risk-filter">Risk Filter</label> {/* Changed label text slightly */}
+                <select id="risk-filter">
+                    <option value="">All Risks</option>
+                    <!-- Options populated by JS (e.g., 0, 1, 2...) -->
+                </select>
             </div>
         </section>
 
-        <section id="lpa-notes-display" class="notes-display" aria-live="polite" style="display: none;">
-            <button id="close-notes-btn" class="close-button" aria-label="Close Notes">&times;</button>
-            <h3>Notes for <span id="notes-lpa-name"></span>:</h3>
-            <p id="notes-content"></p>
-        </section>
+        <main class="dashboard-main">
+            <section class="map-panel">
+                {/* Removed h2 from here, map is self-explanatory */}
+                <div id="map-container">
+                     <!-- Placeholder visual style added via CSS -->
+                     <div class="map-placeholder-visual"></div>
+                     <p class="map-placeholder-text">Map View</p>
+                </div>
+                <div class="map-legend">
+                    <!-- Using labels for better accessibility and styling -->
+                    <label><span class="legend-color adopted_recent"></span>Adopted and current</label>
+                    <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs ago</label> {/* Matched text from stats */}
+                    <label><span class="legend-color emerging_in_progress"></span>Emerging in preparation</label>
+                    <label><span class="legend-color withdrawn_or_vacuum"></span>No current plan / Withdrawn</label>
+                    {/* Add other statuses as needed, e.g., just_adopted_updating */}
+                    <!-- <label><span class="legend-color just_adopted_updating"></span>Just adopted / Updating</label> -->
+                </div>
+            </section>
 
-         <footer>
-             <p class="footer-text copyright">&copy; 2025 The Spatial Ledger</p>
+            <section class="summary-panel">
+                <div class="stats-panel">
+                    <h3>Plan Coverage Statistics</h3> {/* Changed to h3 */}
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-value" id="stat-adopted-current">--%</span>
+                            <span class="stat-label">Adopted and current</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="stat-adopted-outdated">--%</span>
+                            <span class="stat-label">Adopted, but >5 yrs ago</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="stat-no-plan">--%</span>
+                            <span class="stat-label">No current plan</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* MOVED DETAILS PANEL HERE */}
+                <div id="selected-authority-details" class="details-panel" style="display: none;" aria-live="polite">
+                     <button id="close-details-btn" class="close-button" aria-label="Close Details">×</button>
+                     <h3>Selected Authority Details</h3>
+                     <div id="details-content-wrapper">
+                         <div class="detail-item">
+                            <span class="detail-label">LPA Name:</span>
+                            <span class="detail-value" id="details-lpa-name">--</span>
+                         </div>
+                         <div class="detail-item">
+                             <span class="detail-label">Plan Status:</span>
+                             <span class="detail-value" id="details-plan-status">--</span>
+                         </div>
+                          <div class="detail-item">
+                             <span class="detail-label">Status Code:</span>
+                             <span class="detail-value" id="details-status-code">--</span>
+                         </div>
+                         <div class="detail-item">
+                             <span class="detail-label">Years Since Adoption:</span>
+                             <span class="detail-value" id="details-years-since">--</span>
+                         </div>
+                         <div class="detail-item">
+                             <span class="detail-label">Update in Progress:</span>
+                             <span class="detail-value" id="details-update-progress">--</span>
+                         </div>
+                          <div class="detail-item">
+                             <span class="detail-label">NPPF Defaulting:</span>
+                             <span class="detail-value" id="details-nppf-default">--</span>
+                         </div>
+
+                         <h4>Notes:</h4>
+                         <p id="details-notes" class="detail-notes-text">--</p>
+
+                         <h4>References:</h4>
+                         <div id="details-references" class="detail-references-links">
+                             <p>No references available.</p>
+                         </div>
+                    </div>
+                </div>
+                {/* END OF MOVED DETAILS PANEL */}
+
+
+                <div class="table-panel">
+                     <h3>LPA Details Table</h3> {/* Changed to h3 */}
+                     <p class="table-instructions">Click a row to see more details above.</p>
+                     <div class="table-wrapper">
+                         <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">LPA Name</th>
+                                    <th scope="col">Plan Status</th>
+                                    <th scope="col" class="center">Last Adopted</th>
+                                    <th scope="col" class="center">Yrs Since</th>
+                                    <th scope="col" class="center">Risk Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="status-table-body">
+                                <tr><td colspan="5">Loading plan status data...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+             <p class="footer-text copyright">© 2025 The Spatial Ledger</p>
              <p class="footer-text disclaimer">
-                 <strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis.
+                 <strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is illustrative.
              </p>
          </footer>
 
-    </div> <script type="module" src="status-script.js"></script>
+    </div>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
