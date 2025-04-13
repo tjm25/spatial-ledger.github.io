@@ -1,9 +1,12 @@
 // --- Configuration & State ---
-const dataURL = 'status-data.json';
+const statusDataURL = 'status-data.json';
+const geojsonURL = 'lpa_map.geojson'; // Path to your GeoJSON
 const currentYear = new Date().getFullYear();
 let allLpaData = [];
 let filteredLpaData = [];
 let map = null;
+let geojsonLayer = null; // To hold the map layer
+let lpaLayerMapping = {}; // To quickly access layers by LPA ID for highlighting
 let sortColumn = 'name';
 let sortDirection = 'asc';
 
@@ -14,11 +17,47 @@ let detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences, 
 let statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn;
 let exportCsvBtn, mapContainer, lpaCardsContainer;
 
+// --- Status Code to Color Mapping ---
+const statusColors = {
+    'adopted_recent': '#329c85',         // Soft green
+    'just_adopted_updating': '#5bc0de',    // Calm teal
+    'adopted_outdated': '#f5c315',         // Yellow
+    'emerging_in_progress': '#f0ad4e',     // Orange
+    'withdrawn_or_vacuum': '#d9534f',      // Red
+    'default': '#cccccc'                   // Default grey for missing/unknown
+};
+
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed.");
 
-    // Assign DOM Elements
+    // Assign DOM Elements via helper
+    assignDOMElements();
+
+    // Basic Check
+    if (!checkCriticalElements()) return;
+
+    // Initialize Map Structure (without data yet)
+    initializeMapStructure();
+
+    // Fetch both datasets concurrently
+    Promise.all([
+        fetchStatusData(statusDataURL),
+        fetchGeojsonData(geojsonURL)
+    ])
+    .then(([statusData, geojsonData]) => {
+        console.log("Both status and GeoJSON data fetched successfully.");
+        // Process data and initialize the rest of the dashboard
+        processAndInitializeDashboard(statusData, geojsonData);
+    })
+    .catch(error => {
+        console.error("Error fetching initial data:", error);
+        displayLoadingError("Error loading dashboard data. Please try again later.");
+    });
+});
+
+/** Assigns global DOM element variables */
+function assignDOMElements() {
     tableBody = document.getElementById('status-table-body');
     tableHead = document.getElementById('lpa-table-head');
     searchInput = document.getElementById('search-lpa');
@@ -43,8 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
     exportCsvBtn = document.getElementById('export-csv-btn');
     mapContainer = document.getElementById('map-container');
     lpaCardsContainer = document.getElementById('lpa-cards-container');
+}
 
-    // Basic Check
+/** Checks if critical DOM elements were found */
+function checkCriticalElements() {
     const criticalElements = [
         tableBody, tableHead, searchInput, detailsPanel, detailsRiskScore,
         exportCsvBtn, mapContainer, lpaCardsContainer, closeDetailsBtn,
@@ -62,146 +103,213 @@ document.addEventListener('DOMContentLoaded', () => {
             if (header) header.parentNode.insertBefore(errorMsg, header.nextSibling);
             else container.prepend(errorMsg);
         }
-        return;
+        return false;
     }
     console.log("All critical DOM elements found.");
+    return true;
+}
 
-    // Initialize & Fetch
-    initializeMap();
-    fetchData(); // fetchData now handles initial loading message
+/** Displays loading/error messages in main content areas */
+function displayLoadingError(message, isError = true) {
+    const messageClass = isError ? 'error-message' : 'info-message';
+    if (tableBody) {
+        const cols = tableBody.closest('table')?.querySelector('thead tr')?.cells.length || 5;
+        tableBody.innerHTML = `<tr><td colspan="${cols}" class="${messageClass}">${message}</td></tr>`;
+    }
+    if (lpaCardsContainer) {
+        lpaCardsContainer.innerHTML = `<p class="${messageClass}">${message}</p>`;
+    }
+    if (isError) {
+        const stats = [statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn];
+        stats.forEach(stat => { if (stat) stat.textContent = 'ERR'; });
+    }
+}
+
+// --- Data Fetching ---
+
+/** Fetches and returns status data */
+async function fetchStatusData(url) {
+    console.log("Fetching status data...");
+    displayLoadingError("Loading plan status data...", false);
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP error fetching status data! status: ${response.status}`);
+    return await response.json();
+}
+
+/** Fetches and returns GeoJSON data */
+async function fetchGeojsonData(url) {
+    console.log("Fetching GeoJSON data...");
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP error fetching GeoJSON! status: ${response.status}`);
+    return await response.json();
+}
+
+// --- Initialization Flow (after data is loaded) ---
+
+/** Processes data and sets up the dashboard */
+function processAndInitializeDashboard(statusData, geojsonData) {
+    console.log("Processing data and initializing dashboard...");
+    // 1. Pre-process Status Data
+    allLpaData = statusData.map((lpa, index) => {
+        const processedLpa = { ...lpa };
+        processedLpa.id = processedLpa.id || `lpa-${index}`;
+        processedLpa.years_since_adoption = calculateYearsSince(processedLpa.last_adoption_year);
+        processedLpa.plan_status_display = formatStatusCode(processedLpa.status_code);
+        processedLpa.last_adoption_year = processedLpa.last_adoption_year ? parseInt(processedLpa.last_adoption_year, 10) : null;
+        if (isNaN(processedLpa.last_adoption_year)) processedLpa.last_adoption_year = null;
+        processedLpa.plan_risk_score = processedLpa.plan_risk_score !== null && processedLpa.plan_risk_score !== undefined ? parseInt(processedLpa.plan_risk_score, 10) : null;
+        if (isNaN(processedLpa.plan_risk_score)) processedLpa.plan_risk_score = null;
+        processedLpa.years_since_adoption = typeof processedLpa.years_since_adoption === 'number' ? processedLpa.years_since_adoption : null;
+        return processedLpa;
+    });
+
+    // 2. Create Lookup for Status Data
+    const lpaStatusLookup = createLpaStatusLookup(allLpaData);
+
+    // 3. Merge Status Data into GeoJSON Features
+    geojsonData.features.forEach(feature => {
+        const lpaId = feature.properties.LPA23CD; // Match using GeoJSON property
+        const statusInfo = lpaStatusLookup[lpaId];
+        if (statusInfo) {
+            feature.properties.status_code = statusInfo.status_code;
+            feature.properties.name = statusInfo.name;
+            feature.properties.plan_status_display = statusInfo.plan_status_display;
+            feature.properties.id = statusInfo.id;
+        } else {
+            feature.properties.status_code = 'unknown';
+            feature.properties.name = feature.properties.LPA23NM || 'Unknown LPA';
+            feature.properties.plan_status_display = 'Unknown';
+            feature.properties.id = `geojson-${lpaId}`;
+        }
+    });
+
+    // 4. Add Map Overlay
+    addMapOverlay(geojsonData);
+
+    // 5. Populate Filters
+    filteredLpaData = [...allLpaData];
+    populateFilters();
+
+    // 6. Apply Initial Sort & Render Dashboard
+    sortTableData();
+    updateDashboard();
+
+    // 7. Add Event Listeners
     addEventListeners();
-});
 
-// --- Functions ---
+    console.log("Dashboard initialization complete.");
+}
 
-function initializeMap() {
+/** Creates a lookup object for status data by LPA ID */
+function createLpaStatusLookup(statusData) {
+    const lookup = {};
+    statusData.forEach(lpa => { lookup[lpa.id] = lpa; });
+    return lookup;
+}
+
+// --- Map Functions ---
+
+/** Initializes the Leaflet map structure */
+function initializeMapStructure() {
     try {
-        map = L.map(mapContainer).setView([52.5, -1.5], 6);
+        map = L.map(mapContainer).setView([53.5, -1.5], 6); // Center on England/Wales
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            detectRetina: true
         }).addTo(map);
-        console.log("Basic Leaflet map initialized.");
+        console.log("Leaflet map structure initialized.");
         const placeholderVisual = mapContainer.querySelector('.map-placeholder-visual');
         const placeholderText = mapContainer.querySelector('.map-placeholder-text');
         if (placeholderVisual) placeholderVisual.style.display = 'none';
         if (placeholderText) placeholderText.style.display = 'none';
     } catch (error) {
-        console.error("Error initializing Leaflet map:", error);
+        console.error("Error initializing Leaflet map structure:", error);
         mapContainer.innerHTML = '<p class="error-message" style="margin: auto;">Could not load map.</p>';
     }
 }
 
-/**
- * Fetches LPA status data from the JSON file.
- * UPDATED: Sets initial loading state for both table and cards.
- */
-async function fetchData() {
-    // Set initial loading state in both views
-    if (tableBody) {
-        const cols = tableBody.closest('table')?.querySelector('thead tr')?.cells.length || 5;
-        tableBody.innerHTML = `<tr><td colspan="${cols}" class="info-message">Loading plan status data...</td></tr>`;
+/** Adds the GeoJSON overlay layer to the map */
+function addMapOverlay(geojsonData) {
+    if (!map) {
+        console.error("Map not initialized, cannot add overlay.");
+        return;
     }
-    if (lpaCardsContainer) {
-        lpaCardsContainer.innerHTML = '<p class="info-message">Loading plan status data...</p>';
-    }
-
+    lpaLayerMapping = {}; // Reset mapping
+    geojsonLayer = L.geoJSON(geojsonData, {
+        style: styleFunction,
+        onEachFeature: onEachFeatureFunction
+    }).addTo(map);
+    console.log("GeoJSON layer added to map.");
     try {
-        const response = await fetch(dataURL);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        allLpaData = await response.json();
-        console.log(`Fetched ${allLpaData.length} LPA records.`);
-
-        // Pre-process data
-        allLpaData.forEach((lpa, index) => {
-            lpa.id = lpa.id || `lpa-${index}`;
-            lpa.years_since_adoption = calculateYearsSince(lpa.last_adoption_year);
-            lpa.plan_status_display = formatStatusCode(lpa.status_code);
-            lpa.last_adoption_year = lpa.last_adoption_year ? parseInt(lpa.last_adoption_year, 10) : null;
-            if (isNaN(lpa.last_adoption_year)) lpa.last_adoption_year = null;
-            lpa.plan_risk_score = lpa.plan_risk_score !== null && lpa.plan_risk_score !== undefined ? parseInt(lpa.plan_risk_score, 10) : null;
-            if (isNaN(lpa.plan_risk_score)) lpa.plan_risk_score = null;
-            lpa.years_since_adoption = typeof lpa.years_since_adoption === 'number' ? lpa.years_since_adoption : null;
-        });
-
-        filteredLpaData = [...allLpaData];
-        populateFilters();
-        sortTableData();
-        updateDashboard(); // Initial population replaces loading message
-
-    } catch (error) {
-        console.error("Error fetching status data:", error);
-        const errorHtmlTable = `<tr><td colspan="5" class="error-message">Error loading data. Please try again later.</td></tr>`;
-        const errorHtmlCards = '<p class="error-message">Error loading data. Please try again later.</p>';
-        if (tableBody) tableBody.innerHTML = errorHtmlTable;
-        if (lpaCardsContainer) lpaCardsContainer.innerHTML = errorHtmlCards;
-        if (statAdoptedRecent) statAdoptedRecent.textContent = 'ERR';
+        if (geojsonLayer.getBounds().isValid()) {
+            map.fitBounds(geojsonLayer.getBounds().pad(0.1));
+        }
+    } catch (e) {
+        console.warn("Could not fit map bounds to GeoJSON layer:", e);
     }
 }
 
-/**
- * Populates filter dropdowns based on available data.
- */
-function populateFilters() {
-    const regions = new Set();
-    const statuses = new Set();
-    const risks = new Set();
-    allLpaData.forEach(lpa => {
-        if (lpa.region) regions.add(lpa.region);
-        if (lpa.status_code) statuses.add(lpa.status_code);
-        if (lpa.plan_risk_score !== null && lpa.plan_risk_score !== undefined) risks.add(lpa.plan_risk_score);
-    });
-    if (regionFilter) populateSelect(regionFilter, [...regions].sort());
-    if (statusFilter) populateSelect(statusFilter, [...statuses].sort(), formatStatusCode);
-    if (riskFilter) populateSelect(riskFilter, [...risks].sort((a, b) => a - b));
+/** Defines the style for each map feature based on status */
+function styleFunction(feature) {
+    const statusCode = feature.properties.status_code || 'unknown';
+    const color = statusColors[statusCode] || statusColors['default'];
+    return {
+        fillColor: color,
+        fillOpacity: 0.6,
+        color: '#555',
+        weight: 1,
+        opacity: 0.8
+    };
 }
 
-/** Helper to populate a select dropdown */
-function populateSelect(selectElement, options, formatter = (val) => val) {
-    selectElement.innerHTML = '<option value="">All</option>';
-    options.forEach(optionValue => {
-        const option = document.createElement('option');
-        option.value = optionValue;
-        option.textContent = formatter(optionValue);
-        selectElement.appendChild(option);
+/** Defines interactions for each map feature */
+function onEachFeatureFunction(feature, layer) {
+    if (feature.properties.id) {
+        lpaLayerMapping[feature.properties.id] = layer;
+    }
+    const tooltipContent = `<b>${feature.properties.name || 'Unknown LPA'}</b><br>Status: ${feature.properties.plan_status_display || 'Unknown'}`;
+    layer.bindTooltip(tooltipContent);
+    layer.on('click', (e) => {
+        if (feature.properties.id) {
+            console.log(`Map feature clicked: ${feature.properties.name}, ID: ${feature.properties.id}`);
+            displayLpaDetails(feature.properties.id);
+        } else {
+            console.warn("Clicked map feature missing 'id' property.");
+        }
+    });
+    layer.on('mouseover', (e) => {
+        e.target.setStyle({
+            weight: 2,
+            color: '#333',
+            fillOpacity: 0.75
+        });
+    });
+    layer.on('mouseout', (e) => {
+        if (detailsPanel.dataset.lpaId !== feature.properties.id) {
+             geojsonLayer.resetStyle(e.target);
+        }
     });
 }
 
-/**
- * Adds event listeners for filters, table clicks, etc.
- */
+// --- Event Handlers & Display Logic ---
+
 function addEventListeners() {
     console.log("Adding event listeners...");
     let filterTimeout;
-    const debounceFilter = () => {
-        clearTimeout(filterTimeout);
-        filterTimeout = setTimeout(applyFiltersAndRedraw, 300);
-    };
+    const debounceFilter = () => { clearTimeout(filterTimeout); filterTimeout = setTimeout(applyFiltersAndRedraw, 300); };
 
-    // Filters
     if (searchInput) searchInput.addEventListener('input', debounceFilter);
     if (regionFilter) regionFilter.addEventListener('change', debounceFilter);
     if (statusFilter) statusFilter.addEventListener('change', debounceFilter);
     if (riskFilter) riskFilter.addEventListener('change', debounceFilter);
 
-    // Table Header for Sorting
     if (tableHead) tableHead.addEventListener('click', handleSortClick);
-
-    // Table Body for Row Click
     if (tableBody) tableBody.addEventListener('click', handleTableClick);
-
-    // Card Container for Card Click
     if (lpaCardsContainer) lpaCardsContainer.addEventListener('click', handleCardClick);
-
-    // Details Panel Close Button
     if (closeDetailsBtn) closeDetailsBtn.addEventListener('click', hideDetails);
-
-    // Export Button
     if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportToCSV);
 }
 
-/**
- * Applies all active filters to the data and redraws the dashboard.
- */
 function applyFiltersAndRedraw() {
     console.log("Applying filters and redrawing...");
     const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
@@ -220,7 +328,6 @@ function applyFiltersAndRedraw() {
     sortTableData();
     updateDashboard();
 
-    // Re-apply selection highlight or hide details
     if (detailsPanel.style.display !== 'none') {
         const selectedId = detailsPanel.dataset.lpaId;
         if (selectedId && filteredLpaData.some(lpa => lpa.id === selectedId)) {
@@ -231,7 +338,6 @@ function applyFiltersAndRedraw() {
     }
 }
 
-/** Sorts filteredLpaData based on sortColumn and sortDirection */
 function sortTableData() {
     if (!sortColumn) return;
     filteredLpaData.sort((a, b) => {
@@ -254,7 +360,6 @@ function sortTableData() {
     });
 }
 
-/** Handles clicking on table headers for sorting */
 function handleSortClick(event) {
     console.log("Sort click detected");
     const header = event.target.closest('th');
@@ -270,7 +375,6 @@ function handleSortClick(event) {
     updateDashboard();
 }
 
-/** Updates visual indicators on table headers */
 function updateSortIndicators() {
     if (!tableHead) return;
     tableHead.querySelectorAll('th.sortable').forEach(th => {
@@ -281,7 +385,6 @@ function updateSortIndicators() {
     });
 }
 
-/** Checks screen width and calls appropriate render function */
 function updateDashboard() {
     console.log("Updating dashboard view...");
     calculateAndDisplayStats(filteredLpaData);
@@ -300,7 +403,6 @@ function updateDashboard() {
     }
 }
 
-/** Calculates years since adoption. Returns null if not applicable */
 function calculateYearsSince(adoptionYear) {
     if (typeof adoptionYear === 'number' && adoptionYear > 1900 && adoptionYear <= currentYear) {
         return currentYear - adoptionYear;
@@ -308,7 +410,6 @@ function calculateYearsSince(adoptionYear) {
     return null;
 }
 
-/** Maps status codes to user-friendly display text */
 function formatStatusCode(statusCode) {
     switch (statusCode) {
         case 'adopted_recent': return 'Adopted & Current';
@@ -321,7 +422,6 @@ function formatStatusCode(statusCode) {
     }
 }
 
-/** Populates the table */
 function populateTable(data) {
     if (!tableBody) return;
     tableBody.innerHTML = '';
@@ -341,7 +441,6 @@ function populateTable(data) {
     });
 }
 
-/** Populates the cards container */
 function populateCards(data) {
     if (!lpaCardsContainer) return;
     lpaCardsContainer.innerHTML = '';
@@ -366,9 +465,6 @@ function populateCards(data) {
     });
 }
 
-/**
- * Helper to create and append a table cell.
- */
 function createCell(row, text, center = false) {
     const cell = row.insertCell();
     cell.textContent = text;
@@ -376,14 +472,12 @@ function createCell(row, text, center = false) {
     return cell;
 }
 
-/** Formats boolean values for display in the details panel (excluding emojis). */
 function formatBoolean(value) {
     if (value === true) return 'Yes';
     if (value === false) return 'No';
     return 'N/A';
 }
 
-/** Handles clicks within the table body */
 function handleTableClick(event) {
     const row = event.target.closest('tr');
     if (!row || !row.dataset.lpaId || !detailsPanel) return;
@@ -392,7 +486,6 @@ function handleTableClick(event) {
     displayLpaDetails(lpaId);
 }
 
-/** Handles clicks within the card container */
 function handleCardClick(event) {
     const card = event.target.closest('.lpa-card');
     if (!card || !card.dataset.lpaId || !detailsPanel) return;
@@ -401,10 +494,7 @@ function handleCardClick(event) {
     displayLpaDetails(lpaId);
 }
 
-/**
- * Finds LPA data by ID and displays it in the details panel.
- * UPDATED: Added scrollIntoView.
- */
+/** Finds LPA data by ID and displays it in the details panel. */
 function displayLpaDetails(lpaId) {
     console.log(`Attempting to display details for lpaId: ${lpaId}`);
     const lpa = allLpaData.find(item => item.id === lpaId);
@@ -418,14 +508,10 @@ function displayLpaDetails(lpaId) {
         return;
     }
     console.log("Found LPA data:", lpa);
-
-    // Populate fields
     detailsLpaName.textContent = lpa.name ?? 'N/A';
     detailsPlanStatus.textContent = lpa.plan_status ?? 'N/A';
     detailsYearsSince.textContent = lpa.years_since_adoption ?? 'N/A';
     detailsNotes.textContent = lpa.notes ?? 'No specific notes available.';
-    
-    // Risk Score logic
     const riskScore = lpa.plan_risk_score;
     let riskHtml = 'N/A';
     if (riskScore !== null && riskScore !== undefined) {
@@ -436,14 +522,10 @@ function displayLpaDetails(lpaId) {
         riskHtml = `<span class="risk-emoji ${riskClass}"></span>${riskScore}`;
     }
     detailsRiskScore.innerHTML = riskHtml;
-    
-    // Booleans with emoji
     const updateInProgress = lpa.update_in_progress;
     detailsUpdateProgress.innerHTML = (updateInProgress === true) ? '✅ Yes' : (updateInProgress === false ? '❌ No' : 'N/A');
     const nppfDefaulting = lpa.nppf_defaulting;
     detailsNppfDefault.innerHTML = (nppfDefaulting === true) ? '❌ Yes' : (nppfDefaulting === false ? '✅ No' : 'N/A');
-    
-    // Populate References
     detailsReferences.innerHTML = '';
     if (lpa.references && Array.isArray(lpa.references) && lpa.references.length > 0) {
         lpa.references.forEach(refString => {
@@ -470,18 +552,13 @@ function displayLpaDetails(lpaId) {
     } else {
         detailsReferences.innerHTML = '<p class="no-refs">No references available.</p>';
     }
-
-    // Show panel and highlight
     detailsPanel.dataset.lpaId = lpaId;
     detailsPanel.style.display = 'block';
     highlightSelectedItem(lpaId);
-
-    // --- ADDED: Scroll details panel into view ---
     detailsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     console.log("Scrolled details panel into view");
 }
 
-/** Hides the details display section and removes highlights */
 function hideDetails() {
     console.log("Hiding details panel");
     if (detailsPanel) {
@@ -499,7 +576,7 @@ function hideDetails() {
     }
 }
 
-/** Adds selected class to the current item (row or card) */
+/** Adds selected class to the current item (row, card, and map feature) */
 function highlightSelectedItem(lpaId) {
     if (!lpaId) return;
     removeHighlights();
@@ -513,17 +590,35 @@ function highlightSelectedItem(lpaId) {
         console.log("Highlighting card:", lpaId); 
         card.classList.add('selected-card'); 
     }
+    // Highlight map feature if available
+    const layer = lpaLayerMapping[lpaId];
+    if (layer) {
+        console.log("Highlighting map layer:", lpaId);
+        layer.setStyle({
+            weight: 3,
+            color: '#000',
+            opacity: 1
+            // Optionally: fillOpacity: 0.5
+        });
+        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+            layer.bringToFront();
+        }
+    }
 }
 
-/** Removes selected class from any item (row or card) */
+/** Removes selected class/style from any item (row, card, and map feature) */
 function removeHighlights() {
     const selectedRow = tableBody ? tableBody.querySelector('.selected-row') : null;
     const selectedCard = lpaCardsContainer ? lpaCardsContainer.querySelector('.selected-card') : null;
     if (selectedRow) selectedRow.classList.remove('selected-row');
     if (selectedCard) selectedCard.classList.remove('selected-card');
+    const previouslySelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
+    if (previouslySelectedId && lpaLayerMapping[previouslySelectedId]) {
+        console.log("Resetting style for previously selected layer:", previouslySelectedId);
+        geojsonLayer.resetStyle(lpaLayerMapping[previouslySelectedId]);
+    }
 }
 
-/** Calculates and displays the coverage statistics for all 5 statuses */
 function calculateAndDisplayStats(data) {
     const total = data.length;
     const statElements = [statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn];
@@ -547,7 +642,6 @@ function calculateAndDisplayStats(data) {
     statWithdrawn.textContent = formatPercent(counts.withdrawn_or_vacuum, total);
 }
 
-/** Exports the currently filtered data to a CSV file */
 function exportToCSV() {
     if (!filteredLpaData || filteredLpaData.length === 0) { 
         alert("No data to export."); 

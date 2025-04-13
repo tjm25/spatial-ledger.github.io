@@ -215,3 +215,26 @@ footer { margin-top: 3em; padding: 1.5em 15px 0; border-top: 1px solid #eee; tex
     footer { padding: 1em 10px 0.5em; }
     .footer-text, .footer-text.disclaimer { font-size: 0.75em; }
 }
+
+/* --- ADDED: Map Feature Styling --- */
+.leaflet-interactive { /* Default path style */
+    cursor: pointer;
+}
+
+.map-feature-hover {
+    /* Style for feature on mouse hover */
+    /* Example: slightly darker/thicker border */
+    stroke: #333 !important;
+    stroke-width: 2 !important;
+    opacity: 1 !important;
+}
+
+.map-feature-selected {
+    /* Style for feature when corresponding LPA is selected */
+    /* Example: prominent dark border */
+    stroke: #000000 !important;
+    stroke-width: 3 !important;
+    opacity: 1 !important;
+    /* Optional: Slightly reduced fill opacity to make border stand out */
+    fill-opacity: 0.5 !important;
+}
