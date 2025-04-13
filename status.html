@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
 
@@ -26,25 +26,25 @@
 
         <section class="dashboard-filters">
             <div class="filter-item">
-                <label for="search-lpa">🔍 Search LPA...</label> {/* Changed label text slightly */}
+                <label for="search-lpa">🔍 Search LPA...</label> <!-- Changed label text slightly -->
                 <input type="search" id="search-lpa" placeholder="Enter LPA name...">
             </div>
             <div class="filter-item">
-                <label for="region-filter">Region Filter</label> {/* Changed label text slightly */}
+                <label for="region-filter">Region Filter</label> <!-- Changed label text slightly -->
                 <select id="region-filter">
                     <option value="">All Regions</option>
                     <!-- Options populated by JS -->
                 </select>
             </div>
             <div class="filter-item">
-                <label for="status-filter">Status Filter</label> {/* Changed label text slightly */}
+                <label for="status-filter">Status Filter</label> <!-- Changed label text slightly -->
                 <select id="status-filter">
                     <option value="">All Statuses</option>
                     <!-- Options populated by JS -->
                 </select>
             </div>
             <div class="filter-item">
-                <label for="risk-filter">Risk Filter</label> {/* Changed label text slightly */}
+                <label for="risk-filter">Risk Filter</label> <!-- Changed label text slightly -->
                 <select id="risk-filter">
                     <option value="">All Risks</option>
                     <!-- Options populated by JS (e.g., 0, 1, 2...) -->
@@ -54,7 +54,7 @@
 
         <main class="dashboard-main">
             <section class="map-panel">
-                {/* Removed h2 from here, map is self-explanatory */}
+                <!-- Removed h2 from here, map is self-explanatory -->
                 <div id="map-container">
                      <!-- Placeholder visual style added via CSS -->
                      <div class="map-placeholder-visual"></div>
@@ -63,17 +63,17 @@
                 <div class="map-legend">
                     <!-- Using labels for better accessibility and styling -->
                     <label><span class="legend-color adopted_recent"></span>Adopted and current</label>
-                    <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs ago</label> {/* Matched text from stats */}
+                    <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs ago</label> <!-- Matched text from stats -->
                     <label><span class="legend-color emerging_in_progress"></span>Emerging in preparation</label>
                     <label><span class="legend-color withdrawn_or_vacuum"></span>No current plan / Withdrawn</label>
-                    {/* Add other statuses as needed, e.g., just_adopted_updating */}
+                    <!-- Add other statuses as needed, e.g., just_adopted_updating -->
                     <!-- <label><span class="legend-color just_adopted_updating"></span>Just adopted / Updating</label> -->
                 </div>
             </section>
 
             <section class="summary-panel">
                 <div class="stats-panel">
-                    <h3>Plan Coverage Statistics</h3> {/* Changed to h3 */}
+                    <h3>Plan Coverage Statistics</h3> <!-- Changed to h3 -->
                     <div class="stats-grid">
                         <div class="stat-item">
                             <span class="stat-value" id="stat-adopted-current">--%</span>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                {/* MOVED DETAILS PANEL HERE */}
+                <!-- MOVED DETAILS PANEL HERE -->
                 <div id="selected-authority-details" class="details-panel" style="display: none;" aria-live="polite">
                      <button id="close-details-btn" class="close-button" aria-label="Close Details">×</button>
                      <h3>Selected Authority Details</h3>
@@ -129,11 +129,10 @@
                          </div>
                     </div>
                 </div>
-                {/* END OF MOVED DETAILS PANEL */}
-
+                <!-- END OF MOVED DETAILS PANEL -->
 
                 <div class="table-panel">
-                     <h3>LPA Details Table</h3> {/* Changed to h3 */}
+                     <h3>LPA Details Table</h3> <!-- Changed to h3 -->
                      <p class="table-instructions">Click a row to see more details above.</p>
                      <div class="table-wrapper">
                          <table>
