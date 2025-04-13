@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Spatial Ledger (Hybrid Search)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
     <script src="https://unpkg.com/lunr/lunr.min.js"></script>
-    </head>
+</head>
+
 <body>
     <div class="container">
         <header>
@@ -22,26 +25,33 @@
         <section id="browse">
             <h2><span class="emoji">🗂️</span> Find a Local Plan Analysis</h2>
             <form id="search-form">
-                 <label for="search-input">Enter search terms (e.g., 'housing target', 'green belt policy', 'Leeds'):</label>
-                 <div class="search-input-wrapper">
-                     <input type="search" id="search-input" placeholder="Initializing search..." autocomplete="off" disabled>
-                     <button id="search-button" type="submit" disabled>Search</button>
-                 </div>
-                 <span id="loading-indicator" style="display:none;">Initializing...</span>
+                <label for="search-input">Enter search terms (e.g., 'housing target', 'green belt policy',
+                    'Leeds'):</label>
+                <div class="search-input-wrapper">
+                    <input type="search" id="search-input" placeholder="Initializing search..." autocomplete="off"
+                        disabled>
+                    <button id="search-button" type="submit" disabled>Search</button>
+                </div>
+                <span id="loading-indicator" style="display:none;">Initializing...</span>
             </form>
             <div id="search-results"></div>
         </section>
-
+        <div class="status-link-section">
+            <p>Or view the <a href="status.html">overall status of Local Plans</a> across England.</p>
+        </div>
+        
         <main>
             <div class="accordion-group">
-
                 <section class="accordion" id="what-is-it">
                     <button class="accordion-button" aria-expanded="false">
                         <span class="emoji">🔍</span> What is The Spatial Ledger?
                     </button>
                     <div class="accordion-content">
-                        <p>Every Local Plan makes promises: how many homes will be built, where growth will happen, and which priorities will guide development. But are these promises being kept?</p>
-                        <p>The Spatial Ledger cuts through the complexity. We examine Local Plans across England, scrutinising the details to reveal what they truly commit to, what remains unsaid, and where policies might quietly conflict.</p>
+                        <p>Every Local Plan makes promises: how many homes will be built, where growth will happen, and
+                            which priorities will guide development. But are these promises being kept?</p>
+                        <p>The Spatial Ledger cuts through the complexity. We examine Local Plans across England,
+                            scrutinising the details to reveal what they truly commit to, what remains unsaid, and where
+                            policies might quietly conflict.</p>
                         <p>We focus on critical questions:</p>
                         <ul>
                             <li>Does the housing target genuinely meet local needs?</li>
@@ -49,7 +59,8 @@
                             <li>Are constraints presented as unchangeable facts or as policy choices?</li>
                             <li>Do the specific site allocations align with the plan's overall vision?</li>
                         </ul>
-                        <p>The Spatial Ledger provides clear, evidence-based answers, creating a public record for accountability.</p>
+                        <p>The Spatial Ledger provides clear, evidence-based answers, creating a public record for
+                            accountability.</p>
                     </div>
                 </section>
 
@@ -58,70 +69,92 @@
                         <span class="emoji">🧾</span> Why Does This Matter?
                     </button>
                     <div class="accordion-content">
-                        <p>Planning decisions shape our communities profoundly – influencing where we can afford to live, the jobs available, and who feels included or left behind.</p>
-                        <p>Yet, these crucial decisions are often buried within lengthy, technical documents. This opacity makes the planning system difficult for most people to engage with – until a housing crisis or controversial development makes the consequences unavoidable.</p>
-                        <p>The Spatial Ledger aims to change that. By making local planning promises and policies transparent and understandable, we make the system harder to ignore and easier to hold accountable.</p>
+                        <p>Planning decisions shape our communities profoundly – influencing where we can afford to
+                            live, the jobs available, and who feels included or left behind.</p>
+                        <p>Yet, these crucial decisions are often buried within lengthy, technical documents. This
+                            opacity makes the planning system difficult for most people to engage with – until a housing
+                            crisis or controversial development makes the consequences unavoidable.</p>
+                        <p>The Spatial Ledger aims to change that. By making local planning promises and policies
+                            transparent and understandable, we make the system harder to ignore and easier to hold
+                            accountable.</p>
                     </div>
                 </section>
 
                 <section class="accordion" id="how-it-works">
-                     <button class="accordion-button" aria-expanded="false">
-                          <span class="emoji">🔦</span> How Does It Work?
-                     </button>
-                     <div class="accordion-content">
-                          <p>Our process is straightforward:</p>
-                          <ul>
-                              <li>We meticulously read Local Plans and related evidence documents.</li>
-                              <li>We identify vague commitments, internal contradictions, and policies that may hinder rather than help sustainable growth.</li>
-                              <li>We compare stated ambitions with allocated sites, and targets with likely delivery outcomes.</li>
-                          </ul>
-                          <p>We then publish our findings clearly, one page per Local Planning Authority, creating a vital public resource – free to access, with no spin.</p>
-                     </div>
+                    <button class="accordion-button" aria-expanded="false">
+                        <span class="emoji">🔦</span> How Does It Work?
+                    </button>
+                    <div class="accordion-content">
+                        <p>Our process is straightforward:</p>
+                        <ul>
+                            <li>We meticulously read Local Plans and related evidence documents.</li>
+                            <li>We identify vague commitments, internal contradictions, and policies that may hinder
+                                rather than help sustainable growth.</li>
+                            <li>We compare stated ambitions with allocated sites, and targets with likely delivery
+                                outcomes.</li>
+                        </ul>
+                        <p>We then publish our findings clearly, one page per Local Planning Authority, creating a vital
+                            public resource – free to access, with no spin.</p>
+                    </div>
                 </section>
 
                 <section class="accordion" id="whats-included">
-                     <button class="accordion-button" aria-expanded="false">
-                          <span class="emoji">📊</span> What We Analyse
-                     </button>
-                     <div class="accordion-content">
-                          <p>On each Local Planning Authority's page, you'll find analysis covering key aspects:</p>
-                          <ul>
-                               <li><span class="emoji">📌</span> Housing target vs need (local + NPPF benchmark)</li>
-                               <li><span class="emoji">📍</span> Spatial distribution of growth (towns, villages, greenfield)</li>
-                               <li><span class="emoji">⛔</span> Constraints and their justification</li>
-                               <li><span class="emoji">📐</span> Site allocations: quantity, location, mix</li>
-                               <li><span class="emoji">🔁</span> Policy contradictions and trade-offs</li>
-                               <li><span class="emoji">🧩</span> Missing pieces or implementation gaps</li>
-                          </ul>
-                          <p>Wherever feasible, our findings link directly back to the specific paragraphs or policies in the source documents.</p>
-                     </div>
+                    <button class="accordion-button" aria-expanded="false">
+                        <span class="emoji">📊</span> What We Analyse
+                    </button>
+                    <div class="accordion-content">
+                        <p>On each Local Planning Authority's page, you'll find analysis covering key aspects:</p>
+                        <ul>
+                            <li><span class="emoji">📌</span> Housing target vs need (local + NPPF benchmark)</li>
+                            <li><span class="emoji">📍</span> Spatial distribution of growth (towns, villages,
+                                greenfield)</li>
+                            <li><span class="emoji">⛔</span> Constraints and their justification</li>
+                            <li><span class="emoji">📐</span> Site allocations: quantity, location, mix</li>
+                            <li><span class="emoji">🔁</span> Policy contradictions and trade-offs</li>
+                            <li><span class="emoji">🧩</span> Missing pieces or implementation gaps</li>
+                        </ul>
+                        <p>Wherever feasible, our findings link directly back to the specific paragraphs or policies in
+                            the source documents.</p>
+                    </div>
                 </section>
 
                 <section class="accordion" id="methodology">
-                     <button class="accordion-button" aria-expanded="false">
-                          <span class="emoji">🧪</span> Our Methodology
-                     </button>
-                     <div class="accordion-content">
-                          <p>We combine automated analysis using AI tools with careful manual review by planning experts. Our analysis covers adopted Local Plans, sustainability appraisals, strategic housing land availability assessments (SHLAAs), and other core evidence documents.</p>
-                          <p>Our core values are clarity, fairness, and traceability. We strive to present complex information simply, apply consistent standards, and ensure every finding can be traced back to its source. We draw no conclusions without supporting text from the plan documents.</p>
-                          <p>Transparency works both ways: If you believe we've misinterpreted something or made an error, please let us know. We are committed to checking feedback and correcting our analysis where necessary.</p>
-                     </div>
+                    <button class="accordion-button" aria-expanded="false">
+                        <span class="emoji">🧪</span> Our Methodology
+                    </button>
+                    <div class="accordion-content">
+                        <p>We combine automated analysis using AI tools with careful manual review by planning experts.
+                            Our analysis covers adopted Local Plans, sustainability appraisals, strategic housing land
+                            availability assessments (SHLAAs), and other core evidence documents.</p>
+                        <p>Our core values are clarity, fairness, and traceability. We strive to present complex
+                            information simply, apply consistent standards, and ensure every finding can be traced back
+                            to its source. We draw no conclusions without supporting text from the plan documents.</p>
+                        <p>Transparency works both ways: If you believe we've misinterpreted something or made an error,
+                            please let us know. We are committed to checking feedback and correcting our analysis where
+                            necessary.</p>
+                    </div>
                 </section>
 
                 <section class="accordion" id="audience">
-                     <button class="accordion-button" aria-expanded="false">
-                          <span class="emoji">🧭</span> Who Is This For?
-                     </button>
-                     <div class="accordion-content">
-                          <p>The Spatial Ledger is designed to empower anyone interested in the future of their local area:</p>
-                          <ul>
-                               <li><span class="emoji">📎</span> Planning Professionals: Gain insights for balanced decision-making and cross-authority comparisons.</li>
-                               <li><span class="emoji">🗣️</span> Campaigners & Advocates: Find evidence to support calls for greater accountability and better planning outcomes.</li>
-                               <li><span class="emoji">🏘️</span> Residents & Community Groups: Understand the official plans for your area and how they might affect you.</li>
-                               <li><span class="emoji">🧠</span> Researchers & Policymakers: Track planning trends, policy effectiveness, and housing delivery across England.</li>
-                          </ul>
-                          <p>If you care about evidence-based planning and how places evolve, this resource is for you.</p>
-                     </div>
+                    <button class="accordion-button" aria-expanded="false">
+                        <span class="emoji">🧭</span> Who Is This For?
+                    </button>
+                    <div class="accordion-content">
+                        <p>The Spatial Ledger is designed to empower anyone interested in the future of their local
+                            area:</p>
+                        <ul>
+                            <li><span class="emoji">📎</span> Planning Professionals: Gain insights for balanced
+                                decision-making and cross-authority comparisons.</li>
+                            <li><span class="emoji">🗣️</span> Campaigners & Advocates: Find evidence to support calls
+                                for greater accountability and better planning outcomes.</li>
+                            <li><span class="emoji">🏘️</span> Residents & Community Groups: Understand the official
+                                plans for your area and how they might affect you.</li>
+                            <li><span class="emoji">🧠</span> Researchers & Policymakers: Track planning trends, policy
+                                effectiveness, and housing delivery across England.</li>
+                        </ul>
+                        <p>If you care about evidence-based planning and how places evolve, this resource is for you.
+                        </p>
+                    </div>
                 </section>
 
                 <section class="accordion" id="what-you-can-do">
@@ -139,16 +172,26 @@
                      </div>
                 </section>
 
-            </div> </main>
+            </div>
+        </main>
 
-            <footer>
-                <p class="footer-text copyright">&copy; 2025 The Spatial Ledger</p> <p class="footer-text disclaimer">
-                    <strong>Disclaimer:</strong> The information provided by The Spatial Ledger is for general informational purposes only. All information on the site is provided in good faith, based on publicly available Local Plan documents which may be subject to change. However, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site. The content does not constitute legal or professional planning advice. Reliance on any information provided by this site is solely at your own risk. We are not responsible for the content of external sites linked from this analysis. Please consult with a qualified professional for specific advice.
-                </p>
-            </footer>
+        <footer>
+            <p class="footer-text copyright">&copy; 2025 The Spatial Ledger</p>
+            <p class="footer-text disclaimer">
+                <strong>Disclaimer:</strong> The information provided by The Spatial Ledger is for general informational
+                purposes only. All information on the site is provided in good faith, based on publicly available Local
+                Plan documents which may be subject to change. However, we make no representation or warranty of any
+                kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or
+                completeness of any information on the site. The content does not constitute legal or professional
+                planning advice. Reliance on any information provided by this site is solely at your own risk. We are
+                not responsible for the content of external sites linked from this analysis. Please consult with a
+                qualified professional for specific advice.
+            </p>
+        </footer>
     </div>
 
     <script type="module" src="script.js"></script>
 
 </body>
+
 </html>
