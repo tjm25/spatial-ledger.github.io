@@ -1,13 +1,13 @@
 // --- Configuration & State ---
-const dataURL = 'status-data.json'; // Your data file
+const dataURL = 'status-data.json';
 const currentYear = new Date().getFullYear();
-let allLpaData = []; // To store all fetched data
-let filteredLpaData = []; // To store currently filtered data
-let map = null; // Placeholder for Leaflet map instance
-let sortColumn = 'name'; // Default sort column
-let sortDirection = 'asc'; // Default sort direction ('asc' or 'desc')
+let allLpaData = [];
+let filteredLpaData = [];
+let map = null;
+let sortColumn = 'name';
+let sortDirection = 'asc';
 
-// --- DOM Elements (Declare variables, assign inside DOMContentLoaded) ---
+// --- DOM Elements ---
 let tableBody, tableHead, searchInput, regionFilter, statusFilter, riskFilter;
 let detailsPanel, detailsLpaName, detailsPlanStatus, detailsRiskScore, detailsYearsSince;
 let detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences, closeDetailsBtn;
@@ -18,7 +18,7 @@ let exportCsvBtn, mapContainer, lpaCardsContainer;
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed.");
 
-    // --- Assign DOM Elements ---
+    // Assign DOM Elements
     tableBody = document.getElementById('status-table-body');
     tableHead = document.getElementById('lpa-table-head');
     searchInput = document.getElementById('search-lpa');
@@ -44,35 +44,36 @@ document.addEventListener('DOMContentLoaded', () => {
     mapContainer = document.getElementById('map-container');
     lpaCardsContainer = document.getElementById('lpa-cards-container');
 
-    // --- Basic Check ---
-    const criticalElements = [tableBody, tableHead, searchInput, detailsPanel, detailsRiskScore, exportCsvBtn, mapContainer, lpaCardsContainer, closeDetailsBtn, statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn];
+    // Basic Check
+    const criticalElements = [
+        tableBody, tableHead, searchInput, detailsPanel, detailsRiskScore,
+        exportCsvBtn, mapContainer, lpaCardsContainer, closeDetailsBtn,
+        statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn
+    ];
     if (criticalElements.some(el => !el)) {
-        console.error("Dashboard init failed: One or more critical DOM elements were not found. Check HTML IDs.");
+        console.error("Dashboard init failed: Critical elements missing.");
         const container = document.querySelector('.container');
         if (container) {
-             const errorMsg = document.createElement('p'); 
-             errorMsg.className = 'error-message'; 
-             errorMsg.style.margin = '20px'; 
-             errorMsg.textContent = 'Error initializing dashboard components. Please check the console (F12).';
-             const header = document.querySelector('.dashboard-header');
-             if (header) header.parentNode.insertBefore(errorMsg, header.nextSibling);
-             else container.prepend(errorMsg);
+            const errorMsg = document.createElement('p');
+            errorMsg.className = 'error-message';
+            errorMsg.style.margin = '20px';
+            errorMsg.textContent = 'Error initializing dashboard components. Please check the console (F12).';
+            const header = document.querySelector('.dashboard-header');
+            if (header) header.parentNode.insertBefore(errorMsg, header.nextSibling);
+            else container.prepend(errorMsg);
         }
         return;
     }
     console.log("All critical DOM elements found.");
 
-    // --- Initialize & Fetch ---
+    // Initialize & Fetch
     initializeMap();
-    fetchData();
+    fetchData(); // fetchData now handles initial loading message
     addEventListeners();
 });
 
 // --- Functions ---
 
-/**
- * Initializes a basic Leaflet map placeholder.
- */
 function initializeMap() {
     try {
         map = L.map(mapContainer).setView([52.5, -1.5], 6);
@@ -92,8 +93,18 @@ function initializeMap() {
 
 /**
  * Fetches LPA status data from the JSON file.
+ * UPDATED: Sets initial loading state for both table and cards.
  */
 async function fetchData() {
+    // Set initial loading state in both views
+    if (tableBody) {
+        const cols = tableBody.closest('table')?.querySelector('thead tr')?.cells.length || 5;
+        tableBody.innerHTML = `<tr><td colspan="${cols}" class="info-message">Loading plan status data...</td></tr>`;
+    }
+    if (lpaCardsContainer) {
+        lpaCardsContainer.innerHTML = '<p class="info-message">Loading plan status data...</p>';
+    }
+
     try {
         const response = await fetch(dataURL);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -104,7 +115,7 @@ async function fetchData() {
         allLpaData.forEach((lpa, index) => {
             lpa.id = lpa.id || `lpa-${index}`;
             lpa.years_since_adoption = calculateYearsSince(lpa.last_adoption_year);
-            lpa.plan_status_display = formatStatusCode(lpa.status_code); // Ensure this is always assigned a string
+            lpa.plan_status_display = formatStatusCode(lpa.status_code);
             lpa.last_adoption_year = lpa.last_adoption_year ? parseInt(lpa.last_adoption_year, 10) : null;
             if (isNaN(lpa.last_adoption_year)) lpa.last_adoption_year = null;
             lpa.plan_risk_score = lpa.plan_risk_score !== null && lpa.plan_risk_score !== undefined ? parseInt(lpa.plan_risk_score, 10) : null;
@@ -115,13 +126,15 @@ async function fetchData() {
         filteredLpaData = [...allLpaData];
         populateFilters();
         sortTableData();
-        updateDashboard();
+        updateDashboard(); // Initial population replaces loading message
 
     } catch (error) {
         console.error("Error fetching status data:", error);
-        if (tableBody) { /* ... */ }
-        if (lpaCardsContainer) { lpaCardsContainer.innerHTML = '<p class="error-message">Error loading data.</p>'; }
-        if (statAdoptedRecent) statAdoptedRecent.textContent = 'ERR'; /* etc */
+        const errorHtmlTable = `<tr><td colspan="5" class="error-message">Error loading data. Please try again later.</td></tr>`;
+        const errorHtmlCards = '<p class="error-message">Error loading data. Please try again later.</p>';
+        if (tableBody) tableBody.innerHTML = errorHtmlTable;
+        if (lpaCardsContainer) lpaCardsContainer.innerHTML = errorHtmlCards;
+        if (statAdoptedRecent) statAdoptedRecent.textContent = 'ERR';
     }
 }
 
@@ -388,48 +401,48 @@ function handleCardClick(event) {
     displayLpaDetails(lpaId);
 }
 
-/** Finds LPA data by ID and displays it in the details panel */
-function displayLpaDetails(lpaId) { 
+/**
+ * Finds LPA data by ID and displays it in the details panel.
+ * UPDATED: Added scrollIntoView.
+ */
+function displayLpaDetails(lpaId) {
     console.log(`Attempting to display details for lpaId: ${lpaId}`);
     const lpa = allLpaData.find(item => item.id === lpaId);
-    const detailElements = [detailsPanel, detailsLpaName, detailsPlanStatus, detailsRiskScore, detailsYearsSince, detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences];
-    if (!lpa) {
-        console.error(`LPA data not found for id: ${lpaId}`);
-        return;
-    }
-    if (detailElements.some(el => !el)) {
-        console.error("Cannot display details, one or more detail panel DOM elements are missing.");
+    const detailElements = [
+        detailsPanel, detailsLpaName, detailsPlanStatus,
+        detailsRiskScore, detailsYearsSince, detailsUpdateProgress,
+        detailsNppfDefault, detailsNotes, detailsReferences
+    ];
+    if (!lpa || detailElements.some(el => !el)) {
+        console.warn("Cannot display details because an LPA entry or one of the detail elements is missing.");
         return;
     }
     console.log("Found LPA data:", lpa);
 
-    // Populate basic fields
+    // Populate fields
     detailsLpaName.textContent = lpa.name ?? 'N/A';
     detailsPlanStatus.textContent = lpa.plan_status ?? 'N/A';
     detailsYearsSince.textContent = lpa.years_since_adoption ?? 'N/A';
     detailsNotes.textContent = lpa.notes ?? 'No specific notes available.';
-
-    // Format Risk Score
+    
+    // Risk Score logic
     const riskScore = lpa.plan_risk_score;
-    let riskHtml = '';
+    let riskHtml = 'N/A';
     if (riskScore !== null && riskScore !== undefined) {
         let riskClass = 'risk-unknown';
         if (riskScore <= 1) { riskClass = 'risk-low'; }
         else if (riskScore <= 3) { riskClass = 'risk-medium'; }
         else if (riskScore >= 4) { riskClass = 'risk-high'; }
         riskHtml = `<span class="risk-emoji ${riskClass}"></span>${riskScore}`;
-    } else { 
-        riskHtml = 'N/A'; 
     }
     detailsRiskScore.innerHTML = riskHtml;
-
-    // Format Boolean with Emojis
+    
+    // Booleans with emoji
     const updateInProgress = lpa.update_in_progress;
     detailsUpdateProgress.innerHTML = (updateInProgress === true) ? '✅ Yes' : (updateInProgress === false ? '❌ No' : 'N/A');
-
     const nppfDefaulting = lpa.nppf_defaulting;
     detailsNppfDefault.innerHTML = (nppfDefaulting === true) ? '❌ Yes' : (nppfDefaulting === false ? '✅ No' : 'N/A');
-
+    
     // Populate References
     detailsReferences.innerHTML = '';
     if (lpa.references && Array.isArray(lpa.references) && lpa.references.length > 0) {
@@ -437,15 +450,15 @@ function displayLpaDetails(lpaId) {
             if (!refString) return;
             const trimmedRef = refString.trim();
             if (trimmedRef.startsWith('http://') || trimmedRef.startsWith('https://')) {
-                const link = document.createElement('a'); 
+                const link = document.createElement('a');
                 link.href = trimmedRef;
-                try { 
+                try {
                     const url = new URL(trimmedRef);
                     link.textContent = url.hostname.replace(/^www\./, '');
-                } catch (_) { 
-                    link.textContent = trimmedRef; 
+                } catch (_) {
+                    link.textContent = trimmedRef;
                 }
-                link.target = '_blank'; 
+                link.target = '_blank';
                 link.rel = 'noopener noreferrer';
                 detailsReferences.appendChild(link);
             } else {
@@ -460,9 +473,12 @@ function displayLpaDetails(lpaId) {
 
     // Show panel and highlight
     detailsPanel.dataset.lpaId = lpaId;
-    console.log("Setting detailsPanel display to 'block'");
     detailsPanel.style.display = 'block';
     highlightSelectedItem(lpaId);
+
+    // --- ADDED: Scroll details panel into view ---
+    detailsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    console.log("Scrolled details panel into view");
 }
 
 /** Hides the details display section and removes highlights */
