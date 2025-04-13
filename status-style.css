@@ -242,21 +242,29 @@ h3 { /* Used for panel titles */
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust min width */
-    gap: 15px;
+    /* Adjust min width if needed for 5 items */
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 10px; /* Reduced gap slightly */
     text-align: center;
 }
+/* Optional: Force 5 columns on wider screens if auto-fit isn't ideal */
+@media (min-width: 768px) {
+    .stats-grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 
 .stat-item {
     background-color: #f9f9f9; /* Lighter background for stats */
-    padding: 12px 8px; /* Adjust padding */
+    padding: 10px 6px; /* Adjust padding */
     border-radius: 5px;
     border: 1px solid #eee; /* Subtle border */
 }
 
 .stat-value {
     display: block;
-    font-size: 1.9em; /* Adjust size */
+    font-size: 1.8em; /* Adjust size */
     font-weight: bold;
     color: #1A3A5F;
     line-height: 1.1;
@@ -264,7 +272,7 @@ h3 { /* Used for panel titles */
 
 .stat-label {
     display: block;
-    font-size: 0.8em; /* Smaller label */
+    font-size: 0.75em; /* Smaller label */
     color: #555;
     margin-top: 3px; /* Reduced space */
     line-height: 1.3;
@@ -330,21 +338,26 @@ h3 { /* Used for panel titles */
     font-size: 0.9em;
     padding-left: 5px; /* Indent links */
 }
+/* Updated styles for references */
+.detail-references-links p,
+.detail-references-links a {
+    display: block; /* Each reference on a new line */
+    margin-bottom: 5px; /* Space between references */
+    line-height: 1.4;
+}
 .detail-references-links a {
     color: #1A3A5F;
     text-decoration: underline;
-    margin-right: 15px;
-    display: inline-block; /* Ensure margin works */
-    margin-bottom: 5px; /* Space if links wrap */
 }
 .detail-references-links a:hover {
     text-decoration: none;
 }
-.detail-references-links p { /* Style for 'no references' text */
+.detail-references-links p.no-refs { /* Style for 'no references' text */
     color: #666;
     font-style: italic;
     margin: 0; /* Reset paragraph margin */
 }
+
 
 .details-panel .close-button {
     position: absolute;
@@ -507,6 +520,21 @@ footer {
     .table-panel .table-wrapper {
         max-height: 300px;
     }
+     /* Adjust stats grid for tablet */
+    .stats-grid-5 {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablet */
+    }
+    .stats-grid-5 .stat-item:nth-child(4),
+    .stats-grid-5 .stat-item:nth-child(5) {
+         /* Center the last two items on the second row */
+         grid-column: span 1 / auto;
+    }
+     .stats-grid-5 .stat-item:nth-child(4) {
+         grid-column-start: 1;
+     }
+     .stats-grid-5 .stat-item:nth-child(5) {
+          grid-column-start: 2;
+     }
 }
 
 @media (max-width: 768px) {
@@ -523,7 +551,8 @@ footer {
     .filter-item { min-width: 180px; }
     .filter-item label { font-size: 0.85em;}
     .filter-item input, .filter-item select { font-size: 0.9em; }
-    .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; } /* Force 3 columns */
+    /* Keep 3 columns for stats on smaller tablet */
+    .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .stat-value { font-size: 1.6em; }
     .stat-label { font-size: 0.75em; }
     .detail-item { flex-direction: column; align-items: flex-start; margin-bottom: 1em; }
@@ -548,7 +577,14 @@ footer {
     #map-container { height: 200px; }
     .legend-color { width: 14px; height: 14px; margin-right: 8px;}
     .map-legend label { font-size: 0.85em; margin-bottom: 0.4em;}
-    .stats-grid { grid-template-columns: repeat(3, 1fr); } /* Keep 3 columns */
+     /* Adjust stats grid for mobile */
+    .stats-grid-5 {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    }
+     .stats-grid-5 .stat-item:nth-child(5) {
+         grid-column: span 2 / auto; /* Make last item span full width */
+     }
+
     .stat-value { font-size: 1.4em; }
     .stat-label { font-size: 0.7em; }
     .details-panel .close-button { top: -8px; right: -2px; font-size: 1.6em; }

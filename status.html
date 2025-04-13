@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Plan Status Dashboard - The Spatial Ledger</title>
+    <!-- Renamed CSS file -->
     <link rel="stylesheet" href="status-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,70 +27,76 @@
 
         <section class="dashboard-filters">
             <div class="filter-item">
-                <label for="search-lpa">🔍 Search LPA...</label> <!-- Changed label text slightly -->
+                <label for="search-lpa">🔍 Search LPA...</label>
                 <input type="search" id="search-lpa" placeholder="Enter LPA name...">
             </div>
             <div class="filter-item">
-                <label for="region-filter">Region Filter</label> <!-- Changed label text slightly -->
+                <label for="region-filter">Region Filter</label>
                 <select id="region-filter">
                     <option value="">All Regions</option>
                     <!-- Options populated by JS -->
                 </select>
             </div>
             <div class="filter-item">
-                <label for="status-filter">Status Filter</label> <!-- Changed label text slightly -->
+                <label for="status-filter">Status Filter</label>
                 <select id="status-filter">
                     <option value="">All Statuses</option>
                     <!-- Options populated by JS -->
                 </select>
             </div>
             <div class="filter-item">
-                <label for="risk-filter">Risk Filter</label> <!-- Changed label text slightly -->
+                <label for="risk-filter">Risk Filter</label>
                 <select id="risk-filter">
                     <option value="">All Risks</option>
-                    <!-- Options populated by JS (e.g., 0, 1, 2...) -->
+                    <!-- Options populated by JS -->
                 </select>
             </div>
         </section>
 
         <main class="dashboard-main">
             <section class="map-panel">
-                <!-- Removed h2 from here, map is self-explanatory -->
                 <div id="map-container">
-                     <!-- Placeholder visual style added via CSS -->
                      <div class="map-placeholder-visual"></div>
                      <p class="map-placeholder-text">Map View</p>
                 </div>
                 <div class="map-legend">
                     <!-- Using labels for better accessibility and styling -->
                     <label><span class="legend-color adopted_recent"></span>Adopted and current</label>
-                    <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs ago</label> <!-- Matched text from stats -->
+                    <label><span class="legend-color just_adopted_updating"></span>Just adopted / Updating</label>
+                    <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs</label>
                     <label><span class="legend-color emerging_in_progress"></span>Emerging in preparation</label>
                     <label><span class="legend-color withdrawn_or_vacuum"></span>No current plan / Withdrawn</label>
-                    <label><span class="legend-color just_adopted_updating"></span>Just adopted / Updating</label>
                 </div>
             </section>
 
             <section class="summary-panel">
                 <div class="stats-panel">
-                    <h3>Plan Coverage Statistics</h3> <!-- Changed to h3 -->
-                    <div class="stats-grid">
+                    <h3>Plan Coverage Statistics</h3>
+                    <!-- UPDATED: Expanded to 5 stats -->
+                    <div class="stats-grid stats-grid-5">
                         <div class="stat-item">
-                            <span class="stat-value" id="stat-adopted-current">--%</span>
-                            <span class="stat-label">Adopted and current</span>
+                            <span class="stat-value" id="stat-adopted-recent">--%</span>
+                            <span class="stat-label">Adopted & Current</span>
+                        </div>
+                         <div class="stat-item">
+                            <span class="stat-value" id="stat-just-adopted">--%</span>
+                            <span class="stat-label">Just Adopted / Updating</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-value" id="stat-adopted-outdated">--%</span>
-                            <span class="stat-label">Adopted, but >5 yrs ago</span>
+                            <span class="stat-label">Adopted >5 yrs</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-value" id="stat-no-plan">--%</span>
-                            <span class="stat-label">No current plan</span>
+                            <span class="stat-value" id="stat-emerging">--%</span>
+                            <span class="stat-label">Emerging</span>
+                        </div>
+                         <div class="stat-item">
+                            <span class="stat-value" id="stat-withdrawn">--%</span>
+                            <span class="stat-label">Withdrawn / Vacuum</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- MOVED DETAILS PANEL HERE -->
                 <div id="selected-authority-details" class="details-panel" style="display: none;" aria-live="polite">
                      <button id="close-details-btn" class="close-button" aria-label="Close Details">×</button>
                      <h3>Selected Authority Details</h3>
@@ -128,10 +135,9 @@
                          </div>
                     </div>
                 </div>
-                <!-- END OF MOVED DETAILS PANEL -->
 
                 <div class="table-panel">
-                     <h3>LPA Details Table</h3> <!-- Changed to h3 -->
+                     <h3>LPA Details Table</h3>
                      <p class="table-instructions">Click a row to see more details above.</p>
                      <div class="table-wrapper">
                          <table>
@@ -161,6 +167,7 @@
          </footer>
 
     </div>
+    <!-- Renamed JS file -->
     <script type="module" src="status-script.js"></script>
 </body>
 </html>
