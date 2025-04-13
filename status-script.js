@@ -2,7 +2,7 @@
 const statusDataURL = 'status-data.json';
 const geojsonURL = 'lpa_map.geojson'; // Path to your GeoJSON
 const currentYear = new Date().getFullYear();
-let allLpaData = [];
+let allLpaData = []; // This will hold the DE-DUPLICATED data
 let filteredLpaData = [];
 let map = null;
 let geojsonLayer = null; // To hold the map layer
@@ -30,25 +30,16 @@ const statusColors = {
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed.");
-
-    // Assign DOM Elements via helper
     assignDOMElements();
-
-    // Basic Check
     if (!checkCriticalElements()) return;
-
-    // Initialize Map Structure (without data yet)
     initializeMapStructure();
-
-    // Fetch both datasets concurrently
     Promise.all([
         fetchStatusData(statusDataURL),
         fetchGeojsonData(geojsonURL)
     ])
-    .then(([statusData, geojsonData]) => {
+    .then(([rawStatusData, geojsonData]) => { // Receive rawStatusData here
         console.log("Both status and GeoJSON data fetched successfully.");
-        // Process data and initialize the rest of the dashboard
-        processAndInitializeDashboard(statusData, geojsonData);
+        processAndInitializeDashboard(rawStatusData, geojsonData); // Pass raw data
     })
     .catch(error => {
         console.error("Error fetching initial data:", error);
@@ -125,7 +116,6 @@ function displayLoadingError(message, isError = true) {
 }
 
 // --- Data Fetching ---
-
 /** Fetches and returns status data */
 async function fetchStatusData(url) {
     console.log("Fetching status data...");
@@ -144,53 +134,75 @@ async function fetchGeojsonData(url) {
 }
 
 // --- Initialization Flow (after data is loaded) ---
-
 /** Processes data and sets up the dashboard */
-function processAndInitializeDashboard(statusData, geojsonData) {
+function processAndInitializeDashboard(rawStatusData, geojsonData) {
     console.log("Processing data and initializing dashboard...");
-    // 1. Pre-process Status Data
-    allLpaData = statusData.map((lpa, index) => {
+    console.log(`Received ${rawStatusData.length} raw status records.`);
+
+    // --- De-duplication Step ---
+    const lpaMap = {}; // Use a map to store the best entry for each ID
+    rawStatusData.forEach(lpa => {
+        if (!lpa || !lpa.id) {
+            console.warn("Skipping record with missing ID:", lpa);
+            return; // Skip records without an ID
+        }
+        const existingEntry = lpaMap[lpa.id];
+        if (!existingEntry || isMoreRecent(lpa.last_adoption_year, existingEntry.last_adoption_year)) {
+            // If no entry exists or the current LPA is more recent, store or replace it
+            lpaMap[lpa.id] = lpa;
+        }
+    });
+    const deDuplicatedStatusData = Object.values(lpaMap);
+    console.log(`Reduced to ${deDuplicatedStatusData.length} unique/most recent status records.`);
+    // --- End De-duplication Step ---
+
+    // 1. Pre-process the de-duplicated Status Data
+    allLpaData = deDuplicatedStatusData.map((lpa, index) => {
         const processedLpa = { ...lpa };
-        processedLpa.id = processedLpa.id || `lpa-${index}`;
+        // ID is guaranteed from de-duplication
         processedLpa.years_since_adoption = calculateYearsSince(processedLpa.last_adoption_year);
         processedLpa.plan_status_display = formatStatusCode(processedLpa.status_code);
         processedLpa.last_adoption_year = processedLpa.last_adoption_year ? parseInt(processedLpa.last_adoption_year, 10) : null;
         if (isNaN(processedLpa.last_adoption_year)) processedLpa.last_adoption_year = null;
-        processedLpa.plan_risk_score = processedLpa.plan_risk_score !== null && processedLpa.plan_risk_score !== undefined ? parseInt(processedLpa.plan_risk_score, 10) : null;
+        processedLpa.plan_risk_score = (processedLpa.plan_risk_score !== null && processedLpa.plan_risk_score !== undefined)
+            ? parseInt(processedLpa.plan_risk_score, 10)
+            : null;
         if (isNaN(processedLpa.plan_risk_score)) processedLpa.plan_risk_score = null;
-        processedLpa.years_since_adoption = typeof processedLpa.years_since_adoption === 'number' ? processedLpa.years_since_adoption : null;
+        processedLpa.years_since_adoption = (typeof processedLpa.years_since_adoption === 'number')
+            ? processedLpa.years_since_adoption
+            : null;
         return processedLpa;
     });
 
-    // 2. Create Lookup for Status Data
+    // 2. Create Lookup for the de-duplicated Status Data
     const lpaStatusLookup = createLpaStatusLookup(allLpaData);
 
-    // 3. Merge Status Data into GeoJSON Features
+    // 3. Merge de-duplicated Status Data into GeoJSON Features
     geojsonData.features.forEach(feature => {
-        const lpaId = feature.properties.LPA23CD; // Match using GeoJSON property
+        const lpaId = feature.properties.LPA23CD;
         const statusInfo = lpaStatusLookup[lpaId];
         if (statusInfo) {
             feature.properties.status_code = statusInfo.status_code;
             feature.properties.name = statusInfo.name;
             feature.properties.plan_status_display = statusInfo.plan_status_display;
-            feature.properties.id = statusInfo.id; // Use the consistent ID from status data
+            feature.properties.id = statusInfo.id;
         } else {
-            console.warn(`No status data found for LPA ID: ${lpaId} (Name: ${feature.properties.LPA23NM})`);
+            console.warn(`No status data found for GeoJSON feature LPA ID: ${lpaId} (Name: ${feature.properties.LPA23NM}) after de-duplication.`);
             feature.properties.status_code = 'unknown';
             feature.properties.name = feature.properties.LPA23NM || 'Unknown LPA';
             feature.properties.plan_status_display = 'Unknown';
-            feature.properties.id = `geojson-${lpaId}`; // Create a fallback ID
+            feature.properties.id = `geojson-${lpaId}`;
         }
     });
 
     // 4. Add Map Overlay
     addMapOverlay(geojsonData);
 
-    // 5. Populate Filters
+    // 5. Populate Filters (based on de-duplicated data)
     populateFilters();
 
-    // 6. Apply Initial Sort & Render Dashboard
-    filteredLpaData = [...allLpaData]; // Set initial filtered data
+    // 6. Apply Initial Sort & Render Dashboard (uses de-duplicated data)
+    filteredLpaData = [...allLpaData];
     sortTableData();
     updateDashboard();
 
@@ -198,6 +210,16 @@ function processAndInitializeDashboard(statusData, geojsonData) {
     addEventListeners();
 
     console.log("Dashboard initialization complete.");
+}
+
+/** Helper function to compare adoption years, handling nulls */
+function isMoreRecent(yearA, yearB) {
+    const numA = (typeof yearA === 'number' && !isNaN(yearA)) ? yearA : null;
+    const numB = (typeof yearB === 'number' && !isNaN(yearB)) ? yearB : null;
+    if (numA !== null && numB === null) return true;
+    if (numA === null && numB !== null) return false;
+    if (numA === null && numB === null) return false;
+    return numA > numB;
 }
 
 /** Creates a lookup object for status data by LPA ID */
@@ -208,8 +230,6 @@ function createLpaStatusLookup(statusData) {
 }
 
 // --- Map Functions ---
-
-/** Initializes the Leaflet map structure */
 function initializeMapStructure() {
     try {
         map = L.map(mapContainer).setView([53.5, -1.5], 6); // Center on England/Wales
@@ -228,7 +248,6 @@ function initializeMapStructure() {
     }
 }
 
-/** Adds the GeoJSON overlay layer to the map */
 function addMapOverlay(geojsonData) {
     if (!map) { console.error("Map not initialized, cannot add overlay."); return; }
     lpaLayerMapping = {}; // Reset mapping
@@ -242,14 +261,12 @@ function addMapOverlay(geojsonData) {
     } catch (e) { console.warn("Could not fit map bounds to GeoJSON layer:", e); }
 }
 
-/** Defines the style for each map feature based on status */
 function styleFunction(feature) {
     const statusCode = feature.properties.status_code || 'unknown';
     const color = statusColors[statusCode] || statusColors['default'];
     return { fillColor: color, fillOpacity: 0.6, color: '#555', weight: 1, opacity: 0.8 };
 }
 
-/** Defines interactions for each map feature */
 function onEachFeatureFunction(feature, layer) {
     if (feature.properties.id) {
         lpaLayerMapping[feature.properties.id] = layer;
@@ -270,8 +287,6 @@ function onEachFeatureFunction(feature, layer) {
 }
 
 // --- Filter Population ---
-
-/** Populates filter dropdowns based on available data. */
 function populateFilters() {
     console.log("Populating filters...");
     const regions = new Set(), statuses = new Set(), risks = new Set();
@@ -285,7 +300,6 @@ function populateFilters() {
     if (riskFilter) populateSelect(riskFilter, [...risks].sort((a, b) => a - b));
 }
 
-/** Helper to populate a select dropdown */
 function populateSelect(selectElement, options, formatter = (val) => val) {
     selectElement.innerHTML = '<option value="">All</option>';
     options.forEach(optionValue => {
@@ -297,7 +311,6 @@ function populateSelect(selectElement, options, formatter = (val) => val) {
 }
 
 // --- Event Handlers & Display Logic ---
-
 function addEventListeners() {
     console.log("Adding event listeners...");
     let filterTimeout;
@@ -466,12 +479,6 @@ function createCell(row, text, center = false) {
     cell.textContent = text;
     if (center) cell.classList.add('center');
     return cell;
-}
-
-function formatBoolean(value) {
-    if (value === true) return 'Yes';
-    if (value === false) return 'No';
-    return 'N/A';
 }
 
 function handleTableClick(event) {
