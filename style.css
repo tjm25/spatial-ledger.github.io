@@ -31,20 +31,6 @@ h1 {
     font-size: 1.1em;
 }
 
-h2 { /* Default styles for non-accordion H2s if any are added later */
-    font-family: 'Merriweather', serif;
-    color: #1A3A5F;
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
-    border-bottom: 2px solid #A0CED9; /* Light Blue/Teal accent */
-    padding-bottom: 0.3em;
-    font-size: 1.5em;
-}
-h2 .emoji {
-    display: inline-block;
-    margin-right: 0.3em;
-}
-
 /* --- Layout --- */
 .container {
     max-width: 800px;
@@ -62,14 +48,13 @@ header {
 }
 
 section {
-    margin-bottom: 1em; /* Default bottom margin for sections */
+    /* Removed general bottom margin, handled by accordion/specific sections */
+    margin-bottom: 0;
 }
 main > .accordion-group {
-    margin-top: 0; /* Remove top margin if accordion is first in main */
+    margin-top: 0; /* Remove top margin as search section is above */
 }
-main > .accordion-group > section:last-of-type {
-     margin-bottom: 0; /* Remove margin from last main section */
-}
+
 
 /* --- Elements Styling --- */
 p {
@@ -167,15 +152,99 @@ li { /* Default list item styling */
 #search-results .similarity-score { display: block; font-size: 0.8em; color: #008000; margin-top: 0.4em; }
 
 /* --- Accordion Styling --- */
-.accordion-group { border-top: 1px solid #ddd; margin-top: 0; }
-.accordion { border-bottom: 1px solid #ddd; }
-.accordion-button { font-family: 'Merriweather', serif; background: #fff; color: #1A3A5F; border: none; padding: 1rem 1.5rem; width: 100%; text-align: left; font-size: 1.2em; font-weight: 700; cursor: pointer; transition: background-color 0.2s ease; position: relative; margin: 0; }
-.accordion-button .emoji { display: inline-block; margin-right: 0.5em; }
-.accordion-button::after { content: '▼'; font-size: 0.8em; color: #A0CED9; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); transition: transform 0.2s ease; }
-.accordion.open .accordion-button::after { transform: translateY(-50%) rotate(180deg); }
-.accordion-button:hover, .accordion-button:focus { background-color: #f8f5ed; outline: none; }
-.accordion-content { display: none; padding: 1rem 1.5rem 1.5rem; background-color: #fdfcf9; }
-.accordion.open .accordion-content { display: block; }
+.accordion-group {
+     border-top: 1px solid #ddd; /* Separator above first item */
+     margin-top: 0;
+}
+.accordion {
+     border-bottom: 1px solid #ddd; /* Separator between items */
+     margin-bottom: 0; /* REMOVED bottom margin */
+}
+.accordion-button {
+    font-family: 'Merriweather', serif;
+    background: #fff;
+    color: #1A3A5F;
+    border: none;
+    padding: 1rem 1.5rem; /* Padding */
+    width: 100%;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    position: relative;
+    margin: 0;
+}
+ .accordion-button .emoji {
+     display: inline-block;
+     margin-right: 0.5em;
+ }
+
+ /* Accordion Arrow Indicator */
+ .accordion-button::after {
+    content: '▼';
+    font-size: 0.8em;
+    color: #A0CED9;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg); /* Start pointing down */
+    transition: transform 0.3s ease-out; /* Animate arrow rotation */
+ }
+ .accordion.open .accordion-button::after {
+     transform: translateY(-50%) rotate(180deg); /* Point up when open */
+ }
+
+.accordion-button:hover,
+.accordion-button:focus {
+    background-color: #f8f5ed;
+    outline: none;
+}
+
+.accordion-content {
+    /* display: none; */ /* Replaced by max-height */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Hide content until max-height expands */
+    padding: 0 1.5rem; /* Only horizontal padding initially */
+    background-color: #fdfcf9;
+    transition: max-height 0.35s ease-out, padding 0.35s ease-out; /* Animate height and padding */
+}
+
+.accordion.open .accordion-content {
+    max-height: 1000px; /* Large value allowing content to expand */
+    padding: 1rem 1.5rem 1.5rem; /* Restore full padding when open */
+    /* Optional: Add back border if desired when open */
+    /* border-left: 3px solid #ccc; */
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 0.85em;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.footer-text.copyright {
+     font-weight: bold;
+     margin-bottom: 0.5em;
+}
+
+.footer-text.disclaimer {
+    font-size: 0.8em;
+    font-style: italic;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
 
 /* --- Utility & Message Styles --- */
 .error-message { color: #D8000C; background-color: #FFD2D2; border: 1px solid #D8000C; padding: 10px; margin-top: 15px; border-radius: 5px; }
@@ -189,7 +258,8 @@ mark { background-color: #a0ced9; padding: 0.1em; border-radius: 2px; }
     h2 { font-size: 1.4em; }
     .accordion-button { font-size: 1.1em; padding: 0.8rem 1rem; }
     .accordion-button::after { right: 1rem; }
-    .accordion-content { padding: 0.8rem 1rem 1rem; }
+    .accordion-content { padding-left: 1rem; padding-right: 1rem; } /* Adjust horizontal padding */
+    .accordion.open .accordion-content { padding: 0.8rem 1rem 1rem; } /* Adjust open padding */
     body { padding: 5px; font-size: 15px; }
     #browse { padding: 15px; margin-top: 1em; margin-bottom: 1.5em;}
     #browse h2 { font-size: 1.2em; }
@@ -198,4 +268,6 @@ mark { background-color: #a0ced9; padding: 0.1em; border-radius: 2px; }
     .search-input-wrapper { gap: 0.3em; }
     #search-button { width: auto; padding: 10px 15px; margin-top: 0; }
     #loading-indicator { display: block; text-align: center; margin-left: 0; margin-top: 10px; }
+     .footer-text, .footer-text.disclaimer { font-size: 0.75em; }
+     footer { margin-top: 2em; padding-top: 1em; }
 }
