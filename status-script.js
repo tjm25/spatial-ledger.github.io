@@ -9,7 +9,7 @@ let sortDirection = 'asc'; // Default sort direction ('asc' or 'desc')
 
 // --- DOM Elements (Declare variables, assign inside DOMContentLoaded) ---
 let tableBody, tableHead, searchInput, regionFilter, statusFilter, riskFilter;
-let detailsPanel, detailsLpaName, detailsPlanStatus, detailsStatusCode, detailsYearsSince;
+let detailsPanel, detailsLpaName, detailsPlanStatus, detailsRiskScore, detailsYearsSince; // Renamed detailsStatusCode -> detailsRiskScore
 let detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences, closeDetailsBtn;
 let statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn;
 let exportCsvBtn, mapContainer, lpaCardsContainer;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     detailsPanel = document.getElementById('selected-authority-details');
     detailsLpaName = document.getElementById('details-lpa-name');
     detailsPlanStatus = document.getElementById('details-plan-status');
-    detailsStatusCode = document.getElementById('details-status-code');
+    detailsRiskScore = document.getElementById('details-risk-score'); // UPDATED ID
     detailsYearsSince = document.getElementById('details-years-since');
     detailsUpdateProgress = document.getElementById('details-update-progress');
     detailsNppfDefault = document.getElementById('details-nppf-default');
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lpaCardsContainer = document.getElementById('lpa-cards-container'); // Assign card container
 
     // --- Basic Check: Ensure critical elements were found ---
-    const criticalElements = [tableBody, tableHead, searchInput, detailsPanel, exportCsvBtn, mapContainer, lpaCardsContainer, closeDetailsBtn, statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn];
+    const criticalElements = [tableBody, tableHead, searchInput, detailsPanel, detailsRiskScore, exportCsvBtn, mapContainer, lpaCardsContainer, closeDetailsBtn, statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn]; // Added detailsRiskScore
     if (criticalElements.some(el => !el)) {
         console.error("Dashboard init failed: One or more critical DOM elements were not found. Check HTML IDs.");
         const container = document.querySelector('.container');
@@ -129,6 +129,7 @@ async function fetchData() {
         if (lpaCardsContainer) {
             lpaCardsContainer.innerHTML = '<p class="error-message">Error loading data. Please try again later.</p>';
         }
+        // Update all stat displays on error
         if (statAdoptedRecent) statAdoptedRecent.textContent = 'ERR';
         if (statJustAdopted) statJustAdopted.textContent = 'ERR';
         if (statAdoptedOutdated) statAdoptedOutdated.textContent = 'ERR';
@@ -199,8 +200,7 @@ function addEventListeners() {
     // Export Button
     if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportToCSV);
 
-    // Optional: Listen for resize to update view if needed (though CSS handles visibility change)
-    // Could be useful if rendering logic needs to explicitly change beyond visibility
+    // Optional: Listen for resize to update view if needed
     // let resizeTimeout;
     // window.addEventListener('resize', () => {
     //     clearTimeout(resizeTimeout);
@@ -315,7 +315,6 @@ function updateDashboard() {
     calculateAndDisplayStats(filteredLpaData);
 
     // Choose view based on screen width (matches CSS breakpoint)
-    // Use window.matchMedia for potentially more robust detection
     const isMobileView = window.matchMedia("(max-width: 768px)").matches;
 
     if (isMobileView) {
@@ -364,8 +363,8 @@ function populateTable(data) {
         const row = tableBody.insertRow();
         row.dataset.lpaId = lpa.id;
         if (lpa.status_code) row.classList.add(`status-${lpa.status_code}`);
-        createCell(row, lpa.name || 'N/A');
-        createCell(row, lpa.plan_status_display || 'N/A');
+        createCell(row, lpa.name ?? 'N/A');
+        createCell(row, lpa.plan_status_display ?? 'N/A');
         createCell(row, lpa.last_adoption_year ?? 'N/A', true);
         createCell(row, lpa.years_since_adoption ?? 'N/A', true);
         createCell(row, lpa.plan_risk_score ?? 'N/A', true);
@@ -401,12 +400,14 @@ function populateCards(data) {
 /** Helper to create and append a table cell. */
 function createCell(row, text, center = false) {
     const cell = row.insertCell();
-    cell.textContent = text;
+    // Check if text is null or undefined and display 'N/A' or similar
+    cell.textContent = (text === null || text === undefined) ? 'N/A' : text;
     if (center) cell.classList.add('center');
     return cell;
 }
 
-/** Formats boolean values for display. */
+
+/** Formats boolean values for display in the details panel (excluding emojis). */
 function formatBoolean(value) {
     if (value === true) return 'Yes';
     if (value === false) return 'No';
@@ -430,7 +431,8 @@ function handleCardClick(event) {
 /** Finds LPA data by ID and displays it in the details panel */
 function displayLpaDetails(lpaId) {
     const lpa = allLpaData.find(item => item.id === lpaId);
-    const detailElements = [detailsPanel, detailsLpaName, detailsPlanStatus, detailsStatusCode, detailsYearsSince, detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences];
+    // Added detailsRiskScore to the check
+    const detailElements = [detailsPanel, detailsLpaName, detailsPlanStatus, detailsRiskScore, detailsYearsSince, detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences];
     if (!lpa || detailElements.some(el => !el)) {
         console.warn("Cannot display details, LPA data or detail panel elements missing.");
         return;
@@ -439,43 +441,80 @@ function displayLpaDetails(lpaId) {
     // Populate basic fields
     detailsLpaName.textContent = lpa.name ?? 'N/A';
     detailsPlanStatus.textContent = lpa.plan_status ?? 'N/A';
-    detailsStatusCode.textContent = lpa.status_code ?? 'N/A';
     detailsYearsSince.textContent = lpa.years_since_adoption ?? 'N/A';
-    detailsUpdateProgress.textContent = formatBoolean(lpa.update_in_progress);
-    detailsNppfDefault.textContent = formatBoolean(lpa.nppf_defaulting);
     detailsNotes.textContent = lpa.notes ?? 'No specific notes available.';
 
-    // Populate References
+    // --- Format Risk Score ---
+    const riskScore = lpa.plan_risk_score;
+    let riskHtml = '';
+    if (riskScore !== null && riskScore !== undefined) {
+        let riskClass = 'risk-unknown'; // Default class
+        // Define thresholds for risk score colors
+        if (riskScore <= 1) { riskClass = 'risk-low'; }      // Green for 0 or 1
+        else if (riskScore <= 3) { riskClass = 'risk-medium'; } // Amber for 2 or 3
+        else if (riskScore >= 4) { riskClass = 'risk-high'; }   // Red for 4+
+        // Note: No inner emoji needed if the background color is the indicator
+
+        riskHtml = `<span class="risk-emoji ${riskClass}"></span>${riskScore}`; // Span provides the colored circle background
+    } else {
+        riskHtml = 'N/A';
+    }
+    detailsRiskScore.innerHTML = riskHtml;
+
+    // --- Format Boolean with Emojis ---
+    const updateInProgress = lpa.update_in_progress;
+    if (updateInProgress === true) {
+        detailsUpdateProgress.innerHTML = '✅ Yes'; // Added non-breaking space
+    } else if (updateInProgress === false) {
+        detailsUpdateProgress.innerHTML = '❌ No';
+    } else {
+        detailsUpdateProgress.textContent = 'N/A';
+    }
+
+    const nppfDefaulting = lpa.nppf_defaulting;
+    if (nppfDefaulting === true) { // NPPF Defaulting is "bad"
+        detailsNppfDefault.innerHTML = '❌ Yes';
+    } else if (nppfDefaulting === false) { // Not defaulting is "good"
+        detailsNppfDefault.innerHTML = '✅ No';
+    } else {
+        detailsNppfDefault.textContent = 'N/A';
+    }
+
+    // --- Populate References ---
     detailsReferences.innerHTML = ''; // Clear previous
     if (lpa.references && Array.isArray(lpa.references) && lpa.references.length > 0) {
         lpa.references.forEach(refString => {
-             if (!refString) return;
-             const trimmedRef = refString.trim();
-             if (trimmedRef.startsWith('http://') || trimmedRef.startsWith('https://')) {
+            if (!refString) return;
+            const trimmedRef = refString.trim();
+            // Basic check if it looks like a URL
+            if (trimmedRef.startsWith('http://') || trimmedRef.startsWith('https://')) {
                 const link = document.createElement('a');
                 link.href = trimmedRef;
-                link.textContent = trimmedRef; // Or try to extract a title if possible later
+                // Attempt to make link text slightly nicer (optional)
+                try {
+                    const url = new URL(trimmedRef);
+                    link.textContent = url.hostname.replace(/^www\./, ''); // Show domain
+                } catch (_) {
+                    link.textContent = trimmedRef; // Fallback to full URL
+                }
                 link.target = '_blank';
                 link.rel = 'noopener noreferrer';
                 detailsReferences.appendChild(link);
-             } else {
+            } else {
+                // Display as plain text paragraph if not a URL
                 const text = document.createElement('p');
                 text.textContent = trimmedRef;
                 detailsReferences.appendChild(text);
-             }
+            }
         });
     } else {
         detailsReferences.innerHTML = '<p class="no-refs">No references available.</p>';
     }
 
     // Show panel and highlight
-    detailsPanel.dataset.lpaId = lpaId; // Store ID for re-highlighting after filter/sort
+    detailsPanel.dataset.lpaId = lpaId;
     detailsPanel.style.display = 'block';
-    highlightSelectedItem(lpaId); // Apply highlight
-    // Optional scroll into view, might be more useful on mobile after clicking a card
-    // if (window.matchMedia("(max-width: 768px)").matches) {
-    //      detailsPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // }
+    highlightSelectedItem(lpaId);
 }
 
 /** Hides the details display section and removes highlights */
@@ -486,13 +525,13 @@ function hideDetails() {
         // Clear content
         if(detailsLpaName) detailsLpaName.textContent = '--';
         if(detailsPlanStatus) detailsPlanStatus.textContent = '--';
-        if(detailsStatusCode) detailsStatusCode.textContent = '--';
+        if(detailsRiskScore) detailsRiskScore.textContent = '--';
         if(detailsYearsSince) detailsYearsSince.textContent = '--';
         if(detailsUpdateProgress) detailsUpdateProgress.textContent = '--';
         if(detailsNppfDefault) detailsNppfDefault.textContent = '--';
         if(detailsNotes) detailsNotes.textContent = '--';
         if(detailsReferences) detailsReferences.innerHTML = '<p class="no-refs">No references available.</p>';
-        removeHighlights(); // Remove any active highlights
+        removeHighlights();
     }
 }
 
@@ -562,7 +601,7 @@ function exportToCSV() {
     const formatBooleanForCSV = (value) => { if (value === true) return 'Yes'; if (value === false) return 'No'; return ''; };
     const dataRows = filteredLpaData.map(lpa => {
         const referencesString = (lpa.references && Array.isArray(lpa.references)) ? lpa.references.join('; ') : '';
-        const yearsSince = calculateYearsSince(lpa.last_adoption_year);
+        const yearsSince = calculateYearsSince(lpa.last_adoption_year); // Recalculate for export consistency
         return [ lpa.id || '', lpa.name || '', lpa.region || '', lpa.plan_status || '', lpa.status_code || '', formatBooleanForCSV(lpa.up_to_date), lpa.last_adoption_year || '', yearsSince ?? '', formatBooleanForCSV(lpa.update_in_progress), formatBooleanForCSV(lpa.nppf_defaulting), lpa.plan_risk_score ?? '', lpa.notes_short || '', lpa.notes || '', referencesString ];
     });
     const escapeCsvCell = (cell) => {

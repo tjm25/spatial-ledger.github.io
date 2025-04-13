@@ -24,35 +24,28 @@
         </header>
 
         <section class="dashboard-filters">
+             <!-- Filters remain the same -->
             <div class="filter-item">
                 <label for="search-lpa">🔍 Search LPA...</label>
                 <input type="search" id="search-lpa" placeholder="Enter LPA name...">
             </div>
             <div class="filter-item">
                 <label for="region-filter">Region Filter</label>
-                <select id="region-filter">
-                    <option value="">All Regions</option>
-                    <!-- Options populated by JS -->
-                </select>
+                <select id="region-filter"><option value="">All Regions</option></select>
             </div>
             <div class="filter-item">
                 <label for="status-filter">Status Filter</label>
-                <select id="status-filter">
-                    <option value="">All Statuses</option>
-                    <!-- Options populated by JS -->
-                </select>
+                <select id="status-filter"><option value="">All Statuses</option></select>
             </div>
             <div class="filter-item">
                 <label for="risk-filter">Risk Filter</label>
-                <select id="risk-filter">
-                    <option value="">All Risks</option>
-                    <!-- Options populated by JS -->
-                </select>
+                <select id="risk-filter"><option value="">All Risks</option></select>
             </div>
         </section>
 
         <main class="dashboard-main">
             <section class="map-panel">
+                 <!-- Map and Legend remain the same -->
                 <div id="map-container">
                      <div class="map-placeholder-visual"></div>
                      <p class="map-placeholder-text">Map View</p>
@@ -68,28 +61,14 @@
 
             <section class="summary-panel">
                 <div class="stats-panel">
+                    <!-- Stats remain the same -->
                     <h3>Plan Coverage Statistics</h3>
                     <div class="stats-grid stats-grid-5">
-                        <div class="stat-item">
-                            <span class="stat-value" id="stat-adopted-recent">--%</span>
-                            <span class="stat-label">Adopted & Current</span>
-                        </div>
-                         <div class="stat-item">
-                            <span class="stat-value" id="stat-just-adopted">--%</span>
-                            <span class="stat-label">Just Adopted / Updating</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="stat-adopted-outdated">--%</span>
-                            <span class="stat-label">Adopted >5 yrs</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="stat-emerging">--%</span>
-                            <span class="stat-label">Emerging</span>
-                        </div>
-                         <div class="stat-item">
-                            <span class="stat-value" id="stat-withdrawn">--%</span>
-                            <span class="stat-label">Withdrawn / Vacuum</span>
-                        </div>
+                        <div class="stat-item"><span class="stat-value" id="stat-adopted-recent">--%</span><span class="stat-label">Adopted & Current</span></div>
+                        <div class="stat-item"><span class="stat-value" id="stat-just-adopted">--%</span><span class="stat-label">Just Adopted / Updating</span></div>
+                        <div class="stat-item"><span class="stat-value" id="stat-adopted-outdated">--%</span><span class="stat-label">Adopted >5 yrs</span></div>
+                        <div class="stat-item"><span class="stat-value" id="stat-emerging">--%</span><span class="stat-label">Emerging</span></div>
+                        <div class="stat-item"><span class="stat-value" id="stat-withdrawn">--%</span><span class="stat-label">Withdrawn / Vacuum</span></div>
                     </div>
                 </div>
 
@@ -105,9 +84,10 @@
                              <span class="detail-label">Plan Status:</span>
                              <span class="detail-value" id="details-plan-status">--</span>
                          </div>
+                         <!-- ID Updated -->
                           <div class="detail-item">
-                             <span class="detail-label">Status Code:</span>
-                             <span class="detail-value" id="details-status-code">--</span>
+                             <span class="detail-label">Risk Score:</span>
+                             <span class="detail-value" id="details-risk-score">--</span>
                          </div>
                          <div class="detail-item">
                              <span class="detail-label">Years Since Adoption:</span>
@@ -132,7 +112,7 @@
                     </div>
                 </div>
 
-                <!-- Table Panel (hidden on mobile) -->
+                 <!-- Table Panel -->
                 <div class="table-panel">
                      <h3>LPA Details Table</h3>
                      <p class="table-instructions">Click a row or header to sort.</p>
@@ -140,7 +120,6 @@
                          <table>
                             <thead id="lpa-table-head">
                                 <tr>
-                                    <!-- ADDED: data-sort attributes and sortable class -->
                                     <th scope="col" class="sortable" data-sort="name">LPA Name</th>
                                     <th scope="col" class="sortable" data-sort="plan_status_display">Plan Status</th>
                                     <th scope="col" class="center sortable" data-sort="last_adoption_year">Last Adopted</th>
@@ -155,9 +134,8 @@
                     </div>
                 </div>
 
-                <!-- Card Container (hidden on desktop) -->
+                <!-- Card Container -->
                 <div id="lpa-cards-container" class="cards-container">
-                    <!-- Cards will be populated by JS -->
                     <p class="info-message">Loading plan status data...</p>
                 </div>
 
@@ -165,10 +143,9 @@
         </main>
 
         <footer>
+             <!-- Footer remains the same -->
              <p class="footer-text copyright">© 2025 The Spatial Ledger</p>
-             <p class="footer-text disclaimer">
-                 <strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is illustrative.
-             </p>
+             <p class="footer-text disclaimer"><strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is illustrative.</p>
          </footer>
 
     </div>
