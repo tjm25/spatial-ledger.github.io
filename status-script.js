@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchStatusData(statusDataURL),
         fetchGeojsonData(geojsonURL)
     ])
-    .then(([rawStatusData, geojsonData]) => { // Receive rawStatusData here
-        console.log("Both status and GeoJSON data fetched successfully.");
-        processAndInitializeDashboard(rawStatusData, geojsonData); // Pass raw data
+    .then(([rawStatusData, geojsonData]) => {
+        console.log("Data fetched.");
+        processAndInitializeDashboard(rawStatusData, geojsonData);
     })
     .catch(error => {
         console.error("Error fetching initial data:", error);
-        displayLoadingError("Error loading dashboard data. Please try again later.");
+        displayLoadingError("Error loading dashboard data.");
     });
 });
 
@@ -102,7 +102,7 @@ function checkCriticalElements() {
     return true;
 }
 
-/** Displays loading/error messages in main content areas */
+/** Displays loading/error messages */
 function displayLoadingError(message, isError = true) {
     const messageClass = isError ? 'error-message' : 'info-message';
     if (tableBody) {
@@ -119,7 +119,6 @@ function displayLoadingError(message, isError = true) {
 }
 
 // --- Data Fetching ---
-/** Fetches and returns status data */
 async function fetchStatusData(url) {
     console.log("Fetching status data...");
     displayLoadingError("Loading plan status data...", false);
@@ -128,7 +127,6 @@ async function fetchStatusData(url) {
     return await response.json();
 }
 
-/** Fetches and returns GeoJSON data */
 async function fetchGeojsonData(url) {
     console.log("Fetching GeoJSON data...");
     const response = await fetch(url);
@@ -136,52 +134,45 @@ async function fetchGeojsonData(url) {
     return await response.json();
 }
 
-// --- Initialization Flow (after data is loaded) ---
-/** Processes data and sets up the dashboard */
+// --- Initialization Flow ---
 function processAndInitializeDashboard(rawStatusData, geojsonData) {
     console.log("Processing data and initializing dashboard...");
-    console.log(`Received ${rawStatusData.length} raw status records.`);
-
-    // --- De-duplication Step ---
-    const lpaMap = {}; // Use a map to store the best entry for each ID
+    // De-duplication (remains same)
+    const lpaMap = {};
     rawStatusData.forEach(lpa => {
         if (!lpa || !lpa.id) {
             console.warn("Skipping record with missing ID:", lpa);
-            return; // Skip records without an ID
+            return;
         }
         const existingEntry = lpaMap[lpa.id];
         if (!existingEntry || isMoreRecent(lpa.last_adoption_year, existingEntry.last_adoption_year)) {
-            // If no entry exists or the current LPA is more recent, store or replace it
             lpaMap[lpa.id] = lpa;
         }
     });
     const deDuplicatedStatusData = Object.values(lpaMap);
-    console.log(`Reduced to ${deDuplicatedStatusData.length} unique/most recent status records.`);
-    // --- End De-duplication Step ---
+    console.log(`Reduced to ${deDuplicatedStatusData.length} unique records.`);
 
-    // 1. Pre-process the de-duplicated Status Data
+    // 1. Pre-process Data (ensure nppf_defaulting is boolean)
     allLpaData = deDuplicatedStatusData.map((lpa, index) => {
         const processedLpa = { ...lpa };
-        // ID is guaranteed from de-duplication
-        processedLpa.years_since_adoption = calculateYearsSince(processedLpa.last_adoption_year);
-        processedLpa.plan_status_display = formatStatusCode(processedLpa.status_code);
-        processedLpa.last_adoption_year = processedLpa.last_adoption_year ? parseInt(processedLpa.last_adoption_year, 10) : null;
+        processedLpa.id = processedLpa.id || `lpa-${index}`;
+        processedLpa.years_since_adoption = calculateYearsSince(lpa.last_adoption_year);
+        processedLpa.plan_status_display = formatStatusCode(lpa.status_code);
+        processedLpa.last_adoption_year = lpa.last_adoption_year ? parseInt(lpa.last_adoption_year, 10) : null;
         if (isNaN(processedLpa.last_adoption_year)) processedLpa.last_adoption_year = null;
         processedLpa.plan_risk_score = (processedLpa.plan_risk_score !== null && processedLpa.plan_risk_score !== undefined)
-            ? parseInt(processedLpa.plan_risk_score, 10)
-            : null;
+            ? parseInt(processedLpa.plan_risk_score, 10) : null;
         if (isNaN(processedLpa.plan_risk_score)) processedLpa.plan_risk_score = null;
         processedLpa.years_since_adoption = (typeof processedLpa.years_since_adoption === 'number')
-            ? processedLpa.years_since_adoption
-            : null;
-        processedLpa.nppf_defaulting = !!lpa.nppf_defaulting; // Ensure nppf_defaulting is strictly boolean
+            ? processedLpa.years_since_adoption : null;
+        processedLpa.nppf_defaulting = !!lpa.nppf_defaulting; // Coerce to boolean
         return processedLpa;
     });
 
-    // 2. Create Lookup for the de-duplicated Status Data
+    // 2. Create Lookup
     const lpaStatusLookup = createLpaStatusLookup(allLpaData);
 
-    // 3. Merge de-duplicated Status Data into GeoJSON Features
+    // 3. Merge Data into GeoJSON (add nppf_defaulting property)
     geojsonData.features.forEach(feature => {
         const lpaId = feature.properties.LPA23CD;
         const statusInfo = lpaStatusLookup[lpaId];
@@ -190,35 +181,31 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
             feature.properties.name = statusInfo.name;
             feature.properties.plan_status_display = statusInfo.plan_status_display;
             feature.properties.id = statusInfo.id;
-            feature.properties.nppf_defaulting = statusInfo.nppf_defaulting; // ADDED
+            feature.properties.notes_short = statusInfo.notes_short || '';
+            feature.properties.nppf_defaulting = statusInfo.nppf_defaulting; // Ensure this is added
         } else {
             console.warn(`No status data found for GeoJSON feature LPA ID: ${lpaId} (Name: ${feature.properties.LPA23NM}) after de-duplication.`);
             feature.properties.status_code = 'unknown';
             feature.properties.name = feature.properties.LPA23NM || 'Unknown LPA';
             feature.properties.plan_status_display = 'Unknown';
             feature.properties.id = `geojson-${lpaId}`;
-            feature.properties.nppf_defaulting = false; // ADDED
+            feature.properties.nppf_defaulting = false; // Default to false if missing
         }
     });
 
     // 4. Add Map Overlay
     addMapOverlay(geojsonData);
-
-    // 5. Populate Filters (based on de-duplicated data)
+    // 5. Populate Filters
     populateFilters();
-
-    // 6. Apply Initial Sort & Render Dashboard (uses de-duplicated data)
+    // 6. Apply Initial Sort & Render
     filteredLpaData = [...allLpaData];
     sortTableData();
     updateDashboard();
-
     // 7. Add Event Listeners
     addEventListeners();
-
     console.log("Dashboard initialization complete.");
 }
 
-/** Helper function to compare adoption years, handling nulls */
 function isMoreRecent(yearA, yearB) {
     const numA = (typeof yearA === 'number' && !isNaN(yearA)) ? yearA : null;
     const numB = (typeof yearB === 'number' && !isNaN(yearB)) ? yearB : null;
@@ -228,7 +215,6 @@ function isMoreRecent(yearA, yearB) {
     return numA > numB;
 }
 
-/** Creates a lookup object for status data by LPA ID */
 function createLpaStatusLookup(statusData) {
     const lookup = {};
     statusData.forEach(lpa => { lookup[lpa.id] = lpa; });
@@ -273,27 +259,63 @@ function styleFunction(feature) {
     return { fillColor: color, fillOpacity: 0.6, color: '#555', weight: 1, opacity: 0.8 };
 }
 
+/**
+ * Defines interactions for each map feature.
+ * UPDATED: Removed code that added a CSS class and now uses setStyle for highlighting.
+ */
 function onEachFeatureFunction(feature, layer) {
     if (feature.properties.id) {
         lpaLayerMapping[feature.properties.id] = layer;
     }
-    const tooltipContent = `<b>${feature.properties.name || 'Unknown LPA'}</b><br>Status: ${feature.properties.plan_status_display || 'Unknown'}`;
+    const tooltipContent = `<b>${feature.properties.name || 'Unknown LPA'}</b><br>${feature.properties.notes_short || 'No details available.'}`;
     layer.bindTooltip(tooltipContent);
+    
     layer.on('click', (e) => {
         if (feature.properties.id) {
-            console.log(`Map feature clicked: ${feature.properties.name}, ID: ${feature.properties.id}`);
             displayLpaDetails(feature.properties.id);
-        } else { console.warn("Clicked map feature missing consistent 'id' property."); }
+        } else {
+            console.warn("Clicked map feature missing consistent 'id' property.");
+        }
     });
-    layer.on('mouseover', (e) => { e.target.setStyle({ weight: 2, color: '#333', fillOpacity: 0.75 }); });
+    
+    // Apply hover style directly
+    layer.on('mouseover', (e) => {
+        const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
+        if (currentSelectedId !== feature.properties.id) {
+            e.target.setStyle({ weight: 2, color: '#333', fillOpacity: 0.75 });
+        }
+    });
+    
+    // Reset style on mouseout using helper that considers highlight mode
     layer.on('mouseout', (e) => {
         const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
-        if (currentSelectedId !== feature.properties.id) { geojsonLayer.resetStyle(e.target); }
+        if (currentSelectedId !== feature.properties.id) {
+            resetLayerStyle(layer);
+        }
     });
-    // ADDED: If feature is defaulting, add the class to the element
-    const element = layer.getElement ? layer.getElement() : null;
-    if (element && feature.properties.nppf_defaulting === true) {
-        element.classList.add('nppf-defaulting');
+    // REMOVED: Previously added code to add CSS class for nppf_defaulting.
+}
+
+/** Helper function to get the dimmed style object */
+function getDimmedStyle() {
+    return {
+        fillOpacity: 0.15,
+        stroke: true, // Ensure border is still visible
+        color: '#aaa',
+        weight: 0.5,
+        opacity: 0.5
+    };
+}
+
+/** Helper function to reset a layer's style based on highlight mode */
+function resetLayerStyle(layer) {
+    if (!layer || !layer.feature) return;
+    const isDefaulting = layer.feature.properties.nppf_defaulting === true;
+    if (isNppfHighlightMode && !isDefaulting) {
+        layer.setStyle(getDimmedStyle());
+    } else {
+        geojsonLayer.resetStyle(layer); // Reset to default style from styleFunction
+        // Optionally apply subtle emphasis for defaulting items if desired
     }
 }
 
@@ -336,21 +358,27 @@ function addEventListeners() {
     if (lpaCardsContainer) lpaCardsContainer.addEventListener('click', handleCardClick);
     if (closeDetailsBtn) closeDetailsBtn.addEventListener('click', hideDetails);
     if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportToCSV);
-    // ADDED: NPPF Highlight Toggle Listener
+    // NPPF Highlight Toggle Listener
     if (nppfHighlightToggle) nppfHighlightToggle.addEventListener('change', handleNppfToggle);
 }
 
-/** Handles the NPPF Highlight Toggle change */
+/**
+ * Handles the NPPF Highlight Toggle change.
+ * UPDATED: Iterates over map layers and resets style using setStyle.
+ */
 function handleNppfToggle(event) {
     isNppfHighlightMode = event.target.checked;
     console.log("NPPF Highlight Mode:", isNppfHighlightMode);
-    if (isNppfHighlightMode) {
-        document.body.classList.add('nppf-highlight-mode');
-    } else {
-        document.body.classList.remove('nppf-highlight-mode');
+    // Toggle body class for table/card dimming
+    document.body.classList.toggle('nppf-highlight-mode', isNppfHighlightMode);
+    // Apply/Reset styles directly to map layers
+    if (geojsonLayer) {
+        const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
+        geojsonLayer.eachLayer(layer => {
+            if (layer.feature && layer.feature.properties.id === currentSelectedId) return;
+            resetLayerStyle(layer);
+        });
     }
-    // Optionally re-apply map styles if needed:
-    // if (geojsonLayer) { geojsonLayer.setStyle(styleFunction); }
 }
 
 function applyFiltersAndRedraw() {
@@ -459,20 +487,20 @@ function formatStatusCode(statusCode) {
 
 /**
  * Populates the table.
- * UPDATED: Adds 'nppf-defaulting' class to rows when applicable.
+ * UPDATED: Adds 'nppf-defaulting' class to rows (for CSS purposes).
  */
 function populateTable(data) {
     if (!tableBody) return;
     tableBody.innerHTML = '';
-    if (!data || data.length === 0) { 
-        tableBody.innerHTML = `<tr><td colspan="5" class="info-message">No LPAs match the current filters.</td></tr>`; 
-        return; 
+    if (!data || data.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="5" class="info-message">No LPAs match the current filters.</td></tr>`;
+        return;
     }
     data.forEach(lpa => {
         const row = tableBody.insertRow();
         row.dataset.lpaId = lpa.id;
         if (lpa.status_code) row.classList.add(`status-${lpa.status_code}`);
-        if (lpa.nppf_defaulting === true) row.classList.add('nppf-defaulting'); // ADDED
+        if (lpa.nppf_defaulting === true) row.classList.add('nppf-defaulting'); // For table/card CSS
         createCell(row, lpa.name ?? 'N/A');
         createCell(row, lpa.plan_status_display);
         createCell(row, lpa.last_adoption_year ?? 'N/A', true);
@@ -483,20 +511,20 @@ function populateTable(data) {
 
 /**
  * Populates the cards container.
- * UPDATED: Adds 'nppf-defaulting' class to cards when applicable.
+ * UPDATED: Adds 'nppf-defaulting' class to cards (for card CSS).
  */
 function populateCards(data) {
     if (!lpaCardsContainer) return;
     lpaCardsContainer.innerHTML = '';
-    if (!data || data.length === 0) { 
-        lpaCardsContainer.innerHTML = `<p class="info-message">No LPAs match the current filters.</p>`; 
-        return; 
+    if (!data || data.length === 0) {
+        lpaCardsContainer.innerHTML = `<p class="info-message">No LPAs match the current filters.</p>`;
+        return;
     }
     data.forEach(lpa => {
         const card = document.createElement('div');
         card.className = 'lpa-card';
         if (lpa.status_code) card.classList.add(`status-${lpa.status_code}`);
-        if (lpa.nppf_defaulting === true) card.classList.add('nppf-defaulting'); // ADDED
+        if (lpa.nppf_defaulting === true) card.classList.add('nppf-defaulting'); // For card CSS
         card.dataset.lpaId = lpa.id;
         card.innerHTML = `
             <div class="lpa-card-header">${lpa.name ?? 'N/A'}</div>
@@ -533,7 +561,6 @@ function handleCardClick(event) {
     displayLpaDetails(lpaId);
 }
 
-/** Finds LPA data by ID and displays it in the details panel. */
 function displayLpaDetails(lpaId) {
     console.log(`Attempting to display details for lpaId: ${lpaId}`);
     const lpa = allLpaData.find(item => item.id === lpaId);
@@ -620,28 +647,31 @@ function hideDetails() {
     }
 }
 
-/** Adds selected class to the current item (row, card, and map feature) */
+/**
+ * Adds selected class/style to the current item (row, card, map feature).
+ * UPDATED: Applies selected style via setStyle.
+ */
 function highlightSelectedItem(lpaId) {
     if (!lpaId) return;
-    removeHighlights();
+    removeHighlights(); // Clear previous, resetting map layer to base/dimmed
+
+    // Highlight table row
     const row = tableBody ? tableBody.querySelector(`tr[data-lpa-id="${lpaId}"]`) : null;
+    if (row) { row.classList.add('selected-row'); }
+
+    // Highlight card
     const card = lpaCardsContainer ? lpaCardsContainer.querySelector(`.lpa-card[data-lpa-id="${lpaId}"]`) : null;
-    if (row) { 
-        console.log("Highlighting row:", lpaId); 
-        row.classList.add('selected-row'); 
-    }
-    if (card) { 
-        console.log("Highlighting card:", lpaId); 
-        card.classList.add('selected-card'); 
-    }
-    // Highlight map feature if available
+    if (card) { card.classList.add('selected-card'); }
+
+    // Highlight map feature (apply selected style directly)
     const layer = lpaLayerMapping[lpaId];
     if (layer) {
-        console.log("Highlighting map layer:", lpaId);
+        console.log("Applying selected style to map layer:", lpaId);
         layer.setStyle({
             weight: 3,
             color: '#000',
-            opacity: 1
+            opacity: 1,
+            fillOpacity: 0.5
         });
         if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
             layer.bringToFront();
@@ -649,16 +679,19 @@ function highlightSelectedItem(lpaId) {
     }
 }
 
-/** Removes selected class/style from any item (row, card, and map feature) */
+/**
+ * Removes selected class/style from any item (row, card, map feature).
+ * UPDATED: Resets map style based on highlight mode state.
+ */
 function removeHighlights() {
     const selectedRow = tableBody ? tableBody.querySelector('.selected-row') : null;
-    const selectedCard = lpaCardsContainer ? lpaCardsContainer.querySelector('.selected-card') : null;
     if (selectedRow) selectedRow.classList.remove('selected-row');
+    const selectedCard = lpaCardsContainer ? lpaCardsContainer.querySelector('.selected-card') : null;
     if (selectedCard) selectedCard.classList.remove('selected-card');
     const previouslySelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
     if (previouslySelectedId && lpaLayerMapping[previouslySelectedId]) {
         console.log("Resetting style for previously selected layer:", previouslySelectedId);
-        geojsonLayer.resetStyle(lpaLayerMapping[previouslySelectedId]);
+        resetLayerStyle(lpaLayerMapping[previouslySelectedId]);
     }
 }
 
