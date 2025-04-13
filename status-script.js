@@ -4,77 +4,61 @@ const currentYear = new Date().getFullYear();
 let allLpaData = []; // To store all fetched data
 let filteredLpaData = []; // To store currently filtered data
 let map = null; // Placeholder for Leaflet map instance
+let sortColumn = 'name'; // Default sort column
+let sortDirection = 'asc'; // Default sort direction ('asc' or 'desc')
 
 // --- DOM Elements (Declare variables, assign inside DOMContentLoaded) ---
-let tableBody, searchInput, regionFilter, statusFilter, riskFilter;
+let tableBody, tableHead, searchInput, regionFilter, statusFilter, riskFilter;
 let detailsPanel, detailsLpaName, detailsPlanStatus, detailsStatusCode, detailsYearsSince;
 let detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences, closeDetailsBtn;
-// UPDATED: Added new stat elements
 let statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn;
-let exportCsvBtn, mapContainer;
+let exportCsvBtn, mapContainer, lpaCardsContainer;
 
 
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed.");
 
-    // --- Assign DOM Elements ---
+    // --- Assign DOM Elements NOW that the DOM is ready ---
     tableBody = document.getElementById('status-table-body');
-    console.log('tableBody:', tableBody);
+    tableHead = document.getElementById('lpa-table-head'); // Get table head for sort listeners
     searchInput = document.getElementById('search-lpa');
-    console.log('searchInput:', searchInput);
     regionFilter = document.getElementById('region-filter');
-    console.log('regionFilter:', regionFilter);
     statusFilter = document.getElementById('status-filter');
-    console.log('statusFilter:', statusFilter);
     riskFilter = document.getElementById('risk-filter');
-    console.log('riskFilter:', riskFilter);
     detailsPanel = document.getElementById('selected-authority-details');
-    console.log('detailsPanel:', detailsPanel);
     detailsLpaName = document.getElementById('details-lpa-name');
-    console.log('detailsLpaName:', detailsLpaName);
     detailsPlanStatus = document.getElementById('details-plan-status');
-    console.log('detailsPlanStatus:', detailsPlanStatus);
     detailsStatusCode = document.getElementById('details-status-code');
-    console.log('detailsStatusCode:', detailsStatusCode);
     detailsYearsSince = document.getElementById('details-years-since');
-    console.log('detailsYearsSince:', detailsYearsSince);
     detailsUpdateProgress = document.getElementById('details-update-progress');
-    console.log('detailsUpdateProgress:', detailsUpdateProgress);
     detailsNppfDefault = document.getElementById('details-nppf-default');
-    console.log('detailsNppfDefault:', detailsNppfDefault);
     detailsNotes = document.getElementById('details-notes');
-    console.log('detailsNotes:', detailsNotes);
     detailsReferences = document.getElementById('details-references');
-    console.log('detailsReferences:', detailsReferences);
     closeDetailsBtn = document.getElementById('close-details-btn');
-    console.log('closeDetailsBtn:', closeDetailsBtn);
-    // UPDATED: Assign new stat elements
     statAdoptedRecent = document.getElementById('stat-adopted-recent');
-    console.log('statAdoptedRecent:', statAdoptedRecent);
     statJustAdopted = document.getElementById('stat-just-adopted');
-    console.log('statJustAdopted:', statJustAdopted);
     statAdoptedOutdated = document.getElementById('stat-adopted-outdated');
-    console.log('statAdoptedOutdated:', statAdoptedOutdated);
     statEmerging = document.getElementById('stat-emerging');
-    console.log('statEmerging:', statEmerging);
     statWithdrawn = document.getElementById('stat-withdrawn');
-    console.log('statWithdrawn:', statWithdrawn);
-
     exportCsvBtn = document.getElementById('export-csv-btn');
-    console.log('exportCsvBtn:', exportCsvBtn);
     mapContainer = document.getElementById('map-container');
-    console.log('mapContainer:', mapContainer);
+    lpaCardsContainer = document.getElementById('lpa-cards-container'); // Assign card container
 
-    // --- Basic Check ---
-    if (!tableBody || !searchInput || !detailsPanel || !exportCsvBtn || !mapContainer || !closeDetailsBtn ||
-        !statAdoptedRecent || !statJustAdopted || !statAdoptedOutdated || !statEmerging || !statWithdrawn) { // Check new stats too
-        console.error("Dashboard init failed: One or more critical DOM elements were not found. Check logs and HTML IDs.");
+    // --- Basic Check: Ensure critical elements were found ---
+    const criticalElements = [tableBody, tableHead, searchInput, detailsPanel, exportCsvBtn, mapContainer, lpaCardsContainer, closeDetailsBtn, statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn];
+    if (criticalElements.some(el => !el)) {
+        console.error("Dashboard init failed: One or more critical DOM elements were not found. Check HTML IDs.");
         const container = document.querySelector('.container');
-        if(container) { /* ... (error message display code remains same) ... */ }
-        return;
+        if(container) {
+             const errorMsg = document.createElement('p'); errorMsg.className = 'error-message';
+             errorMsg.style.margin = '20px'; errorMsg.textContent = 'Error initializing dashboard components. Please check the console (F12).';
+             const header = document.querySelector('.dashboard-header');
+             if(header) header.parentNode.insertBefore(errorMsg, header.nextSibling); else container.prepend(errorMsg);
+        }
+        return; // Stop initialization
     }
-    console.log("All expected DOM elements successfully selected.");
+    console.log("All critical DOM elements found.");
 
     // --- Initialize & Fetch ---
     initializeMap();
@@ -94,10 +78,12 @@ function initializeMap() {
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         console.log("Basic Leaflet map initialized.");
+        // Clear the placeholder visual/text if map initializes successfully
         const placeholderVisual = mapContainer.querySelector('.map-placeholder-visual');
         const placeholderText = mapContainer.querySelector('.map-placeholder-text');
         if (placeholderVisual) placeholderVisual.style.display = 'none';
         if (placeholderText) placeholderText.style.display = 'none';
+        // TODO: Load GeoJSON data for LPAs, style, add interactions
     } catch (error) {
         console.error("Error initializing Leaflet map:", error);
         mapContainer.innerHTML = '<p class="error-message" style="margin: auto;">Could not load map.</p>';
@@ -116,19 +102,33 @@ async function fetchData() {
 
         // Pre-process data
         allLpaData.forEach((lpa, index) => {
-            lpa.id = lpa.id || `lpa-${index}`;
+            lpa.id = lpa.id || `lpa-${index}`; // Ensure unique ID
             lpa.years_since_adoption = calculateYearsSince(lpa.last_adoption_year);
-            lpa.plan_status_display = formatStatusCode(lpa.status_code);
+            lpa.plan_status_display = formatStatusCode(lpa.status_code); // Add display text
+            // Ensure numeric fields are numbers for sorting, handling null/undefined
+            lpa.last_adoption_year = lpa.last_adoption_year ? parseInt(lpa.last_adoption_year, 10) : null;
+            if (isNaN(lpa.last_adoption_year)) lpa.last_adoption_year = null;
+
+            lpa.plan_risk_score = lpa.plan_risk_score !== null && lpa.plan_risk_score !== undefined ? parseInt(lpa.plan_risk_score, 10) : null;
+             if (isNaN(lpa.plan_risk_score)) lpa.plan_risk_score = null;
+
+            lpa.years_since_adoption = typeof lpa.years_since_adoption === 'number' ? lpa.years_since_adoption : null; // Already handles N/A -> null logic via calculate function
         });
 
-        filteredLpaData = [...allLpaData];
-        populateFilters();
-        updateDashboard();
+        filteredLpaData = [...allLpaData]; // Initially, show all data
+        populateFilters(); // Populate dropdowns only after data is fetched
+        sortTableData();   // Apply initial default sort
+        updateDashboard(); // Initial population of table/cards and stats
 
     } catch (error) {
         console.error("Error fetching status data:", error);
-        if (tableBody) { /* ... (error message handling remains same) ... */ }
-        // Update all stat displays on error
+        if (tableBody) {
+             const cols = tableBody.closest('table')?.querySelector('thead tr')?.cells.length || 5;
+             tableBody.innerHTML = `<tr><td colspan="${cols}" class="error-message">Error loading data. Please try again later.</td></tr>`;
+        }
+        if (lpaCardsContainer) {
+            lpaCardsContainer.innerHTML = '<p class="error-message">Error loading data. Please try again later.</p>';
+        }
         if (statAdoptedRecent) statAdoptedRecent.textContent = 'ERR';
         if (statJustAdopted) statJustAdopted.textContent = 'ERR';
         if (statAdoptedOutdated) statAdoptedOutdated.textContent = 'ERR';
@@ -171,20 +171,44 @@ function populateSelect(selectElement, options, formatter = (val) => val) {
  * Adds event listeners for filters, table clicks, etc.
  */
 function addEventListeners() {
-    console.log("Attempting to add event listeners...");
+    console.log("Adding event listeners...");
     let filterTimeout;
     const debounceFilter = () => {
         clearTimeout(filterTimeout);
         filterTimeout = setTimeout(applyFiltersAndRedraw, 300);
     };
 
-    if (searchInput) { searchInput.addEventListener('input', debounceFilter); console.log("Listener added: searchInput"); } else { console.warn("Listener not added: searchInput is null"); }
-    if (regionFilter) { regionFilter.addEventListener('change', debounceFilter); console.log("Listener added: regionFilter"); } else { console.warn("Listener not added: regionFilter is null"); }
-    if (statusFilter) { statusFilter.addEventListener('change', debounceFilter); console.log("Listener added: statusFilter"); } else { console.warn("Listener not added: statusFilter is null"); }
-    if (riskFilter) { riskFilter.addEventListener('change', debounceFilter); console.log("Listener added: riskFilter"); } else { console.warn("Listener not added: riskFilter is null"); }
-    if (tableBody) { tableBody.addEventListener('click', handleTableClick); console.log("Listener added: tableBody"); } else { console.warn("Listener not added: tableBody is null"); }
-    if (closeDetailsBtn) { closeDetailsBtn.addEventListener('click', hideDetails); console.log("Listener added: closeDetailsBtn"); } else { console.warn("Listener not added: closeDetailsBtn is null"); }
-    if (exportCsvBtn) { exportCsvBtn.addEventListener('click', exportToCSV); console.log("Listener added: exportCsvBtn"); } else { console.warn("Listener not added: exportCsvBtn is null"); }
+    // Filters
+    if (searchInput) searchInput.addEventListener('input', debounceFilter);
+    if (regionFilter) regionFilter.addEventListener('change', debounceFilter);
+    if (statusFilter) statusFilter.addEventListener('change', debounceFilter);
+    if (riskFilter) riskFilter.addEventListener('change', debounceFilter);
+
+    // Table Header for Sorting
+    if (tableHead) tableHead.addEventListener('click', handleSortClick);
+
+    // Table Body for Row Click
+    if (tableBody) tableBody.addEventListener('click', handleTableClick);
+
+    // Card Container for Card Click
+    if (lpaCardsContainer) lpaCardsContainer.addEventListener('click', handleCardClick);
+
+    // Details Panel Close Button
+    if (closeDetailsBtn) closeDetailsBtn.addEventListener('click', hideDetails);
+
+    // Export Button
+    if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportToCSV);
+
+    // Optional: Listen for resize to update view if needed (though CSS handles visibility change)
+    // Could be useful if rendering logic needs to explicitly change beyond visibility
+    // let resizeTimeout;
+    // window.addEventListener('resize', () => {
+    //     clearTimeout(resizeTimeout);
+    //     resizeTimeout = setTimeout(() => {
+    //         console.log("Window resized, potentially updating view");
+    //         updateDashboard(); // Re-render based on new width
+    //     }, 250);
+    // });
 }
 
 /**
@@ -204,64 +228,175 @@ function applyFiltersAndRedraw() {
         return nameMatch && regionMatch && statusMatch && riskMatch;
     });
 
-    if (detailsPanel && detailsPanel.style.display !== 'none') { /* ... (hide details if filtered out remains same) ... */ }
+    // Sort the newly filtered data based on current sort state
+    sortTableData();
+    // Render the sorted, filtered data
     updateDashboard();
+
+    // Re-apply selection highlight if the selected item is still visible
+    if (detailsPanel.style.display !== 'none') {
+        const selectedId = detailsPanel.dataset.lpaId;
+        if (selectedId && filteredLpaData.some(lpa => lpa.id === selectedId)) {
+            highlightSelectedItem(selectedId); // Re-apply highlight
+        } else {
+            hideDetails(); // Hide details if selected item is filtered out
+        }
+    }
 }
 
-/**
- * Updates the table, stats, and potentially the map based on filteredData.
- */
+/** Sorts filteredLpaData based on sortColumn and sortDirection */
+function sortTableData() {
+    if (!sortColumn) return; // No column selected
+
+    filteredLpaData.sort((a, b) => {
+        let valA = a[sortColumn];
+        let valB = b[sortColumn];
+
+        // Handle potential null/undefined values - treat nulls as "lowest"
+        const aIsNull = valA === null || valA === undefined;
+        const bIsNull = valB === null || valB === undefined;
+
+        if (aIsNull && bIsNull) return 0; // Both null, equal
+        if (aIsNull) return sortDirection === 'asc' ? -1 : 1; // a is lower if asc, higher if desc
+        if (bIsNull) return sortDirection === 'asc' ? 1 : -1; // b is lower if asc, higher if desc
+
+        // Proceed with comparison for non-null values
+        let comparison = 0;
+        if (typeof valA === 'number' && typeof valB === 'number') {
+            comparison = valA - valB;
+        } else {
+            // Default to string comparison (case-insensitive)
+            valA = String(valA).toLowerCase();
+            valB = String(valB).toLowerCase();
+            comparison = valA.localeCompare(valB);
+        }
+
+        return sortDirection === 'asc' ? comparison : comparison * -1; // Apply direction
+    });
+}
+
+/** Handles clicking on table headers for sorting */
+function handleSortClick(event) {
+    const header = event.target.closest('th');
+    if (!header || !header.classList.contains('sortable') || !header.dataset.sort) {
+        return; // Clicked outside a sortable header
+    }
+
+    const newSortColumn = header.dataset.sort;
+
+    if (newSortColumn === sortColumn) {
+        // Toggle direction if same column clicked
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+        // New column clicked, default to ascending
+        sortColumn = newSortColumn;
+        sortDirection = 'asc';
+    }
+
+    sortTableData(); // Sort the data
+    updateDashboard(); // Redraw table/cards with sorted data and update indicators
+}
+
+/** Updates visual indicators on table headers */
+function updateSortIndicators() {
+    if (!tableHead) return;
+    tableHead.querySelectorAll('th.sortable').forEach(th => {
+        th.classList.remove('sort-asc', 'sort-desc');
+        if (th.dataset.sort === sortColumn) {
+            th.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
+        }
+    });
+}
+
+
+/** Checks screen width and calls appropriate render function */
 function updateDashboard() {
-    populateTable(filteredLpaData);
+    // Update Stats regardless of view
     calculateAndDisplayStats(filteredLpaData);
-    // TODO: Update map
+
+    // Choose view based on screen width (matches CSS breakpoint)
+    // Use window.matchMedia for potentially more robust detection
+    const isMobileView = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobileView) {
+        populateCards(filteredLpaData);
+         // Hide table head indicators explicitly if switching to mobile
+         if(tableHead) tableHead.querySelectorAll('th.sortable').forEach(th => th.classList.remove('sort-asc', 'sort-desc'));
+    } else {
+        populateTable(filteredLpaData);
+        updateSortIndicators(); // Update indicators only when table is visible
+    }
+     // Re-apply highlight after rendering, check if details panel is visible
+     if (detailsPanel.style.display !== 'none') {
+         highlightSelectedItem(detailsPanel.dataset.lpaId);
+     }
 }
 
-/**
- * Calculates years since adoption.
- */
+/** Calculates years since adoption. Returns null if not applicable */
 function calculateYearsSince(adoptionYear) {
+    // adoptionYear should already be a number or null due to pre-processing
     if (typeof adoptionYear === 'number' && adoptionYear > 1900 && adoptionYear <= currentYear) {
         return currentYear - adoptionYear;
     }
-    return 'N/A';
+    return null; // Return null instead of 'N/A' for easier sorting/handling
 }
 
-/**
- * Maps status codes to user-friendly display text for filters/details.
- */
+/** Maps status codes to user-friendly display text */
 function formatStatusCode(statusCode) {
     switch (statusCode) {
-        case 'adopted_recent': return 'Adopted & Current'; // Match stats label
+        case 'adopted_recent': return 'Adopted & Current';
         case 'just_adopted_updating': return 'Just Adopted / Updating';
-        case 'adopted_outdated': return 'Adopted >5 yrs'; // Match stats label
-        case 'emerging_in_progress': return 'Emerging'; // Match stats label
-        case 'withdrawn_or_vacuum': return 'Withdrawn / Vacuum'; // Match stats label
+        case 'adopted_outdated': return 'Adopted >5 yrs';
+        case 'emerging_in_progress': return 'Emerging';
+        case 'withdrawn_or_vacuum': return 'Withdrawn / Vacuum';
         case 'unknown':
         default: return statusCode ? String(statusCode).replace(/_/g, ' ') : 'Unknown';
     }
 }
 
-/**
- * Populates the table with LPA data.
- */
+/** Populates the table */
 function populateTable(data) {
     if (!tableBody) return;
     tableBody.innerHTML = '';
-
-    if (!Array.isArray(data) || data.length === 0) { /* ... (no results message remains same) ... */ return; }
+    if (!data || data.length === 0) { tableBody.innerHTML = `<tr><td colspan="5" class="info-message">No LPAs match the current filters.</td></tr>`; return; }
 
     data.forEach(lpa => {
         const row = tableBody.insertRow();
         row.dataset.lpaId = lpa.id;
+        if (lpa.status_code) row.classList.add(`status-${lpa.status_code}`);
         createCell(row, lpa.name || 'N/A');
         createCell(row, lpa.plan_status_display || 'N/A');
-        createCell(row, lpa.last_adoption_year || 'N/A', true);
-        createCell(row, lpa.years_since_adoption, true);
+        createCell(row, lpa.last_adoption_year ?? 'N/A', true);
+        createCell(row, lpa.years_since_adoption ?? 'N/A', true);
         createCell(row, lpa.plan_risk_score ?? 'N/A', true);
-        if (lpa.status_code) row.classList.add(`status-${lpa.status_code}`);
     });
 }
+
+/** Populates the cards container */
+function populateCards(data) {
+    if (!lpaCardsContainer) return;
+    lpaCardsContainer.innerHTML = ''; // Clear previous cards
+    if (!data || data.length === 0) { lpaCardsContainer.innerHTML = `<p class="info-message">No LPAs match the current filters.</p>`; return; }
+
+    data.forEach(lpa => {
+        const card = document.createElement('div');
+        card.className = 'lpa-card';
+        if (lpa.status_code) card.classList.add(`status-${lpa.status_code}`); // Add status class if needed for styling
+        card.dataset.lpaId = lpa.id;
+
+        // Use nullish coalescing (??) to show 'N/A' for null values
+        card.innerHTML = `
+            <div class="lpa-card-header">${lpa.name ?? 'N/A'}</div>
+            <div class="lpa-card-status">${lpa.plan_status_display ?? 'N/A'}</div>
+            <div class="lpa-card-details">
+                <span><span class="label">Adopted:</span> ${lpa.last_adoption_year ?? 'N/A'}</span>
+                <span><span class="label">Risk:</span> ${lpa.plan_risk_score ?? 'N/A'}</span>
+            </div>
+        `;
+        lpaCardsContainer.appendChild(card);
+    });
+}
+
 
 /** Helper to create and append a table cell. */
 function createCell(row, text, center = false) {
@@ -278,74 +413,72 @@ function formatBoolean(value) {
     return 'N/A';
 }
 
-/**
- * Handles clicks within the table body (event delegation).
- */
+/** Handles clicks within the table body */
 function handleTableClick(event) {
     const row = event.target.closest('tr');
     if (!row || !row.dataset.lpaId || !detailsPanel) return;
     displayLpaDetails(row.dataset.lpaId);
 }
 
-/**
- * Finds LPA data by ID and displays it in the details panel.
- */
+/** Handles clicks within the card container */
+function handleCardClick(event) {
+    const card = event.target.closest('.lpa-card');
+    if (!card || !card.dataset.lpaId || !detailsPanel) return;
+    displayLpaDetails(card.dataset.lpaId);
+}
+
+/** Finds LPA data by ID and displays it in the details panel */
 function displayLpaDetails(lpaId) {
     const lpa = allLpaData.find(item => item.id === lpaId);
-    // Ensure all elements exist
-    if (!lpa || !detailsPanel || !detailsLpaName || !detailsPlanStatus || !detailsStatusCode ||
-        !detailsYearsSince || !detailsUpdateProgress || !detailsNppfDefault || !detailsNotes || !detailsReferences) {
+    const detailElements = [detailsPanel, detailsLpaName, detailsPlanStatus, detailsStatusCode, detailsYearsSince, detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences];
+    if (!lpa || detailElements.some(el => !el)) {
         console.warn("Cannot display details, LPA data or detail panel elements missing.");
         return;
     }
 
     // Populate basic fields
-    detailsLpaName.textContent = lpa.name || 'N/A';
-    detailsPlanStatus.textContent = lpa.plan_status || 'N/A';
-    detailsStatusCode.textContent = lpa.status_code || 'N/A';
-    detailsYearsSince.textContent = lpa.years_since_adoption;
+    detailsLpaName.textContent = lpa.name ?? 'N/A';
+    detailsPlanStatus.textContent = lpa.plan_status ?? 'N/A';
+    detailsStatusCode.textContent = lpa.status_code ?? 'N/A';
+    detailsYearsSince.textContent = lpa.years_since_adoption ?? 'N/A';
     detailsUpdateProgress.textContent = formatBoolean(lpa.update_in_progress);
     detailsNppfDefault.textContent = formatBoolean(lpa.nppf_defaulting);
-    detailsNotes.textContent = lpa.notes || 'No specific notes available.';
+    detailsNotes.textContent = lpa.notes ?? 'No specific notes available.';
 
-    // UPDATED: Populate References
-    detailsReferences.innerHTML = ''; // Clear previous content
+    // Populate References
+    detailsReferences.innerHTML = ''; // Clear previous
     if (lpa.references && Array.isArray(lpa.references) && lpa.references.length > 0) {
         lpa.references.forEach(refString => {
-            if (!refString) return; // Skip empty references
-
-            // Basic URL detection
-            if (refString.trim().startsWith('http://') || refString.trim().startsWith('https://')) {
+             if (!refString) return;
+             const trimmedRef = refString.trim();
+             if (trimmedRef.startsWith('http://') || trimmedRef.startsWith('https://')) {
                 const link = document.createElement('a');
-                link.href = refString.trim();
-                link.textContent = refString.trim(); // Use URL as text for now
+                link.href = trimmedRef;
+                link.textContent = trimmedRef; // Or try to extract a title if possible later
                 link.target = '_blank';
                 link.rel = 'noopener noreferrer';
                 detailsReferences.appendChild(link);
-            } else {
-                // If not a URL, display as plain text paragraph
+             } else {
                 const text = document.createElement('p');
-                text.textContent = refString;
+                text.textContent = trimmedRef;
                 detailsReferences.appendChild(text);
-            }
+             }
         });
     } else {
-        // Display default message if no references
-        const noRefsText = document.createElement('p');
-        noRefsText.textContent = 'No references available.';
-        noRefsText.className = 'no-refs'; // Add class for potential styling
-        detailsReferences.appendChild(noRefsText);
+        detailsReferences.innerHTML = '<p class="no-refs">No references available.</p>';
     }
 
-    // Show the panel
-    detailsPanel.dataset.lpaId = lpaId;
+    // Show panel and highlight
+    detailsPanel.dataset.lpaId = lpaId; // Store ID for re-highlighting after filter/sort
     detailsPanel.style.display = 'block';
-    // detailsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Optional scroll
+    highlightSelectedItem(lpaId); // Apply highlight
+    // Optional scroll into view, might be more useful on mobile after clicking a card
+    // if (window.matchMedia("(max-width: 768px)").matches) {
+    //      detailsPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // }
 }
 
-/**
- * Hides the details display section.
- */
+/** Hides the details display section and removes highlights */
 function hideDetails() {
     if (detailsPanel) {
         detailsPanel.style.display = 'none';
@@ -359,170 +492,96 @@ function hideDetails() {
         if(detailsNppfDefault) detailsNppfDefault.textContent = '--';
         if(detailsNotes) detailsNotes.textContent = '--';
         if(detailsReferences) detailsReferences.innerHTML = '<p class="no-refs">No references available.</p>';
+        removeHighlights(); // Remove any active highlights
     }
 }
 
-/**
- * Calculates and displays the coverage statistics for all 5 statuses.
- */
+/** Adds selected class to the current item (row or card) */
+function highlightSelectedItem(lpaId) {
+    if (!lpaId) return;
+    removeHighlights(); // Clear previous highlights first
+    const row = tableBody ? tableBody.querySelector(`tr[data-lpa-id="${lpaId}"]`) : null;
+    const card = lpaCardsContainer ? lpaCardsContainer.querySelector(`.lpa-card[data-lpa-id="${lpaId}"]`) : null;
+
+    if (row) row.classList.add('selected-row');
+    if (card) card.classList.add('selected-card');
+}
+
+/** Removes selected class from any item (row or card) */
+function removeHighlights() {
+    const selectedRow = tableBody ? tableBody.querySelector('.selected-row') : null;
+    const selectedCard = lpaCardsContainer ? lpaCardsContainer.querySelector('.selected-card') : null;
+    if (selectedRow) selectedRow.classList.remove('selected-row');
+    if (selectedCard) selectedCard.classList.remove('selected-card');
+}
+
+/** Calculates and displays the coverage statistics for all 5 statuses */
 function calculateAndDisplayStats(data) {
     const total = data.length;
-    // Ensure all stat elements exist
-    if (!statAdoptedRecent || !statJustAdopted || !statAdoptedOutdated || !statEmerging || !statWithdrawn) {
+    const statElements = [statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn];
+    if (statElements.some(el => !el)) {
         console.warn("Cannot calculate stats, one or more stat DOM elements missing.");
         return;
     }
 
-    if (total === 0) {
-        statAdoptedRecent.textContent = '0%';
-        statJustAdopted.textContent = '0%';
-        statAdoptedOutdated.textContent = '0%';
-        statEmerging.textContent = '0%';
-        statWithdrawn.textContent = '0%';
-        return;
-    }
+    const zeroOutStats = () => statElements.forEach(el => el.textContent = '0%');
 
-    // Initialize counters for all 5 statuses
-    let adoptedRecentCount = 0;
-    let justAdoptedUpdatingCount = 0;
-    let adoptedOutdatedCount = 0;
-    let emergingInProgressCount = 0;
-    let withdrawnOrVacuumCount = 0;
+    if (total === 0) { zeroOutStats(); return; }
+
+    let counts = {
+        adopted_recent: 0,
+        just_adopted_updating: 0,
+        adopted_outdated: 0,
+        emerging_in_progress: 0,
+        withdrawn_or_vacuum: 0
+    };
 
     data.forEach(lpa => {
-        switch (lpa.status_code) {
-            case 'adopted_recent':
-                adoptedRecentCount++;
-                break;
-            case 'just_adopted_updating':
-                justAdoptedUpdatingCount++;
-                break;
-            case 'adopted_outdated':
-                adoptedOutdatedCount++;
-                break;
-            case 'emerging_in_progress':
-                emergingInProgressCount++;
-                break;
-            case 'withdrawn_or_vacuum':
-                withdrawnOrVacuumCount++;
-                break;
-            // No default needed, unknown statuses won't be counted in these 5
+        if (counts.hasOwnProperty(lpa.status_code)) {
+            counts[lpa.status_code]++;
         }
     });
 
     const formatPercent = (count, total) => `${((count / total) * 100).toFixed(0)}%`;
 
-    // Update text content for all 5 stat elements
-    statAdoptedRecent.textContent = formatPercent(adoptedRecentCount, total);
-    statJustAdopted.textContent = formatPercent(justAdoptedUpdatingCount, total);
-    statAdoptedOutdated.textContent = formatPercent(adoptedOutdatedCount, total);
-    statEmerging.textContent = formatPercent(emergingInProgressCount, total);
-    statWithdrawn.textContent = formatPercent(withdrawnOrVacuumCount, total);
+    statAdoptedRecent.textContent = formatPercent(counts.adopted_recent, total);
+    statJustAdopted.textContent = formatPercent(counts.just_adopted_updating, total);
+    statAdoptedOutdated.textContent = formatPercent(counts.adopted_outdated, total);
+    statEmerging.textContent = formatPercent(counts.emerging_in_progress, total);
+    statWithdrawn.textContent = formatPercent(counts.withdrawn_or_vacuum, total);
 }
 
-
-/**
- * Exports the currently filtered data to a CSV file.
- * Handles array fields (references) and proper CSV escaping.
- */
+/** Exports the currently filtered data to a CSV file */
 function exportToCSV() {
-    // Ensure there's data to export based on current filters
     if (!filteredLpaData || filteredLpaData.length === 0) {
         alert("No data to export based on current filters.");
         return;
     }
-
     console.log(`Exporting ${filteredLpaData.length} rows to CSV...`);
-
-    // Define the columns/headers for the CSV file
-    // Adjust this array to include/exclude/reorder columns as needed
-    const headers = [
-        "ID",
-        "LPA Name",
-        "Region",
-        "Plan Status Text",
-        "Status Code",
-        "Up-to-date?",
-        "Last Adopted Year",
-        "Years Since Adoption",
-        "Update in Progress?",
-        "NPPF Defaulting?",
-        "Plan Risk Score",
-        "Notes (Short)",
-        "Notes (Full)",
-        "References" // References will be joined into one cell
-    ];
-
-    // Helper function to format boolean values for CSV
-    const formatBooleanForCSV = (value) => {
-        if (value === true) return 'Yes';
-        if (value === false) return 'No';
-        return ''; // Represent null/undefined/non-boolean as empty string
-    };
-
-    // Prepare the data rows for the CSV
+    const headers = [ "ID", "LPA Name", "Region", "Plan Status Text", "Status Code", "Up-to-date?", "Last Adopted Year", "Years Since Adoption", "Update in Progress?", "NPPF Defaulting?", "Plan Risk Score", "Notes (Short)", "Notes (Full)", "References" ];
+    const formatBooleanForCSV = (value) => { if (value === true) return 'Yes'; if (value === false) return 'No'; return ''; };
     const dataRows = filteredLpaData.map(lpa => {
-        // Join the references array into a single string, separated by semicolons
-        const referencesString = (lpa.references && Array.isArray(lpa.references))
-            ? lpa.references.join('; ')
-            : '';
-
-        // Calculate years since adoption again or use pre-calculated value
-        const yearsSince = calculateYearsSince(lpa.last_adoption_year); // Ensure it's up-to-date
-
-        return [
-            lpa.id || '',
-            lpa.name || '',
-            lpa.region || '',
-            lpa.plan_status || '', // The descriptive text
-            lpa.status_code || '', // The internal code
-            formatBooleanForCSV(lpa.up_to_date),
-            lpa.last_adoption_year || '',
-            yearsSince === 'N/A' ? '' : yearsSince, // Handle 'N/A' case
-            formatBooleanForCSV(lpa.update_in_progress),
-            formatBooleanForCSV(lpa.nppf_defaulting),
-            lpa.plan_risk_score ?? '', // Handle null/undefined risk score
-            lpa.notes_short || '',
-            lpa.notes || '', // Full notes
-            referencesString // Joined references
-        ];
+        const referencesString = (lpa.references && Array.isArray(lpa.references)) ? lpa.references.join('; ') : '';
+        const yearsSince = calculateYearsSince(lpa.last_adoption_year);
+        return [ lpa.id || '', lpa.name || '', lpa.region || '', lpa.plan_status || '', lpa.status_code || '', formatBooleanForCSV(lpa.up_to_date), lpa.last_adoption_year || '', yearsSince ?? '', formatBooleanForCSV(lpa.update_in_progress), formatBooleanForCSV(lpa.nppf_defaulting), lpa.plan_risk_score ?? '', lpa.notes_short || '', lpa.notes || '', referencesString ];
     });
-
-    // Function to escape cell content for CSV format
-    // Handles commas, double quotes, and newlines within cells
     const escapeCsvCell = (cell) => {
-        const cellString = String(cell ?? ''); // Convert to string, handle null/undefined
-        // If the cell contains a comma, double quote, or newline character:
+        const cellString = String(cell ?? '');
         if (cellString.includes(',') || cellString.includes('"') || cellString.includes('\n') || cellString.includes('\r')) {
-            // Enclose the entire cell string in double quotes
-            // Escape any existing double quotes within the string by doubling them ("" -> """")
             return `"${cellString.replace(/"/g, '""')}"`;
         }
-        // Otherwise, return the string as is
         return cellString;
     };
-
-    // Build the CSV content string
     let csvContent = "data:text/csv;charset=utf-8,";
-
-    // Add the header row
     csvContent += headers.map(escapeCsvCell).join(",") + "\r\n";
-
-    // Add the data rows
-    dataRows.forEach(rowArray => {
-        let row = rowArray.map(escapeCsvCell).join(",");
-        csvContent += row + "\r\n";
-    });
-
-    // Create a link element and trigger the download
+    dataRows.forEach(rowArray => { csvContent += rowArray.map(escapeCsvCell).join(",") + "\r\n"; });
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
     link.setAttribute("download", "local_plan_status_export.csv");
-    document.body.appendChild(link); // Append link to body (required for Firefox)
-    link.click();                     // Simulate click to trigger download
-    document.body.removeChild(link);  // Remove link from body after click
-
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     console.log("CSV export triggered.");
 }
 

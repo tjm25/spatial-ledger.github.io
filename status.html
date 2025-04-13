@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Plan Status Dashboard - The Spatial Ledger</title>
-    <!-- Renamed CSS file -->
     <link rel="stylesheet" href="status-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-    <!-- Add Leaflet CSS for map placeholder -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
@@ -60,7 +58,6 @@
                      <p class="map-placeholder-text">Map View</p>
                 </div>
                 <div class="map-legend">
-                    <!-- Using labels for better accessibility and styling -->
                     <label><span class="legend-color adopted_recent"></span>Adopted and current</label>
                     <label><span class="legend-color just_adopted_updating"></span>Just adopted / Updating</label>
                     <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs</label>
@@ -72,7 +69,6 @@
             <section class="summary-panel">
                 <div class="stats-panel">
                     <h3>Plan Coverage Statistics</h3>
-                    <!-- UPDATED: Expanded to 5 stats -->
                     <div class="stats-grid stats-grid-5">
                         <div class="stat-item">
                             <span class="stat-value" id="stat-adopted-recent">--%</span>
@@ -131,23 +127,25 @@
 
                          <h4>References:</h4>
                          <div id="details-references" class="detail-references-links">
-                             <p>No references available.</p>
+                             <p class="no-refs">No references available.</p>
                          </div>
                     </div>
                 </div>
 
+                <!-- Table Panel (hidden on mobile) -->
                 <div class="table-panel">
                      <h3>LPA Details Table</h3>
-                     <p class="table-instructions">Click a row to see more details above.</p>
+                     <p class="table-instructions">Click a row or header to sort.</p>
                      <div class="table-wrapper">
                          <table>
-                            <thead>
+                            <thead id="lpa-table-head">
                                 <tr>
-                                    <th scope="col">LPA Name</th>
-                                    <th scope="col">Plan Status</th>
-                                    <th scope="col" class="center">Last Adopted</th>
-                                    <th scope="col" class="center">Yrs Since</th>
-                                    <th scope="col" class="center">Risk Score</th>
+                                    <!-- ADDED: data-sort attributes and sortable class -->
+                                    <th scope="col" class="sortable" data-sort="name">LPA Name</th>
+                                    <th scope="col" class="sortable" data-sort="plan_status_display">Plan Status</th>
+                                    <th scope="col" class="center sortable" data-sort="last_adoption_year">Last Adopted</th>
+                                    <th scope="col" class="center sortable" data-sort="years_since_adoption">Yrs Since</th>
+                                    <th scope="col" class="center sortable" data-sort="plan_risk_score">Risk Score</th>
                                 </tr>
                             </thead>
                             <tbody id="status-table-body">
@@ -156,6 +154,13 @@
                         </table>
                     </div>
                 </div>
+
+                <!-- Card Container (hidden on desktop) -->
+                <div id="lpa-cards-container" class="cards-container">
+                    <!-- Cards will be populated by JS -->
+                    <p class="info-message">Loading plan status data...</p>
+                </div>
+
             </section>
         </main>
 
@@ -167,7 +172,6 @@
          </footer>
 
     </div>
-    <!-- Renamed JS file -->
     <script type="module" src="status-script.js"></script>
 </body>
 </html>
