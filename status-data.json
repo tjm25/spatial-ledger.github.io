@@ -7299,5 +7299,24 @@
     ],
     "region": "Wales",
     "plan_risk_score": 7
+  },
+  {
+    "id": "E60000175",
+    "name": "Cotswold LPA",
+    "plan_status": "Cotswold District Local Plan 2011–2031 adopted Aug 2018; Partial Update underway (\"Green to the Core\") and New Local Plan 2026–2041 in early stages",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 7,
+    "nppf_defaulting": true,
+    "notes_short": "Cotswold’s 2018 Local Plan is 7 years old. The District is doing a Partial Update (focused on climate change and refinements) and simultaneously beginning a full new Local Plan to 2041. The current plan remains mostly serviceable but will be superseded around 2025–26.",
+    "notes": "Cotswold District Council adopted its Local Plan (2011–2031) in August 2018. That plan was broadly compliant with the 2012 NPPF but by 2020 the Council declared a Climate Emergency and decided to partially update the plan to be *Green to the Core*. A Partial Update consultation took place in 2022–23, proposing strengthened environmental policies and minor tweaks to allocations. Concurrently, because the plan’s end date is 2031, the Council has started scoping a full new Local Plan 2026–2041 (the Local Development Scheme indicates preparation ramping up in 2024–25). As of 2025, the adopted plan is slightly out-of-date in terms of housing need (Standard Method suggests a higher annual figure). Cotswold’s housing delivery has been borderline (2022 HDT ~95%) and its 5-year land supply is marginal. Thus, some weight is given to the NPPF presumption on appeal. The Partial Update is intended to extend the life of the 2018 plan until the new plan can be adopted (likely by 2026). Overall, risk is moderate: policies are aging, but the Council’s active updates and generally positive delivery mean the situation is under control. Once the new plan is in place, Cotswold will have an up-to-date framework emphasizing sustainability.",
+    "references": [
+      "https://www.cotswold.gov.uk/planning-and-building/planning-policy/local-plan-update-and-supporting-information/",
+      "https://issuesandoptions.commonplace.is/"
+    ],
+    "region": "South West",
+    "plan_risk_score": 5
   }
 ]
