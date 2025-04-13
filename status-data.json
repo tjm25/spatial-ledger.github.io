@@ -3237,24 +3237,6 @@
     "plan_risk_score": 4
   },
   {
-    "id": "E60000335",
-    "name": "Barrow-in-Furness Borough Council",
-    "plan_status": "Adopted mid-2019",
-    "up_to_date": true,
-    "last_adoption_year": 2019,
-    "update_in_progress": false,
-    "status_code": "adopted_outdated",
-    "years_since_adoption": 6,
-    "nppf_defaulting": false,
-    "notes_short": "Local Plan adopted mid-2019; still considered current.",
-    "notes": "Barrow’s Local Plan was adopted in June 2019. It is just about 6 years old as of 2025, so it is on the cusp of needing review but is generally still considered current for some policies. No new plan has been announced yet.",
-    "references": [
-      "PINS Monitoring (2025) – Barrow Local Plan adopted June 2019"
-    ],
-    "region": "North West",
-    "plan_risk_score": 4
-  },
-  {
     "id": "E60000154",
     "name": "Basildon District Council",
     "plan_status": "1998 Local Plan",
@@ -7301,7 +7283,7 @@
     "plan_risk_score": 7
   },
   {
-    "id": "E60000175",
+    "id": "E60000309",
     "name": "Cotswold LPA",
     "plan_status": "Cotswold District Local Plan 2011–2031 adopted Aug 2018; Partial Update underway (\"Green to the Core\") and New Local Plan 2026–2041 in early stages",
     "up_to_date": false,
