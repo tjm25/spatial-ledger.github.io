@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ])
     .then(([rawStatusData, geojsonData]) => { // Receive rawStatusData here
         console.log("Both status and GeoJSON data fetched successfully.");
-        processAndInitializeDashboard(rawStatusData, geojsonData);
+        processAndInitializeDashboard(rawStatusData, geojsonData); // Pass raw data
     })
     .catch(error => {
         console.error("Error fetching initial data:", error);
@@ -148,6 +148,7 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
         }
         const existingEntry = lpaMap[lpa.id];
         if (!existingEntry || isMoreRecent(lpa.last_adoption_year, existingEntry.last_adoption_year)) {
+            // If no entry exists or the current LPA is more recent, store or replace it
             lpaMap[lpa.id] = lpa;
         }
     });
@@ -155,10 +156,10 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
     console.log(`Reduced to ${deDuplicatedStatusData.length} unique/most recent status records.`);
     // --- End De-duplication Step ---
 
-    // 1. Pre-process the *De-duplicated* Status Data
+    // 1. Pre-process the de-duplicated Status Data
     allLpaData = deDuplicatedStatusData.map((lpa, index) => {
         const processedLpa = { ...lpa };
-        // ID is already guaranteed by de-duplication logic
+        // ID is guaranteed from de-duplication
         processedLpa.years_since_adoption = calculateYearsSince(processedLpa.last_adoption_year);
         processedLpa.plan_status_display = formatStatusCode(processedLpa.status_code);
         processedLpa.last_adoption_year = processedLpa.last_adoption_year ? parseInt(processedLpa.last_adoption_year, 10) : null;
@@ -170,15 +171,13 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
         processedLpa.years_since_adoption = (typeof processedLpa.years_since_adoption === 'number')
             ? processedLpa.years_since_adoption
             : null;
-        // Add notes_short directly for easier access in map tooltip
-        processedLpa.notes_short = lpa.notes_short || '';
         return processedLpa;
     });
 
-    // 2. Create Lookup for the *De-duplicated* Status Data
+    // 2. Create Lookup for the de-duplicated Status Data
     const lpaStatusLookup = createLpaStatusLookup(allLpaData);
 
-    // 3. Merge De-duplicated Status Data into GeoJSON Features
+    // 3. Merge de-duplicated Status Data into GeoJSON Features
     geojsonData.features.forEach(feature => {
         const lpaId = feature.properties.LPA23CD;
         const statusInfo = lpaStatusLookup[lpaId];
@@ -187,24 +186,22 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
             feature.properties.name = statusInfo.name;
             feature.properties.plan_status_display = statusInfo.plan_status_display;
             feature.properties.id = statusInfo.id;
-            feature.properties.notes_short = statusInfo.notes_short; // Add notes_short to feature properties
         } else {
             console.warn(`No status data found for GeoJSON feature LPA ID: ${lpaId} (Name: ${feature.properties.LPA23NM}) after de-duplication.`);
             feature.properties.status_code = 'unknown';
             feature.properties.name = feature.properties.LPA23NM || 'Unknown LPA';
             feature.properties.plan_status_display = 'Unknown';
             feature.properties.id = `geojson-${lpaId}`;
-            feature.properties.notes_short = 'No short notes available.';
         }
     });
 
     // 4. Add Map Overlay
     addMapOverlay(geojsonData);
 
-    // 5. Populate Filters
+    // 5. Populate Filters (based on de-duplicated data)
     populateFilters();
 
-    // 6. Apply Initial Sort & Render Dashboard
+    // 6. Apply Initial Sort & Render Dashboard (uses de-duplicated data)
     filteredLpaData = [...allLpaData];
     sortTableData();
     updateDashboard();
@@ -238,6 +235,7 @@ function initializeMapStructure() {
         map = L.map(mapContainer).setView([53.5, -1.5], 6); // Center on England/Wales
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            detectRetina: true
         }).addTo(map);
         console.log("Leaflet map structure initialized.");
         const placeholderVisual = mapContainer.querySelector('.map-placeholder-visual');
@@ -269,41 +267,22 @@ function styleFunction(feature) {
     return { fillColor: color, fillOpacity: 0.6, color: '#555', weight: 1, opacity: 0.8 };
 }
 
-/**
- * Defines interactions for each map feature.
- * UPDATED: Tooltip now shows notes_short.
- */
 function onEachFeatureFunction(feature, layer) {
-    // Store layer reference using the consistent ID from status data (or fallback ID)
     if (feature.properties.id) {
         lpaLayerMapping[feature.properties.id] = layer;
     }
-
-    // --- UPDATED Tooltip ---
-    const tooltipContent = `<b>${feature.properties.name || 'Unknown LPA'}</b><br>${feature.properties.notes_short || 'No details available.'}`;
-    layer.bindTooltip(tooltipContent, {
-        // Optional: add tooltip options, e.g., sticky: true
-    });
-
-    // Click handler
+    const tooltipContent = `<b>${feature.properties.name || 'Unknown LPA'}</b><br>Status: ${feature.properties.plan_status_display || 'Unknown'}`;
+    layer.bindTooltip(tooltipContent);
     layer.on('click', (e) => {
         if (feature.properties.id) {
             console.log(`Map feature clicked: ${feature.properties.name}, ID: ${feature.properties.id}`);
             displayLpaDetails(feature.properties.id);
-        } else { 
-            console.warn("Clicked map feature missing consistent 'id' property.");
-        }
+        } else { console.warn("Clicked map feature missing consistent 'id' property."); }
     });
-
-    // Hover effects
-    layer.on('mouseover', (e) => { 
-        e.target.setStyle({ weight: 2, color: '#333', fillOpacity: 0.75 }); 
-    });
+    layer.on('mouseover', (e) => { e.target.setStyle({ weight: 2, color: '#333', fillOpacity: 0.75 }); });
     layer.on('mouseout', (e) => {
         const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
-        if (currentSelectedId !== feature.properties.id) { 
-            geojsonLayer.resetStyle(e.target);
-        }
+        if (currentSelectedId !== feature.properties.id) { geojsonLayer.resetStyle(e.target); }
     });
 }
 
