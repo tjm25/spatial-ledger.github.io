@@ -298,39 +298,3 @@ footer { margin-top: 3em; padding: 1.5em 15px 0; border-top: 1px solid #eee; tex
     /* Example: slightly brighter border? */
     stroke: #e60000 !important;
 }
-
-.nppf-highlight-mode #status-table-body tr:not(.nppf-defaulting) {
-    opacity: 0.4;
-}
-.nppf-highlight-mode #status-table-body tr.selected-row:not(.nppf-defaulting) {
-    opacity: 1;
-}
-.nppf-highlight-mode .lpa-card:not(.nppf-defaulting) {
-    opacity: 0.4;
-}
-.nppf-highlight-mode .lpa-card.selected-card:not(.nppf-defaulting) {
-    opacity: 1;
-}
-.nppf-highlight-mode .nppf-defaulting {
-    opacity: 1 !important; /* Ensure defaulting items are fully visible */
-}
-
-/* --- Map Feature Styling --- */
-.leaflet-interactive { 
-    cursor: pointer; 
-}
-
-/* Style for selected feature (applied via JS setStyle, not just CSS) */
-.map-feature-selected {
-    stroke: #000000 !important;
-    stroke-width: 3 !important; /* Leaflet uses stroke-width */
-    opacity: 1 !important;
-    fill-opacity: 0.5 !important; /* Optional */
-}
-
-/* Hover style still useful for mouseover */
-.map-feature-hover {
-    stroke: #333 !important;
-    stroke-width: 2 !important;
-    opacity: 1 !important;
-}
