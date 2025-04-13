@@ -5,60 +5,93 @@ let allLpaData = []; // To store all fetched data
 let filteredLpaData = []; // To store currently filtered data
 let map = null; // Placeholder for Leaflet map instance
 
-// --- DOM Elements ---
-const tableBody = document.getElementById('status-table-body');
-const searchInput = document.getElementById('search-lpa');
-const regionFilter = document.getElementById('region-filter');
-const statusFilter = document.getElementById('status-filter');
-const riskFilter = document.getElementById('risk-filter');
+// --- DOM Elements (Declare variables, assign inside DOMContentLoaded) ---
+let tableBody, searchInput, regionFilter, statusFilter, riskFilter;
+let detailsPanel, detailsLpaName, detailsPlanStatus, detailsStatusCode, detailsYearsSince;
+let detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences, closeDetailsBtn;
+let statAdoptedCurrent, statAdoptedOutdated, statNoPlan;
+let exportCsvBtn, mapContainer;
 
-const detailsPanel = document.getElementById('selected-authority-details');
-const detailsLpaName = document.getElementById('details-lpa-name');
-const detailsPlanStatus = document.getElementById('details-plan-status');
-const detailsStatusCode = document.getElementById('details-status-code');
-const detailsYearsSince = document.getElementById('details-years-since');
-const detailsUpdateProgress = document.getElementById('details-update-progress');
-const detailsNppfDefault = document.getElementById('details-nppf-default');
-const detailsNotes = document.getElementById('details-notes');
-const detailsReferences = document.getElementById('details-references');
-const closeDetailsBtn = document.getElementById('close-details-btn');
-
-const statAdoptedCurrent = document.getElementById('stat-adopted-current');
-const statAdoptedOutdated = document.getElementById('stat-adopted-outdated');
-const statNoPlan = document.getElementById('stat-no-plan');
-
-const exportCsvBtn = document.getElementById('export-csv-btn');
-const mapContainer = document.getElementById('map-container');
 
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
-    initializeMap(); // Initialize the map placeholder
-    fetchData();     // Fetch data and populate
-    addEventListeners(); // Set up interactions
+    // --- Assign DOM Elements NOW that the DOM is ready ---
+    tableBody = document.getElementById('status-table-body');
+    searchInput = document.getElementById('search-lpa');
+    regionFilter = document.getElementById('region-filter');
+    statusFilter = document.getElementById('status-filter');
+    riskFilter = document.getElementById('risk-filter');
+
+    detailsPanel = document.getElementById('selected-authority-details');
+    detailsLpaName = document.getElementById('details-lpa-name');
+    detailsPlanStatus = document.getElementById('details-plan-status');
+    detailsStatusCode = document.getElementById('details-status-code');
+    detailsYearsSince = document.getElementById('details-years-since');
+    detailsUpdateProgress = document.getElementById('details-update-progress');
+    detailsNppfDefault = document.getElementById('details-nppf-default');
+    detailsNotes = document.getElementById('details-notes');
+    detailsReferences = document.getElementById('details-references');
+    closeDetailsBtn = document.getElementById('close-details-btn');
+
+    statAdoptedCurrent = document.getElementById('stat-adopted-current');
+    statAdoptedOutdated = document.getElementById('stat-adopted-outdated');
+    statNoPlan = document.getElementById('stat-no-plan');
+
+    exportCsvBtn = document.getElementById('export-csv-btn');
+    mapContainer = document.getElementById('map-container');
+
+    // --- Basic Check: Ensure critical elements were found ---
+    // You could add more checks here if needed
+    if (!tableBody || !searchInput || !detailsPanel || !exportCsvBtn || !mapContainer) {
+        console.error("Dashboard init failed: Critical DOM elements not found. Check HTML IDs.");
+        // Optionally display a user-facing error message on the page
+        const container = document.querySelector('.container');
+        if(container) {
+             const errorMsg = document.createElement('p');
+             errorMsg.className = 'error-message';
+             errorMsg.style.margin = '20px'; // Add some margin for visibility
+             errorMsg.textContent = 'Error initializing dashboard components. Please check the console for details.';
+             // Insert after the header or filters
+             const header = document.querySelector('.dashboard-header');
+             if(header) {
+                 header.parentNode.insertBefore(errorMsg, header.nextSibling);
+             } else {
+                 container.prepend(errorMsg);
+             }
+        }
+        return; // Stop initialization if critical elements are missing
+    }
+
+    // --- Now safe to initialize map, fetch data, and add listeners ---
+    initializeMap();
+    fetchData();     // This will eventually call populateFilters and updateDashboard
+    addEventListeners(); // Add listeners now that elements are selected
 });
 
-// --- Functions ---
+// --- Functions --- (Keep the rest of the functions as they were in the previous correct version)
 
 /**
  * Initializes a basic Leaflet map placeholder.
- * Replace with actual map implementation later.
  */
 function initializeMap() {
-    if (!mapContainer) return;
+    // mapContainer is now guaranteed to be assigned (or initialization stopped)
     try {
-        // Basic map centered on England
-         map = L.map(mapContainer).setView([52.5, -1.5], 6);
-         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-         }).addTo(map);
-         console.log("Basic Leaflet map initialized.");
-         // TODO: Load GeoJSON data for LPAs
-         // TODO: Add styling based on lpa.status_code
-         // TODO: Add hover tooltips
-         // TODO: Add click listeners on features to call displayLpaDetails(lpaId)
+        map = L.map(mapContainer).setView([52.5, -1.5], 6);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        console.log("Basic Leaflet map initialized.");
+        // Clear the placeholder visual/text if map initializes successfully
+        const placeholderVisual = mapContainer.querySelector('.map-placeholder-visual');
+        const placeholderText = mapContainer.querySelector('.map-placeholder-text');
+        if (placeholderVisual) placeholderVisual.style.display = 'none';
+        if (placeholderText) placeholderText.style.display = 'none';
+
+        // TODO: Load GeoJSON data for LPAs, style, add interactions
     } catch (error) {
         console.error("Error initializing Leaflet map:", error);
-        mapContainer.innerHTML = '<p class="error-message">Could not load map.</p>';
+        // Keep the placeholder visible or show specific map error
+        mapContainer.innerHTML = '<p class="error-message" style="margin: auto;">Could not load map.</p>';
     }
 }
 
@@ -75,7 +108,7 @@ async function fetchData() {
         allLpaData = await response.json();
         console.log(`Fetched ${allLpaData.length} LPA records.`);
 
-        // Pre-process data (calculate dynamic fields, ensure IDs)
+        // Pre-process data
         allLpaData.forEach((lpa, index) => {
             lpa.id = lpa.id || `lpa-${index}`; // Ensure unique ID
             lpa.years_since_adoption = calculateYearsSince(lpa.last_adoption_year);
@@ -84,23 +117,24 @@ async function fetchData() {
 
         filteredLpaData = [...allLpaData]; // Initially, show all data
 
-        populateFilters();
-        updateDashboard(); // Initial population
+        populateFilters(); // Populate dropdowns only after data is fetched
+        updateDashboard(); // Initial population of table and stats
 
     } catch (error) {
         console.error("Error fetching status data:", error);
+        // Ensure elements exist before trying to update them
         if (tableBody) {
-            tableBody.innerHTML = `<tr><td colspan="5" class="error-message">Error loading data. Please try again later.</td></tr>`;
+            const cols = tableBody.closest('table')?.querySelector('thead tr')?.cells.length || 5;
+            tableBody.innerHTML = `<tr><td colspan="${cols}" class="error-message">Error loading data. Please try again later.</td></tr>`;
         }
-        // Display error in stats panel too
-        statAdoptedCurrent.textContent = 'ERR';
-        statAdoptedOutdated.textContent = 'ERR';
-        statNoPlan.textContent = 'ERR';
+        if (statAdoptedCurrent) statAdoptedCurrent.textContent = 'ERR';
+        if (statAdoptedOutdated) statAdoptedOutdated.textContent = 'ERR';
+        if (statNoPlan) statNoPlan.textContent = 'ERR';
     }
 }
 
 /**
- * Populates filter dropdowns based on available data (example).
+ * Populates filter dropdowns based on available data.
  */
 function populateFilters() {
     const regions = new Set();
@@ -113,16 +147,16 @@ function populateFilters() {
         if (lpa.plan_risk_score !== null && lpa.plan_risk_score !== undefined) risks.add(lpa.plan_risk_score);
     });
 
-    populateSelect(regionFilter, [...regions].sort());
-    populateSelect(statusFilter, [...statuses].sort(), formatStatusCode); // Use formatter for display text
-    populateSelect(riskFilter, [...risks].sort((a, b) => a - b));
+    // Check if filter elements exist before populating
+    if (regionFilter) populateSelect(regionFilter, [...regions].sort());
+    if (statusFilter) populateSelect(statusFilter, [...statuses].sort(), formatStatusCode); // Use formatter for display text
+    if (riskFilter) populateSelect(riskFilter, [...risks].sort((a, b) => a - b));
 }
 
 /** Helper to populate a select dropdown */
 function populateSelect(selectElement, options, formatter = (val) => val) {
-    if (!selectElement) return;
-    // Keep the first 'All' option
-    selectElement.innerHTML = '<option value="">All</option>';
+    // No need for null check here as it's done in populateFilters
+    selectElement.innerHTML = '<option value="">All</option>'; // Keep the 'All' option
     options.forEach(optionValue => {
         const option = document.createElement('option');
         option.value = optionValue;
@@ -134,6 +168,7 @@ function populateSelect(selectElement, options, formatter = (val) => val) {
 
 /**
  * Adds event listeners for filters, table clicks, etc.
+ * Called AFTER DOM elements are assigned in DOMContentLoaded
  */
 function addEventListeners() {
     let filterTimeout;
@@ -142,32 +177,25 @@ function addEventListeners() {
         filterTimeout = setTimeout(applyFiltersAndRedraw, 300); // Debounce filters
     };
 
+    // Add checks before adding listeners, although they should exist if init didn't fail
     if (searchInput) searchInput.addEventListener('input', debounceFilter);
     if (regionFilter) regionFilter.addEventListener('change', debounceFilter);
     if (statusFilter) statusFilter.addEventListener('change', debounceFilter);
     if (riskFilter) riskFilter.addEventListener('change', debounceFilter);
-
-    if (tableBody) {
-        tableBody.addEventListener('click', handleTableClick);
-    }
-
-    if (closeDetailsBtn) {
-        closeDetailsBtn.addEventListener('click', hideDetails);
-    }
-
-    if (exportCsvBtn) {
-        exportCsvBtn.addEventListener('click', exportToCSV);
-    }
+    if (tableBody) tableBody.addEventListener('click', handleTableClick);
+    if (closeDetailsBtn) closeDetailsBtn.addEventListener('click', hideDetails);
+    if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportToCSV); // This line should now work
 }
 
 /**
  * Applies all active filters to the data and redraws the dashboard.
  */
 function applyFiltersAndRedraw() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const selectedRegion = regionFilter.value;
-    const selectedStatus = statusFilter.value;
-    const selectedRisk = riskFilter.value;
+    // Ensure filter inputs exist before reading their values
+    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+    const selectedRegion = regionFilter ? regionFilter.value : '';
+    const selectedStatus = statusFilter ? statusFilter.value : '';
+    const selectedRisk = riskFilter ? riskFilter.value : '';
 
     filteredLpaData = allLpaData.filter(lpa => {
         const nameMatch = !searchTerm || (lpa.name && lpa.name.toLowerCase().includes(searchTerm));
@@ -178,14 +206,13 @@ function applyFiltersAndRedraw() {
         return nameMatch && regionMatch && statusMatch && riskMatch;
     });
 
-    // Hide details panel if the selected LPA is filtered out
-     if (detailsPanel.style.display !== 'none') {
-         const displayedLpaId = detailsPanel.dataset.lpaId;
-         if (displayedLpaId && !filteredLpaData.some(lpa => lpa.id === displayedLpaId)) {
-             hideDetails();
-         }
-     }
-
+    // Check details panel state
+    if (detailsPanel && detailsPanel.style.display !== 'none') {
+        const displayedLpaId = detailsPanel.dataset.lpaId;
+        if (displayedLpaId && !filteredLpaData.some(lpa => lpa.id === displayedLpaId)) {
+            hideDetails();
+        }
+    }
 
     updateDashboard();
 }
@@ -194,6 +221,7 @@ function applyFiltersAndRedraw() {
  * Updates the table, stats, and potentially the map based on filteredData.
  */
 function updateDashboard() {
+    // Checks are implicitly handled by functions called below
     populateTable(filteredLpaData);
     calculateAndDisplayStats(filteredLpaData);
     // TODO: Update map based on filteredLpaData (e.g., highlight filtered features)
@@ -228,7 +256,7 @@ function formatStatusCode(statusCode) {
             return 'No current plan / Withdrawn';
         case 'unknown':
         default:
-            return statusCode ? String(statusCode) : 'Unknown'; // Handle null/undefined
+            return statusCode ? String(statusCode).replace(/_/g, ' ') : 'Unknown'; // Handle null/undefined and format unknowns
     }
 }
 
@@ -236,7 +264,7 @@ function formatStatusCode(statusCode) {
  * Populates the table with LPA data.
  */
 function populateTable(data) {
-    if (!tableBody) return;
+    if (!tableBody) return; // Guard clause
     tableBody.innerHTML = ''; // Clear previous data
 
     if (!Array.isArray(data) || data.length === 0) {
@@ -285,7 +313,8 @@ function formatBoolean(value) {
  */
 function handleTableClick(event) {
     const row = event.target.closest('tr');
-    if (!row || !row.dataset.lpaId) return; // Clicked outside a row or row has no ID
+    // Ensure detailsPanel exists before trying to display
+    if (!row || !row.dataset.lpaId || !detailsPanel) return;
 
     const lpaId = row.dataset.lpaId;
     displayLpaDetails(lpaId);
@@ -295,8 +324,13 @@ function handleTableClick(event) {
  * Finds LPA data by ID and displays it in the details panel.
  */
 function displayLpaDetails(lpaId) {
-    const lpa = allLpaData.find(item => item.id === lpaId); // Find in *all* data
-    if (!lpa || !detailsPanel) return;
+    const lpa = allLpaData.find(item => item.id === lpaId);
+    // Ensure all required detail elements exist before proceeding
+    if (!lpa || !detailsPanel || !detailsLpaName || !detailsPlanStatus || !detailsStatusCode ||
+        !detailsYearsSince || !detailsUpdateProgress || !detailsNppfDefault || !detailsNotes || !detailsReferences) {
+            console.warn("Cannot display details, LPA data or detail panel elements missing.");
+            return;
+        }
 
     // Populate the fields
     detailsLpaName.textContent = lpa.name || 'N/A';
@@ -327,6 +361,7 @@ function displayLpaDetails(lpaId) {
     // Show the panel and store the ID
     detailsPanel.dataset.lpaId = lpaId; // Store which LPA is displayed
     detailsPanel.style.display = 'block';
+    // Optional: Scroll the details panel into view if needed, especially on mobile
     detailsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     // TODO: Highlight the selected row in the table
@@ -341,12 +376,15 @@ function hideDetails() {
     if (detailsPanel) {
         detailsPanel.style.display = 'none';
         detailsPanel.removeAttribute('data-lpa-id'); // Clear stored ID
-        // Clear content to avoid showing stale data briefly
-        detailsLpaName.textContent = '--';
-        detailsPlanStatus.textContent = '--';
-        // ... clear other fields ...
-        detailsNotes.textContent = '--';
-        detailsReferences.innerHTML = '<p>No references available.</p>';
+        // Clear content (check if elements exist first)
+        if(detailsLpaName) detailsLpaName.textContent = '--';
+        if(detailsPlanStatus) detailsPlanStatus.textContent = '--';
+        if(detailsStatusCode) detailsStatusCode.textContent = '--';
+        if(detailsYearsSince) detailsYearsSince.textContent = '--';
+        if(detailsUpdateProgress) detailsUpdateProgress.textContent = '--';
+        if(detailsNppfDefault) detailsNppfDefault.textContent = '--';
+        if(detailsNotes) detailsNotes.textContent = '--';
+        if(detailsReferences) detailsReferences.innerHTML = '<p>No references available.</p>';
 
         // TODO: Remove highlight from table row
         // TODO: Reset map view if needed
@@ -358,6 +396,9 @@ function hideDetails() {
  */
 function calculateAndDisplayStats(data) {
     const total = data.length;
+    // Ensure stat elements exist before updating
+    if (!statAdoptedCurrent || !statAdoptedOutdated || !statNoPlan) return;
+
     if (total === 0) {
         statAdoptedCurrent.textContent = '0%';
         statAdoptedOutdated.textContent = '0%';
@@ -413,7 +454,7 @@ function exportToCSV() {
         formatBoolean(lpa.update_in_progress),
         formatBoolean(lpa.nppf_defaulting),
         lpa.plan_risk_score ?? '',
-        lpa.notes || '' // Include notes if available
+        (lpa.notes || '').replace(/[\r\n]+/g, ' ') // Replace newlines in notes for CSV
     ]);
 
     // Escape commas and quotes within fields
@@ -446,3 +487,5 @@ function exportToCSV() {
 
     console.log("CSV export triggered.");
 }
+
+// --- End of script ---
