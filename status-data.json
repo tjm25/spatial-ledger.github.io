@@ -1339,5 +1339,1016 @@
     ],
     "region": "East Midlands",
     "plan_risk_score": 4
+  },
+  {
+    "id": "E60000322",
+    "name": "North York Moors National Park Authority",
+    "plan_status": "Adopted 2020",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "The North York Moors National Park’s Local Plan was adopted in July 2020 and remains up-to-date, focusing on conservation and very limited development for local needs.",
+    "notes": "The North York Moors National Park Authority adopted its Local Plan in July 2020. This plan governs development in the park up to 2035, with an emphasis on protecting the landscape, biodiversity, and cultural heritage of the Moors. It strictly limits development; only around 29 new homes per year (mostly affordable or local occupancy) are planned across the park’s villages, and the plan addresses issues like isolated rural worker dwellings and conversions of traditional buildings. Being adopted just five years ago, the plan is current. The Authority is not facing pressure to review yet, as the plan’s approach remains aligned with National Park purposes and government guidance. With such limited planned growth and strong protections, the tilted balance is not applicable in practice, as National Park status weighs heavily against speculative development. The NYMNP Authority will continue to implement this plan, facilitating small-scale housing for local communities and tourism development that fits the park’s special qualities, likely reviewing the plan closer to the mid-2020s if needed to extend beyond 2035.",
+    "references": [
+      "https://www.northyorkmoors.org.uk/planning/framework"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000336",
+    "name": "North Yorkshire Council",
+    "plan_status": "No unified plan (uses former district plans)",
+    "up_to_date": false,
+    "last_adoption_year": null,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 0,
+    "nppf_defaulting": true,
+    "notes_short": "North Yorkshire Council was formed in 2023 and is preparing a new county-wide Local Plan. Until adoption (est. 2028), it relies on seven former district plans, many of which are outdated.",
+    "notes": "North Yorkshire Council became a unitary authority in April 2023, merging seven districts (Hambleton, Harrogate, Richmondshire, Ryedale, Scarborough, Selby, plus the County Council). Currently, planning decisions rely on the existing Local Plans of the former districts, which vary in age: Harrogate’s plan (adopted 2020) and Craven’s (2019) are relatively recent, while others like Selby (Core Strategy 2013), Richmondshire (2014) and Ryedale (2013) are older, and Scarborough’s plan dates to 2017. These disparate plans have differing policies and timeframes. North Yorkshire Council has launched work on a new North Yorkshire Local Plan, which will provide a unified strategy for development across England’s largest county. This process is in early stages (a call for sites and initial consultations in 2023/24) and adoption is likely years away. In the interim, there is a policy vacuum at the strategic level: for example, how to allocate housing need that was unmet in some districts or address county-wide infrastructure. The NPPF’s tilted balance could apply in parts of North Yorkshire where the old plans are out-of-date or where five-year supply is lacking (which has been the case in Selby and Hambleton recently). The new council is managing these risks by honoring commitments in approved plans and carefully assessing applications against the NPPF. However, the sooner a comprehensive plan is in place (anticipated by 2027–2028), the better the authority can guide sustainable growth and protect its environment coherently across the whole county.",
+    "references": [
+      "https://www.northyorks.gov.uk/planning-policy/local-plan"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000181",
+    "name": "Norwich City Council",
+    "plan_status": "Adopted 2024 (Joint Local Plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Norwich, as part of Greater Norwich, adopted the Joint Greater Norwich Local Plan in March 2024. This up-to-date plan directs significant growth to the Norwich area through 2038.",
+    "notes": "Norwich City, along with Broadland and South Norfolk, forms the Greater Norwich partnership. The Greater Norwich Local Plan (GNLP) was adopted in March 2024. This replaces the previous Joint Core Strategy (2014) and provides a plan-led approach to growth until 2038. The GNLP allocates around 49,500 homes across Greater Norwich, focusing development in and around the Norwich urban area and key growth locations like the Norwich Research Park, Easton, and the Norwich fringe, while also supporting market towns in Broadland and South Norfolk. For Norwich City itself, the plan continues an urban regeneration focus, with brownfield sites and city centre mixed-use schemes playing a big role in housing delivery. With this newly adopted plan, Norwich’s planning policy is up-to-date and aligned with national policy objectives (like urban concentration and sustainable transport). The city can demonstrate a healthy land supply pipeline via the GNLP allocations, so the tilted balance is not in play. The plan also dovetails with Norwich’s Transport Strategy (including widespread cycling improvements and possibly a Transforming Cities fund boost). Monitoring will be ongoing, but no review is expected for at least five years given the recency of adoption.",
+    "references": [
+      "https://www.gnlp.org.uk"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000075",
+    "name": "Nottingham City Council",
+    "plan_status": "Adopted 2014 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Nottingham’s Core Strategy (part of the aligned Core Strategies, 2014) is now dated. Work is underway on a Greater Nottingham Strategic Plan to replace it, but adoption is pending.",
+    "notes": "Nottingham City’s principal planning document is the Aligned Core Strategy (ACS) adopted in September 2014, prepared jointly with adjoining Broxtowe and Gedling (and aligned with Erewash). The City also has a Land and Planning Policies document adopted in 2020 (site allocations). While the 2020 part provides updated development management policies, the strategic framework from 2014 is out-of-date, especially with the plan period ending 2028 and housing targets that now fall short of the standard method numbers. The Greater Nottingham authorities (Nottingham, Broxtowe, Gedling and Rushcliffe) have been working on a new Greater Nottingham Strategic Plan (GNSP) to roll forward strategy to 2038. A Publication Draft was issued in late 2022, but progress has been slower than anticipated (Erewash withdrew to do its own plan; Rushcliffe’s involvement shifted to partial). As of 2025, Nottingham’s new strategic plan is not yet submitted. The city, however, has continued to regenerate brownfield sites (e.g. around the Waterside, Southern Gateway, and city centre) and is largely meeting its housing delivery, though any shortfall in land could expose it to the tilted balance. Adoption of the GNSP, expected around 2025, will firm up targets (likely increasing housing numbers for the city) and allocate broad locations (such as around the proposed HS2 East Midlands Hub at Toton just outside the city) that impact Nottingham. Until then, Nottingham relies on its 2014/2020 plans and the NPPF; crucially, it benefits from the urban focus of national policy and its demonstrated urban housing supply, which has so far averted major speculative development issues.",
+    "references": [
+      "https://www.gnplan.org.uk",
+      "https://www.nottinghamcity.gov.uk/localplan"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000126",
+    "name": "Nuneaton and Bedworth Borough Council",
+    "plan_status": "Adopted 2019 (Review submitted 2024)",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "just_adopted_updating",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Nuneaton & Bedworth’s Borough Plan was adopted in 2019. A new Borough Plan 2024–2039 was submitted in Feb 2024 to meet higher housing needs and keep the plan current.",
+    "notes": "Nuneaton and Bedworth adopted its Borough Plan in June 2019, which allocated several large urban extensions (such as at Arbury and north Nuneaton) and Green Belt releases near Coventry to accommodate growth and Coventry’s unmet housing need. That plan included a review mechanism by 2024. In line with this, the council prepared a new Borough Plan 2024-2039, which was submitted for examination in February 2024. The review addresses an increased housing requirement (partly from updated standard method figures and still some duty to cooperate need from Coventry) and identifies additional sites accordingly. As of 2025, the 2019 plan’s policies remain largely up-to-date (the council has maintained a five-year supply by granting planning permissions on allocated sites, though delivery has been slower than expected on some). By proactively moving to a new plan, Nuneaton & Bedworth aims to avoid any policy gap. The new plan will also update policies on town centre regeneration (e.g., transforming underused retail space in Nuneaton) and infrastructure delivery. Assuming a smooth examination, the borough should have an updated adopted plan by late 2024 or early 2025, thereby seamlessly replacing the 2019 plan and preventing the tilted balance from arising.",
+    "references": [
+      "https://www.nuneatonandbedworth.gov.uk/info/21014/planning_policy/332/borough_plan"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000091",
+    "name": "Oadby and Wigston Borough Council",
+    "plan_status": "Adopted 2019 (Review published 2025)",
+    "up_to_date": false,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 6,
+    "nppf_defaulting": true,
+    "notes_short": "Oadby & Wigston’s current Local Plan was adopted in 2019. A new Local Plan 2041 is in preparation (Reg 19 published Jan 2025) to address growth to 2041, given the small borough’s constraints.",
+    "notes": "Oadby and Wigston, a compact urban borough south of Leicester, adopted its Local Plan in April 2019. That plan, running to 2031, allocated limited growth (around 2,000 homes) mostly on brownfield and a few Greenfield edge sites, given the borough’s tight boundaries and surrounding Green Belt. With the plan now over five years old, the council has been working on a new Local Plan 2021-2041, which reached Regulation 19 Publication in January 2025. This new plan must reckon with a substantial increase in housing need figures (partly due to Leicester City’s unmet need). Likely, it will need to identify one or more sustainable urban extensions possibly spilling into current Green Belt. As of 2025, the 2019 plan’s allocations are largely built or committed, and Oadby & Wigston has struggled to maintain a five-year supply (it has leaned on Leicester’s unmet need agreement to buffer this). The tilted balance has been a concern recently, with developers eyeing Greenfield land. Adoption of the new plan (expected by 2025/26) is crucial to provide new allocations (potentially a major urban extension west of Oadby) and updated policies. In the interim, the borough’s decisions rely on the aging 2019 plan and the broader Leicestershire housing distribution agreements. The sooner the new plan is in place, the sooner Oadby & Wigston can firm up its stance against speculative proposals and plan comprehensively for infrastructure alongside growth.",
+    "references": [
+      "https://www.oadby-wigston.gov.uk/pages/new_local_plan"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000028",
+    "name": "Oldham Metropolitan Borough Council",
+    "plan_status": "Adopted 2024 (Joint plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Oldham is covered by the Greater Manchester 'Places for Everyone' Joint Plan, adopted March 2024, which provides up-to-date strategic allocations and policies to 2037.",
+    "notes": "Oldham MBC, as part of Greater Manchester, benefitted from the adoption of the Places for Everyone (PfE) joint plan in March 2024. PfE allocates several significant sites in Oldham previously in Green Belt – notably around Elton Reservoir (shared with Bury) and at Broadbent Moss – to deliver new housing and employment through to 2037, in addition to urban brownfield development. This joint plan supplants the strategic elements of Oldham’s old plan. Oldham’s own Local Plan documents (dating back to a 2011 Development Plan Document) will be updated in light of PfE, but for strategic matters, the borough now has an up-to-date framework. With PfE, Oldham can meet its housing requirement (incl. some contribution to GM-wide need) and plan necessary infrastructure like transport links to new sites. The plan’s adoption ensures no authority in the PfE partnership is subject to tilted balance due to plan absence. Oldham will still likely produce a new local plan or core strategy to align local policies with PfE in coming years, but in the meantime, PfE plus Oldham’s existing control policies allow the council to manage development effectively. This significantly reduces speculative development risk on formerly protected land since clear allocations and boundaries are now set.",
+    "references": [
+      "https://www.greatermanchester-ca.gov.uk/what-we-do/planning-and-housing/places-for-everyone/"
+    ],
+    "region": "North West",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000330",
+    "name": "Old Oak and Park Royal Development Corporation (OPDC)",
+    "plan_status": "Adopted 2022",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "The OPDC Local Plan (for the Old Oak and Park Royal area) was adopted in June 2022. It is current, guiding massive regeneration around the future HS2 interchange at Old Oak Common.",
+    "notes": "The OPDC – Mayoral development corporation acting as planning authority for Old Oak Common and Park Royal in west London – adopted its first Local Plan in June 2022. This plan sets out an ambitious regeneration blueprint to 2038 for the area surrounding the forthcoming HS2 and Crossrail hub at Old Oak Common, aiming to deliver 25,500 new homes and 56,000 jobs. The plan is up-to-date, having navigated significant challenges (earlier drafts had to be revised when a major landowner withdrew a site). It establishes detailed place policies for districts like Old Oak South, North Acton, and the Park Royal industrial estate. With adoption, OPDC has been actively determining large applications (several thousand homes have permission in the area). The plan’s currency means the OPDC can drive development according to its strategy – for example, securing affordable housing and new parks – without the threat of developers bypassing the plan. Given its end date (2038) and relatively recent adoption, no review is yet needed. Eventually, once the area’s development is well underway (post-HS2 opening around 2030), a mid-life review may occur, but for now the focus is implementation. The NPPF tilted balance is not relevant here, as the corporation has an adopted plan and effectively a development corporation’s powers to ensure the comprehensive redevelopment of this nationally significant brownfield site.",
+    "references": [
+      "https://www.london.gov.uk/programmes-strategies/planning/planning-applications-and-decisions/old-oak-and-park-royal-development-corporation-opdc/planning-policy"
+    ],
+    "region": "London",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000266",
+    "name": "Oxford City Council",
+    "plan_status": "Adopted 2020 (New plan withdrawn 2025)",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Oxford’s Local Plan 2036 was adopted in 2020 and is in force. A new Local Plan 2040 was being prepared, but the draft was withdrawn in Jan 2025 amid changing national policy, so the 2020 plan remains operative.",
+    "notes": "Oxford’s current Local Plan (adopted June 2020) guides development to 2036. It allocates sites intensively within the city’s tight boundaries and relies on neighboring districts to accommodate Oxford’s unmet housing need. The plan is up-to-date, and Oxford has strong planning control via these policies. The City Council began a new Oxford Local Plan 2040, which was submitted in March 2024, but this emerging plan was withdrawn in January 2025 due to uncertainty over national planning reform. Consequently, Oxford will continue to use its 2020 Local Plan for the next few years. The adopted plan’s housing and employment strategies are still valid, and Oxford can demonstrate a five-year housing land supply (aided by planned urban sites and agreed housing contributions from nearby areas). Thus, the tilted balance is not currently engaged. Oxford intends to restart its 2040 plan process once national policy stabilizes, to extend its vision to 2040 while maintaining alignment with the high growth pressures and green belt constraints around the city.",
+    "references": [
+      "https://www.oxford.gov.uk/info/20067/planning_policy/1311/oxford_local_plan_2040"
+    ],
+    "region": "South East",
+    "plan_risk_score": 3
+  },
+  {
+    "id": "E60000324",
+    "name": "Peak District National Park Authority",
+    "plan_status": "Adopted 2011 (Under review)",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "The Peak District National Park’s Core Strategy (2011) is outdated. The Authority is working on a new Local Plan (Parts 1 and 2) to replace it, focusing on minimal development consistent with National Park purposes.",
+    "notes": "The Peak District National Park’s current Core Strategy was adopted in 2011, with some Development Management Policies added in 2019. This framework is now beyond its intended timeframe. The National Park Authority has begun reviewing its plan (“Local Plan Parts 1 and 2” are in preparation) to guide development to 2040. Given the national park status, only very limited development is permitted (primarily local needs housing and rural business or tourism facilities), so the absence of an up-to-date plan has less impact on large-scale speculative building than in other areas. However, an updated plan is needed to address new challenges (like climate change, sustainability in farming, and pressures for telecommunication infrastructure). Until the new plan is adopted, the 2011 policies remain in force alongside 2019 DM Policies. The Authority continues to strictly control development; the NPPF’s tilted balance is generally not applied in practice here because of the park’s highest level of protection. A new Local Plan will ensure clarity and compliance with current National Park Management Plan objectives while still severely restricting unwarranted development.",
+    "references": [
+      "https://www.peakdistrict.gov.uk/planning/policies-and-guides"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000040",
+    "name": "Pendle Borough Council",
+    "plan_status": "Adopted 2015 (Under examination)",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Pendle’s Core Strategy (2015) and Local Plan Part 2 (2006 saved policies) are outdated. A new Local Plan (the fourth attempt) covering 2021–2040 was submitted in Feb 2025 and is under examination, aiming to end a protracted plan vacuum.",
+    "notes": "Pendle’s last comprehensive plan is its Core Strategy adopted in 2015. A number of older Local Plan policies (from 2006) still apply as well, due to the failure to adopt subsequent site allocations plans. Pendle has struggled with plan-making: two earlier Local Plan iterations were withdrawn or not progressed. The Council has now submitted a new Pendle Local Plan (Fourth Edition) 2021–2040 in February 2025 for examination. This emerging plan seeks to allocate sufficient housing and employment land (Pendle has to balance regeneration in Nelson/Colne with growth in rural villages) and update policies on design and the environment. In the interim, Pendle’s housing delivery has lagged and it cannot demonstrate a five-year supply, rendering the tilted balance frequently in play. Indeed, several speculative applications have been allowed on appeal in recent years due to the policy vacuum. Adoption of the new plan in 2025/26 should greatly improve the situation, establishing a firm framework and reducing the risk of unplanned development, especially in the attractive but infrastructure-constrained villages in Pendle’s countryside.",
+    "references": [
+      "https://www.pendle.gov.uk/localplan"
+    ],
+    "region": "North West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000146",
+    "name": "Peterborough City Council",
+    "plan_status": "Adopted 2019 (Update emerging)",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Peterborough’s Local Plan was adopted in 2019 and remains largely up-to-date. The council has launched a review to extend the plan to 2040, with a new draft published in Dec 2024.",
+    "notes": "Peterborough adopted its current Local Plan in July 2019, setting out growth to 2036. That plan provides for over 19,000 new homes focused on urban extensions (like Hampton and Great Haddon) and sustainable urban infill, and it included a partial overlap with the now-aborted Cambridgeshire & Peterborough joint spatial plan. As of 2025, the 2019 plan is about six years old and generally up-to-date – Peterborough has a healthy housing supply pipeline, and major developments are underway in line with the plan. The City Council has commenced a plan update to extend the horizon to 2040 (the new “Peterborough Local Plan 2040”), and a draft was published in December 2024. This emerging plan will adjust housing targets (likely increasing them to meet both local needs and any unmet need from adjacent areas), allocate additional employment land (especially around the A1 and A47 corridors), and incorporate updated environmental policies (e.g., flood risk management for the Fens). Until the new plan is adopted (expected by 2025–26), the 2019 Local Plan continues to carry full weight. Peterborough is not currently in an NPPF default situation – it can demonstrate over five years’ supply – so the tilted balance is not engaged. The proactive review will ensure the city stays ahead of any potential shortfall and remains in control of its growth trajectory.",
+    "references": [
+      "https://www.peterborough.gov.uk/council/planning-and-development/local-plan"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000295",
+    "name": "Plymouth City Council",
+    "plan_status": "Adopted 2019 (Joint Plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Plymouth’s development plan is the Plymouth & South West Devon Joint Local Plan, adopted in 2019. It is current and provides a robust framework to 2034, though a review is anticipated by 2024–25 as required.",
+    "notes": "Plymouth City’s Local Plan needs are met through the Plymouth & South West Devon Joint Local Plan (JLP), adopted in March 2019, prepared jointly with South Hams and West Devon councils. This plan covers 2014–2034 and directs significant growth to the Plymouth Policy Area (with urban intensification and urban extensions such as Sherford new community and Derriford), while managing suburban and rural development in the adjoining districts. The JLP is up-to-date; it was one of the first joint plans to be found sound under the 2018 NPPF. The plan included a policy commitment to formally consider a five-year review by March 2024. That review process has begun (the partner councils have been gathering evidence on housing need uplift, climate emergency targets, and possible site shortfalls). As of 2025, however, the JLP’s strategy remains effective: Plymouth has a rolling pipeline of housing, and recent monitoring shows the city meeting its targets, avoiding any presumption trigger. The councils are expected to decide on the scope of a plan update soon, particularly to extend the plan beyond 2034 and align with new national policy (e.g., zero-carbon development). In the meantime, the adopted JLP continues to carry full weight, and speculative development outside its scope is generally refused successfully, keeping the tilted balance at bay.",
+    "references": [
+      "https://www.plymouth.gov.uk/planning-and-building-control/planning-policy/plymouth-and-south-west-devon-joint-local-plan"
+    ],
+    "region": "South West",
+    "plan_risk_score": 3
+  },
+  {
+    "id": "E60000226",
+    "name": "Portsmouth City Council",
+    "plan_status": "Adopted 2012 (New plan in progress)",
+    "up_to_date": false,
+    "last_adoption_year": 2012,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 13,
+    "nppf_defaulting": true,
+    "notes_short": "Portsmouth’s current Local Plan dates back to 2012 and is out-of-date. A new Local Plan 2020–2040 is being prepared (a draft was published in 2024) to significantly boost housing delivery in this dense urban area.",
+    "notes": "Portsmouth’s last Core Strategy (“Portsmouth Plan”) was adopted in January 2012. Being well over a decade old, it no longer reflects the city’s growth requirements (the housing target in that plan was substantially lower than current assessed need). Portsmouth has been working on a new Local Plan for 2020–2040; a Publication draft was issued in July 2024. This emerging plan proposes major regeneration and taller redevelopment in the city (particularly in city centre and seafront sites) to accommodate roughly 15,000 homes, though it still acknowledges a sizeable unmet need that would require cooperation from Havant or Winchester for urban extensions just outside the city. In absence of an adopted update, Portsmouth’s development control relies on the NPPF and saved policies. The council has struggled to demonstrate a five-year supply under modern requirements, leading to some appeal losses where the tilted balance was applied. Notably, proposals for high-density schemes have sometimes succeeded due to the urgent housing shortfall. The new plan’s adoption (expected in 2025) is critical for Portsmouth to regain a plan-led approach – it will set clearer parameters for height, infrastructure (such as improving transport to handle growth on Portsea Island), and contributions to meet unmet need elsewhere. Until then, Portsmouth remains in a relatively vulnerable position regarding speculative developments, constrained only by practical limits of the island geography and its conservation areas.",
+    "references": [
+      "https://www.portsmouth.gov.uk/services/development-and-planning/planning-policy/local-plan/"
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000041",
+    "name": "Preston City Council",
+    "plan_status": "Adopted 2012 (Joint Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2012,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 13,
+    "nppf_defaulting": true,
+    "notes_short": "Preston’s strategic planning is guided by the Central Lancashire Core Strategy (2012) and a 2015 Local Plan – both now aging. A new Central Lancashire Local Plan is being prepared (publication Feb 2025) to replace these, with adoption expected in 2025.",
+    "notes": "Preston’s current development plan comprises the **Central Lancashire Core Strategy 2012 (joint with South Ribble and Chorley) and the Preston Local Plan 2015. These provided a framework to 2026, focusing growth in Preston’s urban area and new distribution across Central Lancashire. By 2020, a review was necessary. The Central Lancs authorities agreed an interim arrangement to redistribute housing need annually (to address the tilted balance issues) while working on a new joint Local Plan. That new Central Lancashire Local Plan (covering 2023–2038) reached Publication stage in Feb 2025. It will allocate updated sites – including further urban extensions around Preston and new villages if needed – and reflect higher housing targets (Preston City’s own need plus a share of any unmet needs from neighboring areas). Until this plan is adopted, Preston faces some uncertainty: it has, at times, relied on the 2012 Core Strategy housing figures which are lower than current need, leading to appeals where developers argued policies were out-of-date. Indeed, the tilted balance was invoked in several appeal decisions around 2018–2021, compelling the councils to apply a consistent higher housing requirement to maintain a five-year supply. The forthcoming joint plan is anticipated to be adopted by late 2025, which will refresh Preston’s policy framework and firmly close the door on speculative arguments. In the meantime, Preston continues to approve significant housing schemes on preferred sites (e.g. North West Preston) to demonstrate commitment to meeting needs and reduce the risk of unplanned developments.",
+    "references": [
+      "https://centrallocalplan.lancashire.gov.uk"
+    ],
+    "region": "North West",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000292",
+    "name": "Purbeck (Dorset Council area)",
+    "plan_status": "Adopted 2023",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "The former Purbeck area in Dorset has a Local Plan adopted in 2023 (overseen to adoption by Dorset Council post-reorg). This provides up-to-date coverage for that part of Dorset through 2034, even as Dorset Council works on a new county-wide plan.",
+    "notes": "Purbeck’s Local Plan was under examination at the time Dorset became a unitary authority in 2019. Dorset Council carried that plan forward to adoption, and the Purbeck Local Plan 2018-2034 was adopted in July 2023. It allocates modest growth including an urban extension at Wareham and several village sites, while implementing strong habitat mitigation for Dorset Heathlands. With adoption, the Purbeck area’s planning policy is up-to-date. Dorset Council is in parallel developing a new Dorset-wide Local Plan (which will eventually supersede Purbeck’s plan, likely around 2026), but until then, the Purbeck Local Plan 2023 fills what would have been a policy gap. This means decisions in the Purbeck area remain plan-led and compliant with the latest NPPF. The tilted balance does not apply, as a five-year supply was demonstrated upon adoption (though contingent on some contentious Green Belt releases near Lytchett Matravers). Elsewhere in the Dorset Council area, other former districts rely on older plans, but Purbeck is in the fortunate position of having a recently adopted plan, reducing speculative development risk in that locality for the near term.",
+    "references": [
+      "https://www.dorsetcouncil.gov.uk/planning-buildings-land/planning-policy/purbeck-local-plan"
+    ],
+    "region": "South West",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000227",
+    "name": "Reading Borough Council",
+    "plan_status": "Adopted 2019 (Partial update in progress)",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Reading’s Local Plan was adopted in Nov 2019 and is largely current. The council began a focused Local Plan update in 2023 to extend the plan to 2040 and strengthen environmental policies, with a draft published in late 2024.",
+    "notes": "Reading’s Local Plan (covering up to 2036) was adopted in November 2019. It provides an urban-centric growth strategy, emphasizing high-density redevelopment in the town centre and along key transport corridors (with significant office-to-residential conversions and new flats near the station) as well as a major urban extension at Reading Golf Course. By 2024, Reading remained on track with its plan objectives and had a positive housing supply trajectory, so its policies are up-to-date. The council has nonetheless chosen to undertake a partial update to address new issues and roll the horizon forward. A draft Reading Borough Local Plan (2040) was published in Nov 2024. Key areas of update include raising environmental standards (Reading aims for net-zero carbon development ahead of national requirements), accommodating additional housing need to 2040 (the borough is near built-out, so this likely involves even greater densities and partnering with West Berkshire/Wokingham for any unmet need), and updating transport policies post-Elizabeth Line opening. Until this update is adopted (anticipated by 2025/26), the 2019 plan continues to function well. Reading can demonstrate a five-year supply and has resisted ad hoc greenfield expansion, meaning the tilted balance has not been a significant issue. Adoption of the updated plan will further insulate the borough against speculative challenges and ensure its development strategy remains aligned with its ambitious climate targets and growth pressures.",
+    "references": [
+      "https://www.reading.gov.uk/planning/planning-policy/new-local-plan-to-2040/"
+    ],
+    "region": "South East",
+    "plan_risk_score": 3
+  },
+  {
+    "id": "E60000006",
+    "name": "Redcar and Cleveland Borough Council",
+    "plan_status": "Adopted 2018",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 7,
+    "nppf_defaulting": true,
+    "notes_short": "Redcar & Cleveland’s Local Plan was adopted in May 2018. While it remains the operative plan, it is moving past the 5-year mark with no review yet underway, coinciding with major economic changes in the area (Teesworks regeneration).",
+    "notes": "The Redcar & Cleveland Local Plan (2015-2032) was adopted in 2018. It allocates sites for regeneration including on former industrial land along the Tees estuary and supports the big Teesworks project (redevelopment of the former steelworks). Now in 2025, the plan is over five years old, thus technically some policies (like housing supply figures) could be deemed out-of-date unless reviewed. The borough has seen transformative economic developments with the Teesworks freeport and green energy projects, which may outpace the plan’s original scope. The Council has not yet launched a formal plan review, partly awaiting the outcome of the new Tees Valley mayoral Spatial Framework proposals and the trajectory of housing need (which in this area is relatively stable or declining). In practice, Redcar & Cleveland has managed to maintain land supply by reallocating brownfield sites and has not faced a flood of speculative housing in inappropriate locations – demand is modest. However, as more Teesworks jobs materialize, pressure for new housing could increase. Without an updated plan, the tilted balance could be engaged if housing delivery falls behind. A plan review in the next year or two is likely to ensure alignment with the changing economic landscape and to extend the plan period. In the interim, the 2018 plan’s focus on brownfield regeneration remains broadly in tune with national policy, so decision-making continues to rely on it, supplemented by the NPPF where needed.",
+    "references": [
+      "https://www.redcar-cleveland.gov.uk/resident/planning-and-building/local-plan"
+    ],
+    "region": "North East",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000139",
+    "name": "Redditch Borough Council",
+    "plan_status": "Adopted 2017",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "Redditch’s Local Plan No.4 was adopted in Jan 2017 and is now due for replacement. The Borough is working (with Bromsgrove) on a new Local Plan review, recognizing that growth needs and cross-boundary housing issues have evolved.",
+    "notes": "Redditch’s current Local Plan (Local Plan No.4) was adopted in January 2017 and covers development to 2030. It included meeting some of Redditch’s growth via an urban extension across the border in Bromsgrove (the “Redditch cross-boundary allocation” at Foxlydiate). Since then, most of the allocated sites have been coming forward, and by 2022 the Borough had largely met its immediate housing targets. However, the plan is now beyond 5 years. A committed plan review with Bromsgrove began but was paused in late 2022 pending clarity on the government’s planning reform proposals. This leaves Redditch with an aging plan, though many policies (on town centre revitalization, employment at Eastern Gateway, etc.) remain relevant. The housing requirement will likely be revised upward in a new plan, and Redditch has very limited land within its boundaries (being tightly encircled by Green Belt), meaning future growth may again rely on Bromsgrove accommodating development on Redditch’s edge. Until a new plan is in place (probably not before 2025), Redditch risks the tilted balance if it cannot show sufficient housing land. So far, the existing strategic sites have sustained supply, but the buffer is thinning. The Council’s strategy is to continue joint planning with Bromsgrove – a Preferred Options paper for a joint plan is anticipated in 2024. In the meantime, the 2017 Local Plan and the NPPF guide decisions. No notable speculative incursions have succeeded yet (owing to Green Belt protection around Redditch), but updating the plan is becoming urgent to avoid any pressures for unplanned Green Belt release under appeal.",
+    "references": [
+      "https://www.redditchbc.gov.uk/planning/planning-policy/local-plan.aspx"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000274",
+    "name": "Reigate and Banstead Borough Council",
+    "plan_status": "Adopted 2014 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Reigate & Banstead’s Core Strategy (2014) and Development Management Plan (2019) form the current plan. While much of the plan remains in force (due to the 2019 DMP), the strategic policies are over 5 years old. The council will likely need to review its Core Strategy by 2025 to stay compliant.",
+    "notes": "Reigate & Banstead adopted its Core Strategy in 2014 and later a Development Management Plan in 2019. Together, these documents guide development to 2027, including urban extensions in sustainable locations around Horley, Redhill and Reigate. The 2019 DMP allocated specific sites (helping maintain a rolling land supply), and those policies are recent. However, the overarching housing requirement stems from the 2014 strategy, which is now beyond the 5-year threshold. The borough has been meeting its targets so far, but housing pressure in Surrey remains high and a new plan will need to extend the horizon beyond 2027. As of 2025, Reigate & Banstead has not formally commenced a Core Strategy review, possibly waiting on outcomes from Surrey’s 2050 Place Ambition work and changes in national policy on Green Belt. In practice, because a substantial part of the borough is Green Belt/AONB, the tilted balance has not led to many approvals of unwanted sites – the council can still refuse speculative proposals in protected areas. That said, a few appeals have tested whether the older Core Strategy should carry full weight. The council acknowledges that a review by 2025 is necessary to avoid policy slippage. For now, the 2014/2019 plan is holding, supported by a healthy housing land supply (including ongoing developments in Horley and at Preston regeneration area). A new plan process is expected to kick off soon to plan for post-2027 growth, ensuring continued compliance and guarding against any future shortfall that developers could exploit.",
+    "references": [
+      "https://www.reigate-banstead.gov.uk/corestrategy"
+    ],
+    "region": "South East",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000042",
+    "name": "Ribble Valley Borough Council",
+    "plan_status": "Adopted 2014 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Ribble Valley’s Core Strategy (2014) and Housing & Economic DPD (2019) are now due for replacement. The council has an emerging new Local Plan (Reg 19 2021–2038) in progress to update housing targets and allocations, as the 2014 strategy is significantly outdated.",
+    "notes": "Ribble Valley’s Core Strategy was adopted in 2014, and a complementary Site Allocations and Development Management DPD was adopted in 2019. These documents guided considerable housing growth in Clitheroe, Longridge, and Whalley over the past decade. However, the Core Strategy’s timeframe extended only to 2028 and its housing figures are based on now-outdated evidence. The Borough Council has prepared a revised Local Plan 2021–2038 (a Regulation 19 draft was consulted on in 2021/22). Progress stalled somewhat, but the council aims to submit this plan in 2023/24. The emerging plan will likely uplift the housing requirement (Ribble Valley has seen rising demand as a commuter and retirement area) and adjust settlement boundaries accordingly, while also strengthening policies on design and climate change. Currently, with the 2014 strategy over 5 years old, Ribble Valley has faced developers pushing the tilted balance argument. The council has managed to fend off some speculative proposals by demonstrating a five-year supply, but it has had to rely on the buffer provided by the 2019 allocations. As those get built out, pressure will mount without a new plan. The risk of planning by appeal is moderate here: the borough is largely rural but doesn’t have extensive Green Belt, so some villages have been targeted for large housing schemes beyond plan limits. Adoption of the new Local Plan (expected by 2024/25) will reset the housing supply and policy framework, giving Ribble Valley renewed control over development distribution through to 2038.",
+    "references": [
+      "https://www.ribblevalley.gov.uk/planning-policy/local-development-framework"
+    ],
+    "region": "North West",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000336",
+    "name": "Richmondshire District Council (now North Yorkshire)",
+    "plan_status": "Adopted 2014 (Outdated)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Richmondshire’s Core Strategy (2014) is considerably out-of-date. A local plan review was underway to 2035, but with the district merging into North Yorkshire Council in 2023, the review’s future is uncertain. The area will eventually be covered by North Yorkshire’s new countywide Local Plan.",
+    "notes": "Richmondshire’s 2012–2028 Core Strategy was adopted in Dec 2014, focusing on modest growth around Catterick Garrison and Richmond. Work began on a Local Plan Review (2018–2035), including consultations up to a Preferred Option in 2021. However, the District Council was abolished in April 2023 with the formation of North Yorkshire Council. The new unitary has paused individual district plan efforts in favor of creating a unified North Yorkshire Local Plan by 2028. As a result, Richmondshire’s area continues to be governed by the 2014 strategy (and some saved older policies) for the interim. This plan is outdated; key issues like the expansion of Catterick Garrison (linked to Army restructuring) and new housing needs are not fully addressed. The housing requirement in the old plan was low and mostly met, so the council had started to allocate additional sites (e.g. in Colburn) in the review. Without that new plan, there is a policy gap. Thus far, extensive speculative development has been limited – partly because the Ministry of Defence drives much of the demand at Catterick and coordinates with the council. But as the plan remains out-of-date, any substantial private development proposals might cite the tilted balance (especially if North Yorkshire Council cannot demonstrate a 5-year supply for this sub-area). North Yorkshire Council will need to manage applications using the NPPF and remaining policies until the countywide plan is in place. The risk is mitigated somewhat by low market pressure in this rural area, but the uncertainty will persist until the new comprehensive plan provides up-to-date allocations and policies post-2028.",
+    "references": [
+      "https://www.richmondshire.gov.uk/planning/planning-policy/local-plan-2018-2035/"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000029",
+    "name": "Rochdale Metropolitan Borough Council",
+    "plan_status": "Adopted 2024 (Joint plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Rochdale’s strategic policies are now set by the Places for Everyone joint plan, adopted March 2024. This supersedes much of Rochdale’s 2016 Core Strategy and provides an up-to-date framework to 2037, including allocations for major growth at Heywood/Pilsworth.",
+    "notes": "Rochdale’s own Core Strategy was adopted in 2016, but its strategic planning has since been absorbed into the Greater Manchester Places for Everyone (PfE) joint plan. PfE was adopted in March 2024 with Rochdale as one of the 9 participating boroughs. For Rochdale, PfE allocates significant development, notably a large new mixed-use site at Heywood/Pilsworth (spanning Rochdale and Bury) to deliver housing and employment on former Green Belt, as well as smaller Green Belt releases at Smithy Bridge (Littleborough) and around Rochdale’s southern fringes. With PfE in place, Rochdale now has an up-to-date strategic plan that addresses its contributions to Greater Manchester housing and job needs up to 2037. This means that earlier uncertainty – after the 2016 Core Strategy became five years old – has been resolved: the PfE provides new targets and land supply, so Rochdale can comfortably show a five-year supply and a fifteen-year pipeline. The tilted balance is therefore not applicable; any proposals must conform to PfE and Rochdale’s remaining local policies. The council will continue to use its 2016 Development Management policies and Allocations (from the Unitary Development Plan 2006 for smaller sites) until it possibly produces a local allocations DPD to supplement PfE. In summary, with PfE, Rochdale’s plan-led system is secure, major growth is directed (especially via the PfE allocation of 1,700 homes at Heywood/Pilsworth), and the borough can resist unplanned development, focusing instead on delivering the strategic sites identified.",
+    "references": [
+      "https://www.greatermanchester-ca.gov.uk/placesforeveryone"
+    ],
+    "region": "North West",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000163",
+    "name": "Rochford District Council",
+    "plan_status": "Adopted 2011 (Plan failed, new plan needed)",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Rochford’s Core Strategy (2011) is very out-of-date. A new Local Plan is in the works (earlier attempts stalled), and the council is now part of a South Essex joint strategy. Until a new plan is adopted, Rochford faces significant speculative development risk under the tilted balance.",
+    "notes": "Rochford’s existing development plan consists of its Core Strategy 2011 and older saved policies, all of which are obsolete by NPPF standards. The district attempted to develop a new Local Plan in the late 2010s; however, a draft plan faced challenges (notably over Green Belt release and unmet Southend overspill) and was never submitted. The process was effectively reset, and now Rochford, along with other South Essex authorities, is pursuing a joint approach (the South Essex Plan) in parallel to preparing its own local plan. As of 2025, no new plan is close to adoption. This absence has left Rochford vulnerable: the council lacks a five-year housing land supply and has lost appeals (e.g. large housing schemes on Green Belt edges around Rayleigh) because the tilted balance applies. The government has even intervened in some cases to ensure housing comes forward given the plan vacuum. Rochford’s situation is among the more acute in the region – almost all its land is Green Belt, so any required housing growth necessitates politically difficult Green Belt release, which the old plan avoided. With no updated plan, decisions are largely made via the NPPF’s presumption, weighing local harm vs. benefit case-by-case. The council is expediting a new Local Plan (targeting submission by 2024/25) that will likely identify specific Green Belt sites to meet its sizable housing shortfall and align with Southend’s unmet need. Until then, Rochford remains in a de facto policy vacuum, and developers are aggressively pushing proposals on what would traditionally have been safeguarded land.",
+    "references": [
+      "https://www.rochford.gov.uk/planning-and-building/planning-policy/new-local-plan"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000043",
+    "name": "Rossendale Borough Council",
+    "plan_status": "Adopted 2021",
+    "up_to_date": true,
+    "last_adoption_year": 2021,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 4,
+    "nppf_defaulting": false,
+    "notes_short": "Rossendale adopted a new Local Plan in December 2021, providing an up-to-date development strategy to 2036. The plan is recent, so Rossendale has a firm policy basis and is not subject to the tilted balance.",
+    "notes": "Rossendale’s Local Plan (covering 2019–2036) was adopted in December 2021. It replaced the borough’s 2011 Core Strategy after a lengthy examination that involved some Green Belt release around Edenfield to meet housing needs. The adopted plan allocates sufficient housing and employment land (about 3,200 new homes by 2036) focusing on the Rawtenstall area and other valley towns, while also addressing town centre regeneration and ridge-top wind energy potential. Being just a few years old, the plan is up-to-date, and Rossendale Borough can demonstrate a five-year housing supply aligned with its new allocations (although delivery on the large Edenfield site has been slower due to local opposition, it is now moving forward following adoption). With this current plan, Rossendale’s development management decisions are firmly plan-led. The council has successfully defended against appeals on unallocated sites because it can point to the fresh strategy and allocated alternatives. The tilted balance is not engaged. Moving forward, Rossendale will monitor its plan but likely won’t need a review until closer to 2026, unless housing delivery significantly deviates from projections. The 2021 plan has thus greatly reduced speculative development risk, providing certainty for both developers and communities in this East Lancashire authority.",
+    "references": [
+      "https://www.rossendale.gov.uk/localplan"
+    ],
+    "region": "North West",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000240",
+    "name": "Rother District Council",
+    "plan_status": "Adopted 2014 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Rother’s Core Strategy (2014) and 2019 Development Plan are aging. A new Local Plan (2020–2040) is in preparation to update housing numbers (especially for Bexhill) and address infrastructure delays. The current plan is just beyond 5 years old, raising pressure for completion of the new plan.",
+    "notes": "Rother District (which includes Bexhill, Rye, and rural East Sussex areas) has a Core Strategy adopted in 2014 and a Development and Site Allocations Plan adopted in 2019. Together, these set development to 2028. Key allocations like the Bexhill urban extensions have been slower to come forward due to infrastructure timing (the Combe Valley Way link road opened later than expected). As of 2025, the plan is slightly out-of-date, particularly on overall housing numbers – Rother’s housing need has risen beyond the Core Strategy’s target. The Council is progressing a new Local Plan covering 2020–2040, which will likely allocate additional sites around Bexhill and perhaps modest growth in rural service centres to meet higher targets and factor in unmet Hastings needs. This new plan has been through consultation but not yet submitted. In the interim, Rother has struggled with five-year supply calculations and in late 2021 conceded it fell short, forcing it to grant some contentious applications (e.g., extra greenfield units on the edges of villages under the tilted balance). Since then, the council has tried to manage supply by approving sustainable reserve sites from the 2019 allocations to fend off less suitable proposals. The adoption of the updated plan (expected 2024) should rectify this by boosting land supply and extending the policy framework to 2040. Until then, the district remains somewhat vulnerable: with much of Rother designated High Weald AONB, truly speculative large schemes are limited, but non-AONB areas (like around Bexhill and Battle) have seen developer interest. Getting the new plan in place will secure Rother’s ability to plan-led meet development needs while protecting its sensitive landscapes from ad hoc development.",
+    "references": [
+      "https://www.rother.gov.uk/planning-and-building-control/planning-policy/local-plan/"
+    ],
+    "region": "South East",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000066",
+    "name": "Rotherham Metropolitan Borough Council",
+    "plan_status": "Adopted 2014/2018",
+    "up_to_date": true,
+    "last_adoption_year": 2018,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 7,
+    "nppf_defaulting": false,
+    "notes_short": "Rotherham’s Local Plan is in two parts: the Core Strategy (2014) and Sites and Policies (2018). Together they form an up-to-date plan delivering growth to 2028. While the Core Strategy is older than 5 years, it was supported by later site allocations, and Rotherham has maintained supply; a full review is likely around 2025.",
+    "notes": "Rotherham’s development plan comprises the Core Strategy 2013–2028 adopted in 2014 and a Sites and Policies document adopted in 2018. The combination provides a comprehensive framework: the Core Strategy released some Green Belt for growth (around Waverley, Bassingthorpe Farm, etc.), and the 2018 Sites DPD allocated specific sites to meet the borough’s significant housing target (about 14,000 homes) and employment land needs. As of 2025, Rotherham has been delivering well on this plan – major developments like Waverley new community and town centre housing on brownfield are progressing. The plan is effectively current because the detailed allocations are recent, and the Council can demonstrate a healthy five-year supply (Rotherham’s latest monitoring indicates over 7 years supply, aided by the strategic sites coming forward). Therefore, even though the Core Strategy is 11 years old, its policies haven’t been deemed out-of-date due to the successful implementation via the 2018 document. Rotherham has not faced significant speculative development pressure outside allocated areas; the tilted balance has not been an issue. Going forward, the Council will begin considering a new Local Plan likely in 2025 to extend beyond 2028 and align with any new growth requirements (potentially influenced by the Sheffield City Region’s spatial framework). For now, however, the existing Local Plan remains robust and is guiding sustainable development without NPPF defaulting.",
+    "references": [
+      "https://www.rotherham.gov.uk/planning-development/local-plan"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 3
+  },
+  {
+    "id": "E60000210",
+    "name": "Royal Borough of Greenwich",
+    "plan_status": "Adopted 2014 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Greenwich’s Core Strategy (2014) is now past its 5-year review date. The borough is preparing a new Local Plan 2021–2036, having published a draft in 2023, to update housing targets (especially in Thamesmead/Charlton) and align with the London Plan.",
+    "notes": "The Royal Borough of Greenwich’s extant plan is the Core Strategy with Detailed Policies adopted in 2014. That plan facilitated large-scale redevelopment in Greenwich Peninsula, Woolwich, and Charlton. However, given the 2021 London Plan’s increased housing targets for Greenwich (over 2,800 homes per year), the 2014 plan is out-of-date in terms of housing capacity and some policy areas (e.g., affordable housing thresholds, industrial land release). Greenwich is in the process of preparing a **new Local Plan (Greenwich Plan 2021-2036)**; a Regulation 18 draft was consulted on in 2023. The new plan will refine where additional housing can go – likely with further intensification in town centres, estates renewal, Charlton riverside development, and the continuing build-out of Thamesmead (coordinated with Peabody and cross-river transport improvements). In the interim, Greenwich relies heavily on the London Plan (2021) to make development decisions. The borough has generally been meeting housing delivery (thanks to thousands of units on the Peninsula and in Woolwich), but some unallocated sites have come forward to help hit annual targets, raising issues when the council tries to refuse them on outdated policy grounds. The tilted balance could be argued if Greenwich faltered on supply, but so far it has maintained enough pipeline. Nonetheless, without an updated local plan, the borough’s ability to shape certain outcomes (e.g., securing maximum affordable housing or timely infrastructure for new growth areas) is somewhat constrained by the need to defer to strategic London Plan policies. Prompt progression of the Greenwich Plan will restore a locally-specific, up-to-date policy framework attuned to the borough’s needs while complementing the London Plan objectives.",
+    "references": [
+      "https://www.royalgreenwich.gov.uk/newlocalplan"
+    ],
+    "region": "London",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000194",
+    "name": "Royal Borough of Kensington and Chelsea",
+    "plan_status": "Adopted 2024",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Kensington & Chelsea adopted a comprehensive Local Plan review in July 2024. This new Local Plan updates the 2019 version, is fully up-to-date, and sets policy to 2041, reinforcing development management in this dense, high-value borough.",
+    "notes": "The Royal Borough of Kensington and Chelsea (RBKC) has an up-to-date Local Plan, having adopted a Local Plan Review in July 2024. RBKC had previously consolidated its Core Strategy and subsequent alterations into a 2019 Local Plan; the 2024 review further updates policies on housing (emphasizing affordable housing delivery in a borough with scarce opportunity sites), environmental sustainability (tightening rules on basement developments and heritage protection), and it extends the plan period to 2041. With this adoption, Kensington & Chelsea’s planning framework is current and aligned with the latest London Plan. The borough is uniquely constrained (very little undeveloped land and strict conservation controls), so the plan focuses on making the most of brownfield capacity (e.g., Kensal Canalside opportunity area is a key allocation for mixed-use development). The new plan also addresses community concerns around density and design after the Grenfell Tower tragedy. Because RBKC’s plan is now up-to-date, the NPPF presumption does not apply – not that RBKC has unmet land supply issues, given its modest housing target and the primacy of London Plan guidance. The council can robustly enforce its policies (which include some of the strictest building design and neighbourly development rules in London). In summary, RBKC faces low plan-related risk; with the 2024 plan it retains strong local control and can resist any proposals that don’t accord with its finely tuned local policies, without vulnerability to appeals on grounds of an out-of-date plan.",
+    "references": [
+      "https://www.rbkc.gov.uk/planning-and-building-control/planning-policy/local-plan/local-plan"
+    ],
+    "region": "London",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000215",
+    "name": "Royal Borough of Kingston upon Thames",
+    "plan_status": "Adopted 2012 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2012,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 13,
+    "nppf_defaulting": true,
+    "notes_short": "Kingston’s Core Strategy (2012) is outdated relative to current London Plan targets. The borough has been developing a New Local Plan; after delays, it aims to progress to examination in 2024. In the meantime, Kingston leans on the London Plan and emerging policies to guide growth in its town centre and Cambridge Road estate regeneration.",
+    "notes": "The Royal Borough of Kingston’s extant Core Strategy was adopted in 2012, and many of its policies are now out-of-date, especially given the London Plan (2021) effectively doubled Kingston’s housing target (to ~964 homes/year). The borough worked on a new Local Plan (calling it the “Kingston Local Plan”) and consulted on drafts in 2019 and 2020, but progress stalled, partly due to the pandemic and uncertainty over Crossrail 2 (now paused) which had underpinned some growth assumptions. As of 2025, Kingston is re-launching its Local Plan effort – a revised draft is expected to go to Regulation 19 consultation. This plan will need to identify how to accommodate much higher housing numbers, likely through tall buildings and mixed-use redevelopment in Kingston Town Centre, Norbiton (including the large Cambridge Road Estate renewal), and possibly releasing some industrial land. Until the new plan is adopted (likely 2025), Kingston makes decisions using the London Plan and any still-relevant local policies. The council has approved several high-density schemes in the town centre (e.g., around the train station) to demonstrate commitment to meeting targets, but also faced developer pressure on other sites. Without an updated plan, Kingston’s development control runs the risk of appeals where developers argue the 2012 policies carry less weight. Indeed, Kingston has struggled to maintain a five-year supply – recent monitoring showed shortfalls – invoking the tilted balance in a few cases. The new Local Plan is critical to reset the supply by allocating additional sites (Kingston likely will allow more tall residential towers and intensification of suburban areas). In the interim, the borough is somewhat vulnerable to appeals, but the strong direction of the London Plan and Mayor’s oversight on large applications have so far helped manage growth in a coordinated way.",
+    "references": [
+      "https://www.kingston.gov.uk/local-plan"
+    ],
+    "region": "London",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000231",
+    "name": "Royal Borough of Windsor and Maidenhead",
+    "plan_status": "Adopted 2022",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "The Royal Borough of Windsor & Maidenhead’s Borough Local Plan was adopted in February 2022, replacing a long-standing 1999 plan. It is up-to-date and provides for growth (mostly at Maidenhead) to 2033, giving the borough a firm planning footing.",
+    "notes": "After years of relying on an old 1999 plan, Windsor and Maidenhead (RBWM) achieved adoption of a new Borough Local Plan 2013–2033 in February 2022. This plan allocates several major sites, notably urban extensions south of Maidenhead (at Desborough and Woodlands Park) and redevelopment of previously developed Green Belt at the Maidenhead Golf Course for housing. It also plans for some growth in Windsor and village areas while balancing extensive Green Belt and floodplain constraints. With the plan adopted relatively recently, RBWM’s policies are up-to-date. The borough can comfortably demonstrate a five-year housing supply (the Maidenhead sites are progressing through planning, and a couple have started delivery). As such, the tilted balance does not apply. The plan significantly boosts the borough’s housing trajectory (RBWM had a historic undersupply which this plan is correcting), and it also addresses infrastructure – for example, it ties housing releases to delivery of a new Maidenhead bypass link. RBWM is not currently working on a new plan since the ink is barely dry on the 2022 one; focus is on implementation. Some local controversies remain (like protecting the character of smaller settlements from infill), but the existence of the adopted plan allows the Council to defend against proposals outside the agreed strategy. Overall, RBWM’s planning risk profile is low at present – with an adopted plan in place, decisions are plan-led and speculative development that doesn’t accord with the Borough Local Plan can be refused with confidence.",
+    "references": [
+      "https://www.rbwm.gov.uk/home/planning/planning-policy/adopted-borough-local-plan-2013-2033"
+    ],
+    "region": "South East",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000127",
+    "name": "Rugby Borough Council",
+    "plan_status": "Adopted 2019 (Review commenced)",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "just_adopted_updating",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Rugby’s Local Plan was adopted in June 2019 and is largely up-to-date. The council has begun a review (Local Plan 2041) to expand the plan’s timeframe and potentially allocate further growth, given development pressure around the town and the Coventry overspill.",
+    "notes": "The Rugby Borough Local Plan 2011–2031 was adopted in June 2019. It allocated major sustainable urban extensions (notably the 6,200-home Southwest Rugby allocation) and released land at the urban edge to accommodate some of Coventry’s unmet housing need. This plan is relatively recent and in-date. Rugby has been experiencing rapid growth – housing delivery has exceeded targets thanks to sites like Houlton (the former radio station new town) – so the borough currently can demonstrate a healthy land supply. To maintain momentum and plan for the long term, Rugby has commenced a Local Plan Review for the period up to 2041. An Issues consultation took place, examining options including additional development north of Rugby town and further allocations to meet Coventry’s continued overspill beyond 2031. As of 2025, that review is in early stages, meaning the 2019 plan remains the operative policy. Because the plan is under five years old, its policies carry full weight and the tilted balance is not engaged. The council can refuse speculative proposals that don’t align with the spatial strategy (and has done so, for instance, proposals in villages beyond what the plan allows have been dismissed at appeal referencing the new plan). Nonetheless, by later in 2024 the five-year mark approaches, so completing the review by around 2026 will be important. Provided Rugby keeps its supply above requirements – which the large allocations help ensure – it should remain in a strong position. The planned South West Rugby urban extension is critical: it delivers new homes plus a link road, and Rugby’s ability to show progress there staves off arguments of land supply shortfall. Overall, Rugby’s planning framework is solid for now and the proactive review will ensure it stays ahead of any NPPF default triggers.",
+    "references": [
+      "https://www.rugby.gov.uk/localplan"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000275",
+    "name": "Runnymede Borough Council",
+    "plan_status": "Adopted 2020",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Runnymede’s 2030 Local Plan was adopted in July 2020. It remains up-to-date and allocates several Green Belt releases (e.g., Longcross Garden Village) to meet development needs. The borough will consider a review by 2025 but currently has a firm supply and no tilted balance concerns.",
+    "notes": "Runnymede’s Local Plan (2015–2030) was adopted in July 2020. This plan, after significant debate, did remove some land from the Green Belt for development – notably the Longcross Garden Village (a new settlement on a former military engineering site) and some urban extensions to towns like Addlestone and Ottershaw – to accommodate around 7,500 new homes. Because of these allocations and a healthy pipeline (including sites under construction like Longcross and the Addlestone One redevelopment), Runnymede can demonstrate a solid housing supply through the plan period. The plan is current, with policies aligned to the 2012 NPPF (under which it was examined) and generally consistent with the 2021 NPPF as well. The Council is not yet undertaking a formal review; it committed to assess by 2025 whether one is needed (especially to extend the plan beyond 2030). In development control, Runnymede’s decisions are plan-led, and it has successfully defended refusals on non-allocated Green Belt sites since adoption, as it can point to sufficient allocated alternatives. The tilted balance does not apply given the up-to-date plan and a more than five-year supply in hand. The main focus for Runnymede is delivery – ensuring that Longcross and other major sites proceed on schedule (any significant delay might prompt pressure for additional interim sites). Provided those stay on track, Runnymede faces low risk from speculative development. When the time comes, a new plan looking to 2040 will be prepared, but until then the 2020 Local Plan offers a robust framework.",
+    "references": [
+      "https://runnymede.gov.uk/planning-and-building-control/local-plan"
+    ],
+    "region": "South East",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000112",
+    "name": "Rushcliffe Borough Council",
+    "plan_status": "Adopted 2014/2019 (Joint Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Rushcliffe’s strategic plan is the Greater Nottingham Core Strategy (2014) and a 2019 Part 2 Local Plan, now aging. A new Greater Nottingham Strategic Plan covering Rushcliffe is underway (publication Nov 2024) to guide growth to 2045, including potential new settlements, since existing allocations (Bingham, Fairham) are mostly committed.",
+    "notes": "Rushcliffe, a borough adjacent to Nottingham, currently relies on the **Aligned Core Strategy 2014 (joint with Nottingham and Broxtowe) and its own Local Plan Part 2 adopted in 2019. These provided for significant growth, notably the 3,000-home Fairham Pastures development (south of Nottingham) and major expansions of Bingham and East Leake. Many of those sites are now well into development, and Rushcliffe’s housing delivery has been strong. However, the strategic framework is dated, and the borough’s housing need remains high – driven by both local demand and unmet need from Nottingham City. To address this, Rushcliffe is participating in the new Greater Nottingham Strategic Plan (GNSP), with a draft published in Nov 2024. The GNSP proposes further growth for Rushcliffe to 2045, likely including new settlement options (a possible garden village near East Leake or somewhere along the A46) and Green Belt adjustments around Nottingham’s fringe. Until the GNSP is adopted (expected by 2025), Rushcliffe’s policy weight is slightly reduced due to the age of the 2014 strategy. The council has worked to maintain a five-year supply – it currently has one, thanks to the large allocations – which has helped avoid the tilted balance so far. But applications for additional sites (especially in villages not allocated) have been coming forward, arguing the need for more housing beyond the old targets. Rushcliffe has mostly resisted these, pending the new plan’s direction. The risk is moderate: if any of the big sites stall or if Nottingham’s unmet need escalates without a plan in place, speculative proposals could gain traction. The timely completion of the GNSP will be key to securing a refreshed strategy, after which Rushcliffe will proceed to align its local development plan documents. In the meantime, the borough’s substantial committed supply acts as a buffer against unplanned development.",
+    "references": [
+      "https://www.gnplan.org.uk/greater-nottingham-strategic-plan"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000250",
+    "name": "Rushmoor Borough Council",
+    "plan_status": "Adopted 2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Rushmoor’s Local Plan was adopted in Feb 2019 and remains up-to-date. The plan, which runs to 2032, enabled Aldershot’s Wellesley development and other brownfield regeneration in Farnborough – enough to meet housing needs with a buffer, meaning Rushmoor has a secure five-year supply.",
+    "notes": "Rushmoor’s Local Plan (2014–2032) was adopted in February 2019. This plan carried forward the substantial Wellesley (Aldershot Urban Extension) project which is delivering ~3,850 homes on former military land, and it identified additional housing capacity largely through urban redevelopment in Aldershot and Farnborough town centres (and by absorbing some overspill demand from adjoining Surrey). At adoption, Rushmoor had more housing planned than required, allowing it to assist Hart District under the Housing Market Area agreement. As of 2025, implementation is on track: Wellesley continues to build out hundreds of units per year, and several town centre sites have been completed or are under construction (e.g., in Farnborough). The Local Plan is current and the Borough comfortably demonstrates a five-year supply (Rushmoor’s latest housing land supply was about 9.5 years, reflecting the strong delivery at Wellesley). Thus, all policies (including those protecting certain employment zones and environmental constraints like the Thames Basin Heaths SPA mitigation) carry full weight, and the tilted balance is not engaged. The council has not needed to commence a new plan yet; it will likely do so by 2024/25 mainly to extend the timeframe beyond 2032, but there is no immediate urgency or shortfall. In effect, Rushmoor’s 2019 plan has de-risked development – it laid out clear parameters that developers have largely followed. Barring any major unexpected surge in housing need or failure of the Wellesley project (which is unlikely given its success to date), Rushmoor faces minimal speculative development pressure. It can continue to make planning decisions with a robust adopted policy framework behind them.",
+    "references": [
+      "https://www.rushmoor.gov.uk/planning-and-growth/planning-policy/local-plan"
+    ],
+    "region": "South East",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000076",
+    "name": "Rutland County Council",
+    "plan_status": "Adopted 2011 (Withdrawn plan 2021)",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Rutland’s Core Strategy (2011) is long expired. A new Local Plan had progressed to submission but was controversially withdrawn in Sept 2021 (over a proposed quarry garden village). Rutland restarted the plan process and submitted a new Local Plan in Feb 2025, hoping to finally replace its outdated policies.",
+    "notes": "Tiny Rutland has endured a turbulent recent planning history. Its Core Strategy 2011 and associated documents are seriously out-of-date, yet they remain the statutory plan after a replacement effort failed. In early 2021, Rutland County Council had a new Local Plan at examination which included a large new garden community at St. George’s Barracks (a former MOD base) to meet much of its growth. However, amid local opposition and concerns over infrastructure funding (particularly the cost of a new school), the Council withdrew that draft plan in September 2021, despite the inspector’s initial indications that it could be made sound. This left Rutland without an up-to-date plan and no allocated sites beyond 2026, effectively a policy vacuum. Developers have since targeted sites around Oakham and Uppingham, leading to appeals where the tilted balance has been applied against the council. Acknowledging this untenable situation, a new Local Plan process was launched in 2022. Rutland accelerated work and re-submitted a Local Plan in February 2025 (omitting the prior garden village, and instead dispersing housing around existing towns and larger villages). During this limbo, planning decisions have heavily relied on the NPPF. The council has had to approve some unplanned housing to avoid total absence of supply (recent approvals on Oakham’s edge were granted to boost short-term numbers). The submitted 2025 plan aims to restore a plan-led approach and will, if adopted, run to 2041 with more modest strategic allocations. Until adoption (likely in 2025/26), Rutland remains highly vulnerable to speculative proposals. The new plan’s swift examination and adoption are critical to end the current reliance on antiquated 2011 policies and to give the county a sustainable development strategy that balances growth with Rutland’s unique character.",
+    "references": [
+      "https://www.rutland.gov.uk/planning-building-control/planning-policy/local-plan"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000030",
+    "name": "Salford City Council",
+    "plan_status": "Adopted 2024 (Joint plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Salford’s strategic planning is now governed by the Places for Everyone (PfE) joint plan, adopted March 2024. This supersedes parts of Salford’s saved UDP and provides an up-to-date strategic framework (including major allocations at Port Salford and Chat Moss) through 2037.",
+    "notes": "Salford had been operating with saved policies from a 2006 Unitary Development Plan and the 2017 Greater Manchester Spatial Framework draft when, finally, the Places for Everyone Joint Plan was adopted in March 2024. PfE includes Salford and eight other GM authorities (excluding Stockport) and sets out strategic growth to 2037. For Salford, PfE confirms major projects: the expansion of Port Salford (with multimodal freight infrastructure and new employment land) and a large housing allocation on Chat Moss (the “GM Allocation 32 – East of Irlam”) to deliver around 800 homes with accompanying peatland mitigation. It also works alongside Salford’s ongoing regeneration of inner-city areas like Ordsall and Salford Quays, which are mostly covered by the city’s own development management plan (Salford has a separate Local Plan: Development Management adopted in 2022). With PfE, Salford now has an up-to-date strategic plan, meaning no gap in its development plan coverage remains. The city can comfortably demonstrate a five-year supply given the enormous pipeline of apartment schemes in Salford Central and MediaCity and now the addition of PfE greenfield allocations for later in the plan period. The tilted balance is not applicable – Salford can enforce its plan-led vision. The council will shortly incorporate PfE allocations into its local planning decisions and may prepare area-specific guidance for the new allocations. Having this adopted plan greatly reduces planning risk: prior to PfE, Salford had occasionally faced challenges on Green Belt release at appeal, but now any release is happening through the plan (as at Irlam). Salford’s focus can shift to delivery and fine-tuning local policies, with plan-making largely resolved for the next decade.",
+    "references": [
+      "https://www.greatermanchester-ca.gov.uk/what-we-do/planning-and-housing/places-for-everyone/",
+      "https://www.salford.gov.uk/planning-building-and-regeneration/planning-policies/local-planning-policy"
+    ],
+    "region": "North West",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000133",
+    "name": "Sandwell Metropolitan Borough Council",
+    "plan_status": "Adopted 2011 (Joint Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Sandwell’s current plan is the Black Country Core Strategy (2011), now badly out-of-date. A Black Country Plan review started but collapsed in 2022. Sandwell is now pursuing its own Local Plan (submitted Dec 2024) to cover needs to 2041. Until adoption, Sandwell’s housing shortfall means the tilted balance could apply, although the urban area constraints limit huge speculative sites.",
+    "notes": "Sandwell, as part of the Black Country, has been operating under the Black Country Core Strategy 2011–2026, adopted in 2011. A planned Black Country Plan review (covering Sandwell, Dudley, Walsall, Wolverhampton) reached an advanced draft in 2022, but was abandoned when Dudley MBC withdrew over Green Belt release concerns. This left Sandwell without an updated joint plan. In response, Sandwell quickly moved to prepare its own Sandwell Local Plan, which it submitted for examination in Dec 2024. The emerging plan seeks to meet Sandwell’s growth needs to 2041 within its urban area to the extent possible (by regenerating brownfield and increasing densities in centres like West Bromwich), but acknowledges a significant shortfall of housing land due to lack of developable sites – Sandwell is built-up and has tight boundaries. That shortfall will rely on agreements with neighboring areas (notably South Staffordshire, though progress on that is uncertain). In the interim, Sandwell’s policies are out-of-date and it cannot demonstrate a five-year housing supply, having one of the lowest delivery rates relative to target in the country. This has started to engage the tilted balance, though opportunities for speculative greenfield development are limited (Sandwell has very little Green Belt or fringe land – most unmet need would have to be accommodated outside the borough). Instead, the main risk is that without an adopted plan, it’s harder for Sandwell to compel redevelopment of difficult brownfield sites or resist non-residential uses taking potential housing land. The timely adoption of the new plan (expected in 2025) will solidify allocations (including several sites currently in employment use that are proposed to switch to housing) and strengthen policy for securing contributions from any overspill sites outside Sandwell. Until then, Sandwell remains in a precarious position planning-wise, relying on the NPPF and goodwill of neighbors.",
+    "references": [
+      "https://www.sandwell.gov.uk/planning-building/sandwell-local-plan"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000336",
+    "name": "Scarborough Borough Council (now North Yorkshire)",
+    "plan_status": "Adopted 2017 (Outdated)",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "Scarborough’s Local Plan was adopted in July 2017 and would now be due for review. However, with Scarborough Borough dissolved into North Yorkshire in 2023, no standalone update is planned – the area will be covered by the forthcoming North Yorkshire Local Plan by 2028. In the interim, the 2017 plan’s policies age and any supply gaps may invoke NPPF’s presumption.",
+    "notes": "Scarborough’s 2011-2032 Local Plan was adopted in 2017 and provided a development framework for the coastal borough (including Scarborough town, Whitby, and Filey). By 2023, the Borough Council was abolished, becoming part of North Yorkshire Council. The 2017 plan is thus out-of-date on the five-year criterion and will not be reviewed separately. Instead, the new North Yorkshire Council will incorporate Scarborough’s future needs in its countywide Local Plan. Until that is in place (targeted for 2027), the 2017 Scarborough Local Plan remains the operative plan for the area. This plan had allocated a range of housing sites around Scarborough and Whitby, some of which have progressed, though others (particularly in Whitby) have lagged due to market factors and infrastructure. Currently, North Yorkshire Council can still cite the 2017 plan policies to guide decisions – many remain relevant (e.g., tourism development controls, conserving the National Park fringe). However, if significant new housing proposals come that exceed the 2017 plan’s allocations, the council may have limited grounds to refuse purely on policy since the plan is aging and the housing requirement evidence is superseded. The tilted balance could be argued by developers if a shortfall in land supply is demonstrated (which is possible if some allocated sites do not deliver as expected). In practice, Scarborough’s housing market is modest and environmental constraints (Moors, coastal erosion, etc.) limit large speculative schemes, so major conflicts have been few. Nonetheless, the longer the gap before a new plan, the greater the risk that piecemeal developments could come forward not fully aligned with a strategic vision. North Yorkshire Council will likely lean on the NPPF and the 2017 plan where possible to manage development until the comprehensive new Local Plan provides an updated framework.",
+    "references": [
+      "https://www.scarborough.gov.uk/planning-building/planning-policy/adopted-local-plan-2017"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000337",
+    "name": "Sedgemoor District Council (now Somerset)",
+    "plan_status": "Adopted 2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Sedgemoor’s Local Plan was adopted in Feb 2019 and was one of the most up-to-date in Somerset. With Sedgemoor merged into the new Somerset Council in 2023, its 2019 plan will remain operative until a county-wide plan is adopted. The Sedgemoor area thus retains an up-to-date policy basis for now.",
+    "notes": "The former Sedgemoor District (around Bridgwater and Burnham-on-Sea) adopted its Local Plan 2011-2032 in February 2019. This plan facilitated major housing growth in Bridgwater (including the Bridgwater urban extension at Kings Down) and at Burnham/Highbridge, in part to support Hinkley Point C’s construction workforce and legacy. When Somerset became a unitary in April 2023, Sedgemoor’s plan became part of the patchwork of inherited plans for the new Somerset Council. Among those, Sedgemoor’s is the most recent and up-to-date. The policies and allocations in Sedgemoor’s 2019 plan continue to be implemented – for example, Bridgwater’s housing sites are progressing well and employment land take-up near Junction 23 (M5) is strong. Somerset Council will replace this with a new county-wide Local Plan by ~2028, but until then, the Sedgemoor section of Somerset has a current plan and does not face the same degree of vulnerability as other parts of the county that had older plans (e.g., Mendip or West Somerset). Sedgemoor can demonstrate a five-year housing supply (it had a surplus upon the last assessment), so the tilted balance is not an issue in this patch. Any development proposals in the Sedgemoor area are being assessed against the relatively recent 2019 policies, which carry full weight – Somerset Council has even used them as a model when handling applications elsewhere in the county for consistency. In summary, the Sedgemoor area’s planning is on a solid footing through the transition to the unitary, and it will smoothly roll into the new Somerset-wide plan when that is prepared, without a high risk of unplanned development in the interim.",
+    "references": [
+      "https://www.somerset.gov.uk/waste-planning-and-land/local-plans/#sedgemoor"
+    ],
+    "region": "South West",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000049",
+    "name": "Sefton Metropolitan Borough Council",
+    "plan_status": "Adopted 2017",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "Sefton’s Local Plan was adopted in April 2017 and provided land allocations mainly via Green Belt release. While still largely being delivered, it is now beyond 5 years old. The council has not begun a formal review yet, but will need to consider one soon, particularly as some housing sites may not come forward as fast as anticipated.",
+    "notes": "Sefton’s Local Plan (2030 horizon) was adopted in 2017 after identifying extensive development land via Green Belt release around Formby, Crosby, Maghull (including a new Maghull garden settlement of 1,600 homes), and Southport. The plan significantly boosted Sefton’s housing supply. As of 2025, those allocations are in various stages: some have progressed (the Maghull East site is under construction), others have faced delays due to land ownership or infrastructure. The plan is now just over 8 years from adoption, so technically out-of-date by NPPF definitions. However, Sefton has generally managed to maintain a five-year housing supply thanks to the allocated sites – the latest report showed around 5.6 years – and housing delivery is roughly on target overall. The Council has not yet launched a Local Plan review, likely due to uncertainty around wider sub-regional needs (Sefton is part of the Liverpool City Region) and waiting to see the completion of current allocations. If some allocated sites (e.g., some in Formby facing constraints) do not deliver, Sefton might slip under a five-year supply, triggering the tilted balance. There have been a few appeals on unallocated sites recently where developers argued the plan is aging; so far the council has successfully defended using its supply calculations. Nonetheless, to avoid future risk, a plan review by 2025/26 may be prudent – potentially to extend the plan to 2040 and adjust for any shortfalls or new economic opportunities (like the Freeport at the Port of Liverpool expansion affecting Sefton’s employment land). Until then, Sefton relies on its 2017 plan which, while aging, is still fundamentally aligned with Merseyside’s growth pattern and thus remains a relatively sound basis for decisions. The planning risk is moderate: manageable now, but could increase if any major site fails to materialize or if unmet needs from neighbors (e.g., Liverpool’s shortfall) put pressure on Sefton without an updated plan.",
+    "references": [
+      "https://www.sefton.gov.uk/localplan"
+    ],
+    "region": "North West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000336",
+    "name": "Selby District Council (now North Yorkshire)",
+    "plan_status": "Adopted 2013 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 12,
+    "nppf_defaulting": true,
+    "notes_short": "Selby’s Core Strategy (2013) is out-of-date. A new Selby Local Plan was in development and nearly complete (a Revised Publication Draft was out in 2023), but with Selby now under North Yorkshire Council since 2023, that plan’s fate will fold into the county-wide plan. In the meantime, Selby’s growth has been strong, but policy gaps exist as its old plan ages.",
+    "notes": "Selby District’s Core Strategy was adopted in October 2013, focusing growth in Selby town and to a lesser degree Sherburn and Tadcaster. A full new Local Plan was well underway by Selby District Council – the Revised Publication Draft was published in 2023, proposing significant further growth including a new settlement at Heronby. However, the district was abolished in April 2023 into North Yorkshire, and the new unitary has paused separate adoption to integrate this work into the North Yorkshire Local Plan. As such, Selby area’s 2013 strategy remains the official plan, and many of its housing allocations are either built or in advanced stages (Selby had high housing delivery, often exceeding targets). Nonetheless, the plan is out-of-date and didn’t anticipate the full scale of current demand – Selby’s location near Leeds/York makes it a hotspot for commuters, and recent years saw numerous speculative proposals. Selby District Council had managed to maintain a five-year supply by quickly approving sustainable urban extensions around Selby and Sherburn; however, with the old plan’s horizon nearing and some villages lacking up-to-date boundaries, developers have pushed at the edges. The tilted balance had started to become a factor in decisions for out-of-plan sites, which is one reason the new plan was being expedited. Now, North Yorkshire Council must bridge this gap. It will likely use the nearly-ready Selby plan content when forming the county plan, but that delay means a few more years where Selby area decisions rely on aged policies plus the NPPF. Fortunately, many needed sites already have permission (Selby’s housing requirement is essentially met up to 2027), so the risk of large unplanned approvals may be moderate. Still, smaller speculative applications in villages might succeed if the council cannot cite an up-to-date local policy. Overall, the situation underscores the importance of completing the North Yorkshire plan to cover areas like Selby that are coasting on an aging strategy amid dynamic growth pressures.",
+    "references": [
+      "https://www.northyorks.gov.uk/planning-policy-background-evidence",
+      "https://selby-prod.codeenigma.net/sites/default/files/Documents/Selby_District_Local_Plan_Revised_Publication.pdf"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000260",
+    "name": "Sevenoaks District Council",
+    "plan_status": "Adopted 2011 (Plan failed 2019)",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Sevenoaks’ Core Strategy (2011) is extremely out-of-date. A 2019 Draft Local Plan was rejected by Inspectors over Duty-to-Cooperate issues, leaving no new plan in place. The council is trying again with a Local Plan 2040 (Reg 18 consulted) but it won’t be ready until ~2025. Meanwhile, Sevenoaks relies on the NPPF, meaning the tilted balance often applies given unmet housing needs.",
+    "notes": "Sevenoaks District has been without an up-to-date plan for years. Its *Core Strategy 2011 and saved local plan policies from 2000 are in force but far from compliant with current needs. Sevenoaks attempted to adopt a new Local Plan in 2019, but that plan was found unsound in March 2020 due to a failure of the Duty to Cooperate (it didn’t adequately secure neighboring help to meet Sevenoaks’ substantial unmet housing need in full). Consequently, the council withdrew that plan after legal challenges failed. As of 2025, Sevenoaks is working on a fresh *Local Plan 2040, having done Issues & Options consultations. However, adoption is at least a year or two away. In this vacuum, Sevenoaks has had to evaluate applications primarily on NPPF grounds. The district is 93% Green Belt, so its 2011 plan deliberately underprovided housing – which means Sevenoaks has not been able to demonstrate a five-year supply for years. The tilted balance is therefore engaged by default. This led to multiple appeals and approvals on Green Belt sites contrary to local preferences. The council has been resisting major incursions, but pressure is high: in 2022 a developer even submitted a proposal to the Planning Inspectorate directly (via a s.62A route) for a large Green Belt housing scheme, citing the council’s lack of plan (though that was refused, it exemplifies the desperation). Sevenoaks is, in effect, operating in a development management by appeal scenario, where only National policy and the Green Belt’s absolute protection in NPPF (except in Very Special Circumstances) provide boundaries. This is the most extreme example of plan risk – until Sevenoaks gets a new plan in place (which will inevitably involve some Green Belt release agreed through plan-making, plus reliance on neighbors like Tunbridge Wells or Bromley to take overflow), the district remains highly exposed. Each application is a battle of weighing unmet needs versus Green Belt harm. The forthcoming plan will aim to allocate certain Green Belt sites in a controlled way to meet part of the need, thus restoring some plan-led order. But until adoption, Sevenoaks faces a planning policy vacuum of the highest order.",
+    "references": [
+      "https://www.sevenoaks.gov.uk/localplan2022"
+    ],
+    "region": "South East",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000067",
+    "name": "Sheffield City Council",
+    "plan_status": "Adopted 2009 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2009,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 16,
+    "nppf_defaulting": true,
+    "notes_short": "Sheffield’s last Core Strategy dates to 2009. The city has operated without an updated Local Plan for well over a decade. A new ‘Sheffield Plan’ covering 2022–2039 was finally submitted in Oct 2023 and is in examination. In the interim, Sheffield’s housing shortfall and aging policies have meant reliance on the NPPF’s presumption, though a brownfield-first approach has mitigated Green Belt loss pending the new plan.",
+    "notes": "Sheffield has had an elongated plan hiatus. Its *Core Strategy 2009 (to 2026) is very out-of-date, and a subsequent City Policies and Sites plan was never adopted. As a result, development decisions have leaned on that old Core Strategy (which emphasized brownfield regeneration and set modest housing targets) plus the 2019 South Yorkshire Spatial Framework (non-statutory) and the NPPF. The city’s housing delivery fell behind modern requirements, with supply constrained by a longstanding political commitment to minimal Green Belt release. This led to a significant shortfall – by 2020 Sheffield consistently fell below a five-year supply, engaging the tilted balance for many proposals. However, because the city had ample brownfield opportunities, many developers focused on central sites anyway (leading to a boom in city centre apartments). The critical pressure point became the lack of allocated sites for family housing – evidenced by rising unmet need and appeals on the urban fringe. Recognizing this, Sheffield City Council finally produced a new Sheffield Local Plan 2022-2039, which it **submitted in October 2023. This plan proposes allocating around 20,000 homes, including selective Green Belt releases (a major shift for Sheffield) especially in the southeast of the city, to ensure a deliverable pipeline. Until this plan is adopted (likely 2024/25), Sheffield remains vulnerable: the council has already lost or had to concede appeals for lack of five-year supply (notably around Owlthorpe and Deepcar). The new plan’s examination will determine if the chosen Green Belt sites are sufficient or need expanding. For now, Sheffield continues assessing proposals case-by-case – favoring brownfield but increasingly acknowledging that some edge expansions may be necessary even ahead of plan adoption to avoid worse speculative outcomes. The risk level is high but on the cusp of resolution; an adopted Sheffield Plan will substantially lower it by establishing a clear development framework and restoring plan-led control after years of planning by default.",
+    "references": [
+      "https://www.sheffield.gov.uk/planning-development/sheffield-plan"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000114",
+    "name": "Shropshire Council",
+    "plan_status": "Adopted 2011/2015 (Under review)",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Shropshire’s Core Strategy (2011) and SAMDev allocations (2015) are dated. A comprehensive Local Plan Review (2016–2038) was submitted in 2021, but examination has been prolonged (notably due to nutrient neutrality issues affecting river catchments). Adoption is anticipated in 2024, which will modernize the county’s development framework.",
+    "notes": "Shropshire’s current plan comprises a 2011 Core Strategy and a 2015 Site Allocations & Management of Development (SAMDev) Plan. These documents are out-of-date – they planned growth only to 2026. The Council prepared a new Local Plan (2016–2038) and submitted it in September 2021. However, the examination has faced delays, primarily over the need to ensure no harm to protected river habitats (the River Clun SAC) from development phosphorus runoff. Hearings concluded in 2022, and Shropshire is working on Main Modifications (including stronger environmental mitigation and perhaps slightly reduced site capacities) to satisfy the Inspector. In the interim, many of Shropshire’s allocated sites from 2015 are built or underway, and the county has a sizable housing land supply pipeline (especially around Shrewsbury and the growth corridors). This has somewhat buffered the absence of an up-to-date plan: the Council has managed to maintain around a five-year supply, and major speculative proposals have been limited. That said, without an adopted new plan, certain policies (like updated employment land strategies or rural housing flexibility) are in limbo, and any slippage in supply could quickly engage the tilted balance (which the Council is keen to avoid). Assuming the new Local Plan is adopted in 2024, Shropshire will have an up-to-date strategy providing for housing and employment to 2038 (including new strategic settlements east of Shrewsbury and near Junction 3 of the M54). This will solidify the policy position. Until then, Shropshire is operating with caution – approving needed developments where appropriate to shore up supply and relying on national policy to fill gaps – and looking forward to finally replacing its aging plan to remove any lingering uncertainty for investors and communities.",
+    "references": [
+      "https://shropshire.gov.uk/planning-policy/local-planning/local-plan-review-2016-2038/"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000228",
+    "name": "Slough Borough Council",
+    "plan_status": "Adopted 2008 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2008,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 17,
+    "nppf_defaulting": true,
+    "notes_short": "Slough’s Core Strategy (2008) is very out-of-date. The borough is heavily constrained (no space to meet its housing need) and has not advanced a new Local Plan to submission yet. Housing delivery relies on high-density brownfield redevelopment, but Slough continues to have a large unmet need which adjacent areas have resisted taking – leaving a persistent policy gap and reliance on the NPPF.",
+    "notes": "Slough’s planning framework is outdated. Its Core Strategy was adopted in 2008 (to 2026) and a Site Allocations plan in 2010. The Council’s attempt to prepare a new Local Plan has been slow; a draft Preferred Options was consulted in 2020, but as of 2025 it has not been submitted. Slough’s dilemma is that it is a small, urban borough essentially at capacity – nearly all available land is developed or Green Belt (Colnbrook area) or needed for employment (due to proximity to Heathrow). The 2020 draft Local Plan frankly acknowledged that Slough cannot meet its government-calculated housing need within its boundaries and asked neighbors (South Bucks in particular) to help. That request has so far not been agreed (South Bucks’ own plan was withdrawn in 2020). Consequently, Slough has been approving virtually all feasible housing redevelopment within the town (e.g. office-to-residential conversions, estate renewals at higher densities). This has kept housing delivery numbers somewhat up, but still far below the required level. The tilted balance is effectively in play – any proposal that can deliver housing is hard for the Council to refuse unless it causes clear harm, because its lack of five-year supply and up-to-date plan makes appeals likely to succeed. However, opportunities for “speculative” development are few given Slough’s geography; most new housing will come from council-led or partnership schemes to build upwards, such as the “Slough Urban Renewal” projects. The plan vacuum primarily impacts strategic decisions – for example, a potential large expansion into Green Belt (if ever considered) would have to come via a local plan, which is stalled. The Council is now under pressure (and possible government intervention threats) to get a new Local Plan in place by 2025. Until then, Slough’s planning decisions rely on the NPPF presumption and whatever relevant saved policies remain (mostly for design and environmental health). The risk and reality is that Slough’s development is being driven by short-term opportunities rather than a long-term spatial strategy, pending the overdue new Local Plan.",
+    "references": [
+      "http://slough.citizenspace.com/planning/slough-local-plan-preferred-options"
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000134",
+    "name": "Solihull Metropolitan Borough Council",
+    "plan_status": "Adopted 2013 (Plan review withdrawn 2024)",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": false,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 12,
+    "nppf_defaulting": true,
+    "notes_short": "Solihull’s Local Plan (2013) is out-of-date. A Draft Submission Plan (including significant Green Belt releases and the UK Central HS2 interchange site) was well advanced and under examination, but the Council withdrew it in Oct 2024 due to uncertainties and likely soundness issues. This leaves Solihull without an updated plan at a time of major growth pressure, increasing reliance on the NPPF and ad hoc decisions until a new plan is prepared.",
+    "notes": "Solihull’s last local plan was adopted in December 2013. Recognizing it needed to plan for HS2’s arrival and a higher housing target (including some of Birmingham’s unmet need), Solihull developed a comprehensive Draft Submission Plan and submitted it in 2021. That plan proposed large Green Belt releases (notably for a new garden village at The Triangle and major expansion near Shirley) and a vision for the UK Central Hub around the new HS2 Interchange. Examination proved challenging: there were doubts about deliverability and duty-to-cooperate (especially with neighboring Black Country authorities). In October 2024, Solihull formally withdrew the draft plan from examination, citing the evolving national policy landscape and a need to reconsider spatial options. As a result, Solihull is effectively back to using its 2013 plan for decisions. Many of its strategic aims (like focusing growth in north Solihull regeneration areas and allowing limited village development) have largely been met, and housing sites identified there are built out. Meanwhile, the borough faces intense development pressure: the HS2 node is underway and expected to drive demand for commercial and residential development. Without an updated plan, Solihull must determine applications case-by-case. Some sites that were earmarked in the withdrawn plan (e.g. land near Balsall Common) are coming forward anyway via planning applications, and the council will have to judge them on current NPPF merits – essentially meaning the tilted balance if housing land supply is deemed insufficient. The risk is moderate to high: Solihull still has significant Green Belt which provides a defense, but its housing shortfall (especially for affordable and family homes) is growing. The council intends to reset the plan process, perhaps collaborating more with neighbors or scaling back certain allocations, but a new plan is likely 2-3 years away. In the interim, Solihull’s planning decisions will rely on 2013 policies (many of which are outdated) and national guidance, trying to avoid piecemeal erosion of Green Belt before a new comprehensive strategy can be agreed.",
+    "references": [
+      "https://www.solihull.gov.uk/planning-and-building/solihull-local-plan"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000337",
+    "name": "Somerset Council",
+    "plan_status": "No unified plan (using former districts’ plans)",
+    "up_to_date": false,
+    "last_adoption_year": null,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 0,
+    "nppf_defaulting": true,
+    "notes_short": "Somerset Council (established 2023) currently relies on the four former districts’ plans – which range from relatively recent (Sedgemoor 2019) to significantly outdated (Mendip 2014). A new single Somerset Local Plan is being prepared (Call for Sites in 2024) to unify the strategy by around 2028. Until then, plan coverage is uneven: some areas have up-to-date policies, others face policy gaps and tilted balance situations.",
+    "notes": "When Somerset became a unitary authority in April 2023, it inherited the local plans of Mendip, Sedgemoor, South Somerset, and Somerset West & Taunton. These are of varying ages and quality. Sedgemoor’s 2019 Plan is up-to-date and delivering well, while Mendip’s 2014 Plan is out-of-date, with Mendip having failed to adopt a replacement (a 2022 consultation plan was not finished). South Somerset’s 2015 Plan is also outdated, and Somerset West & Taunton’s 2020 Plan (covering Taunton area) was fairly recent but that district ceased to exist after just a few years. Somerset Council is now working on a new county-wide Local Plan, with initial scoping and a Call for Sites launched in early 2024. The goal is to have an adopted plan by 2027/28, setting consistent growth targets and policies across the county. In the meantime, the planning regime is patchy: in Sedgemoor (Bridgwater area) and Taunton, the existing plans still carry weight and those areas can manage development with minimal issue. Conversely, in former Mendip (Frome, Glastonbury, etc.), the absence of an up-to-date plan has led to speculative applications, and the tilted balance has been invoked (some large greenfield housing schemes near Frome have come forward against the old plan’s intentions due to housing shortfall). Somerset Council has been handling these by pragmatically using whatever saved policies exist and the NPPF to negotiate the best outcomes until new allocations can be made. The risk of unplanned development is therefore higher in the parts of Somerset covered by older plans, whereas areas with newer plans have more protection. The new Somerset Local Plan will resolve this by creating a single, coherent approach – likely redistributing some growth (for example, focusing more on Taunton and less on smaller towns that struggled with infrastructure). Until its adoption, the council must apply a hybrid of its predecessors’ policies, which is not ideal but is being managed through careful development management and interim supplementary guidance (e.g., a countywide design guide).",
+    "references": [
+      "https://www.somerset.gov.uk/waste-planning-and-land/local-plans/"
+    ],
+    "region": "South West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000229",
+    "name": "Southampton City Council",
+    "plan_status": "Adopted 2015 (Core Strategy Partial Review)",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Southampton’s current plan is based on a Core Strategy (2010) with a partial update in 2015. It is now due for replacement. The council is developing a new ‘Southampton City Vision’ Local Plan to 2040 (Reg 18 consulted in 2022). In the interim, Southampton leans on the 2015 policies and the NPPF – it is meeting housing delivery via high-density schemes, but an updated plan is needed to provide a longer-term strategy and account for modern needs.",
+    "notes": "Southampton last updated its plan with the City Centre Action Plan (2015) and a partial Core Strategy review in 2015, which itself tweaked the 2010 Core Strategy. These documents guided substantial redevelopment in the city center and along the waterfront. A significant amount of housing has been delivered through conversions and mid-rise apartment blocks in the city, keeping Southampton’s housing numbers on track in recent years. However, the plan’s evidence base and policies on newer issues (e.g., zero-carbon building, newer transport schemes like the Green City initiative) are out-of-date. The City Council embarked on preparing a new Southampton City Vision Local Plan (to 2040), and held a major Regulation 18 consultation in late 2022. Key challenges include addressing how to accommodate more family housing (the city is tightly bounded with little undeveloped land), potentially partnering with neighboring Eastleigh or Test Valley to take some unmet need, and tackling traffic congestion and air quality in the dense urban area. Until this new plan is adopted (likely by 2025/26), Southampton’s 2015-era policies remain the basis for decisions. The city has generally been able to demonstrate a five-year supply with its pipeline of brownfield sites, so it hasn’t faced many appeals on housing supply grounds (the tilted balance has not been widely triggered). The bigger risk is qualitative: without an updated plan, the council has limited ability to enforce newer priorities (for example, it’s relying on national standards for energy efficiency rather than local plan requirements that it might want to impose). Recent large proposals (e.g., redevelopment of the former daily Echo building site for high-rise flats) have been approved under existing policy but would ideally be guided by a fresh masterplan approach in the new plan. Overall, while the lack of an updated plan hasn’t caused a housing land supply crisis in Southampton, it does leave a strategic vacuum for the medium-term development of the city. The forthcoming City Vision plan will fill that, ensuring growth (including possible urban extensions on the city fringe if needed) is properly planned alongside infrastructure – something that is difficult under the piecemeal current framework.",
+    "references": [
+      "https://www.southampton.gov.uk/planning/planning-policy/southampton-city-vision/"
+    ],
+    "region": "South East",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000153",
+    "name": "South Cambridgeshire District Council",
+    "plan_status": "Adopted 2018 (Joint Local Plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 7,
+    "nppf_defaulting": false,
+    "notes_short": "South Cambridgeshire, jointly with Cambridge City, adopted a Local Plan in 2018. This plan remains largely up-to-date and has facilitated new settlements (at Northstowe, Waterbeach). A new Greater Cambridge Local Plan is in preparation (Reg 18 completed) to extend the strategy to 2041, with adoption expected by 2025. The current plan still sufficiently guides development, so plan risk is low.",
+    "notes": "The “Greater Cambridge” joint Local Plan for Cambridge and South Cambridgeshire was adopted in 2018. It allocates significant growth, including major new towns at Northstowe (on a former airfield) and Waterbeach (on a former barracks), and expansive expansion on Cambridge’s fringe (Trumpington, Darwin Green, etc.), aiming to meet needs to 2031. South Cambridgeshire has seen rapid housing delivery under this plan, and many strategic sites are well underway or complete. Because the plan is reasonably recent, its policies are up-to-date, and the two councils can demonstrate a healthy combined five-year supply (over 6.1 years as per the latest annual monitor). Work is ongoing on the next Greater Cambridge Local Plan 2041, which has gone through Issues & Options and will allocate additional land largely focused on sustainable locations (with an emphasis on sites near new railway stations and possibly further expansion at Cambourne or a new village along the A428). That plan has faced some delay due to water supply constraints (the chalk aquifer serving the area is limited), but innovative solutions (like a proposed water reservoir in Fenland) are being factored in. Adoption of the new plan is expected around 2025. In the interim, the 2018 plan continues to function effectively: the tilted balance is not engaged because housing delivery and supply have exceeded targets (indeed, the area often runs into the opposite problem of managing very high growth). The main risk in not having an updated plan yet is manageable – if certain new strategic infrastructure (like East West Rail or Cambridge metro) materializes, the current plan may not reflect opportunities around those, but that is a matter of optimizing growth rather than risking unplanned sprawl. All in all, South Cambridgeshire’s planning is on solid footing with an active, modern plan and a clearly defined path to the next one, keeping plan-led development firmly in control.",
+    "references": [
+      "https://www.greatercambridgeplanning.org/emerging-plans-and-guidance/greater-cambridge-local-plan/"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 3
+  },
+  {
+    "id": "E60000084",
+    "name": "South Derbyshire District Council",
+    "plan_status": "Adopted 2016/2017 (Part 1 and 2)",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "South Derbyshire’s Local Plan was adopted in two parts (2016 and 2017) and provided growth mainly in the Derby Urban Area and Swadlincote. It is now slightly beyond 5 years old. The council has started a review (focused on the Part 1 strategic policies) to plan to 2041. Current supply is adequate, but an updated plan is needed to continue coordinating growth, including any new Garden Village proposal.",
+    "notes": "South Derbyshire’s Local Plan Part 1 (Core Strategy) was adopted in June 2016 and Part 2 (Allocations) in November 2017. This plan has successfully guided substantial development, especially on the edge of Derby City (South Derbyshire contributes several large housing sites to meet the wider Derby HMA need) and in/around Swadlincote. The district has met its targets so far, with a five-year supply reported. However, with the plan’s end date of 2028 approaching and the housing demand in the Derby area remaining high, the council commenced a partial review of the Local Plan Part 1 in 2023. The review (Reg 18) is considering options up to 2041, including potentially a new settlement (there was speculation of a “Drakelow Garden Village” in the previous regional plan context) and further expansion of existing settlements. As of 2025, that review is underway but not yet at submission. The adopted 2016/17 plan is technically out-of-date on the NPPF’s 5-year rule, but because the council proactively confirmed via a 2021 review that policies remained effective and it has an ongoing update process, inspectors have generally allowed continued use of the existing policies. The risk of speculative development has been moderate: developers have brought a few proposals on unallocated sites arguing the plan is aging, but South Derbyshire’s ability to show a surplus of housing land (partly due to oversupply around Derby and the Drakelow power station redevelopment coming forward) has helped fend off the tilted balance in decisions. Nonetheless, further delay in adopting the new plan could increase risk, as more time passes since 2016. With the major allotments from the current plan largely committed, the council does need the new plan to identify the next phase of growth locations (and to handle issues like updated flood risk mapping and infrastructure for the growing commuter settlements). Overall, while not in crisis, South Derbyshire is keen to get its revised plan in place by around 2025 to ensure continuity of a plan-led approach and to avoid any vacuum as the 2016/17 plan ages beyond its effective lifespan.",
+    "references": [
+      "https://www.southderbyshire.gov.uk/our-services/planning-and-building-control/planning/planning-policy/local-plan-review"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000325",
+    "name": "South Downs National Park Authority",
+    "plan_status": "Adopted 2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "The South Downs National Park Local Plan was adopted in July 2019 and is up-to-date. It provides a strong conservation-led framework with limited housing and is in line with NPPF guidance for National Parks. No immediate review is needed; the SDNPA will monitor but likely roll forward policies via a review in the late 2020s.",
+    "notes": "The South Downs National Park Authority (SDNPA) adopted its first Local Plan in 2019, covering the entire park across several counties. This plan is current and sets a strategy of conserving the landscape and cultural heritage of the South Downs while allowing only small-scale development to meet local needs (approximately 250 homes per year across the whole park). It also contains bespoke dark night skies policies and controls on visitor-related development. Being relatively new, the plan’s policies are fully in line with the NPPF and the Park’s statutory purposes, and the Authority is rigorously applying them – for example, refusing major developments that do not demonstrate exceptional circumstances. The housing delivered under this plan is on track via allocated brownfield sites in places like Petworth and small infill in villages. Because the National Park’s duty is conservation, lack of housing supply does not trigger the tilted balance in the usual way (footnote 7 of NPPF excludes protected areas from the presumption). Therefore, plan risk is inherently low. SDNPA will eventually consider a review (possibly around 2025-2027) mainly to extend the plan beyond 2033 and incorporate updated climate change mitigation targets. For now, the 2019 plan provides a robust framework – it is one of the more recently adopted in the region – and the National Park is largely insulated from speculative development pressure by virtue of national policy protection. In summary, the South Downs Local Plan is up-to-date and effective, and the National Park Authority is firmly in control of planning decisions through its policies, with no significant vulnerabilities to unplanned development.",
+    "references": [
+      "https://www.southdowns.gov.uk/planning-policy/south-downs-local-plan_2019/"
+    ],
+    "region": "South East",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000147",
+    "name": "Southend-on-Sea City Council",
+    "plan_status": "Adopted 2007 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2007,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 18,
+    "nppf_defaulting": true,
+    "notes_short": "Southend’s Core Strategy dates to 2007 and is long outdated. The city has unmet housing needs and minimal undeveloped land. A new Local Plan is in preparation (Reg 18 done), but progress is slow. In the meantime, Southend is heavily reliant on the NPPF – it has approved many high-density schemes to meet demand, yet remains short of its targets, meaning the tilted balance is effectively the norm.",
+    "notes": "Southend-on-Sea (now a city) has not had a new Local Plan in the era of the NPPF. Its Core Strategy 2007 (to 2021) is extremely out-of-date, and though some Development Management DPDs were adopted in 2015, the strategic framework for growth is lacking. Southend’s challenge is acute: it is densely built, with its few remaining open areas either Green Belt or environmentally sensitive Thames Estuary habitats. The 2007 plan anticipated modest growth (housing target ~2,000 for 2001-2021), far below current needs (which are around 1,200 homes per year under the standard method). Southend has been preparing a new Local Plan since 2019; Issues & Options were consulted, identifying potential intensified development in the central area and perhaps some Green Belt release at Shoeburyness. However, as of 2025, a draft plan is not yet submitted. This leaves Southend in a de facto continuous presumption-in-favor scenario. The council has tried to accommodate demand by approving very high-density flatted schemes especially in Southend town centre and along the seafront (for example, several tower block proposals have been permitted in recent years). These have boosted housing numbers but also raised concerns about infrastructure capacity and changing townscape character absent a holistic plan. Despite these efforts, Southend still cannot demonstrate a five-year supply or meet its Housing Delivery Test, so the tilted balance applies by default. The risk is that without a plan, development may not be optimally distributed – e.g., there’s pressure on green wedges like Belfairs, and without a plan the council struggles to defend them if proposals come forward. The new Local Plan (when eventually adopted) will likely call for intense urban renewal and negotiation with neighbors (like Basildon or Rochford) to take overflow. Until then, Southend’s planning is essentially reactive: any sustainable site that can deliver housing is looked on favorably to avoid appeals, and the city must manage the consequences (parking, services) as best as it can. The situation underscores an urgent need for the new plan to bring clarity and reduce the current reliance on the NPPF’s default provisions.",
+    "references": [
+      "https://localplan.southend.gov.uk/"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000296",
+    "name": "South Gloucestershire Council",
+    "plan_status": "Adopted 2013 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 12,
+    "nppf_defaulting": true,
+    "notes_short": "South Gloucestershire’s Core Strategy (2013) and Policies Plan (2014) are now dated. The council is working on a New Local Plan 2025–2041 (a draft was published Feb 2025) to align with the Joint Spatial Plan’s demise and new growth context. The current plan’s major sites (e.g., new neighbourhoods at Cribbs/Patchway) are largely committed, but an updated plan is needed to identify further housing capacity and address modern challenges like Buckover Garden Village (now canceled).",
+    "notes": "South Gloucestershire’s existing plan was adopted in two parts: a Core Strategy in 2013 and a Policies, Sites & Places Plan in 2014. These allocated significant development, including major urban extensions north of Bristol (such as at Cribbs Causeway/Patchway and East of Harry Stoke) which are now well underway, and a now-shelved proposal for Buckover Garden Village (omitted after the West of England Joint Spatial Plan failed in 2019). With the abolition of the JSP, South Glos has reoriented to a local plan approach. It has produced a draft New Local Plan 2025-2041 (Reg 18 draft published Feb 2025). This emerging plan focuses on meeting housing needs within urban areas and selected expansions of towns like Yate, while collaborating with Bristol on urban edge sites. Until this new plan is adopted (likely ~2025/26), the council relies on the 2013/2014 plans. Those are out-of-date in parts: for instance, housing targets were lower than current need and some intended strategic sites (like Buckover) did not proceed, leaving a gap. Nonetheless, South Glos has maintained a five-year supply by stepping up delivery on other sites and approving additional housing in certain villages under flexible policies. This has so far prevented widespread speculative development—though a few appeals have succeeded by citing unmet need, especially for affordable housing. The risk will heighten if adoption of the new plan is delayed, as the urban extension sites from the old plan will mostly complete by late 2020s, and without new allocations supply could dip. The council has mitigated short-term risk by approving interim housing on some safeguarded lands around settlements. Once the new plan is in place, with updated allocations (possibly including a reduced version of a new settlement near Thornbury or expanded Yate), the policy situation will stabilize. In summary, while the current plan is outdated, South Glos has managed to control development via careful interim measures and is on the cusp of adopting a replacement plan, keeping plan-led risk at a moderate level in this transitional period.",
+    "references": [
+      "https://beta.southglos.gov.uk/new-local-plan"
+    ],
+    "region": "South West",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000304",
+    "name": "South Hams District Council",
+    "plan_status": "Adopted 2019 (Joint Local Plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "South Hams shares the Plymouth & South West Devon Joint Local Plan adopted in 2019, which is up-to-date and runs to 2034. That plan directs modest growth to South Hams towns (excluding the National Park area). No immediate review is needed; South Hams has a secure land supply and benefits from the joint plan structure.",
+    "notes": "South Hams (outside the Dartmoor National Park) is covered by the Plymouth & South West Devon Joint Local Plan 2014–2034, adopted March 2019. This joint plan with Plymouth and West Devon allocates major growth primarily in Plymouth’s urban fringe (some of which falls in South Hams, such as at Woolwell) and in a new town at Sherford (straddling the South Hams-Plymouth border). For the rural parts of South Hams, the plan focuses on meeting local needs in towns like Dartmouth, Kingsbridge, and Ivybridge, while protecting the AONB coast. This plan is current and has proven effective: Sherford new community is under construction (with hundreds of homes occupied and ultimately ~5,500 planned), and smaller allocations in the market towns are coming forward with appropriate infrastructure. South Hams can demonstrate a comfortable five-year supply (bolstered by Sherford’s trajectory). As such, the tilted balance does not apply. The Councils have committed to monitor the plan and formally consider by 2024 whether a review is needed – this was done and it was concluded the strategy remains sound, so a full review was not immediately triggered. Barring significant changes (e.g., if Plymouth’s needs increase or a new environmental constraint emerges), the joint plan will likely remain in force until around 2029 when a new plan will be prepared. Therefore, South Hams currently faces low plan-related risks: the joint plan framework ensures development is plan-led, and speculative proposals outside identified settlements have largely been dismissed on appeal due to the strong housing land position and up-to-date policies. In summary, South Hams’ planning is stable under the adopted joint plan, and it remains one of the better examples of effective cross-border planning delivering growth and thus minimizing the risk of unplanned development.",
+    "references": [
+      "https://www.plymouth.gov.uk/planning-and-building-control/planning-policy/plymouth-and-south-west-devon-joint-local-plan"
+    ],
+    "region": "South West",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000096",
+    "name": "South Holland District Council",
+    "plan_status": "Adopted 2019 (Joint Local Plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "South Holland’s Local Plan is the South East Lincolnshire Joint Plan (with Boston Borough) adopted in March 2019. It is up-to-date, guiding development to 2036 (notably around Spalding and Holbeach). The plan is delivering well and has ample land allocated, so no immediate update is needed and the NPPF presumption is not an issue.",
+    "notes": "South Holland (with Boston) adopted the South East Lincolnshire Local Plan 2011-2036 in 2019. This joint plan allocates significant housing and employment growth to Spalding (including urban extensions and a relief road), Holbeach, and a number of villages, and also safeguards a route for the Spalding Western Relief Road to support new development. Since adoption, South Holland has seen steady progress: housing delivery has been on target with numerous sites in Spalding and Holbeach building out. The plan also coordinated with infrastructure like upgrades to the A16 and flood mitigation in the Fens. With the plan only 6 years in, its policies are current and effective – for example, the council has successfully used them to refuse ad hoc developments in unsustainable locations, defending appeals by pointing to the allocated sites pipeline. The area has a healthy five-year supply; indeed, South Holland has a surplus of potential housing land, partially because some expected major employment projects (like a possible food enterprise zone expansion) didn’t need all the housing originally anticipated. There is no pressing need to review the plan yet, though a review will likely start around 2025 to plan beyond 2036 and incorporate updated growth forecasts (e.g., any impact from the Peterborough economy or from improved road links). Until then, South Holland’s planning remains firmly plan-led under the joint plan. The tilted balance is not engaged, speculative proposals are generally declining because developers prefer the certainty of allocated sites, and the council can focus on implementation – such as ensuring infrastructure commitments like new schools in the urban extensions are delivered timely. In short, South Holland’s Local Plan is robust and up-to-date, keeping development on track and risk low.",
+    "references": [
+      "http://www.southeastlincslocalplan.org/"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 2
   }
 ]
