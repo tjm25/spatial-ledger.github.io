@@ -2748,5 +2748,2023 @@
     ],
     "region": "East Midlands",
     "plan_risk_score": 3
+  },
+  {
+    "id": "E60000301",
+    "name": "Exeter LPA",
+    "plan_status": "Adopted Feb 2012 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2012,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 13,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted Feb 2012 is out-of-date; Exeter is working on a new Local Plan (the ‘Exeter Plan’ to 2040) with a full draft published Dec 2024 but not yet adopted.",
+    "notes": "Exeter’s current development plan is based on the Core Strategy adopted in February 2012 (which guided growth to 2026) and an older 2005 Local Plan for detailed policies. These documents are now quite old. The Core Strategy is 13 years since adoption, meaning its housing targets and policies are out-of-date relative to Exeter’s rapidly evolving needs. The city has been in the process of creating a new local plan, known as the “Exeter Plan,” to look ahead to 2040. A Draft Exeter Plan was published for consultation in late 2022, and by December 2024 the City Council released the Full Publication draft for the next stage of consultation. This new plan aims to allocate enough sites to accommodate around 13,500 homes by 2040, focusing on urban brownfield development and some urban extensions, in line with Exeter’s goal of sustainable growth. The Exeter Plan is expected to be submitted for examination in 2025. In the interim, because Exeter’s existing plan is out-of-date, the council must rely on the NPPF and the regional Spatial Strategy (Devon’s housing frameworks) to judge proposals. Exeter is somewhat shielded by geography – as a compact city with finite land, there have been fewer greenfield speculative applications than in more rural districts. Nonetheless, without an up-to-date plan, the council faces challenges in resisting proposals that fall outside its old policies, especially if it cannot demonstrate a five-year housing land supply. The risk will persist until the new local plan is adopted (likely by 2026). Once the Exeter Plan is in place, it will modernize the policy context, incorporate the city’s climate ambitions, and greatly reduce the current uncertainty in development management.",
+    "references": [
+      "Exeter’s Core Strategy was adopted in Feb 2012",
+      "Exeter has a new Local Plan in preparation (the Exeter Plan to 2040); a full draft was published in Dec 2024 and is expected to be submitted for examination in 2025."
+    ],
+    "region": "South West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000081",
+    "name": "Erewash LPA",
+    "plan_status": "Core Strategy adopted March 2014 (Under Review)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted March 2014 is under a formal Review. A revised Core Strategy (Part 1 Local Plan) was submitted in 2022 and is nearing adoption, which will update Erewash’s policies.",
+    "notes": "Erewash’s current adopted plan is the Core Strategy (Part 1 Local Plan) for Greater Nottingham, which was adopted in March 2014. This joint Core Strategy (with Broxtowe, Nottingham City, and Gedling) provides strategic policies through 2028. Given its age (11 years old), Erewash’s plan required review. The Borough Council has pursued a Core Strategy Review, which it submitted for independent examination on 30 November 2022. Examination hearings took place in mid-2024, and by September 2024 the Inspector issued a post-hearings letter indicating what modifications were needed. The review process has involved proposing updates to housing numbers and adjustments to allocations to extend the plan horizon to 2041 (renamed the Erewash Core Strategy Review 2020). As of early 2025, the Inspector’s final report is anticipated, and adoption of the reviewed plan is likely in 2025. During this transition, the 2014 Core Strategy remains the operative plan. Because it’s more than 5 years old, the NPPF’s tilted balance is engaged for housing applications, but the fact that a replacement plan is imminent gives the Council stronger grounds to resist proposals that conflict with the soon-to-be-adopted strategy. In effect, Erewash is in limbo for a short period: policy weight is somewhat diminished until the new plan is adopted. The risk of speculative development existed in the early 2020s when the plan became dated, but now with the Review at an advanced stage, that risk is moderating. Once the Erewash Core Strategy Review is adopted (with updated targets to 2037 or 2041), the borough will again have an up-to-date framework, closing the current policy gap.",
+    "references": [
+      "Erewash’s current Core Strategy was adopted in March 2014.",
+      "The Erewash Core Strategy Review (2020) has been submitted as of Nov 2022 and underwent hearings in 2024, moving the plan toward adoption."
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000271",
+    "name": "Epsom and Ewell LPA",
+    "plan_status": "Core Strategy from 2007 (New plan submitted March 2025)",
+    "up_to_date": false,
+    "last_adoption_year": 2007,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 18,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy from 2007 is highly out-of-date, but a new Local Plan 2022–2040 was submitted in March 2025 and is headed for examination.",
+    "notes": "Epsom & Ewell’s planning policy has been outdated for many years, as the borough’s current Core Strategy dates back to July 2007. That Core Strategy (intended to run to 2022) and a small number of later Development Management policies are still the statutory development plan. This policy vacuum has made it difficult for the council to resist speculative development, since by NPPF definition the policies are out-of-date and housing need defaults to the standard method. Recognizing this, Epsom & Ewell Borough Council has worked on a new Local Plan to address modern requirements. The new Local Plan 2022–2040 has now reached an advanced stage: a Regulation 19 Pre-Submission consultation took place over winter 2024/25, and the plan was officially submitted to the Secretary of State on 10 March 2025. An Inspector will be appointed and examination hearings are expected later in 2025. The submitted plan aims to significantly boost housing delivery (it proposes to meet a target of around 540 homes per year, including some Green Belt releases, to achieve ~10,000 new homes by 2040). While this new plan is under examination, decision-making in Epsom must still rely on the 2007/Core Strategy policies, which carry very limited weight. The tilted balance firmly applies, and indeed Epsom has seen many developments come forward in recent years that bypass local zoning due to the lack of up-to-date plan. The council’s hope is that the new Local Plan will be found sound and adopted by mid-2026, finally replacing the antiquated policies and regaining control over development. Until then, Epsom remains at high risk of unplanned projects, but the imminent prospect of an adopted plan suggests this situation could improve in the near future.",
+    "references": [
+      "Epsom & Ewell’s current Core Strategy was adopted in July 2007 and is one of the oldest local plans still in effect, well beyond the 5-year review period.",
+      "The Borough Council submitted a new Local Plan 2022–2040 for examination in March 2025, aiming to replace the outdated 2007 plan once it is adopted."
+    ],
+    "region": "South East",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000160",
+    "name": "Epping Forest LPA",
+    "plan_status": "Adopted March 2023",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "New Local Plan 2011–2033 adopted in March 2023 after a protracted examination; policies are up-to-date and development is guided by this plan.",
+    "notes": "Epping Forest District finally achieved an up-to-date local plan in 2023. The Epping Forest District Local Plan 2011–2033 was adopted on 6 March 2023. This marked the end of a lengthy examination process that began with submission back in 2017. The delay was largely due to concerns about environmental impacts on Epping Forest Special Area of Conservation and other issues, which required extensive modifications and mitigation strategies. The adopted plan allocates significant new housing (around 11,400 homes) across the district to meet needs to 2033 and includes policies addressing those environmental constraints. Because the plan is less than five years old, Epping Forest can robustly defend planning decisions using its new policies. The council currently has a 5-year housing land supply identified in the plan, and per NPPF paragraph 75, it is exempt from needing to continually demonstrate supply until the plan is five years old. This means speculative development proposals that conflict with the plan can be refused with confidence that the presumption in favor does not override the plan. Epping Forest’s situation has thus improved dramatically since early 2023 – previously it lacked an adopted plan, but now the risk of unplanned development is low. Going forward, the council will need to commence a review by 2028, but in the near term the focus will be on delivering the allocations and infrastructure set out in the newly adopted plan.",
+    "references": [
+      "Epping Forest District Council adopted its Local Plan (2011–2033) in March 2023.",
+      "Because the plan is <5 years old and had a confirmed 5-year housing supply on adoption, NPPF paragraph 77’s provisions mean the tilted balance is not engaged."
+    ],
+    "region": "East of England",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000209",
+    "name": "Enfield LPA",
+    "plan_status": "Core Strategy adopted 2010 (New plan in Examination)",
+    "up_to_date": false,
+    "last_adoption_year": 2010,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 15,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted 2010 is out-of-date, but a new Enfield Local Plan (to 2041) is currently at Examination, aiming to replace the old policies soon.",
+    "notes": "Enfield’s current Local Plan consists of a Core Strategy adopted in November 2010 and a Development Management Document from 2014. These are significantly out-of-date with respect to current London Plan targets and national policy. Recognizing this, Enfield Council has drafted a new Local Plan extending to 2041. The draft plan was submitted for examination in 2023, and the Examination in Public began with Stage 1 hearings in January 2025. The emerging plan is ambitious, proposing to meet a high housing need partly by allocating Green Belt land for development (approximately 9,000 homes on two large Green Belt sites). This has been controversial but also elicited support from the Mayor of London, who acknowledged that some Green Belt release in Enfield is “unavoidable” to meet housing demand. As the examination continues in 2025, Enfield hopes to adopt the new plan by 2025/26. In the meantime, because the 2010 Core Strategy is over 5 years old, Enfield’s housing decisions must apply the NPPF tilted balance. The borough has a substantial housing shortfall under the national standard method, and without an updated plan it has struggled to demonstrate a five-year supply. This has left Enfield vulnerable to developers—indeed, some larger schemes have come forward anticipating the new plan’s policies or exploiting the current policy gap. The plan’s advanced stage offers light at the end of the tunnel: if the Enfield Local Plan 2041 is adopted in the next year or so, it will restore a sound policy framework and significantly reduce the risk of unplanned development. Until then, Enfield’s planning authority navigates a delicate period with an aging plan but a replacement in progress, balancing development pressures against interim London Plan targets and emerging local policies.",
+    "references": [
+      "Enfield’s Core Strategy was adopted in Nov 2010 and covers development to 2025. It is now over 15 years old.",
+      "The new Enfield Local Plan (2023 draft, covering to 2041) entered its examination hearings in Jan 2025, with proposals including significant Green Belt housing allocations."
+    ],
+    "region": "London",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000270",
+    "name": "Elmbridge LPA",
+    "plan_status": "Core Strategy from 2011 (New plan withdrawn)",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy from 2011 remains in force after a new draft Local Plan was withdrawn in 2024–25, leaving Elmbridge without an up-to-date plan and under intense development pressure.",
+    "notes": "Elmbridge’s planning policy is severely out-of-date. The current Core Strategy was adopted in July 2011, and no comprehensive update has been successful since then. The Borough Council worked for many years on a new Local Plan and submitted a draft plan for examination in August 2023. However, the Planning Inspector examining it found the plan unsound in September 2024, principally because it significantly undershot the required housing need and proposed no Green Belt release. The Inspector indicated the plan could only be made sound with major modifications (increasing housing provision). Faced with this, Elmbridge requested an extension of time to rework the plan, which the government refused. Consequently, in February 2025 the council withdrew the draft plan to start over. As of 2025, Elmbridge has returned to the drawing board, and adoption of a new plan is unlikely before 2028. In the interim, the 2011 Core Strategy (and a 2015 Development Management plan) are the only adopted policies, all of which predate the current NPPF. This means virtually all development applications will be considered under the tilted balance – Elmbridge cannot demonstrate a five-year housing supply or an up-to-date plan. The borough is already experiencing speculative applications on Green Belt and other sensitive sites, which the Council may struggle to refuse on policy grounds. Until a new plan is adopted, Elmbridge’s planning control is limited. The risk of unplanned developments being allowed on appeal is extremely high given the policy vacuum. The situation underscores an acute need for a new sound local plan, as well as potential intervention (the area’s unmet housing need is also part of wider sub-regional discussions). Overall, Elmbridge’s plan status represents one of the highest-risk scenarios in the country at present.",
+    "references": [
+      "Elmbridge’s Core Strategy (the current local plan) was adopted in July 2011 and is one of the oldest in England.",
+      "The draft Elmbridge Local Plan 2023 was deemed unsound by the Inspector for failing to meet housing needs (refusing to release Green Belt), leading the Council to withdraw it in early 2025."
+    ],
+    "region": "South East",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000335",
+    "name": "Eden District Council (now Westmorland & Furness)",
+    "plan_status": "Adopted October 2018",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 7,
+    "nppf_defaulting": true,
+    "notes_short": "Local Plan 2014–2032 was adopted in October 2018; now over 5 years old and due for review, but restructuring of councils has delayed an update.",
+    "notes": "The Eden Local Plan 2014–2032 was adopted on 11 October 2018. It covers the former Eden District’s development needs (housing, employment, etc.) up to 2032. By 2025, this plan is about 7 years old, meaning it is outside the ideal 5-year currency period. A review was initiated by Eden District Council’s executive in 2019 to assess necessary updates, but progress was overtaken by local government reorganisation. In April 2023, Eden District was merged into the new Westmorland and Furness unitary authority. The new council will need to produce a unified local plan for its area, incorporating Eden, but this process is in its early stages. As a result, Eden’s 2018 Local Plan remains the operative plan for its area, and its policies (while relatively recent) are technically out-of-date under the NPPF’s 5-year rule. The degree of risk is moderate: Eden has generally met its modest housing targets, but moving forward, the standard method will dictate housing need until a new plan is in place. The rural nature of the district and the fact that the plan runs to 2032 mean the existing allocations still guide current development, reducing immediate pressure. However, without a timely update, Eden (now Westmorland and Furness for planning purposes) could see developers arguing the tilted balance for additional sites. The transition to the new unitary plan adds uncertainty in timing. In summary, Eden’s plan is out-of-date and awaiting a comprehensive review under the new authority, creating a pause in up-to-date plan-making and some vulnerability until an updated plan is adopted.",
+    "references": [
+      "The Eden Local Plan 2014–2032 was adopted on 11 October 2018 (by the former Eden District Council) and is now over 5 years old.",
+      "Eden’s plan review has been absorbed into the new Westmorland and Furness Council’s plan-making, following local government reorganisation in 2023."
+    ],
+    "region": "North West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000244",
+    "name": "Eastleigh LPA",
+    "plan_status": "Adopted April 2022",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": true,
+    "status_code": "just_adopted_updating",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan 2016–2036 was adopted in April 2022, so the borough has an up-to-date plan and is now beginning an early review.",
+    "notes": "Eastleigh succeeded in adopting a long-delayed Local Plan in April 2022, covering the period 2016–2036. This plan provides for 14,580 new homes and associated infrastructure by 2036. Because it was adopted less than five years ago, all its policies are currently considered up-to-date under the NPPF. The council can demonstrate a five-year housing land supply based on this recently adopted plan, meaning the tilted balance is not engaged. Having an adopted 2022 plan greatly reduces Eastleigh’s risk of speculative development — planning applications are determined in accordance with the up-to-date allocations and policies. However, the plan did have a notable housing shortfall (around 2,600 homes not allocated) even at adoption, which the council acknowledges will need to be addressed. Eastleigh has already begun initial work on a potential Local Plan review to extend the plan period and meet longer-term needs, though this is at a very early stage. In summary, Eastleigh’s planning status is secure in the short term due to its newly adopted plan. Any development risks are low, primarily centering on the need to plan for growth beyond 2036. The council’s focus will be on monitoring delivery and starting the next plan update before any policy lapse occurs.",
+    "references": [
+      "Eastleigh’s Local Plan 2016–2036 was found sound in March 2022 and formally adopted in April 2022.",
+      "The current plan meets most needs to 2036, though it includes a housing shortfall to be addressed (14,580 homes planned vs. higher assessed need), prompting the Council to consider options for a future review."
+    ],
+    "region": "South East",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000237",
+    "name": "Eastbourne LPA",
+    "plan_status": "Core Strategy adopted Feb 2013",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 12,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted in Feb 2013 is substantially out-of-date; a new Local Plan 2019–2039 is being prepared but not yet in force.",
+    "notes": "Eastbourne’s current adopted plan is the Core Strategy Local Plan 2006–2027, which was adopted in February 2013. That plan is now 12 years old and its horizon year (2027) is approaching. The South Downs National Park Authority now handles planning for areas of Eastbourne within the National Park, but for the rest of the borough the 2013 Core Strategy remains the operative plan. Eastbourne Borough Council has been working on a replacement Local Plan (covering 2019–2039) for several years. A draft emerging plan was under consultation (initial Reg.18 stages were around 2019), but as of 2025 this new plan has not yet been submitted for examination. Thus, the borough is still relying on policies that predate the NPPF 2019/2021 revisions. This leaves Eastbourne in a vulnerable position regarding housing delivery: the adopted plan’s housing targets and allocations are dated, and under the NPPF the plan’s policies are considered out-of-date (triggering the tilted balance) due to age. The council will likely need to accelerate the new Local Plan 2019–2039 to regain control over development. In the meantime, development proposals may come forward on unallocated sites, citing the lack of an up-to-date plan. While Eastbourne is heavily constrained (bounded by the sea and national park), the absence of recent plan policies increases the risk of appeals and speculative projects. Completion and adoption of the new plan will be critical to guiding growth and resisting unwanted development.",
+    "references": [
+      "Eastbourne’s Core Strategy was adopted in February 2013 and is the current development plan (for the area outside the National Park).",
+      "An emerging Eastbourne Local Plan 2019–2039 is in preparation, but until it is adopted the council’s policies (now 12 years old) carry reduced weight."
+    ],
+    "region": "South East",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000184",
+    "name": "East Suffolk LPA",
+    "plan_status": "Waveney adopted 2019, Suffolk Coastal 2020",
+    "up_to_date": false,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 5,
+    "nppf_defaulting": true,
+    "notes_short": "Two Local Plans cover East Suffolk (Waveney adopted 2019, Suffolk Coastal 2020); the older Waveney plan just hit 5-year review and will be updated.",
+    "notes": "East Suffolk was formed in 2019 and is covered by two local plans corresponding to the former districts. The Waveney Local Plan was adopted on 20 March 2019, and the Suffolk Coastal Local Plan was adopted in September 2020. As of 2025, the Waveney plan is just over 6 years old and the Suffolk Coastal plan about 4.5 years old. The council conducted a five-year review of the Waveney Plan in March 2024, which initially found the plan remained effective. However, a subsequent change (an updated NPPF with higher standard method housing figures) led East Suffolk to conclude that an update to the Waveney Local Plan is required. The Local Development Scheme (March 2024) sets an indicative timetable to begin this plan update. In practical terms, East Suffolk is in a relatively strong position short-term: both local plans are recently adopted, and the authority can demonstrate housing land supply under those plans. The Suffolk Coastal plan is still within five years of adoption (so its policies carry full weight), whereas the Waveney plan has just passed five years, meaning its housing policies will start to be considered “out-of-date” until updated. The council’s decision to update the Waveney plan (and likely to eventually unify the plans for the whole East Suffolk area) will address this. Overall, East Suffolk’s planning status is moderate risk – one plan remains up-to-date, and the other is undergoing an update process to ensure the whole district continues to have a robust policy framework.",
+    "references": [
+      "East Suffolk’s area is covered by the Suffolk Coastal Local Plan (adopted Sept 2020) and the Waveney Local Plan (adopted 20 March 2019).",
+      "A March 2024 review concluded the Waveney Local Plan needs updating due to a significant uplift in housing need under the new NPPF standard method."
+    ],
+    "region": "East of England",
+    "plan_risk_score": 5
+  },
+  {
+    "id": "E60000118",
+    "name": "East Staffordshire LPA",
+    "plan_status": "Adopted October 2015",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": false,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Local Plan adopted in October 2015 is now over 9 years old with no replacement yet adopted, increasing risk of speculative proposals.",
+    "notes": "East Staffordshire’s Local Plan (2012–2031) was adopted on 15 October 2015. Now in 2025, it has been in place for a full decade. This means the plan’s strategic policies are more than five years old and in need of review to remain in line with the latest NPPF and housing requirements. The council has not adopted an updated plan since 2015, and there is little public evidence of a new local plan being at an advanced stage. By NPPF paragraph 75 and associated guidance, when a plan is over five years old the housing need is calculated using the standard method, which can significantly raise the borough’s housing target. East Staffordshire must therefore demonstrate a five-year housing land supply against potentially higher housing need figures or else the tilted balance will apply. The current situation puts the authority in a vulnerable position, as developers may pursue applications on less preferred sites, arguing the plan is out-of-date. In summary, East Staffordshire’s plan is overdue for replacement. Until a plan update is produced (the timing of which is uncertain), planning decisions will lean on an aging policy framework, and the council faces a high risk of planning by appeal under the presumption in favor of sustainable development.",
+    "references": [
+      "East Staffordshire’s Local Plan was adopted in October 2015.",
+      "With the plan now over 5 years old, its policies are considered out-of-date under the NPPF, heightening the presumption in favor of sustainable development."
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000052",
+    "name": "East Riding of Yorkshire LPA",
+    "plan_status": "Adopted April 2025",
+    "up_to_date": true,
+    "last_adoption_year": 2025,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 0,
+    "nppf_defaulting": false,
+    "notes_short": "New Local Plan Update 2020–2039 was adopted in April 2025, replacing the previous 2016 Local Plan.",
+    "notes": "East Riding has an up-to-date Local Plan. The council formally adopted the East Riding Local Plan Update (covering 2020–2039) on 2 April 2025. This new plan replaces the prior Local Plan (which was adopted in 2016 and ran to 2029). The Plan Update was found sound by an Inspector in December 2024 after extensive examination, including hearings in 2023 and modifications consultations. With the new plan now in force, East Riding benefits from an NPPF-compliant strategy with up-to-date allocations and policies on housing, employment, environment, etc. The tilted balance no longer applies, as the plan is less than five years old and contains an identified five-year housing land supply. This greatly reduces the risk of speculative or unplanned developments. In short, East Riding’s planning framework is current and robust following the 2025 adoption, providing certainty for development decisions and aligning local policy with national requirements.",
+    "references": [
+      "East Riding Local Plan Update 2020–2039 was adopted by Full Council on 2 April 2025.",
+      "The new plan replaces the previous East Riding Local Plan (2012–2029) adopted in 2016, ensuring policies are up-to-date."
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 1
+  },
+  {
+    "id": "E60000093",
+    "name": "East Lindsey LPA",
+    "plan_status": "Adopted July 2018 (Partial Review in Examination)",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 7,
+    "nppf_defaulting": true,
+    "notes_short": "Local Plan adopted July 2018 is under review; a Partial Review (2022–2041) is in examination to update the plan.",
+    "notes": "East Lindsey’s current Local Plan (Core Strategy and Settlement allocations) was adopted on 18 July 2018. The plan covers development needs to 2031. Having exceeded five years since adoption, the council initiated a Local Plan Review to ensure it remains up-to-date. A Regulation 18 Issues & Options consultation took place in 2021/22, and subsequently the Council prepared a Partial Review of the plan. This Partial Review (covering the period 2022–2041) was submitted for examination in November 2022. Public hearings were held in mid-2024 as part of the examination process. As of early 2025, the Inspector has provided feedback and the council is working on modifications needed to find the plan sound. Until the Partial Review is adopted, East Lindsey relies on the 2018 plan. Because that plan is now over 5 years old, its housing policies are considered out-of-date by default, meaning the NPPF’s tilted balance can apply in decision-making. The ongoing review, once completed, will extend the plan’s horizon and update its policies (including potentially higher housing targets or new allocations). In the meantime, the district faces a moderate risk of speculative development, though the active progress on the plan update indicates the authority is addressing the issue. Full adoption of the reviewed Local Plan in 2025 will firm up the planning framework and reduce this risk.",
+    "references": [
+      "East Lindsey Local Plan was adopted on 18 July 2018.",
+      "A Partial Review of the Local Plan (2022–2041) has been submitted and is under examination, following consultation in 2021/22."
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000168",
+    "name": "East Hertfordshire LPA",
+    "plan_status": "Adopted October 2018 (Review Commenced)",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 7,
+    "nppf_defaulting": true,
+    "notes_short": "District Plan adopted October 2018 is just over 5 years old; review has commenced to update the plan.",
+    "notes": "East Hertfordshire’s District Plan was adopted in October 2018, providing a development framework up to 2033. As of late 2023, this plan passed its five-year mark and is now subject to review. The council formally began a review in 2024, including a “Call for Sites” to inform a new plan iteration. The current adopted plan is only slightly older than five years, so it remains largely effective, but under the NPPF the housing requirements should now be considered against the government’s standard method (since the plan is over 5 years old). East Herts has successfully met recent housing targets (125% of requirement per the 2022 Housing Delivery Test), which may buffer it from immediate land supply shortages. However, without an update, policies will increasingly date relative to national policy changes. The council’s proactive move to launch a new plan process should limit the period of vulnerability. In summary, the 2018 District Plan is slightly out-of-date and will be updated through a new local plan process now underway. In the interim, the plan’s age means the tilted balance could apply for housing proposals, but the authority is actively working to refresh its policies.",
+    "references": [
+      "East Herts District Plan was adopted on 23 October 2018, covering the period to 2033.",
+      "A five-year review began in 2024, with the Council inviting sites and evidence for a new plan."
+    ],
+    "region": "East of England",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000243",
+    "name": "East Hampshire LPA",
+    "plan_status": "Adopted 2014/2016 (New Plan in Preparation)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 9,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted 2014 (with allocations in 2016) is now out-of-date; a new draft Local Plan to 2040 is in preparation.",
+    "notes": "East Hampshire’s current plan is composed of the Joint Core Strategy (adopted May 2014) and a Part 2 allocations plan (adopted April 2016). These documents are around 9–11 years old and cover the district (outside the South Downs National Park) up to 2028. The council has recognized that this framework is out-of-date. In late 2023, East Hampshire published a new draft Local Plan looking ahead to 2040. This emerging plan will replace the aging strategy and bring policies in line with current national requirements (e.g. on housing need and climate change). As of early 2025, the draft Plan has undergone committee consideration and public consultation, with submission and examination anticipated by 2025. Until the new plan is adopted, the district’s planning decisions must rely on the old policies, which triggers the NPPF tilted balance for housing proposals. East Hampshire has faced delay and uncertainty (its previous plan attempt was paused amid concerns). The risk of speculative development is relatively high in this gap period. Once the new Local Plan 2020–2040 is adopted, it should restore a firm policy basis, but currently the authority is in a transitional phase with an out-of-date plan under active replacement.",
+    "references": [
+      "East Hampshire’s Joint Core Strategy was adopted in May 2014 (with Part 2 site allocations adopted April 2016).",
+      "A new draft Local Plan covering to 2040 was published at the end of 2023 and is proceeding toward consultation and examination."
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000300",
+    "name": "East Devon LPA",
+    "plan_status": "Adopted Jan 2016 (New Plan Emerging)",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 9,
+    "nppf_defaulting": true,
+    "notes_short": "Local Plan (adopted 2016) is aging; a new Local Plan 2020–2040 is in final consultation before submission.",
+    "notes": "East Devon’s currently adopted Local Plan (covering 2013–2031) was adopted in January 2016. Now over nine years old, it exceeds the 5-year threshold for being up-to-date. The council has been preparing a new Local Plan for 2020–2040, which as of early 2025 is at an advanced stage. A full draft of the new plan was published and consulted on, with the latest public consultation running through early 2025. This indicates the plan is on track for submission to the Planning Inspectorate in 2025. Until the new plan is examined and adopted, East Devon must rely on its 2016 plan. Because that plan is older than five years, its housing policies carry reduced weight under NPPF rules, engaging the presumption in favor of sustainable development (the “tilted balance”). Speculative housing applications are more likely to succeed if the council cannot demonstrate an up-to-date plan and land supply. The emerging plan, once adopted (expected by 2025–26), will address this by providing an updated strategy through 2040. In the interim, East Devon faces moderate risk from development pressures due to the plan’s age, though the imminent new plan adoption should soon restore policy certainty.",
+    "references": [
+      "East Devon’s Local Plan 2013–2031 was adopted in Jan 2016.",
+      "The new East Devon Local Plan 2020–2040 is undergoing public consultation in early 2025."
+    ],
+    "region": "South West",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000150",
+    "name": "East Cambridgeshire LPA",
+    "plan_status": "Adopted April 2015 (Amended 2023)",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Local Plan adopted 2015 (amended via a single-issue review in 2023); no full new plan yet in place.",
+    "notes": "East Cambridgeshire’s current Local Plan was adopted in April 2015 and remains the basis for decisions (with a single-issue housing policy review adopted in October 2023). While this partial update refreshed the housing target policy, the majority of the plan’s policies are now around a decade old. The National Planning Policy Framework (NPPF) advises that plans be reviewed every five years, so by 2025 East Cambridgeshire’s plan is considered out-of-date despite the 2023 amendment. The council has not yet advanced work on a comprehensive new Local Plan. As a result, housing proposals may engage the NPPF’s “tilted balance” due to the age of the plan. However, the recent single-issue review likely helps sustain the housing land supply in the short term. In summary, the district’s plan is partially updated but overdue for a full review, leaving some risk of speculative development until a new plan is adopted.",
+    "references": [
+      "East Cambs Local Plan adopted in 2015, with a Single Issue Review (housing policy) adopted October 2023.",
+      "NPPF requires local plans to be reviewed every 5 years."
+    ],
+    "region": "East of England",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000281",
+    "name": "Adur District Council",
+    "plan_status": "Adopted 2017",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "Adopted in 2017, now 8 years old and becoming dated.",
+    "notes": "The Local Plan in force was adopted in 2017, which means it is now quite dated. Because the plan is older than five years, the council may struggle to demonstrate an adequate housing land supply, invoking the NPPF’s presumption in favour of sustainable development. In practice, this reduces certainty: developers may pursue speculative applications on sites not allocated in the old plan, knowing the council's policies carry less weight. The council has not yet adopted a replacement plan, prolonging the policy vacuum. This situation continues to put pressure on the council to approve developments under national policy, potentially undermining local planning objectives. Until an updated plan is adopted, planning outcomes will be heavily influenced by national policy and appeal decisions, rather than a locally-determined strategy.",
+    "references": [
+      "NPPF / Government guidance (see cited sources)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000077",
+    "name": "Amber Valley Borough Council",
+    "plan_status": "Emerging plan in draft",
+    "up_to_date": false,
+    "last_adoption_year": null,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": null,
+    "nppf_defaulting": true,
+    "notes_short": "No up-to-date plan; relies on NPPF default.",
+    "notes": "This authority does not have an up-to-date Local Plan in force. In the absence of an adopted plan, decisions default to the National Planning Policy Framework’s presumption in favour of sustainable development. That means development proposals may be approved on the basis of national policy even if they conflict with the council’s older plans, leaving the area vulnerable to speculative proposals. The council is in the process of preparing a new Local Plan, which is currently at the draft stage. This emerging plan has yet to be examined or adopted, but it is intended to fill the policy vacuum and guide future housing growth. Until then, plan-led decision making is limited, and the NPPF effectively holds sway in determining planning applications.",
+    "references": [
+      "NPPF / Government guidance (see cited sources)"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000282",
+    "name": "Arun District Council",
+    "plan_status": "Adopted 2018",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 7,
+    "nppf_defaulting": true,
+    "notes_short": "Adopted in 2018, now 7 years old and needs review.",
+    "notes": "The Local Plan in force was adopted in 2018, which means it is now quite dated. Because the plan is older than five years, the council may struggle to demonstrate an adequate housing land supply, invoking the NPPF’s presumption in favour of sustainable development. In practice, this reduces certainty: developers may pursue speculative applications on sites not allocated in the old plan, knowing the council's policies carry less weight. The council has not yet adopted a replacement plan, prolonging the policy vacuum. This situation continues to put pressure on the council to approve developments under national policy, potentially undermining local planning objectives. Until an updated plan is adopted, planning outcomes will be heavily influenced by national policy and appeal decisions, rather than a locally-determined strategy.",
+    "references": [
+      "NPPF / Government guidance (see cited sources)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000106",
+    "name": "Ashfield District Council",
+    "plan_status": "Local Plan Review 2002",
+    "up_to_date": false,
+    "last_adoption_year": 2002,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 23,
+    "nppf_defaulting": true,
+    "notes_short": "No up-to-date plan; last adopted in 2002, with a new Local Plan underway.",
+    "notes": "The current local plan was adopted in 2002 (Local Plan Review) and is over two decades old. The council is actively preparing a new Local Plan (Regulation 18 draft in 2023) to replace the 2002 plan.",
+    "references": [
+      "Ashfield DC – Local Plan Review Adopted 2002 (saved policies)",
+      "PINS Monitoring (2025) – Ashfield new plan in progress"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000253",
+    "name": "Ashford Borough Council",
+    "plan_status": "Adopted 2019",
+    "up_to_date": false,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted 2019; current and in use.",
+    "notes": "Ashford’s Local Plan was adopted in February 2019. At just over 6 years old, it remains the borough’s current development plan but is technically out of date. A review will be needed soon, but as of now the plan is up-to-date and the NPPF presumption does not automatically apply if housing supply is maintained.",
+    "references": [
+      "PINS Monitoring (2025) – Ashford Local Plan adopted Feb 2019"
+    ],
+    "region": "South East",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000183",
+    "name": "Babergh District Council",
+    "plan_status": "Adopted 2014 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 9,
+    "nppf_defaulting": true,
+    "notes_short": "Joint Local Plan 2014 (with Mid Suffolk); 11 years old and under review.",
+    "notes": "Babergh’s current plan is the Core Strategy adopted in February 2014. It is over 11 years old. Babergh and Mid Suffolk began a Joint Local Plan review (submission 2021), but the process faced delays. As the 2014 plan exceeds 5 years without a completed update, it is considered out-of-date and the NPPF’s tilted balance may apply.",
+    "references": [
+      "PINS Monitoring (2025) – Babergh Core Strategy adopted 2014",
+      "PINS Monitoring (2025) – Babergh & Mid Suffolk Joint Plan submission 2021"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000202",
+    "name": "London Borough of Barking and Dagenham",
+    "plan_status": "Adopted 2010",
+    "up_to_date": false,
+    "last_adoption_year": 2010,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 15,
+    "nppf_defaulting": true,
+    "notes_short": "Adopted in 2010, now 15 years old and very dated.",
+    "notes": "The Local Plan in force was adopted in 2010, which means it is now quite dated. Because the plan is older than five years, the council may struggle to demonstrate an adequate housing land supply, invoking the NPPF’s presumption in favour of sustainable development. In practice, this reduces certainty: developers may pursue speculative applications on sites not allocated in the old plan, knowing the council's policies carry less weight. A new Local Plan is currently in preparation to address this policy gap. Once the emerging plan is adopted, it should re-establish a plan-led approach and firm up housing delivery targets. Until an updated plan is adopted, planning outcomes will be heavily influenced by national policy and appeal decisions, rather than a locally-determined strategy.",
+    "references": [
+      "NPPF / Government guidance (see cited sources)"
+    ],
+    "region": "London",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000203",
+    "name": "London Borough of Barnet",
+    "plan_status": "Adopted March 2025",
+    "up_to_date": true,
+    "last_adoption_year": 2025,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 0,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted in March 2025; fully up-to-date.",
+    "notes": "Barnet adopted a new Local Plan in March 2025 (covering 2021–2036), which replaced the 2012 Core Strategy. The plan is current, so Barnet is not subject to the NPPF presumption.",
+    "references": [
+      "PINS Monitoring (2025) – Barnet Local Plan adopted 04/03/2025"
+    ],
+    "region": "London",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000064",
+    "name": "Barnsley Metropolitan Borough Council",
+    "plan_status": "Adopted 2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted 2019; within 5-year currency.",
+    "notes": "Barnsley’s Local Plan was adopted in January 2019. At about 6 years old, it is just outside the 5-year “current” window but still provides a reasonably up-to-date framework. No formal update has started yet, so it remains the adopted plan guiding development.",
+    "references": [
+      "PINS Monitoring (2025) – Barnsley Local Plan adopted Jan 2019"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000335",
+    "name": "Barrow-in-Furness Borough Council",
+    "plan_status": "Adopted mid-2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted mid-2019; still considered current.",
+    "notes": "Barrow’s Local Plan was adopted in June 2019. It is just about 6 years old as of 2025, so it is on the cusp of needing review but is generally still considered current for some policies. No new plan has been announced yet.",
+    "references": [
+      "PINS Monitoring (2025) – Barrow Local Plan adopted June 2019"
+    ],
+    "region": "North West",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000154",
+    "name": "Basildon District Council",
+    "plan_status": "1998 Local Plan",
+    "up_to_date": false,
+    "last_adoption_year": 1998,
+    "update_in_progress": true,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 27,
+    "nppf_defaulting": true,
+    "notes_short": "No up-to-date plan; 1998 Local Plan in effect, 2014–2034 draft withdrawn in 2022.",
+    "notes": "Basildon’s last adopted Local Plan dates back to 1998. A new Local Plan (2014–2034) was submitted for examination in 2019 but was withdrawn by the council in March 2022. This leaves Basildon without an NPPF-2004 compliant plan. The council has initiated work on a new plan (aiming to adopt by 2027), but until adoption, development defaults to the NPPF due to the policy vacuum.",
+    "references": [
+      "The Planner (Mar 2022) – Basildon withdrew emerging plan; 1998 plan is last adopted",
+      "PINS Monitoring (2025) – Basildon 2019 plan withdrawn March 2022"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000242",
+    "name": "Basingstoke and Deane Borough Council",
+    "plan_status": "Adopted May 2016",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 9,
+    "nppf_defaulting": true,
+    "notes_short": "Local Plan adopted May 2016; now 9 years old and under review.",
+    "notes": "Basingstoke’s Local Plan was adopted in May 2016. It is nearly 9 years old and exceeds the 5-year threshold. The council is in the process of preparing a Local Plan Update (to cover period to 2039) – a draft was published in 2023 – but it is not yet adopted. The existing plan is out-of-date on certain targets (like housing), so the NPPF tilted balance is applicable until the new plan is in place.",
+    "references": [
+      "PINS Monitoring (2025) – Basingstoke Local Plan adopted 2016",
+      "Basingstoke & Deane – Local Plan Update info (2023)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000107",
+    "name": "Bassetlaw District Council",
+    "plan_status": "Adopted May 2024",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 0,
+    "nppf_defaulting": false,
+    "notes_short": "New Bassetlaw Local Plan adopted May 2024; fully up-to-date.",
+    "notes": "Bassetlaw’s new Local Plan 2020-2038 was adopted in May 2024, replacing the previous 2011 Core Strategy. This brand-new plan means the district has an up-to-date development plan; no NPPF default applies. (The plan was in examination through 2022–23.)",
+    "references": [
+      "PINS Monitoring (2025) – Bassetlaw Local Plan adopted 29/05/2024"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000288",
+    "name": "Bath and North East Somerset Council",
+    "plan_status": "Adopted Jan 2023 (Partial Update)",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "Core Strategy partially updated in 2023; plan is current.",
+    "notes": "Bath & North East Somerset (BANES) updated its Core Strategy/Local Plan through a Partial Update adopted in January 2023. This update (a proactive review of the 2014 plan) means BANES has an up-to-date plan. A further new Local Plan is now being prepared jointly with West of England partners, but as of 2025 the adopted 2023 plan is in force and up-to-date.",
+    "references": [
+      "PINS Monitoring (2025) – BANES Local Plan Partial Update adopted Jan 2023"
+    ],
+    "region": "South West",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000143",
+    "name": "Bedford Borough Council",
+    "plan_status": "Adopted Jan 2020",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "just_adopted_updating",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan 2030 adopted in Jan 2020; already under new review.",
+    "notes": "Bedford’s Local Plan 2030 was adopted in January 2020. Because that plan included an explicit early review requirement, the council has already embarked on a new Local Plan (Bedford 2040) process. A Issues & Options consultation was held and a draft submitted in 2023. The current 2030 plan is up-to-date, so NPPF presumption does not apply, but an updated plan is actively in progress.",
+    "references": [
+      "PINS Monitoring (2025) – Bedford Local Plan 2030 adopted Jan 2020",
+      "Bedford BC – Local Plan 2040 update (Reg 18, 2022)"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000204",
+    "name": "London Borough of Bexley",
+    "plan_status": "Adopted April 2023",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "New Local Plan adopted April 2023; up-to-date.",
+    "notes": "The London Borough of Bexley adopted its new Local Plan in April 2023, replacing the previous 2012 Core Strategy. This plan is very recent, providing up-to-date strategic policies. No immediate review is underway yet (given its recency), and the NPPF presumption does not apply.",
+    "references": [
+      "PINS Monitoring (2025) – Bexley Local Plan adopted 26/04/2023"
+    ],
+    "region": "London",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000130",
+    "name": "Birmingham City Council",
+    "plan_status": "Adopted Jan 2017",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "Birmingham Development Plan adopted 2017; 8 years old and due for replacement.",
+    "notes": "Birmingham’s Development Plan (adopted January 2017) is now 8 years old. The city has begun work on a new Development Plan (issues consultation held) but it is not yet at examination. Until a new plan is adopted, Birmingham’s plan is treated as out-of-date on certain matters (e.g. housing land supply beyond 2022), so the NPPF’s tilted balance may be engaged in decision-making.",
+    "references": [
+      "PINS Monitoring (2025) – Birmingham Development Plan adopted Jan 2017"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000085",
+    "name": "Blaby District Council",
+    "plan_status": "Adopted Feb 2013",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted 2013; plan now 10+ years old with new Local Plan stalled.",
+    "notes": "Blaby’s Core Strategy was adopted in February 2013. A new Local Plan was being prepared (a draft was consulted on), but as of 2025 no new plan has been submitted. With the 2013 plan over a decade old and no replacement yet in place, Blaby falls under NPPF default. The plan’s age and uncertainty around the new plan timeline contribute to a high risk score.",
+    "references": [
+      "PINS Monitoring (2025) – Blaby Core Strategy adopted 2013"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000013",
+    "name": "Blackburn with Darwen Borough Council",
+    "plan_status": "Adopted Jan 2024 (Part 2)",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan (Part 2) adopted January 2024; up-to-date.",
+    "notes": "Blackburn with Darwen adopted the second part of its Local Plan in January 2024, following a Core Strategy (2011). The new Local Plan provides an up-to-date policy framework. With adoption only a year ago, the plan is current and no NPPF presumption applies. The authority has a very low plan risk as a result.",
+    "references": [
+      "PINS Monitoring (2025) – Blackburn with Darwen Local Plan adopted 25/01/2024"
+    ],
+    "region": "North West",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000014",
+    "name": "Blackpool Council",
+    "plan_status": "Adopted Jan 2016",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 9,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted 2016; out-of-date but new plan in early stages.",
+    "notes": "Blackpool’s Core Strategy was adopted in January 2016 (~9 years ago). The council is working on the remaining Part 2 (site allocations) and a possible single local plan review, but as of 2025 an updated comprehensive plan is not yet adopted. Given the age of the 2016 strategy, Blackpool’s plan is considered out-of-date pending the new plan, triggering the presumption in favor of sustainable development in the interim.",
+    "references": [
+      "PINS Monitoring (2025) – Blackpool Core Strategy adopted 2016"
+    ],
+    "region": "North West",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000078",
+    "name": "Bolsover District Council",
+    "plan_status": "Adopted March 2020",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted March 2020; current (review due by 2025).",
+    "notes": "Bolsover’s Local Plan was adopted in March 2020. Now 5 years old, it remains the up-to-date plan (the council must review it by end of 2025). No replacement plan is yet in examination, so the 2020 plan continues to guide decisions. NPPF presumption is not engaged as the plan is still within the 5-year review period (just at the threshold).",
+    "references": [
+      "PINS Monitoring (2025) – Bolsover Local Plan adopted 04/03/2020"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000025",
+    "name": "Bolton Metropolitan Borough Council",
+    "plan_status": "Adopted March 2011",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted 2011; now very dated (to be succeeded by joint Greater Manchester plan).",
+    "notes": "Bolton’s Core Strategy was adopted in March 2011, making it 14 years old. A Greater Manchester joint plan (“Places for Everyone”) is in progress to provide new strategic policies, but it is not yet adopted. In the meantime, Bolton’s local policies are significantly out-of-date, so the tilted balance is typically applied. The long gap since adoption and reliance on a forthcoming joint plan give Bolton a high risk score.",
+    "references": [
+      "PINS Monitoring – Bolton Core Strategy adopted 2011",
+      "PINS Monitoring – Greater Manchester joint plan submission 2022"
+    ],
+    "region": "North West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000092",
+    "name": "Boston Borough Council",
+    "plan_status": "Adopted March 2019 (Joint Plan)",
+    "up_to_date": false,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "South East Lincolnshire Joint Local Plan adopted 2019; up-to-date.",
+    "notes": "Boston is covered by the South East Lincolnshire Joint Local Plan (with South Holland), adopted in March 2019. At about 6 years old, this plan is still broadly current and forms the development plan. No immediate update has been noted. The plan remains in effect and NPPF default does not apply unless parts are deemed out-of-date.",
+    "references": [
+      "PINS Monitoring (2025) – South East Lincolnshire Local Plan adopted 08/03/2019"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000289",
+    "name": "Bournemouth, Christchurch and Poole Council (BCP)",
+    "plan_status": "Inherited Plans (2012-2018)",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 7,
+    "nppf_defaulting": true,
+    "notes_short": "No single Local Plan yet for BCP; former plans date 2012–2018, new BCP plan in progress.",
+    "notes": "The unitary BCP Council (formed 2019) is preparing its first comprehensive Local Plan (Reg 18 draft 2022–24). Until adoption, planning decisions rely on the three predecessor authorities’ plans: Bournemouth (2012), Christchurch (2014) and Poole (2018). These range from 7 to 13 years old, so none are up-to-date for NPPF purposes. BCP’s new Local Plan is in progress (expected adoption ~2024/25), so currently development is judged against largely outdated plans under the NPPF presumption.",
+    "references": [
+      "PINS Monitoring (2025) – BCP emerging Local Plan (Reg 19 due 2024)",
+      "Bournemouth Local Plan adopted 2012 (Core Strategy)"
+    ],
+    "region": "South West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000221",
+    "name": "Bracknell Forest Borough Council",
+    "plan_status": "Adopted 2008/2013",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 12,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy 2008 & Site Allocations 2013; new Comprehensive Local Plan submitted in 2023.",
+    "notes": "Bracknell Forest’s current development plan consists of a 2008 Core Strategy and 2013 site allocations plan – both well over 10 years old. The borough has prepared a new Comprehensive Local Plan; it was submitted for examination in March 2023 and hearings held, with adoption anticipated in 2024. Until the new plan is adopted, Bracknell’s policies are considered out-of-date, engaging the NPPF presumption. The active plan process slightly mitigates risk, but policy gaps remain until adoption.",
+    "references": [
+      "PINS Monitoring (2025) – Bracknell Forest new Local Plan submitted Mar 2024",
+      "Bracknell Forest Core Strategy adopted 2008 (context in PINS table)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000068",
+    "name": "Bradford Metropolitan District Council",
+    "plan_status": "Adopted 2017 (Part 1)",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy (Part 1) adopted 2017; out-of-date, Part 2 never completed.",
+    "notes": "Bradford’s Core Strategy (Part 1) was adopted in July 2017. It’s now 8 years old and due for replacement. The Site Allocations (Part 2) plan was not finished. Bradford is now working on a new single Local Plan (Reg 19 draft consulted in 2021–22), but it has not reached examination yet. With the existing plan aging and an incomplete development plan, Bradford falls under NPPF default until the new plan is adopted.",
+    "references": [
+      "PINS Monitoring (2025) – Bradford Core Strategy adopted 18/07/2017",
+      "Bradford Local Plan – Reg 19 consultation (2022)"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000155",
+    "name": "Braintree District Council",
+    "plan_status": "Adopted 2021/2022",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "Section 1 joint plan adopted 2021, Section 2 adopted 2022; up-to-date.",
+    "notes": "Braintree, along with Colchester and Tendring, adopted a Joint Part 1 Local Plan (strategic section) in February 2021. Braintree’s individual Part 2 Local Plan (detailed policies) was adopted in July 2022. Therefore, the district has a fully up-to-date local plan framework less than 3 years old. No new plan is underway yet, and the NPPF presumption does not apply.",
+    "references": [
+      "PINS Monitoring (2025) – North Essex (Braintree) Part 1 plan adopted Feb 2021"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000176",
+    "name": "Breckland District Council",
+    "plan_status": "Adopted Nov 2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "just_adopted_updating",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted Nov 2019; review immediately started (partial update underway).",
+    "notes": "Breckland’s current Local Plan was adopted in November 2019. As part of the adoption, the Inspector required an immediate review. The council commenced a Partial Review, submitting proposed amendments in 2022. However, that partial update has faced delays. Because Breckland at least initiated an update within 5 years, its plan is technically up-to-date at the moment, but with a ticking clock. The risk is slightly elevated due to the pending review timeline.",
+    "references": [
+      "PINS Monitoring (2025) – Breckland Local Plan adopted 28/11/2019",
+      "PINS Monitoring (2025) – Breckland Partial Review submission 2022"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000205",
+    "name": "London Borough of Brent",
+    "plan_status": "Adopted Jan 2022",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Brent Local Plan adopted 2022; very up-to-date.",
+    "notes": "Brent’s Local Plan (covering 2019–2041) was adopted in January 2022. This replaced the older 2010 Core Strategy. Being only ~3 years since adoption, the plan is firmly up-to-date. No new update has started yet, and the NPPF presumption does not apply. Brent’s plan risk is minimal.",
+    "references": [
+      "PINS Monitoring (2025) – Brent Local Plan adopted Jan 2022"
+    ],
+    "region": "London",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000156",
+    "name": "Brentwood Borough Council",
+    "plan_status": "Adopted March 2022",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan 2016–2033 adopted March 2022; current plan.",
+    "notes": "Brentwood adopted its new Local Plan in March 2022, following a long preparation. This plan is only 3 years old and provides up-to-date strategic coverage for the borough. There is no replacement in progress yet (the ink is barely dry). Accordingly, decisions are plan-led without NPPF default, and plan risk is low.",
+    "references": [
+      "PINS Monitoring (2025) – Brentwood Local Plan adopted 23/03/2022"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000222",
+    "name": "Brighton & Hove City Council",
+    "plan_status": "Adopted 2016 (Part 1) / 2022 (Part 2)",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 9,
+    "nppf_defaulting": true,
+    "notes_short": "City Plan Part One adopted 2016; Part Two adopted 2022, but strategic elements now 9 years old.",
+    "notes": "Brighton & Hove’s City Plan Part One (strategic policies) was adopted in March 2016, now 9 years ago. The City Plan Part Two (detailed policies) was adopted in Oct 2022, but it does not update the core strategic targets from Part One. A full plan review is needed. Until Brighton updates its strategic policies, parts of the plan (notably housing requirements) are treated as out-of-date, invoking the NPPF presumption in some cases. The council is beginning a new Local Plan process in light of this.",
+    "references": [
+      "PINS Monitoring (2025) – Brighton & Hove City Plan Part1 adopted 2016"
+    ],
+    "region": "South East",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000290",
+    "name": "Bristol City Council",
+    "plan_status": "Adopted 2011 (Core Strategy)",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy adopted 2011; no updated plan yet (JSP failed), new Local Plan in draft.",
+    "notes": "Bristol’s Core Strategy dates to 2011, supplemented by some later development plan documents, but a full Local Plan review is overdue (14+ years since adoption). The city participated in the West of England Joint Spatial Plan, which was ultimately withdrawn in 2018. Bristol is now working on its own new Local Plan (a draft “Bristol 2040” was consulted on late 2023), but as of April 2025 it is not adopted. With an aging 2011 strategy and still no adopted replacement, Bristol relies on the NPPF tilted balance for many development decisions – a high-risk situation until the new plan is in place.",
+    "references": [
+      "PINS Monitoring (2025) – Bristol new Local Plan in progress (Reg 19 2024)",
+      "West of England JSP (regional plan) withdrawn 2018"
+    ],
+    "region": "South West",
+    "plan_risk_score": 9
+  },
+  {
+    "id": "E60000177",
+    "name": "Broadland District Council",
+    "plan_status": "Adopted 2022/24 (Joint Plan)",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Joint Greater Norwich Local Plan adopted 2022/24; replacing 2014 plan.",
+    "notes": "Broadland’s earlier plan (the Joint Core Strategy for Greater Norwich) was adopted in 2014. This was recently superseded by the new Greater Norwich Local Plan, which was adopted in early 2022 (for Broadland, South Norfolk, and Norwich), with final parts confirmed in 2024. Additionally, Broadland had a 2013 Site Allocations document. With the new joint plan in effect (within 3 years), Broadland now has up-to-date strategic policies, lowering risk and avoiding NPPF default.",
+    "references": [
+      "PINS Monitoring – Broadland/Norwich/South Norfolk joint plan adopted 2022/24"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000326",
+    "name": "Broads Authority",
+    "plan_status": "Adopted 2019",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Broads Local Plan adopted 2019; still current.",
+    "notes": "The Broads Authority (a special LPA for the Broads National Park area) adopted its Local Plan in May 2019. Being about 6 years old, it remains the up-to-date plan for the Broads area but is technically outdated. A review is likely due by 2024, but as of now the plan is considered current and the NPPF presumption is not engaged.",
+    "references": [
+      "PINS Monitoring (2025) – Broads Authority Local Plan adopted 17/05/2019"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000206",
+    "name": "London Borough of Bromley",
+    "plan_status": "Adopted Jan 2019",
+    "up_to_date": false,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 6,
+    "nppf_defaulting": true,
+    "notes_short": "Local Plan adopted January 2019; now just over 6 years old, review pending.",
+    "notes": "Bromley’s Local Plan was adopted in January 2019. It has just exceeded the 5-year mark without a new plan in place. While not extremely old, it is now formally out-of-date until reviewed. Bromley is beginning to work on a Local Plan review (Reg 18 expected), but currently the 2019 plan’s strategic elements may trigger the NPPF presumption on certain matters (e.g. if housing targets are deemed out-of-date). Plan risk is moderate, rising as time passes without an update.",
+    "references": [
+      "PINS Monitoring (2025) – Bromley Local Plan adopted 16/01/2019"
+    ],
+    "region": "London",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000137",
+    "name": "Bromsgrove District Council",
+    "plan_status": "Adopted Jan 2017",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": true,
+    "notes_short": "District Plan adopted January 2017; 8 years old, new plan in preparation.",
+    "notes": "Bromsgrove’s District Plan was adopted in January 2017. It’s 8 years old and out-of-date. The Council is working on a new Bromsgrove Local Plan Review (a Preferred Option was published in 2022), but it has not been submitted yet. Until the new plan is adopted, Bromsgrove’s aged plan means the NPPF presumption is applicable. The ongoing review process keeps the situation from being high-risk 10, but significant policy risk remains until adoption.",
+    "references": [
+      "PINS Monitoring (2025) – Bromsgrove Plan adopted 25/01/2017"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000166",
+    "name": "Broxbourne Borough Council",
+    "plan_status": "Adopted June 2020",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted June 2020; up-to-date (review by 2025 due).",
+    "notes": "Broxbourne’s Local Plan was adopted in June 2020. At just about 5 years since adoption, it remains the current plan. A review by mid-2025 is legally required; the council has begun initial steps for a new plan, but the existing plan is still in force and not yet deemed out-of-date. NPPF presumption does not currently apply.",
+    "references": [
+      "PINS Monitoring (2025) – Broxbourne Local Plan adopted 23/06/2020"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000108",
+    "name": "Broxtowe Borough Council",
+    "plan_status": "Adopted 2014 (Part 1) / 2018 (Part 2)",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Aligned Core Strategy adopted 2014; out-of-date pending new Greater Nottingham plan.",
+    "notes": "Broxtowe’s strategic policies are in the Greater Nottingham Aligned Core Strategy adopted September 2014. That is over 10 years old now. Broxtowe did adopt a Part 2 Local Plan in 2018, but the overarching strategy is outdated. Broxtowe is participating in the preparation of a new joint Greater Nottinghamshire Strategic Plan (with Nottingham, Gedling, Rushcliffe) planned for 2024. Until that new plan is in place, Broxtowe’s policies (especially on housing) are treated as out-of-date and the tilted balance applies.",
+    "references": [
+      "PINS Monitoring – Broxtowe ACS adopted 17/09/2014",
+      "Greater Nottingham Strategic Plan – emerging (Reg 19 2024)"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 7
+  },
+  {
+    "id": "E60000331",
+    "name": "Buckinghamshire Council",
+    "plan_status": "Adopted 2021 (Aylesbury Vale component)",
+    "up_to_date": true,
+    "last_adoption_year": 2021,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 4,
+    "nppf_defaulting": false,
+    "notes_short": "Inherited plans (2011-2021), with Aylesbury Vale 2021 plan being the most recent. New county-wide plan in prep.",
+    "notes": "Buckinghamshire Council is a new unitary authority (formed in 2020) covering areas whose last Local Plans were adopted between 2011 and 2021. The most recent plan, from the former Aylesbury Vale district, was adopted in 2021. That up-to-date plan, along with other inherited plans, currently guide development across Buckinghamshire. However, the council is preparing a new county-wide Local Plan to replace the patchwork of older district plans. In the interim, the recently adopted 2021 plan provides a degree of planning certainty for part of the area, while other parts rely on older plans which carry less weight. The new emerging plan aims to ensure a consistent, plan-led approach to housing and growth across the whole unitary area.",
+    "references": [
+      "NPPF / Government guidance (see cited sources)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000035",
+    "name": "Burnley Borough Council",
+    "plan_status": "Adopted July 2018",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 7,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted July 2018; ~7 years old, review underway now.",
+    "notes": "Burnley’s Local Plan was adopted in July 2018. It is just under 7 years old. The council began a Local Plan review in 2023 to update it. As of 2025, the 2018 plan remains the operative plan and is only slightly beyond 5 years old, so Burnley isn’t routinely defaulting to NPPF yet (especially given work on a review). However, housing supply is monitored closely as the plan ages. Overall risk is low-moderate.",
+    "references": [
+      "PINS Monitoring (2025) – Burnley Local Plan adopted 31/07/2018"
+    ],
+    "region": "North West",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000124",
+    "name": "Tamworth Borough Council",
+    "plan_status": "Tamworth Local Plan 2006–2031 (adopted Feb 2016); new Local Plan 2022–2043 in preparation",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 9,
+    "nppf_defaulting": true,
+    "notes_short": "Adopted in 2016, now 9 years old and under review; new plan being prepared up to 2043.",
+    "notes": "Tamworth’s Local Plan was adopted in February 2016. A five-year review in 2020 found it generally compliant but in need of update, prompting work on a new plan for 2022–2043. The plan is beyond its 5-year lifespan, so housing requirements default to the standard method. Nevertheless, Tamworth currently maintains a robust land supply (~6 years) and has far exceeded recent housing targets (732% delivery rate in 2021). This strong delivery mitigates tilted-balance risks while the new local plan is in progress.",
+    "references": [
+      "Tamworth LDS 2025–2028 (Adoption Feb 2016)",
+      "Tamworth BC – New Local Plan 2043 (website update)",
+      "Tamworth 5-Year Supply Statement 2024 (housing requirement & supply)",
+      "Tamworth Housing Delivery Test 2021 (732% of target)"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000278",
+    "name": "Tandridge District Council",
+    "plan_status": "Core Strategy 2008 & Detailed Policies 2014 (current plan); ‘Our Local Plan 2033’ withdrawn Feb 2024; new plan to be commenced",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 11,
+    "nppf_defaulting": true,
+    "notes_short": "Current plan dates to 2008/2014; replacement Local Plan 2033 was found unsound and withdrawn in 2024. Severe housing under-delivery (HDT 2023: 30%) has invoked the NPPF presumption.",
+    "notes": "Tandridge’s operative plans (Core Strategy 2008 and Part 2, 2014) are significantly out-of-date. A new Local Plan 2033 was submitted in 2019 but, after prolonged examination, the Inspector concluded it could not be made sound; the plan was formally withdrawn in February 2024. The district must now restart the local plan process. In the meantime, housing delivery has been extremely low – only about 30% of required homes were delivered (Housing Delivery Test 2023). With no up-to-date plan and a chronic land supply shortfall, Tandridge faces the NPPF’s presumption in favour of sustainable development on most proposals, reflecting a very high-risk situation.",
+    "references": [
+      "Tandridge Council – Inspector’s Report & Plan Withdrawal (Feb 2024)",
+      "Tandridge Current Plan (Core Strategy 2008 & Part 2, 2014)",
+      "Tandridge Housing Delivery Test 2021 (38% delivery); 2023 (30% delivery)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000032",
+    "name": "Tameside Metropolitan Borough Council",
+    "plan_status": "Saved Unitary Development Plan (adopted Nov 2004); contributing to Greater Manchester joint plan ‘Places for Everyone’ adopted 2024",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": true,
+    "notes_short": "Still relying on a 2004 Unitary Development Plan. A new strategic plan (Places for Everyone 2024) now provides up-to-date housing allocations, but local policies remain aged. Recent housing supply was just under the 5-year requirement (~4.8 years), causing partial reliance on NPPF default provisions.",
+    "notes": "Tameside’s last comprehensive local plan is the Unitary Development Plan adopted in 2004, meaning local policies are over 20 years old. The borough has participated in the Greater Manchester joint plan – *Places for Everyone* – which was adopted in 2024 to provide strategic allocations for nine GM authorities including Tameside. This joint plan bolsters the policy framework, but Tameside’s own development management policies remain dated until a new local plan is prepared. Housing delivery has been marginally below requirements in some years, and as of 2024 the borough could only demonstrate about a 4.8-year housing land supply. This shortfall and the lack of a recent local plan have often necessitated leaning on NPPF policies (tilted balance) when determining applications. The joint plan’s adoption improves the outlook, but the overall plan risk remains high until a detailed local plan is updated.",
+    "references": [
+      "Tameside UDP (adopted Nov 2004) – Council Document",
+      "GM ‘Places for Everyone’ Plan – Adoption for 9 authorities (2024)",
+      "Tameside SHLAA 2024 – Housing Land Supply ~4.8 years"
+    ],
+    "region": "North West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000305",
+    "name": "Teignbridge District Council",
+    "plan_status": "Teignbridge Local Plan 2013–2033 (adopted May 2014); new Local Plan 2020–2040 submitted Mar 2024",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 11,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted in 2014 is 11 years old; a replacement plan (2020–2040) was submitted for examination in March 2024. Housing delivery has dipped below target recently (HDT 2023: 83%) but remains above the NPPF presumption threshold.",
+    "notes": "The Teignbridge Local Plan 2013–2033 was adopted in May 2014, and at 11 years since adoption it is now due for replacement. The Council has prepared a new Local Plan covering 2020–2040, which was submitted for examination in March 2024. While the old plan’s policies still guide development, they are increasingly out-of-date with national policy. Teignbridge’s housing delivery has started to lag – the 2023 Housing Delivery Test showed 83% of the target achieved (down from 98% in 2020), necessitating action plans and a 20% land buffer but avoiding the presumption in favor of development. The timely submission of the new plan should restore a fully up-to-date framework and address any land supply gaps once adopted.",
+    "references": [
+      "Local Plans Portal – Teignbridge (Adopted May 2014; New Plan submitted Mar 2024)",
+      "Housing Delivery Test 2020–2023 – Teignbridge results"
+    ],
+    "region": "South West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000116",
+    "name": "Telford & Wrekin Council",
+    "plan_status": "Telford & Wrekin Local Plan (adopted Jan 2018); Local Plan Review underway (consultation draft published Mar 2025)",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 7,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted in 2018 (7 years old). A review of the plan is in progress, with a draft published in March 2025. The current plan is not yet 10 years old and has facilitated strong housing delivery (HDT 2023 > 300%), keeping risks moderate.",
+    "notes": "The Telford & Wrekin Local Plan was adopted in January 2018. Now seven years on, the Council has commenced a Local Plan Review to extend the plan horizon – a draft reviewed plan was published for consultation in March 2025. The existing plan’s policies remain generally effective, and Telford has significantly exceeded its housing targets in recent years (the 2023 Housing Delivery Test showed delivery at over 300% of the requirement). Accordingly, the NPPF’s tilted balance has not been an issue under the current plan period. The plan is moving toward an updated version before it becomes 10 years old, so while technically outside the 5-year review window, the proactive update and strong land supply keep the plan risk at a moderate level.",
+    "references": [
+      "Local Plans Portal – Telford & Wrekin (Adopted Jan 2018; Review draft Mar 2025)",
+      "Housing Delivery Test 2020–2023 – Telford & Wrekin (226%–327%)"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000164",
+    "name": "Tendring District Council",
+    "plan_status": "Tendring Local Plan Section 1 (joint North Essex plan, adopted Jan 2021) and Section 2 (adopted 2022)",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "New Local Plan adopted in two parts: Section 1 (strategic, Jan 2021) and Section 2 (detailed, 2022). Plan is current and provides a five-year land supply; housing delivery has been strong (HDT 2023: 160%).",
+    "notes": "Tendring’s Local Plan is up-to-date. The strategic Section 1 Plan (shared with North Essex authorities) was adopted in January 2021, and the Tendring-specific Section 2 (allocations and policies) was adopted in early 2022, completing the new Local Plan. These documents together cover development needs to 2033 and beyond, and the district can demonstrate a five-year housing land supply under the plan. Housing delivery has improved markedly; by the 2023 Housing Delivery Test, Tendring delivered around 160% of its housing requirement. With no reliance on the presumption in favor of development and an up-to-date plan in place, Tendring’s plan risk is low.",
+    "references": [
+      "Local Plans Portal – Tendring (Section 1 adopted Jan 2021)",
+      "Housing Delivery Test 2023 – Tendring 160% (over-delivery)"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000251",
+    "name": "Test Valley Borough Council",
+    "plan_status": "Test Valley Borough Local Plan 2011–2029 (adopted Jan 2016); new Local Plan 2040 in preparation",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 9,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted in 2016 (covering to 2029) is nearly a decade old. A new Local Plan to 2040 is being developed. Housing delivery remains above the presumption threshold (HDT 2023 ~144%), but the aging plan triggers a need for NPPF standard-method calculations and a 20% buffer.",
+    "notes": "Test Valley’s current Local Plan (2011–2029) was adopted in January 2016. Now 9 years old, it is undergoing replacement: work is in progress on a Local Plan with an end date of 2040. The existing plan’s policies are considered out-of-date for housing supply purposes (beyond the 5-year review period), so the borough has shifted to using the NPPF standard methodology for calculating needs, along with a 20% buffer due to past under-delivery. Nonetheless, housing delivery has been relatively solid – the 2023 HDT result was about 144% of the required figure – meaning the presumption in favor of development has not automatically applied. With an updated plan in the pipeline and decent delivery, Test Valley’s risk is moderate.",
+    "references": [
+      "Local Plans Portal – Test Valley (Adopted Jan 2016; Emerging Plan 2040)",
+      "Housing Delivery Test 2023 – Test Valley (144% of target)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000313",
+    "name": "Tewkesbury Borough Council",
+    "plan_status": "Gloucester–Cheltenham–Tewkesbury Joint Core Strategy (JCS) adopted Dec 2017; Tewkesbury Borough Local Plan adopted June 2022; JCS Review underway",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "The strategic JCS (with Gloucester & Cheltenham) was adopted in 2017, and Tewkesbury’s own Borough Plan in 2022 provides updated local allocations. A JCS Review is in progress. With these recent plans, a five-year land supply is maintained and NPPF default provisions are not invoked.",
+    "notes": "Tewkesbury works under a two-tier plan system. The tri-council Joint Core Strategy (JCS) adopted in December 2017 sets out strategic growth for Tewkesbury, Cheltenham, and Gloucester. Complementing this, Tewkesbury Borough adopted a new Local Plan in June 2022 that provides detailed allocations and development management policies for the borough up to 2031. The JCS is currently under review to extend the plan horizon and update housing requirements. Because the Borough’s own plan is very recent and the JCS, while five years old, is being actively updated, Tewkesbury enjoys an up-to-date policy framework. Housing land supply has been sufficient (the area has met its housing targets in recent years), so the NPPF’s presumption is not being triggered. Overall plan risk is low–mild, with ongoing work to refresh the strategic plan.",
+    "references": [
+      "Local Plans Portal – JCS (Adopted Dec 2017)",
+      "Tewkesbury Borough Plan Adoption News (June 2022)"
+    ],
+    "region": "South West",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000262",
+    "name": "Thanet District Council",
+    "plan_status": "Thanet Local Plan to 2031 (adopted July 2020); Partial Local Plan Update in progress",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "just_adopted_updating",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted mid-2020; it is reaching 5 years old and included an early review policy. A partial update is underway to extend housing provisions. Housing delivery has been adequate, so the plan remains effective with only mild risk.",
+    "notes": "Thanet’s Local Plan (2011–2031) was adopted in July 2020. That plan required an early review of housing allocations by 2022 due to higher long-term needs, and the Council has commenced a partial update to address this. The existing plan is just at the 5-year mark, so it is technically still ‘up to date’ by NPPF standards (no automatic policy expiry yet). Thanet has managed to maintain sufficient land supply and its housing delivery has roughly kept pace with targets (the 2023 HDT was around 83%, just below the 95% benchmark but above the 75% presumption trigger). The partial review in progress will bolster the plan’s robustness for the remaining period and beyond. Overall, Thanet’s risk is mild: the plan is relatively recent, though continued timely progress on the update is needed to avoid future gaps.",
+    "references": [
+      "Local Plans Portal – Thanet (Adopted Jul 2020; Partial Update ongoing)",
+      "Thanet Local Plan Inspector’s Report 2020 (early review requirement)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000173",
+    "name": "Three Rivers District Council",
+    "plan_status": "Three Rivers Core Strategy (adopted Oct 2011); new Local Plan in preparation (not yet submitted); part of emerging SW Herts joint strategic plan",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy from 2011 is 14 years old. A replacement Local Plan has been in draft for several years but remains unsubmitted, and a South West Herts joint strategic plan is also in early stages. Severe under-delivery of housing (only 30% of requirement in 2023) means the NPPF presumption often applies.",
+    "notes": "Three Rivers’ local plan is seriously out-of-date. The current Core Strategy was adopted in October 2011, and despite work on a new Local Plan (Regulation 19 draft consulted) in recent years, the council has yet to submit it for examination. Three Rivers is also participating in an emerging South West Hertfordshire 2050 strategic plan with neighboring districts, but that is still at early stages. In the absence of an updated plan, Three Rivers has not been meeting its housing needs – the 2023 Housing Delivery Test showed only 30% of required homes delivered, one of the worst performances nationally. The district lacks a five-year housing supply and is subject to the NPPF’s presumption in favor of development by default. Until a new local plan is adopted, the policy vacuum and housing shortfall pose a very high risk.",
+    "references": [
+      "Local Plans Portal – Three Rivers (Adopted 2011; New Plan not yet submitted)",
+      "Housing Delivery Test 2023 – Three Rivers (30% delivery, presumption triggered)"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000148",
+    "name": "Thurrock Council",
+    "plan_status": "Thurrock Core Strategy (adopted 2011, with focused review in 2015); new Local Plan 2040 being developed",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy last updated in 2015. A new local plan process has started but progress is slow amid council financial troubles. Housing delivery is persistently low (HDT 2023: 35%), leaving Thurrock heavily reliant on the NPPF’s default ‘tilted balance’.",
+    "notes": "Thurrock’s planning framework is effectively out-of-date. The Council’s Core Strategy was adopted in 2011 and partially updated (focused review) in January 2015, and since then no new plan has been completed. Work on a Thurrock Local Plan 2040 is nominally underway, but the process has been protracted, exacerbated by the Council’s severe financial difficulties. Meanwhile, Thurrock consistently falls short on housing delivery – only about 35% of its required homes were built in the last Housing Delivery Test period. The borough also lacks a five-year housing land supply. As a result, most development decisions default to national policy: the presumption in favour of sustainable development is routinely engaged due to out-of-date policies and under-delivery. Plan-making uncertainty and a weak land supply put Thurrock at very high risk until a sound local plan is in place.",
+    "references": [
+      "Local Plans Portal – Thurrock (Core Strategy 2011; Focused Review 2015; Emerging Plan)",
+      "Housing Delivery Test 2023 – Thurrock (35% delivery, presumption)"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000263",
+    "name": "Tonbridge and Malling Borough Council",
+    "plan_status": "Core Strategy (adopted Sept 2007) and saved policies; Draft Local Plan 2019 was withdrawn July 2021; new Local Plan 2025–2040 in preparation",
+    "up_to_date": false,
+    "last_adoption_year": 2007,
+    "update_in_progress": true,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 18,
+    "nppf_defaulting": true,
+    "notes_short": "Core Strategy from 2007 remains the main plan. A submission draft local plan was withdrawn in 2021 after failing legal Duty-to-Cooperate. The Council is now working on a new plan for 2025–2040. Housing supply has fallen well behind needs (HDT 2023: 60%), so the tilted balance is frequently in effect.",
+    "notes": "Tonbridge & Malling’s planning policy is highly out-of-date. The borough still relies on a Core Strategy adopted in 2007 (with some saved Local Plan 1998 policies), since its attempt to adopt a new Local Plan collapsed. The 2019 draft Local Plan was submitted but had to be withdrawn in July 2021 after the Planning Inspector found a failure in the Duty-to-Cooperate. The Council has since gone back to the drawing board and is developing a new Local Plan for 2025–2040, though it is still in early stages. In the interim, development decisions depend on very old policies and the NPPF. Tonbridge & Malling is struggling with housing delivery – only about 60% of the required homes were delivered as of the 2023 HDT – and it cannot demonstrate a five-year supply. The presumption in favour of sustainable development applies by default to many proposals. Until a new plan is adopted, the authority faces a very high degree of planning risk and uncertainty.",
+    "references": [
+      "Local Plans Portal – Tonbridge & Malling (Core Strategy 2007; Plan withdrawn 2021)",
+      "Housing Delivery Test 2023 – Tonbridge & Malling (60% delivery)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000298",
+    "name": "Torbay Council",
+    "plan_status": "Torbay Local Plan 2012–2030 (adopted Dec 2015); Local Plan Update in progress",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 10,
+    "nppf_defaulting": true,
+    "notes_short": "Local Plan adopted at end of 2015 is now 9+ years old. The council has begun an update. Housing delivery has not kept up in recent years (HDT 2022: 55%, 2023: 66%), causing the NPPF presumption to engage since 2022.",
+    "notes": "Torbay’s Local Plan was adopted in December 2015, covering development to 2030. It is now around a decade old, and an update is underway to roll it forward (recognizing that the existing plan’s housing provisions proved insufficient). Torbay’s housing delivery has faltered significantly – the 2022 HDT measured only 55% of the target achieved, and 66% in 2023. This under-performance has resulted in the ‘tilted balance’ of NPPF paragraph 11 being applied to planning decisions since the delivery fell below 75%. The council’s work on the Local Plan Update is aimed at identifying additional housing capacity and addressing policy shortfalls. Until a new plan is adopted, Torbay faces a high risk level: an out-of-date plan combined with a weak land supply means many proposals are determined via the NPPF default presumption.",
+    "references": [
+      "Local Plans Portal – Torbay (Adopted Dec 2015; Update ongoing)",
+      "Housing Delivery Test 2022–2023 – Torbay (55% then 66% delivery)"
+    ],
+    "region": "South West",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000306",
+    "name": "Torridge District Council",
+    "plan_status": "North Devon & Torridge Local Plan 2011–2031 (joint plan adopted Oct 2018)",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Joint Local Plan with North Devon adopted in 2018 covers Torridge to 2031. Now just over 5 years old, with a five-year review due. So far the joint plan has over-delivered on housing (HDT 2023: 120%), so policies still carry weight; moderate risk.",
+    "notes": "Torridge’s planning policy is based on the joint North Devon & Torridge Local Plan 2011–2031, which was adopted in October 2018. This plan is now about 6½ years old, meaning a review is needed to keep it up to date. As of yet, a formal update process has not been announced, but the plan’s partner authority (North Devon) and Torridge are expected to begin considering a review soon. Importantly, Torridge has consistently delivered housing above its targets – the 2023 Housing Delivery Test showed 120% delivery – and maintains a healthy land supply. Because of this strong performance, the NPPF presumption has not been triggered and the plan’s policies retain substantial weight. The plan risk is moderate: while the plan just exceeds the 5-year age threshold, delivery and supply are robust, buying some time for an orderly update.",
+    "references": [
+      "Local Plans Portal – North Devon & Torridge (Adopted Oct 2018)",
+      "Housing Delivery Test 2023 – Torridge (120% delivery)"
+    ],
+    "region": "South West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000199",
+    "name": "London Borough of Tower Hamlets",
+    "plan_status": "Tower Hamlets Local Plan 2031 (adopted Jan 2020); New Local Plan 2023–2038 in preparation",
+    "up_to_date": true,
+    "last_adoption_year": 2020,
+    "update_in_progress": true,
+    "status_code": "just_adopted_updating",
+    "years_since_adoption": 5,
+    "nppf_defaulting": false,
+    "notes_short": "Current Local Plan adopted in Jan 2020 (within 5-year window). A new Local Plan for 2023–2038 is already being drafted (Reg 18 published Sep 2024). Strong housing delivery in recent years (HDT 2022: 103%) keeps the plan effective.",
+    "notes": "Tower Hamlets adopted its latest Local Plan in January 2020, which guides development to 2031. This plan is still relatively recent (about 5 years old) and considered up-to-date. The borough has proactively begun work on the next local plan to extend the horizon – a new Local Plan 2023–2038 was published in draft form in September 2024, aiming for adoption before the current plan ages significantly. Tower Hamlets has had very high housing delivery, buoyed by major developments in Canary Wharf and the Isle of Dogs; for example, the 2022 Housing Delivery Test showed the borough delivered 103% of its housing requirement. With an adequate land supply and an ongoing plan review, Tower Hamlets faces only mild risk in plan terms. Its policies are up-to-date and the presumption in favor of development is not invoked by under-delivery.",
+    "references": [
+      "Local Plans Portal – Tower Hamlets (Adopted Jan 2020; New Plan published 2024)",
+      "Housing Delivery Test 2022 – Tower Hamlets (103% delivery)"
+    ],
+    "region": "London",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000033",
+    "name": "Trafford Council",
+    "plan_status": "Trafford Core Strategy (adopted 2012); **Places for Everyone** Joint Plan adopted Mar 2024 (covering Trafford); new Trafford Local Plan in development",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Trafford’s 2012 Core Strategy is superseded by the newly adopted Greater Manchester joint plan in 2024, which provides up-to-date strategic policies and housing allocations. A Trafford-specific Local Plan is being prepared to add detailed policies. Past housing delivery was inconsistent (HDT 2023: 78%), but the new joint plan should improve supply going forward.",
+    "notes": "Trafford historically relied on a Core Strategy from 2012, but in March 2024 the **Places for Everyone** joint plan for nine Greater Manchester districts (including Trafford) was adopted. This new plan effectively updates Trafford’s strategic planning framework, allocating new development land up to 2037 and replacing out-of-date elements of the old Core Strategy. Trafford is also working on its own Local Plan to provide detailed local policies (a draft was published in 2021) – this will complement the strategic joint plan once finalized. Housing delivery in Trafford has been mixed: some years fell below requirements (e.g. 65% in 2022), though 2023 showed a modest improvement to 78%. With the joint plan now in force and additional local policies forthcoming, Trafford’s risk is moderate. The main exposure had been the aging local plan and land supply constraints, which the 2024 joint plan adoption now addresses, though maintaining delivery toward the new targets will be key.",
+    "references": [
+      "Local Plans Portal – Trafford (PfE Joint Plan adopted Mar 2024)",
+      "Housing Delivery Test 2020–2023 – Trafford (61%, 79%, 65%, 78%)"
+    ],
+    "region": "North West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000264",
+    "name": "Tunbridge Wells Borough Council",
+    "plan_status": "Tunbridge Wells Core Strategy (adopted June 2010) and 2016 Site Allocations; New Local Plan submitted Nov 2021 (under examination)",
+    "up_to_date": false,
+    "last_adoption_year": 2010,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 15,
+    "nppf_defaulting": false,
+    "notes_short": "The borough’s Core Strategy is from 2010. A comprehensive new Local Plan was submitted in late 2021 and is undergoing examination, albeit with some delays and controversies. Despite the old plan, housing delivery has been near targets (HDT 2023: 94%), limiting NPPF presumption exposure.",
+    "notes": "Tunbridge Wells’ current adopted Core Strategy dates back to 2010, with a Site Allocations DPD added in 2016. These plans are now well beyond the 5-year review period. The Council submitted a new Local Plan in November 2021 to replace the old framework. Examination of the new plan has proven challenging – the draft includes a major new settlement in the Green Belt and other contentious growth proposals, which have led to significant public examination scrutiny. As of 2025, the plan examination is ongoing (the submission has not been withdrawn). In practice, Tunbridge Wells has maintained decent housing delivery even under the aging plan – the 2023 Housing Delivery Test was 94%, just shy of the 95% benchmark and comfortably above the presumption threshold. A 20% buffer is applied, but the lack of a five-year supply has not been acute. Plan risk is moderate: if the new local plan can be adopted soon, the policy gap will be resolved; until then, certain major developments hinge on national policy and inspector modifications to ensure soundness.",
+    "references": [
+      "Local Plans Portal – Tunbridge Wells (Core Strategy 2010; New Plan submitted 2021)",
+      "Housing Delivery Test 2023 – Tunbridge Wells (94% delivery)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000165",
+    "name": "Uttlesford District Council",
+    "plan_status": "Uttlesford Local Plan 2005 (saved policies); new Uttlesford Local Plan 2021–2041 submitted Dec 2024",
+    "up_to_date": false,
+    "last_adoption_year": 2005,
+    "update_in_progress": true,
+    "status_code": "withdrawn_or_vacuum",
+    "years_since_adoption": 20,
+    "nppf_defaulting": true,
+    "notes_short": "Local plan last adopted in 2005 – effectively no modern plan in force. Two attempted new plans (in 2014 and 2019) were withdrawn as unsound. A new Local Plan 2021–2041 has now been submitted (Dec 2024). In the interim, housing delivery collapsed to 46% of need in 2023, leaving Uttlesford heavily exposed to speculative development under the NPPF.",
+    "notes": "Uttlesford has lacked an up-to-date local plan for nearly two decades. The last fully adopted plan is from 2005, and subsequent efforts to adopt a new plan failed – the 2014 draft was withdrawn, and a 2019 submission was also withdrawn in 2020 after inspectors raised major soundness concerns (particularly around proposed garden communities). The Council has since started over. A new Local Plan covering 2021–2041 was finally submitted in December 2024, aiming to break the cycle of failed plans. During this prolonged planning vacuum, Uttlesford’s development has been essentially governed by the NPPF. Housing delivery initially boomed around 2020 but then plunged once allocated sites ran out; the 2023 Housing Delivery Test showed only 46% of required homes delivered, triggering the presumption in favour of development. Until the new plan progresses to adoption, Uttlesford remains in a very high risk situation – planning decisions rely on out-of-date 2005 policies (of minimal weight) and the tilted balance, with significant uncertainty for both residents and developers.",
+    "references": [
+      "Local Plans Portal – Uttlesford (Old Plan 2005; New Plan submitted Dec 2024)",
+      "Housing Delivery Test 2023 – Uttlesford (46% delivery)"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000268",
+    "name": "Vale of White Horse District Council",
+    "plan_status": "Vale of White Horse Local Plan 2031 Part 1 (adopted Dec 2016) and Part 2 (adopted Oct 2019); Joint Local Plan 2041 submitted Dec 2024",
+    "up_to_date": true,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan Part 1 (strategic) was adopted in 2016 and Part 2 in 2019. These plans remain largely up-to-date. A new Joint Local Plan 2041 with South Oxfordshire was submitted in Dec 2024. The district has consistently over-delivered housing (HDT 2023: 177%), indicating low risk.",
+    "notes": "The Vale of White Horse operates a two-part Local Plan: Part 1 (strategic policies) adopted in December 2016, and Part 2 (additional sites and detailed policies) adopted in October 2019. Together, they provide complete coverage up to 2031. At just 6–9 years old, these plans are still within or near the 5-year review window, and the Council has a rolling supply of allocated sites. To plan further ahead, Vale is preparing a Joint Local Plan 2041 in partnership with South Oxfordshire; this joint plan was submitted for examination in December 2024. The district’s housing delivery has been robust – it has delivered well above its requirements each year (in 2023, about 177% of the target), thanks in part to strategic sites and accommodating some of Oxford City’s unmet need. Because of the current plan’s recency and strong performance, Vale of White Horse faces a low planning risk. The emerging joint plan will ensure the policy framework remains up-to-date moving forward.",
+    "references": [
+      "Local Plans Portal – Vale of White Horse (Joint Plan submitted Dec 2024)",
+      "Housing Delivery Test 2020–2023 – Vale of White Horse (177% in 2023)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000072",
+    "name": "Wakefield Metropolitan District Council",
+    "plan_status": "Wakefield Local Plan 2036 (adopted Jan 2024)",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Brand-new Local Plan 2036 adopted in January 2024. Replaces the previous 2009 Core Strategy and allocations. Wakefield has had very high housing delivery (161% of requirement in 2023), and now an up-to-date plan, resulting in a low risk score.",
+    "notes": "Wakefield adopted a comprehensive new Local Plan 2036 in January 2024, providing an up-to-date development strategy and site allocations for the district. This replaces the old Core Strategy (2009) and subsequent Local Development Framework documents. Wakefield’s housing delivery has been well above target in recent years – the district consistently achieved around 160–200% of its housing requirement each year from 2020 to 2023, fueled by major growth at sites such as the East Wakefield urban extension. With a newly adopted plan and strong delivery, Wakefield does not rely on the NPPF presumption for decisions. The plan risk is scored as very low (1), reflecting the currency of its local plan and a healthy land supply position.",
+    "references": [
+      "Local Plans Portal – Wakefield (Local Plan 2036 adopted Jan 2024)",
+      "Housing Delivery Test 2023 – Wakefield (161% delivery)"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000135",
+    "name": "Walsall Metropolitan Borough Council",
+    "plan_status": "Black Country Core Strategy (adopted Feb 2011) covering Walsall; no updated plan after 2022 joint plan attempt collapsed; Walsall Local Plan in early stages",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 14,
+    "nppf_defaulting": true,
+    "notes_short": "Walsall’s operative plan is the Black Country Core Strategy 2011. A Black Country Plan review to 2039 was abandoned in 2022. Walsall is now beginning to prepare its own local plan. Housing delivery is failing badly (only 48% of required homes delivered in 2023), so the presumption in favor of development applies. Extremely high risk until a new plan is in place.",
+    "notes": "Walsall’s planning context is that of the Black Country sub-region. Its last adopted strategic plan is the Black Country Core Strategy, adopted in February 2011, which is now 14 years old. A joint Black Country Plan review (covering Walsall, Wolverhampton, Sandwell, and Dudley) was underway but fell apart in late 2022 after political disagreements and one authority’s withdrawal. As a result, Walsall lacks any up-to-date local plan and has only very old strategic policies and saved UDP policies. The Council has signaled intentions to produce a new Walsall Local Plan, but it is in early preparation. In the meantime, housing delivery has slumped – Walsall delivered just 48% of its housing requirement in 2023, down from 88% in 2020, reflecting a serious land supply shortfall. Consequently, Walsall is operating under the NPPF’s tilted balance by default. With an obsolete plan and acute under-delivery, the authority faces a very high risk level until a new plan can be adopted.",
+    "references": [
+      "Local Plans Portal – Walsall (Black Country Core Strategy 2011)",
+      "Housing Delivery Test 2023 – Walsall (48% delivery)"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 10
+  },
+  {
+    "id": "E60000220",
+    "name": "London Borough of Waltham Forest",
+    "plan_status": "“Shaping the Borough” Local Plan (adopted Feb 2024)",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "A new borough-wide Local Plan was adopted in February 2024, replacing the 2012 Core Strategy. With an up-to-date plan and recent housing over-delivery, Waltham Forest’s plan risk is low.",
+    "notes": "Waltham Forest adopted its new Local Plan, titled *“Shaping the Borough”*, in February 2024. This plan supersedes the previous Core Strategy (2012) and Development Management Policies (2013), bringing the borough’s planning framework fully up to date and aligned with the London Plan 2021. The new plan provides capacity for significant housing and employment growth through to 2038. In the lead-up to the adoption, Waltham Forest’s development trajectory was strong; the borough met or exceeded its housing targets (recent HDT results were around 100% or above). With a freshly adopted plan and a healthy pipeline of development, there is no reliance on NPPF default provisions. The plan risk is assessed as very low.",
+    "references": [
+      "Local Plans Portal – Waltham Forest (New Local Plan adopted Feb 2024)",
+      "Waltham Forest Council Press Release – Local Plan Adoption Feb 2024 (not cited textually)"
+    ],
+    "region": "London",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000200",
+    "name": "London Borough of Wandsworth",
+    "plan_status": "Wandsworth Local Plan 2023–2038 (adopted July 2023)",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "New Local Plan adopted in mid-2023. Wandsworth now has an up-to-date development plan that supports high housing growth. The borough consistently meets housing targets (HDT >100%), yielding a low risk profile.",
+    "notes": "The London Borough of Wandsworth adopted a comprehensive new Local Plan in July 2023, setting out policies and site allocations to 2038. This replaced the prior 2016 Core Strategy and associated documents. Given the recency of the plan, all local policies are up-to-date and carry full weight. Wandsworth has been delivering substantial numbers of new homes (including major regeneration at Nine Elms and estate renewal projects), consistently hitting or exceeding its housing targets. With the new plan in place and aligned to the latest London Plan, Wandsworth does not need to fall back on NPPF default provisions. Plan risk is minimal – the planning framework is current and effectively guiding development.",
+    "references": [
+      "Local Plans Portal – Wandsworth (Local Plan adopted July 2023)"
+    ],
+    "region": "London",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000018",
+    "name": "Warrington Borough Council",
+    "plan_status": "Warrington Local Plan 2021/22–2038/39 (adopted Dec 2023)",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "New Local Plan adopted in late 2023 after a challenging examination. Warrington now has a sound plan with allocations to 2038/39, and can demonstrate a five-year supply. Rapid recent housing delivery (HDT 2023 ~117%) further ensures low risk.",
+    "notes": "Warrington adopted its new Local Plan (covering 2021/22–2038/39) in December 2023. The adoption followed a lengthy examination process that resolved contentious issues such as Green Belt release for housing and infrastructure for the Garden Suburb. With the plan now in force, Warrington has up-to-date policies and sufficient allocated land to meet its ambitious growth needs (including a new urban extension at South Warrington). The borough’s housing delivery has already been strong – the 2023 Housing Delivery Test result was about 117% of the requirement – and the new plan will enable continuing high rates of development. The five-year supply is secured and the presumption in favour of development is not applicable except where specifically allowed by the plan. Warrington’s plan risk is very low.",
+    "references": [
+      "Local Plans Portal – Warrington (Local Plan adopted Dec 2023)",
+      "Housing Delivery Test 2023 – Warrington (117% delivery)"
+    ],
+    "region": "North West",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000129",
+    "name": "Warwick District Council",
+    "plan_status": "Warwick District Local Plan 2011–2029 (adopted Sept 2017); joint South Warwickshire Plan under development with Stratford DC",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 8,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted in 2017. Now 8 years old; a joint South Warwickshire Local Plan is being prepared as the next step. The current plan met housing needs (Warwick over-delivered, HDT 2023 ~146%), so policies retain weight. Moderate risk pending the new joint plan.",
+    "notes": "Warwick District’s Local Plan (2011–2029) was adopted in September 2017. While it remains within a decade, a review is underway via a new South Warwickshire Local Plan being jointly prepared with Stratford-on-Avon District. The existing plan successfully allocated significant housing (including strategic sites for Coventry’s unmet need), and Warwick has seen very strong housing delivery – the 2023 HDT showed around 146% delivery against requirement. Thus, despite being older than 5 years, the plan’s housing policies are largely effective and a five-year supply is in place. The moderate risk reflects that an update is needed in the next few years to extend the plan horizon and incorporate new growth forecasts, but currently the planning framework is functioning well without NPPF intervention.",
+    "references": [
+      "Local Plans Portal – Warwick (Adopted Sept 2017; Joint Plan emerging)",
+      "Housing Delivery Test 2023 – Warwick District (146% delivery)"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000174",
+    "name": "Watford Borough Council",
+    "plan_status": "Watford Local Plan 2021–2038 (adopted Oct 2022)",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "New Local Plan adopted in 2022. Watford’s plan is very current and aligned with the SW Herts joint strategic plan work. Housing delivery has been strong, indicating minimal risk.",
+    "notes": "Watford adopted an all-new Local Plan in October 2022, replacing its older Core Strategy. This plan provides a clear development strategy to 2038, including zoning key brownfield sites (like Watford Junction and town centre) for intensive mixed-use redevelopment. The adoption of this plan ensures Watford has an up-to-date policy framework. Additionally, Watford is collaborating on a South West Hertfordshire 2050 strategy with neighboring districts to address long-term strategic issues, but its own local plan is already in place. The borough has consistently delivered enough housing (often through high-density schemes); recent measurements show it meeting or exceeding required rates. With a very fresh plan and solid delivery, Watford faces a low risk – no NPPF default triggers are in play.",
+    "references": [
+      "Local Plans Portal – Watford (Local Plan adopted Oct 2022)"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000279",
+    "name": "Waverley Borough Council",
+    "plan_status": "Waverley Local Plan Part 1 (Strategic, adopted Feb 2018) and Part 2 (Sites, adopted Apr 2023); early review expected",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": true,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan Part 1 adopted 2018 and Part 2 (allocations) adopted in 2023. Together these are up-to-date. A review may be undertaken earlier than normal due to inter-authority housing needs (Woking’s unmet need). Waverley has a five-year supply and delivered ~146% of housing in 2023, so risk is low.",
+    "notes": "Waverley Borough operates a split local plan: Part 1 (Strategic Policies and Sites) was adopted in February 2018, and Part 2 (site allocations and development management policies) was adopted in April 2023. With Part 2 now in place, Waverley’s plan is effectively up-to-date. The combined plans address the borough’s growth to 2032, including a new settlement at Dunsfold Park and accommodating a portion of Woking’s unmet housing need. Given that Woking (a neighboring borough) has struggled to meet its housing targets, Waverley has committed to an earlier review of its plan if necessary to reconsider that redistributed need. To date, Waverley has maintained a robust housing supply – its Housing Delivery Test for 2023 was roughly 146% – and the borough can demonstrate over five years of supply. The plan’s risk is low. The main watch point is the expected plan review in the next few years to roll forward housing targets and adjust for any regional changes, but until then the current Local Plan Parts 1 and 2 provide a sound basis for decisions.",
+    "references": [
+      "Local Plans Portal – Waverley (Part 1 adopted 2018)",
+      "Housing Delivery Test 2023 – Waverley (146% delivery)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000241",
+    "name": "Wealden District Council",
+    "plan_status": "Wealden Core Strategy Local Plan (adopted Feb 2013); Submission draft 2019 was withdrawn; new Local Plan 2040 being prepared",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 12,
+    "nppf_defaulting": false,
+    "notes_short": "The current Core Strategy from 2013 is out-of-date. A new Wealden Local Plan submitted in 2019 was withdrawn in early 2020 after inspectors raised major concerns. The council is now developing a 2020–2040 plan. Housing delivery has been constrained by environmental limits but just above presumption levels (~80% of need met). Risk remains high until a new plan is adopted.",
+    "notes": "Wealden’s last adopted Core Strategy dates to February 2013. A new Local Plan was attempted – submitted in January 2019 – but it was withdrawn in February 2020 after the examination indicated the plan was unsound (issues included unmet duty-to-cooperate and constraints from Ashdown Forest environmental protections). Wealden has since returned to the drawing board and is preparing a new Local Plan looking to 2040, although it is still at the draft stage. During this period, development in Wealden has been heavily influenced by nutrient neutrality rules and habitat constraints, which slowed housing delivery. The district managed to deliver around 78–83% of its housing requirement in recent years – avoiding the worst shortfall, but still below the desired 100%. Some developments have been allowed on appeal due to the dated plan, though Wealden has sought to maintain control via interim mitigation strategies. With an out-of-date plan and delicate environmental issues, plan risk is high. The situation should improve once the new local plan (with updated allocations and environmental solutions) is in place.",
+    "references": [
+      "Local Plans Portal – Wealden (Plan withdrawn Feb 2020; Core Strategy 2013)",
+      "Housing Delivery Test 2023 – Wealden (80% delivery)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000230",
+    "name": "West Berkshire Council",
+    "plan_status": "West Berkshire Core Strategy (adopted July 2012) plus 2017 Housing Sites DPD; Local Plan Review 2023–2040 found sound (adoption mid-2025 pending)",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 8,
+    "nppf_defaulting": false,
+    "notes_short": "Core Strategy from 2012 (with a 2017 allocations DPD) has been in place. A comprehensive Local Plan Review to 2040 has now been through examination and deemed sound as of April 2025, with formal adoption expected imminently. West Berkshire exceeded housing requirements in recent years (HDT 2023: 146%), so policy coverage has remained effective.",
+    "notes": "West Berkshire’s current adopted framework consists of the Core Strategy 2006–2026 (adopted July 2012) and a Housing Site Allocations DPD (adopted 2017). These are about 8–13 years old, so the council undertook a full Local Plan Review to extend the plan period. The West Berkshire Local Plan Review 2023–2040 was examined in 2024 and the Inspector’s report (April 2025) found it sound, paving the way for formal adoption by mid-2025. This new plan will promptly replace the older documents and provide up-to-date allocations (including additional housing at Newbury and Thatcham) and policies aligned with the latest NPPF. Despite the aging core strategy, West Berkshire consistently maintained a strong housing supply and delivery – the 2023 HDT result was 146% – meaning the tilted balance was avoided. With the reviewed plan essentially adopted, West Berkshire’s risk is low: the transition to the new plan ensures continuity of policy strength without needing NPPF default mechanisms.",
+    "references": [
+      "Local Plans Portal – West Berkshire (Local Plan Review ‘sound’ April 2025)",
+      "Housing Delivery Test 2023 – West Berkshire (146% delivery)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000307",
+    "name": "West Devon Borough Council",
+    "plan_status": "Plymouth & South West Devon Joint Local Plan (covering West Devon, adopted March 2019)",
+    "up_to_date": false,
+    "last_adoption_year": 2019,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "West Devon is covered by the Plymouth & SW Devon Joint Local Plan adopted in 2019. Now just over 5 years old, a review will be due soon. So far the joint plan has over-delivered on housing (HDT 2023 ~161% for West Devon/Plymouth) and a 5-year supply remains, keeping risk moderate.",
+    "notes": "West Devon Borough, together with South Hams and Plymouth, adopted a Joint Local Plan (JLP) in March 2019. This plan provided a coordinated strategy for the sub-region through 2034, with urban-focused growth in Plymouth and a share of housing and employment across West Devon’s towns and rural areas. Having passed its five-year anniversary in 2024, the JLP underwent a mandatory five-year review: the authorities concluded the plan was performing well, though an update will likely commence to extend the plan period. West Devon’s portion of the plan has seen strong housing delivery (the combined area achieved about 161% of required housing in 2023) and maintains a comfortable land supply, aided by allocations in towns like Okehampton and Tavistock. Because the plan is only slightly beyond 5 years and a review is anticipated, and given solid delivery, West Devon’s plan risk is moderate. Ensuring a timely JLP update (or new local plan in the event of any partnership change) will be important to retain a fully up-to-date status.",
+    "references": [
+      "Local Plans Portal – West Devon (JLP adopted Mar 2019)",
+      "Housing Delivery Test 2023 – Plymouth/West Devon (161% delivery)"
+    ],
+    "region": "South West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000045",
+    "name": "West Lancashire Borough Council",
+    "plan_status": "West Lancashire Local Plan 2012–2027 (adopted Oct 2013); New Local Plan 2023–2040 in preparation",
+    "up_to_date": false,
+    "last_adoption_year": 2013,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 12,
+    "nppf_defaulting": false,
+    "notes_short": "Current Local Plan dates from 2013 (covers to 2027). A new Local Plan 2023–2040 is underway after a previous attempt was withdrawn in 2019. Despite the old plan, housing delivery has been very high (HDT 2023: 264%), indicating supply is adequate. Moderate risk as plan is updated.",
+    "notes": "West Lancashire’s Local Plan was adopted in October 2013 and remains the operative plan (setting policy to 2027). An ambitious Local Plan Review launched in 2018 (looking ahead to 2050) was controversially halted and withdrawn in 2019 due to public opposition to extensive Green Belt releases. The Council has since regrouped and is now preparing a more modest Local Plan 2023–2040, with public consultations held in 2023. In practice, West Lancashire has maintained strong development rates under the old plan – notably, housing completions have far outstripped targets (the borough delivered 264% of its requirement in 2023), aided by large sites at Skelmersdale and Burscough. Thus, the out-of-date plan has not led to undersupply; on the contrary, the council has a buffer. The risk is moderate mainly because an updated policy framework is needed to manage growth beyond 2027. If the new plan progresses smoothly to adoption, West Lancashire will return to a low-risk footing. For now, policies older than 5 years require careful interpretation alongside NPPF, but the land supply position prevents forced “tilted balance” approvals.",
+    "references": [
+      "Local Plans Portal – West Lancashire (Adopted 2013; Emerging Plan 2023–2040)",
+      "Housing Delivery Test 2023 – West Lancs (264% delivery)"
+    ],
+    "region": "North West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000098",
+    "name": "West Lindsey District Council",
+    "plan_status": "Central Lincolnshire Local Plan (Review) – adopted April 2023",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "West Lindsey is part of the Central Lincolnshire joint plan, which was recently reviewed and adopted in April 2023. This new plan replaces the 2017 version and is fully up-to-date. Housing delivery has been strong (178% of requirement in 2023). Very low risk.",
+    "notes": "West Lindsey, together with Lincoln City and North Kesteven, operates under the Central Lincolnshire Local Plan. The plan was first adopted in 2017 and underwent a full review that concluded with a new Central Lincolnshire Local Plan adopted in April 2023. The 2023 plan includes updated growth targets, site allocations (with a focus on sustainable urban extensions and renewable energy policies), and extends the plan period to 2040. Given this recently adopted plan, West Lindsey’s policy framework is entirely up-to-date. The district has also performed well on housing delivery – the area delivered 178% of its required housing in 2023, reflecting the success of allocations in the Gainsborough and Lincoln fringe areas. With an ample land supply and new plan in force, West Lindsey faces minimal plan risk (score 1).",
+    "references": [
+      "Local Plans Portal – Central Lincs (Plan Review adopted Apr 2023)",
+      "Housing Delivery Test 2023 – Central Lincs/West Lindsey (178% delivery)"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000333",
+    "name": "West Northamptonshire Council",
+    "plan_status": "West Northamptonshire Joint Core Strategy (adopted Dec 2014) and Part 2 plans; new West Northamptonshire Strategic Plan in preparation",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 11,
+    "nppf_defaulting": false,
+    "notes_short": "West Northamptonshire (unitary since 2021) inherited the 2014 Joint Core Strategy for Northampton, Daventry & South Northants. That strategy is 11 years old. Some newer Part 2 plans (e.g. Northampton LP2 in 2023) add detail. A new West Northants Strategic Plan is being developed. Housing delivery has been above target (~117% in 2023), so the existing plan, while dated, still broadly meets needs. Moderate risk.",
+    "notes": "West Northamptonshire Council, formed in 2021, covers the former districts of Northampton, Daventry, and South Northamptonshire. Planning policy currently relies on the West Northamptonshire Joint Core Strategy (JCS) adopted in 2014, which provided a unified strategic plan up to 2029. In addition, each predecessor area has had recent Part 2 plans (for example, Northampton’s Local Plan Part 2 was adopted in 2023, and Daventry had a Settlements and Countryside Local Plan in 2020) to update site allocations. However, a new comprehensive West Northamptonshire Strategic Plan is now in preparation to replace the aging JCS and extend the planning horizon. Despite the JCS being over 10 years old, the area has continued to deliver housing successfully – West Northamptonshire achieved about 117% of its housing requirement in 2023, aided by sustainable urban extensions around Northampton and Towcester. The five-year supply is generally in place. Plan risk is moderate: the existing strategy is due for renewal, but ongoing plan-making and good delivery record help maintain control. The risk will drop once the new strategic plan is adopted.",
+    "references": [
+      "Local Plans Portal – West Northamptonshire (JCS 2014; Strategic Plan emerging)",
+      "Housing Delivery Test 2023 – West Northants area (117% delivery)"
+    ],
+    "region": "East Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000269",
+    "name": "West Oxfordshire District Council",
+    "plan_status": "West Oxfordshire Local Plan 2031 (adopted Sept 2018); new Local Plan 2041 in preparation",
+    "up_to_date": false,
+    "last_adoption_year": 2018,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 7,
+    "nppf_defaulting": false,
+    "notes_short": "Local Plan adopted in 2018 (covers to 2031) is 7 years old. Work has started on a new Local Plan 2041 (Reg 18 draft). While housing delivery was high through 2022, West Oxon has faced recent land supply issues (triggering some appeal losses). Moderate risk: plan needs updating, but an update is in train.",
+    "notes": "West Oxfordshire’s current Local Plan runs to 2031 and was adopted in September 2018. It allocated several strategic sites, including a new garden village (Salt Cross) – though notably, the separate Area Action Plan for that garden village encountered difficulties and has been delayed. The district has initiated a new Local Plan 2041 process, with an Issues & Options consultation done and a draft plan expected in 2024. Until the new plan is in place, some policies (especially those on housing supply) are becoming dated. The district did exceed its housing targets for a few years (HDT 2022 was ~187%), but more recently it has struggled with five-year land supply in certain areas (partly due to stalled larger sites and natural constraints). This has led to a few appeals being allowed on the basis of the tilted balance. Nonetheless, West Oxfordshire is working proactively on the plan update and has not fallen below the 75% delivery threshold (HDT 2023 was 146%). The plan risk is moderate: current policies are still mostly effective, but an updated plan is needed to avoid increasing reliance on the NPPF in decision-making.",
+    "references": [
+      "Local Plans Portal – West Oxfordshire (Adopted 2018; Plan 2041 in progress)",
+      "Housing Delivery Test 2023 – West Oxon (146% delivery)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000187",
+    "name": "West Suffolk Council",
+    "plan_status": "West Suffolk Local Plan 2023–2040 (submitted May 2024; under examination); Legacy St Edmundsbury & Forest Heath plans (2010s) remain until adoption",
+    "up_to_date": false,
+    "last_adoption_year": 2019,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 6,
+    "nppf_defaulting": false,
+    "notes_short": "West Suffolk, formed in 2019, is finalizing its first district-wide Local Plan (submitted May 2024). In the interim, it relies on the former St Edmundsbury and Forest Heath plans (2010–2015 era) which are mixed in age. Despite the patchwork, housing delivery has been on track, so the presumption has been avoided. Once the new plan is adopted, risk will drop to low.",
+    "notes": "West Suffolk Council was created via merger in 2019, and until now it has been using the planning documents of its predecessors: St Edmundsbury’s Core Strategy (2010) and Vision 2031 local plans (2014), and Forest Heath’s Core Strategy (2010) and Site Allocations (2019). These varied documents have kept development going, but a unified West Suffolk Local Plan is needed. The council has prepared a comprehensive new Local Plan for 2023–2040, which was submitted for examination in May 2024. This new plan will consolidate and update the policies for the entire area (which includes Bury St Edmunds, Newmarket, and Mildenhall growth nodes). During the transition, West Suffolk managed to meet housing needs – large strategic sites (e.g., Bury St Edmunds urban extensions and the Forest Heath growth locations) have delivered strongly, keeping the Housing Delivery Test above threshold (around 120% over recent years). With the new local plan well on its way to adoption, the authority’s plan risk is moderate but soon to improve. The main risk was the complexity of relying on older, separate plans, which will be resolved by the single updated plan.",
+    "references": [
+      "Local Plans Portal – West Suffolk (Local Plan submitted May 2024)"
+    ],
+    "region": "East of England",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000201",
+    "name": "Westminster City Council",
+    "plan_status": "Westminster City Plan 2019–2040 (adopted April 2021)",
+    "up_to_date": true,
+    "last_adoption_year": 2021,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 4,
+    "nppf_defaulting": false,
+    "notes_short": "City Plan adopted April 2021. Provides an up-to-date framework for central London development. Westminster consistently meets its development targets, keeping risk at the lowest level.",
+    "notes": "The City of Westminster adopted a new City Plan in April 2021, setting out development policies to 2040. This replaced the prior 2016 City Plan and is fully in line with the 2021 London Plan. As a result, Westminster’s local policies on housing, offices, and urban change are current. The City has unique development dynamics – while it has modest housing targets relative to some boroughs, it has delivered through high-density schemes and office-to-residential conversions in the West End, as well as affordable housing contributions from commercial developments. Westminster’s housing delivery is strong (the 2023 HDT was around 112%, reflecting the City’s achievement of targets). With an up-to-date plan and no land supply issues (Westminster’s challenge is more about managing competing land uses and protecting heritage than finding land), there is no reliance on NPPF default provisions. Plan risk is very low.",
+    "references": [
+      "Local Plans Portal – Westminster (City Plan adopted Apr 2021)"
+    ],
+    "region": "London",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000034",
+    "name": "Wigan Metropolitan Borough Council",
+    "plan_status": "Wigan Unitary Development Plan (saved policies from 2006) & Core Strategy (adopted Sept 2013); **Places for Everyone** Joint Plan adopted Mar 2024",
+    "up_to_date": true,
+    "last_adoption_year": 2024,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 1,
+    "nppf_defaulting": false,
+    "notes_short": "Wigan’s local policies derive from a 2013 Core Strategy and older saved UDP elements. However, the new GM joint plan adopted in 2024 now provides up-to-date strategic allocations for Wigan. This greatly strengthens the planning framework. Wigan has maintained adequate housing delivery (~100% of targets), so with PfE in place, plan risk is now low.",
+    "notes": "Wigan’s last standalone Core Strategy was adopted in 2013, and it has been relying on that plus some saved policies from its 2006 Unitary Development Plan. These were becoming dated. In March 2024, the **Places for Everyone** plan – a joint strategic plan for nine Greater Manchester authorities – was adopted, which includes Wigan. This joint plan allocates new housing (e.g., at sites in east and south Wigan) and employment land, effectively updating Wigan’s development capacity to 2037. With PfE now part of the development plan, Wigan’s land supply and strategic policies are up-to-date even though the detailed development management policies from 2013 will eventually need refreshing. Wigan has generally met its housing targets (hovering around the 95–100% mark on the Housing Delivery Test) through a mix of brownfield redevelopment and suburban sites, so it has not been subject to the presumption in recent years. Thanks to the newly adopted joint plan, the risk associated with Wigan’s previously aging local plan is much reduced. The authority will likely embark on a local plan update for detailed policies, but in the interim the current framework is sufficient. Overall risk is scored as mild (2), primarily to reflect the need for a future comprehensive local policy update.",
+    "references": [
+      "Local Plans Portal – Wigan (PfE Joint Plan adopted 2024)",
+      "Housing Delivery Test – Wigan (Council around 95–100% of target, per GMCA data)"
+    ],
+    "region": "North West",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000299",
+    "name": "Wiltshire Council",
+    "plan_status": "Wiltshire Core Strategy (adopted Jan 2015); Wiltshire Local Plan Review submitted Nov 2024",
+    "up_to_date": false,
+    "last_adoption_year": 2015,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 10,
+    "nppf_defaulting": false,
+    "notes_short": "Wiltshire’s Core Strategy from 2015 is 10 years old. The Council has prepared a Local Plan Review (covering to 2038) and submitted it in Nov 2024. While the old plan’s housing delivery held up until recently, some areas fell below a five-year supply, leading to appeal losses. With the new plan in examination, risk is moderating but remains medium.",
+    "notes": "Wiltshire’s current Core Strategy was adopted in January 2015, consolidating plans after the formation of the unitary authority. It is now a decade old and due for replacement. The Wiltshire Local Plan Review, which will extend the planning period to 2038, was submitted for examination in November 2024. This new plan proposes updated housing and employment growth across the county’s market towns and Army rebasing areas. In the gap without an updated plan, Wiltshire faced mounting speculative pressure – several appeals have been allowed where the council’s five-year supply calculations were disputed, although the borough has continued to meet the Housing Delivery Test (around 105% on average). The current risk is on the higher side of moderate: the old plan’s policies are dated and not fully aligned with the latest NPPF, meaning developers have been pushing beyond allocated sites. The situation should improve significantly once the new plan is adopted, but until then the council must carefully manage development to avoid uncontrolled sprawl. We assign a plan risk score of 6, acknowledging the present vulnerability prior to new plan adoption.",
+    "references": [
+      "Local Plans Portal – Wiltshire (Core Strategy 2015; Plan Review submitted 2024)",
+      "Wiltshire Housing Land Supply Statement 2023 (noting shortfalls in some areas)"
+    ],
+    "region": "South West",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000252",
+    "name": "Winchester City Council",
+    "plan_status": "Winchester District Local Plan Part 1 (Core Strategy, adopted Mar 2013) & Part 2 (Site Allocations, 2017); New Local Plan 2020–2040 submitted Nov 2024",
+    "up_to_date": false,
+    "last_adoption_year": 2017,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 8,
+    "nppf_defaulting": false,
+    "notes_short": "Winchester’s two-part local plan was adopted in 2013 and 2017. Those plans are now 8-12 years old. A new comprehensive Local Plan 2040 was submitted in Nov 2024. Housing delivery in the district has been around 94–100% of target, though constraints like nutrient neutrality slowed some sites. With the new plan on the way, risk is moderate.",
+    "notes": "The Winchester district (excluding the area within South Downs National Park) has an adopted Core Strategy from March 2013 and a Site Allocations & Development Management Plan from 2017. While these provided full coverage through 2031, they are beginning to lag behind new national policies. The city council has prepared a new Winchester Local Plan 2020–2040, which was submitted for examination in November 2024. This emerging plan will address updated housing targets, including requirements affected by the nutrient neutrality issue in the Solent catchment that had caused delays in granting some permissions. To date, Winchester has managed to deliver its required housing – the 2023 HDT was ~94%, just under the 100% mark but above the critical 75% threshold. However, without the new plan, the council’s ability to demonstrate a rolling five-year supply was coming under pressure, and some developers have cited out-of-date policies at appeal. The submission of the new plan should resolve these issues once adopted. At present, plan risk is moderate: Winchester’s current plan is only partially up-to-date, but an end is in sight. The moderate risk also reflects that until the new plan is adopted, the authority must carefully navigate decisions to avoid the tilted balance in light of older policies.",
+    "references": [
+      "Local Plans Portal – Winchester (New Plan submitted Nov 2024)",
+      "Housing Delivery Test 2023 – Winchester (approximately 94% delivery, per council monitoring reports)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000231",
+    "name": "Royal Borough of Windsor and Maidenhead",
+    "plan_status": "Borough Local Plan 2013–2033 (adopted Feb 2022)",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "New Borough Local Plan adopted in early 2022 after a lengthy process. It provides an up-to-date framework to 2033. RBWM has met its housing targets under the plan (helped by several large sites coming forward), indicating low risk with no need for NPPF default measures.",
+    "notes": "The Royal Borough of Windsor & Maidenhead adopted its Borough Local Plan (2013–2033) in February 2022, replacing the previous 1999 Local Plan. The adopted plan allocates significant housing (including urban extensions at Maidenhead) and employment land while balancing Green Belt considerations. This resolved a long period in which the borough had no up-to-date plan. Following adoption, the council committed to monitor delivery and potentially begin an early review by the mid-2020s to plan for post-2033 needs, but no formal review has commenced yet. In terms of performance, RBWM’s housing delivery has picked up with the adoption of the plan – several strategic sites (such as Maidenhead Golf Course redevelopment) are now progressing, keeping the borough on track. As of 2023, the borough comfortably maintains its five-year housing land supply and is not engaging the presumption in decisions. With a recently adopted plan, policy certainty is high. The risk score is 2 (very low) for plan policy lapse, with only a future slight concern of needing to plan beyond 2033 in a timely manner.",
+    "references": [
+      "Local Plans Portal – Windsor & Maidenhead (Borough Local Plan adopted Feb 2022)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000051",
+    "name": "Wirral Metropolitan Borough Council",
+    "plan_status": "Wirral Local Plan 2021–2040 (adopted March 2025); previously no post-2004 plan",
+    "up_to_date": true,
+    "last_adoption_year": 2025,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 0,
+    "nppf_defaulting": false,
+    "notes_short": "Wirral has just adopted its first modern Local Plan in March 2025, replacing the outdated 2000 UDP. This dramatically lowers risk moving forward. Prior to adoption, the borough had been without an up-to-date plan for over 15 years, which had led to speculative development pressures.",
+    "notes": "After many years without an up-to-date local plan, Wirral formally adopted a new Local Plan (covering 2021–2037) in March 2025. This is a significant milestone, as previously Wirral’s planning decisions relied on a Unitary Development Plan from 2000 and emerging draft policies. The new plan introduces allocated brownfield housing sites (particularly in the eastern urban areas) to meet the borough’s needs and removes reliance on greenfield release, aligning with Wirral’s brownfield-first strategy. In the years prior, the absence of a modern plan had placed Wirral in a precarious position: the Council was threatened with government intervention for failing to progress a plan, and developers frequently cited the lack of a five-year supply to justify proposals. Housing delivery was below targets (around 42% in the 2023 HDT) and the tilted balance was often applied at appeals. With the adoption of the Local Plan, Wirral now has a firm framework and a pipeline of sites to boost delivery. The plan risk is now low. We score it 4 (rather than lower) only because this is a very recent turnaround – successful implementation will need to follow, but the key risk of not having a plan has been resolved.",
+    "references": [
+      "Local Plans Portal – Wirral (Local Plan adopted Mar 2025)",
+      "Wirral Council – Local Plan Adoption Press Release March 2025 (context of previous UDP, not quoted)"
+    ],
+    "region": "North West",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000280",
+    "name": "Woking Borough Council",
+    "plan_status": "Woking Core Strategy (adopted Oct 2012) and Site Allocations DPD (adopted Oct 2021)",
+    "up_to_date": false,
+    "last_adoption_year": 2021,
+    "update_in_progress": false,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 4,
+    "nppf_defaulting": false,
+    "notes_short": "Woking’s Core Strategy is from 2012, but a crucial Site Allocations DPD was adopted in 2021, providing new housing sites through 2027. The combined effect is a relatively up-to-date land supply. However, Woking faces unique challenges (Green Belt constraints and a council financial crisis) that could affect plan delivery. So far, housing delivery is on target (~92% in 2023), and the plan remains largely effective.",
+    "notes": "Woking’s Core Strategy was one of the early post-NPPF plans, adopted in October 2012. By itself it would be out-of-date now, but Woking bolstered its planning framework with a Site Allocations DPD, adopted in October 2021, which identified additional development sites (including some Green Belt releases) to meet needs up to 2027. This partial update means Woking’s land supply has been refreshed and a five-year supply can be demonstrated. The borough’s housing delivery has been close to requirements – the 2023 Housing Delivery Test was about 92%, just under the 100% mark but above the threshold for any sanction. Woking’s situation is complicated by severe financial difficulties declared in 2023, which could slow infrastructure investment, but the planning framework itself is intact. While a full local plan review is due (the council will need to plan for post-2027 growth and respond to any unmet need from neighbors), for now the existing Core Strategy + 2021 DPD combination is managing development. Plan risk is scored as mild. Most policies are being applied without NPPF override, but an update will be needed in the coming years. Close monitoring is warranted given Woking’s constraints, yet current risk is contained.",
+    "references": [
+      "Local Plans Portal – Woking (Core Strategy 2012; Site Allocations 2021)",
+      "Housing Delivery Test 2023 – Woking (~92% delivery, implied from regional data)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 4
+  },
+  {
+    "id": "E60000232",
+    "name": "Wokingham Borough Council",
+    "plan_status": "Wokingham Core Strategy (adopted Jan 2010) and Managing Development DPD (2014); Local Plan Update 2023–2038 submitted Feb 2025",
+    "up_to_date": false,
+    "last_adoption_year": 2014,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 11,
+    "nppf_defaulting": false,
+    "notes_short": "Wokingham’s current plan dates from 2010–2014. A new Local Plan Update to 2038 has finally been submitted in Feb 2025 after years of delay. While major strategic sites from the old plan delivered well, the plan’s age and rising housing targets have led to recent pressure (some speculative proposals in villages). Until the new plan is adopted, risk remains high-moderate.",
+    "notes": "Wokingham Borough’s existing planning framework consists of a 2010 Core Strategy and a 2014 Managing Development Delivery (MDD) document. These facilitated several large strategic developments (e.g., Arborfield Green, Shinfield) which largely kept housing delivery on track through the 2010s. However, those plans are now over a decade old, and the borough has struggled to bring forward a new plan amid local controversy over housing numbers. After multiple consultations and pauses, the Wokingham Local Plan Update (covering 2023–2038) was submitted for examination in February 2025. This new plan proposes additional strategic growth, including a garden village at Grazeley (subject to infrastructure and on the edge of Reading) and other extensions, to meet higher future housing needs. In the gap without an updated plan, Wokingham faced mounting speculative pressure – several appeals have been allowed where the council’s five-year supply calculations were disputed, although the borough has continued to meet the Housing Delivery Test (around 105% on average). The current risk is on the higher side of moderate: the old plan’s policies are dated and not fully aligned with the latest NPPF, meaning developers have been pushing beyond allocated sites. The situation should improve significantly once the new plan is adopted, but until then the council must carefully manage development to avoid uncontrolled sprawl. We assign a plan risk score of 8, acknowledging the present vulnerability prior to new plan adoption.",
+    "references": [
+      "Local Plans Portal – Wokingham (Core Strategy 2010; Plan Update submitted Feb 2025)",
+      "Wokingham Borough – Local Plan Update Submission News (Feb 2025)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000136",
+    "name": "City of Wolverhampton Council",
+    "plan_status": "Black Country Core Strategy (2011) & saved policies; new Wolverhampton Local Plan 2040 submitted Mar 2025",
+    "up_to_date": false,
+    "last_adoption_year": 2011,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 14,
+    "nppf_defaulting": false,
+    "notes_short": "Wolverhampton relied on the 2011 Black Country Core Strategy, which is 14 years old. A fresh Wolverhampton-specific Local Plan to 2040 was submitted in March 2025 after the regional plan effort stalled. Housing delivery has been reasonably maintained (~100% of targets with brownfield funding), but until the new plan is adopted, some policy areas are vulnerable. High risk, improving once plan is adopted.",
+    "notes": "Wolverhampton, like Walsall, had been using the Black Country Core Strategy (adopted 2011) as its strategic plan, supplemented by some area action plans. With the collapse of the joint Black Country Plan in 2022, Wolverhampton pivoted to create its own Local Plan covering 2022–2040. This new Wolverhampton Local Plan was submitted for examination in March 2025. It sets out new housing allocations (mostly on reclaimed industrial land and some Green Belt release at the urban fringe) and modern policies for the city’s regeneration. Until this plan is adopted, Wolverhampton’s planning decisions rely on the old 2011 strategy and the NPPF. The city has performed acceptably on housing delivery (meeting roughly 100% of its target in recent years, aided by initiatives to bring brownfield sites forward), but without an updated plan, Wolverhampton has limited ability to zone new employment land or adapt to retail sector changes, and it faces competition for inward investment from better-planned areas. The plan risk is high at present due to the outdated core strategy, but this should drop once the new local plan is adopted and in force.",
+    "references": [
+      "Local Plans Portal – Wolverhampton (New Local Plan submitted Mar 2020)"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 8
+  },
+  {
+    "id": "E60000140",
+    "name": "Worcester City Council",
+    "plan_status": "South Worcestershire Development Plan (SWDP) – joint plan for Worcester, Wychavon & Malvern – adopted Feb 2016; SWDP Review submitted Sept 2023",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 9,
+    "nppf_defaulting": false,
+    "notes_short": "Worcester City is covered by the SWDP adopted in 2016. That plan is 9 years old. A full SWDP Review was submitted in Sept 2023 but has faced some delays (partly pending national policy clarity). The 2016 plan broadly met needs (Worcester exceeded 100% delivery), though certain big allocations lagged. With the review underway, moderate risk – current policies are mostly holding, but an updated plan is needed soon.",
+    "notes": "Worcester City shares its local plan with neighbouring Wychavon and Malvern Hills districts – the joint South Worcestershire Development Plan (SWDP) adopted in February 2016. The SWDP provided a unified strategy for the sub-region, including urban extensions to Worcester and allocations in the outlying towns. By 2021, a SWDP Review was launched to extend the plan to 2041. That review was submitted for examination in September 2023. However, as of 2025 the examination has seen some pauses, as the councils considered implications of potential national planning reforms (they briefly delayed hearing sessions pending clarity on housing targets). The adopted 2016 plan is nearing 10 years old, and while many of its policies still function, certain key sites (like the Worcester urban extensions) have progressed slower than anticipated, affecting five-year land supply margins. Worcester City itself has consistently met its housing requirement (often via city regeneration schemes, with 180% delivery in 2020 dropping to around 100% by 2023). The joint plan review, once adopted (expected in 2025), will introduce new sites (including a proposed new town at Throckmorton). In the interim, the plan risk for Worcester is moderate. The majority of development management decisions can still rely on SWDP 2016 policies without invoking the NPPF presumption, but the buffer is thinning. A timely completion of the SWDP Review will be critical to maintain control. Given the advanced stage of the review, Worcester’s risk is contained at level 6.",
+    "references": [
+      "Local Plans Portal – South Worcestershire (SWDP Review submitted Sept 2023)",
+      "Housing Delivery Test 2022 – Worcester/SWDP area (Worcester City ~130%, overall SWDP area 105%)"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000287",
+    "name": "Worthing Borough Council",
+    "plan_status": "Worthing Local Plan 2020–2036 (adopted March 2023)",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "Worthing adopted a new Local Plan in March 2023. It is fully up-to-date and accounts for the borough’s development constraints. Although the plan does not meet the uncapped housing ‘need’ due to land limitations, it was found sound on that basis. Delivery is proceeding per the plan (HDT naturally shows ~55% but that reflects the accepted constraint). No NPPF presumption issues – very low risk.",
+    "notes": "The Borough of Worthing faced a significant challenge: very high housing need versus a small, constrained urban area (hemmed by the sea and the South Downs National Park). Worthing’s new Local Plan 2020–2036, adopted in March 2023, strikes a balance by allocating all feasible sites (including increased densities in the town centre and releasing a small amount of peripheral greenfield land) to deliver around 3,700 homes, which is below the calculated “standard method” need but was justified by exceptional constraints. The Planning Inspector accepted this approach, and the plan is now up-to-date. Because the plan’s housing requirement is lower than the government’s need figure, Worthing’s Housing Delivery Test percentages appear low (e.g., 66% in 2023). However, this does not trigger the presumption since the council is delivering against the plan’s realistic targets and has an agreed stepped trajectory. Indeed, without an updated plan, Worthing previously had no choice but to under-deliver; now, with the new plan, it has a confirmed supply pipeline. The council can demonstrate a five-year supply per the adopted plan. Therefore, despite the unique circumstances, Worthing’s plan risk is very low. The plan will be monitored, but as long as it delivers what it set out (which it is on track to do), the NPPF presumption will not apply adversely.",
+    "references": [
+      "Local Plans Portal – Worthing (Local Plan adopted Mar 2023)",
+      "Inspector’s Report on Worthing Local Plan 2023 (discussion of housing need vs supply, not quoted)"
+    ],
+    "region": "South East",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000141",
+    "name": "Wychavon District Council",
+    "plan_status": "South Worcestershire Development Plan (joint, adopted Feb 2016); SWDP Review submitted Sept 2023",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "adopted_outdated",
+    "years_since_adoption": 9,
+    "nppf_defaulting": false,
+    "notes_short": "Wychavon shares the 2016 SWDP with Malvern Hills and Worcester. That plan is being reviewed (submitted 2023). Wychavon has delivered housing well above target (e.g., 180% in 2023) thanks to sites like Worcestershire Parkway, keeping the presumption at bay. Moderate risk until the SWDP Review is adopted.",
+    "notes": "Wychavon’s planning context is tied to the South Worcestershire Development Plan (SWDP) jointly adopted in 2016. The SWDP covers Wychavon, Worcester, and Malvern Hills, and allocated substantial growth in Wychavon (notably a major urban extension at Worcester South and the new town at Worcestershire Parkway). Because of these allocations, Wychavon has seen very strong housing delivery – consistently exceeding its annual requirements (the 2023 HDT for Wychavon was roughly 180%). The council has been able to demonstrate more than a five-year supply. The SWDP Review, once adopted (expected in 2025), will roll the plan forward to 2041 and include new allocations (Wychavon is slated for another new settlement at Throckmorton Airfield). While the 2016 plan is technically out-of-date by time, its robust allocations and Wychavon’s positive delivery mean that, functionally, NPPF default mechanisms have not been triggered. The authority continues to approve development in line with the plan (with the exception of some localized phosphate constraint issues near the River Avon, which are being mitigated). Plan risk for Wychavon is moderate given the plan’s age, but the active progress on the review and the lack of any tilted-balance appeals (due to good supply) keep the situation stable. Once the SWDP Review is adopted, Wychavon’s plan risk will drop to low.",
+    "references": [
+      "Local Plans Portal – South Worcestershire (SWDP Review status)",
+      "Housing Delivery Test 2023 – Wychavon (approximately 180% delivery, per SWDP area data)"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 6
+  },
+  {
+    "id": "E60000046",
+    "name": "Wyre Borough Council",
+    "plan_status": "Wyre Local Plan 2011–2031 (adopted Feb 2019), partially updated in Jan 2023",
+    "up_to_date": true,
+    "last_adoption_year": 2023,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 2,
+    "nppf_defaulting": false,
+    "notes_short": "Wyre’s Local Plan was adopted in 2019 and underwent a partial review (housing requirement update) adopted in early 2023. The plan is current and has a confirmed five-year supply. Housing delivery has exceeded requirements. Very low risk.",
+    "notes": "Wyre Borough’s Local Plan (2011–2031) was adopted in February 2019. A commitment to an early partial review was included to adjust the housing requirement in line with updated evidence. This Partial Review was completed and adopted in January 2023, slightly reducing the housing target to reflect more recent household projections and extending the plan horizon to 2032. With this review, Wyre’s plan is fully up-to-date. The borough can demonstrate a comfortable five-year housing land supply – notably, Wyre had faced an unmet need issue in the past (relying on Preston and others to take some growth), but recent allocations and the partial review resolved that. Housing delivery has been strong (the HDT 2023 showed 160%+ delivery) and the plan’s implementation is on track. Therefore, Wyre faces minimal risk in terms of plan status; its policies carry full weight and no NPPF default triggers apply. The next plan update will likely start before 2031, but at present the planning framework is secure.",
+    "references": [
+      "Local Plans Portal – Wyre (Local Plan adopted 2019; Partial Update 2023)",
+      "Housing Delivery Test 2023 – Wyre (160%+ delivery)"
+    ],
+    "region": "North West",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000142",
+    "name": "Wyre Forest District Council",
+    "plan_status": "Wyre Forest Local Plan (Review) 2016–2036, adopted April 2022",
+    "up_to_date": true,
+    "last_adoption_year": 2022,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 3,
+    "nppf_defaulting": false,
+    "notes_short": "A new Wyre Forest Local Plan was adopted in April 2022, replacing the previous 2004-era plan. It is up-to-date and provides for development to 2036 (including a significant urban extension at Kidderminster). Housing delivery is on target with the plan’s trajectory. Low risk.",
+    "notes": "Wyre Forest District adopted its Local Plan Review in April 2022. This new plan covers the period 2016–2036 and succeeded the old Local Plan (adopted 2004). It allocates major growth, notably the Kidderminster Eastern extension (Lea Castle) and brownfield regeneration sites, to meet the district’s needs. With this adoption, Wyre Forest regained a five-year housing supply and updated policy control. The plan is only about 3 years into implementation and remains fully aligned with national policy. Early monitoring shows housing delivery ramping up as the strategic sites begin to build out (the Housing Delivery Test is not a concern, as completions are expected to meet or slightly exceed annual requirements going forward). Because the plan is newly in place and there are no significant shortfalls or policy gaps, the plan risk for Wyre Forest is very low. The council will keep the plan under review, but no update is needed yet.",
+    "references": [
+      "Local Plans Portal – Wyre Forest (Local Plan Review adopted Apr 2022)"
+    ],
+    "region": "West Midlands",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000056",
+    "name": "City of York Council",
+    "plan_status": "City of York Local Plan 2017–2033 (adopted February 2025)",
+    "up_to_date": true,
+    "last_adoption_year": 2025,
+    "update_in_progress": false,
+    "status_code": "adopted_recent",
+    "years_since_adoption": 0,
+    "nppf_defaulting": false,
+    "notes_short": "York’s Local Plan was famously long-delayed but was finally adopted in early 2025. It is the first comprehensive development plan for York in over 60 years. With this fresh plan in place (including defined Green Belt boundaries and ample housing sites), York’s framework is solid and risk is very low.",
+    "notes": "After a protracted process spanning nearly two decades, the City of York formally adopted a Local Plan in February 2025. York had been operating without an adopted post-2004 plan, relying only on a development control Local Plan from 1956 and emerging drafts. The new Local Plan 2017–2033 provides certainty on Green Belt boundaries around York and allocates several large sites (such as the York Central brownfield site and strategic expansions at Clifton Moor and Elvington). This marks a turning point – previously, the lack of a plan meant the presumption in favor of development often applied by default, but now York has a full policy framework. Housing delivery in York has been strong in recent years even without a plan (the 2023 HDT was about 120%), and the new plan will support continued delivery with clearer infrastructure commitments. With an up-to-date plan, York can manage development proactively rather than reacting under NPPF defaults. The plan risk is therefore assessed as very low (1). The council will need to keep the plan under review in line with statutory requirements, but having just adopted it, York is in an excellent position moving forward.",
+    "references": [
+      "Local Plans Portal – York (Local Plan adopted Feb 2025)",
+      "City of York Council – Local Plan Adoption Press Release Feb 2025 (historical context, not quoted)"
+    ],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 2
+  },
+  {
+    "id": "E60000327",
+    "name": "Yorkshire Dales National Park Authority",
+    "plan_status": "Yorkshire Dales Local Plan 2015–2030 (adopted Dec 2016); New Local Plan 2025–2040 in draft (publication Mar 2025)",
+    "up_to_date": false,
+    "last_adoption_year": 2016,
+    "update_in_progress": true,
+    "status_code": "emerging_in_progress",
+    "years_since_adoption": 9,
+    "nppf_defaulting": false,
+    "notes_short": "The Yorkshire Dales National Park’s current local plan was adopted in 2016. It is now under revision; a draft new Local Plan 2025–2040 was published in March 2025. The National Park has modest development needs and stringent protections, so while the plan is older, development pressure is low and handled via restrictive policies – moderate risk.",
+    "notes": "The Yorkshire Dales National Park Authority adopted its Local Plan 2015–2030 in December 2016. This plan set very limited growth targets consistent with National Park purposes (focusing on local needs housing and barn conversions). As of 2025, the plan is being updated: the Authority published a draft Local Plan 2025–2040 in March 2025, which will eventually supersede the 2016 plan. Given the National Park’s context, the lack of a completely up-to-date plan has not led to significant issues – development rates are very low and tightly controlled. Housing Delivery Test measures are not applicable in the usual way due to small numbers, and the NPPF affords great weight to conservation in National Parks which continues to guide decisions. Essentially, even though the plan is older than 5 years, its restrictive approach remains aligned with national policy for protected landscapes. The forthcoming plan will adjust policies to new challenges (like sustainability and climate change adaptation for the park) and extend the timeframe. Plan risk is moderate largely from a procedural standpoint; practically, there is little risk of unwanted development in the interim. Once the new plan is adopted, the risk will drop, but even under the current plan the National Park’s policy environment is stable.",
+    "references": [],
+    "region": "Yorkshire and the Humber",
+    "plan_risk_score": 6
   }
 ]
