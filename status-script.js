@@ -98,10 +98,9 @@ function checkCriticalElements() {
             const errorMsg = document.createElement('p');
             errorMsg.className = 'error-message';
             errorMsg.style.margin = '20px';
-            errorMsg.textContent = 'Error initializing dashboard components. Please check the console (F12).';
+            errorMsg.textContent = 'Error initializing dashboard components. Check console (F12).';
             const header = document.querySelector('.dashboard-header');
-            if (header) header.parentNode.insertBefore(errorMsg, header.nextSibling);
-            else container.prepend(errorMsg);
+            if (header) header.parentNode.insertBefore(errorMsg, header.nextSibling); else container.prepend(errorMsg);
         }
         return false;
     }
@@ -174,12 +173,13 @@ function processAndInitializeDashboard(statusData, geojsonData) {
             feature.properties.status_code = statusInfo.status_code;
             feature.properties.name = statusInfo.name;
             feature.properties.plan_status_display = statusInfo.plan_status_display;
-            feature.properties.id = statusInfo.id;
+            feature.properties.id = statusInfo.id; // Use the consistent ID from status data
         } else {
+            console.warn(`No status data found for LPA ID: ${lpaId} (Name: ${feature.properties.LPA23NM})`);
             feature.properties.status_code = 'unknown';
             feature.properties.name = feature.properties.LPA23NM || 'Unknown LPA';
             feature.properties.plan_status_display = 'Unknown';
-            feature.properties.id = `geojson-${lpaId}`;
+            feature.properties.id = `geojson-${lpaId}`; // Create a fallback ID
         }
     });
 
@@ -187,10 +187,10 @@ function processAndInitializeDashboard(statusData, geojsonData) {
     addMapOverlay(geojsonData);
 
     // 5. Populate Filters
-    filteredLpaData = [...allLpaData];
     populateFilters();
 
     // 6. Apply Initial Sort & Render Dashboard
+    filteredLpaData = [...allLpaData]; // Set initial filtered data
     sortTableData();
     updateDashboard();
 
@@ -230,10 +230,7 @@ function initializeMapStructure() {
 
 /** Adds the GeoJSON overlay layer to the map */
 function addMapOverlay(geojsonData) {
-    if (!map) {
-        console.error("Map not initialized, cannot add overlay.");
-        return;
-    }
+    if (!map) { console.error("Map not initialized, cannot add overlay."); return; }
     lpaLayerMapping = {}; // Reset mapping
     geojsonLayer = L.geoJSON(geojsonData, {
         style: styleFunction,
@@ -241,25 +238,15 @@ function addMapOverlay(geojsonData) {
     }).addTo(map);
     console.log("GeoJSON layer added to map.");
     try {
-        if (geojsonLayer.getBounds().isValid()) {
-            map.fitBounds(geojsonLayer.getBounds().pad(0.1));
-        }
-    } catch (e) {
-        console.warn("Could not fit map bounds to GeoJSON layer:", e);
-    }
+        if (geojsonLayer.getBounds().isValid()) { map.fitBounds(geojsonLayer.getBounds().pad(0.1)); }
+    } catch (e) { console.warn("Could not fit map bounds to GeoJSON layer:", e); }
 }
 
 /** Defines the style for each map feature based on status */
 function styleFunction(feature) {
     const statusCode = feature.properties.status_code || 'unknown';
     const color = statusColors[statusCode] || statusColors['default'];
-    return {
-        fillColor: color,
-        fillOpacity: 0.6,
-        color: '#555',
-        weight: 1,
-        opacity: 0.8
-    };
+    return { fillColor: color, fillOpacity: 0.6, color: '#555', weight: 1, opacity: 0.8 };
 }
 
 /** Defines interactions for each map feature */
@@ -273,21 +260,39 @@ function onEachFeatureFunction(feature, layer) {
         if (feature.properties.id) {
             console.log(`Map feature clicked: ${feature.properties.name}, ID: ${feature.properties.id}`);
             displayLpaDetails(feature.properties.id);
-        } else {
-            console.warn("Clicked map feature missing 'id' property.");
-        }
+        } else { console.warn("Clicked map feature missing consistent 'id' property."); }
     });
-    layer.on('mouseover', (e) => {
-        e.target.setStyle({
-            weight: 2,
-            color: '#333',
-            fillOpacity: 0.75
-        });
-    });
+    layer.on('mouseover', (e) => { e.target.setStyle({ weight: 2, color: '#333', fillOpacity: 0.75 }); });
     layer.on('mouseout', (e) => {
-        if (detailsPanel.dataset.lpaId !== feature.properties.id) {
-             geojsonLayer.resetStyle(e.target);
-        }
+        const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
+        if (currentSelectedId !== feature.properties.id) { geojsonLayer.resetStyle(e.target); }
+    });
+}
+
+// --- Filter Population ---
+
+/** Populates filter dropdowns based on available data. */
+function populateFilters() {
+    console.log("Populating filters...");
+    const regions = new Set(), statuses = new Set(), risks = new Set();
+    allLpaData.forEach(lpa => {
+        if (lpa.region) regions.add(lpa.region);
+        if (lpa.status_code) statuses.add(lpa.status_code);
+        if (lpa.plan_risk_score !== null && lpa.plan_risk_score !== undefined) risks.add(lpa.plan_risk_score);
+    });
+    if (regionFilter) populateSelect(regionFilter, [...regions].sort());
+    if (statusFilter) populateSelect(statusFilter, [...statuses].sort(), formatStatusCode);
+    if (riskFilter) populateSelect(riskFilter, [...risks].sort((a, b) => a - b));
+}
+
+/** Helper to populate a select dropdown */
+function populateSelect(selectElement, options, formatter = (val) => val) {
+    selectElement.innerHTML = '<option value="">All</option>';
+    options.forEach(optionValue => {
+        const option = document.createElement('option');
+        option.value = optionValue;
+        option.textContent = formatter(optionValue);
+        selectElement.appendChild(option);
     });
 }
 
@@ -302,7 +307,6 @@ function addEventListeners() {
     if (regionFilter) regionFilter.addEventListener('change', debounceFilter);
     if (statusFilter) statusFilter.addEventListener('change', debounceFilter);
     if (riskFilter) riskFilter.addEventListener('change', debounceFilter);
-
     if (tableHead) tableHead.addEventListener('click', handleSortClick);
     if (tableBody) tableBody.addEventListener('click', handleTableClick);
     if (lpaCardsContainer) lpaCardsContainer.addEventListener('click', handleCardClick);
@@ -332,29 +336,25 @@ function applyFiltersAndRedraw() {
         const selectedId = detailsPanel.dataset.lpaId;
         if (selectedId && filteredLpaData.some(lpa => lpa.id === selectedId)) {
             highlightSelectedItem(selectedId);
-        } else {
-            hideDetails();
-        }
+        } else { hideDetails(); }
     }
 }
 
 function sortTableData() {
     if (!sortColumn) return;
     filteredLpaData.sort((a, b) => {
-        let valA = a[sortColumn];
-        let valB = b[sortColumn];
+        let valA = a[sortColumn], valB = b[sortColumn];
         const aIsNull = valA === null || valA === undefined;
         const bIsNull = valB === null || valB === undefined;
         if (aIsNull && bIsNull) return 0;
         if (aIsNull) return sortDirection === 'asc' ? -1 : 1;
         if (bIsNull) return sortDirection === 'asc' ? 1 : -1;
         let comparison = 0;
-        if (typeof valA === 'number' && typeof valB === 'number') { 
-            comparison = valA - valB; 
-        } else { 
+        if (typeof valA === 'number' && typeof valB === 'number') { comparison = valA - valB; }
+        else { 
             valA = String(valA).toLowerCase(); 
-            valB = String(valB).toLowerCase(); 
-            comparison = valA.localeCompare(valB); 
+            valB = String(valB).toLowerCase();
+            comparison = valA.localeCompare(valB);
         }
         return sortDirection === 'asc' ? comparison : comparison * -1;
     });
@@ -365,12 +365,8 @@ function handleSortClick(event) {
     const header = event.target.closest('th');
     if (!header || !header.classList.contains('sortable') || !header.dataset.sort) return;
     const newSortColumn = header.dataset.sort;
-    if (newSortColumn === sortColumn) { 
-        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'; 
-    } else { 
-        sortColumn = newSortColumn; 
-        sortDirection = 'asc'; 
-    }
+    if (newSortColumn === sortColumn) { sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'; }
+    else { sortColumn = newSortColumn; sortDirection = 'asc'; }
     sortTableData();
     updateDashboard();
 }
@@ -512,13 +508,18 @@ function displayLpaDetails(lpaId) {
     detailsPlanStatus.textContent = lpa.plan_status ?? 'N/A';
     detailsYearsSince.textContent = lpa.years_since_adoption ?? 'N/A';
     detailsNotes.textContent = lpa.notes ?? 'No specific notes available.';
+    // Updated risk classification logic: scores 1–3 are low, 4–7 medium, and 8–10 high.
     const riskScore = lpa.plan_risk_score;
     let riskHtml = 'N/A';
     if (riskScore !== null && riskScore !== undefined) {
         let riskClass = 'risk-unknown';
-        if (riskScore <= 1) { riskClass = 'risk-low'; }
-        else if (riskScore <= 3) { riskClass = 'risk-medium'; }
-        else if (riskScore >= 4) { riskClass = 'risk-high'; }
+        if (riskScore <= 3) {
+            riskClass = 'risk-low';
+        } else if (riskScore <= 7) {
+            riskClass = 'risk-medium';
+        } else {
+            riskClass = 'risk-high';
+        }
         riskHtml = `<span class="risk-emoji ${riskClass}"></span>${riskScore}`;
     }
     detailsRiskScore.innerHTML = riskHtml;
@@ -598,7 +599,6 @@ function highlightSelectedItem(lpaId) {
             weight: 3,
             color: '#000',
             opacity: 1
-            // Optionally: fillOpacity: 0.5
         });
         if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
             layer.bringToFront();
@@ -624,16 +624,9 @@ function calculateAndDisplayStats(data) {
     const statElements = [statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn];
     if (statElements.some(el => !el)) { return; }
     const zeroOutStats = () => statElements.forEach(el => el.textContent = '0%');
-    if (total === 0) { 
-        zeroOutStats(); 
-        return; 
-    }
+    if (total === 0) { zeroOutStats(); return; }
     let counts = { adopted_recent: 0, just_adopted_updating: 0, adopted_outdated: 0, emerging_in_progress: 0, withdrawn_or_vacuum: 0 };
-    data.forEach(lpa => { 
-        if (counts.hasOwnProperty(lpa.status_code)) { 
-            counts[lpa.status_code]++; 
-        } 
-    });
+    data.forEach(lpa => { if (counts.hasOwnProperty(lpa.status_code)) { counts[lpa.status_code]++; } });
     const formatPercent = (count, total) => `${((count / total) * 100).toFixed(0)}%`;
     statAdoptedRecent.textContent = formatPercent(counts.adopted_recent, total);
     statJustAdopted.textContent = formatPercent(counts.just_adopted_updating, total);
@@ -664,9 +657,7 @@ function exportToCSV() {
     };
     let csvContent = "data:text/csv;charset=utf-8,";
     csvContent += headers.map(escapeCsvCell).join(",") + "\r\n";
-    dataRows.forEach(rowArray => { 
-        csvContent += rowArray.map(escapeCsvCell).join(",") + "\r\n"; 
-    });
+    dataRows.forEach(rowArray => { csvContent += rowArray.map(escapeCsvCell).join(",") + "\r\n"; });
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
