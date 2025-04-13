@@ -1,153 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Plan Status Dashboard - The Spatial Ledger</title>
-    <link rel="stylesheet" href="status-style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Plan Status Dashboard - The Spatial Ledger</title>
+  <link rel="stylesheet" href="status-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 </head>
 <body>
-    <div class="container">
-        <header class="dashboard-header">
-            <h1>Local Plan Status Dashboard</h1>
-            <button id="export-csv-btn" class="export-button">📥 Export CSV</button>
-        </header>
+  <div class="container">
+    <header class="dashboard-header">
+      <h1>Local Plan Status Dashboard</h1>
+      <button id="export-csv-btn" class="export-button">📥 Export CSV</button>
+    </header>
 
-        <section class="dashboard-filters">
-             <!-- Filters remain the same -->
-            <div class="filter-item">
-                <label for="search-lpa">🔍 Search LPA...</label>
-                <input type="search" id="search-lpa" placeholder="Enter LPA name...">
+    <section class="dashboard-filters">
+      <!-- Existing Filters -->
+      <div class="filter-item">
+        <label for="search-lpa">🔍 Search LPA...</label>
+        <input type="search" id="search-lpa" placeholder="Enter LPA name...">
+      </div>
+      <div class="filter-item">
+        <label for="region-filter">Region Filter</label>
+        <select id="region-filter"><option value="">All Regions</option></select>
+      </div>
+      <div class="filter-item">
+        <label for="status-filter">Status Filter</label>
+        <select id="status-filter"><option value="">All Statuses</option></select>
+      </div>
+      <div class="filter-item">
+        <label for="risk-filter">Risk Filter</label>
+        <select id="risk-filter"><option value="">All Risks</option></select>
+      </div>
+      <!-- New Tilted Balance Toggle Filter -->
+      <div class="filter-item">
+        <label for="tilted-balance-toggle">Show Tilted Balance Only</label>
+        <input type="checkbox" id="tilted-balance-toggle">
+      </div>
+    </section>
+
+    <main class="dashboard-main">
+      <section class="map-panel">
+        <!-- Map and Legend remain the same -->
+        <div id="map-container">
+          <div class="map-placeholder-visual"></div>
+          <p class="map-placeholder-text">Map View</p>
+        </div>
+        <div class="map-legend">
+          <label><span class="legend-color adopted_recent"></span>Adopted and current</label>
+          <label><span class="legend-color just_adopted_updating"></span>Just adopted / Updating</label>
+          <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs</label>
+          <label><span class="legend-color emerging_in_progress"></span>Emerging in preparation</label>
+          <label><span class="legend-color withdrawn_or_vacuum"></span>No current plan / Withdrawn</label>
+        </div>
+      </section>
+
+      <section class="summary-panel">
+        <div class="stats-panel">
+          <!-- Stats remain the same -->
+          <h3>Plan Coverage Statistics</h3>
+          <div class="stats-grid stats-grid-5">
+            <div class="stat-item"><span class="stat-value" id="stat-adopted-recent">--%</span><span class="stat-label">Adopted & Current</span></div>
+            <div class="stat-item"><span class="stat-value" id="stat-just-adopted">--%</span><span class="stat-label">Just Adopted / Updating</span></div>
+            <div class="stat-item"><span class="stat-value" id="stat-adopted-outdated">--%</span><span class="stat-label">Adopted >5 yrs</span></div>
+            <div class="stat-item"><span class="stat-value" id="stat-emerging">--%</span><span class="stat-label">Emerging</span></div>
+            <div class="stat-item"><span class="stat-value" id="stat-withdrawn">--%</span><span class="stat-label">Withdrawn / Vacuum</span></div>
+          </div>
+        </div>
+
+        <div id="selected-authority-details" class="details-panel" style="display: none;" aria-live="polite">
+          <button id="close-details-btn" class="close-button" aria-label="Close Details">×</button>
+          <h3>Selected Authority Details</h3>
+          <div id="details-content-wrapper">
+            <div class="detail-item">
+              <span class="detail-label">LPA Name:</span>
+              <span class="detail-value" id="details-lpa-name">--</span>
             </div>
-            <div class="filter-item">
-                <label for="region-filter">Region Filter</label>
-                <select id="region-filter"><option value="">All Regions</option></select>
+            <div class="detail-item">
+              <span class="detail-label">Plan Status:</span>
+              <span class="detail-value" id="details-plan-status">--</span>
             </div>
-            <div class="filter-item">
-                <label for="status-filter">Status Filter</label>
-                <select id="status-filter"><option value="">All Statuses</option></select>
+            <div class="detail-item">
+              <span class="detail-label">Risk Score:</span>
+              <span class="detail-value" id="details-risk-score">--</span>
             </div>
-            <div class="filter-item">
-                <label for="risk-filter">Risk Filter</label>
-                <select id="risk-filter"><option value="">All Risks</option></select>
+            <div class="detail-item">
+              <span class="detail-label">Years Since Adoption:</span>
+              <span class="detail-value" id="details-years-since">--</span>
             </div>
-        </section>
+            <div class="detail-item">
+              <span class="detail-label">Update in Progress:</span>
+              <span class="detail-value" id="details-update-progress">--</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">NPPF Defaulting:</span>
+              <span class="detail-value" id="details-nppf-default">--</span>
+            </div>
+            <h4>Notes:</h4>
+            <p id="details-notes" class="detail-notes-text">--</p>
+            <h4>References:</h4>
+            <div id="details-references" class="detail-references-links">
+              <p class="no-refs">No references available.</p>
+            </div>
+          </div>
+        </div>
 
-        <main class="dashboard-main">
-            <section class="map-panel">
-                 <!-- Map and Legend remain the same -->
-                <div id="map-container">
-                     <div class="map-placeholder-visual"></div>
-                     <p class="map-placeholder-text">Map View</p>
-                </div>
-                <div class="map-legend">
-                    <label><span class="legend-color adopted_recent"></span>Adopted and current</label>
-                    <label><span class="legend-color just_adopted_updating"></span>Just adopted / Updating</label>
-                    <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs</label>
-                    <label><span class="legend-color emerging_in_progress"></span>Emerging in preparation</label>
-                    <label><span class="legend-color withdrawn_or_vacuum"></span>No current plan / Withdrawn</label>
-                </div>
-            </section>
+        <!-- Table Panel -->
+        <div class="table-panel">
+          <h3>LPA Details Table</h3>
+          <p class="table-instructions">Click a row or header to sort.</p>
+          <div class="table-wrapper">
+            <table>
+              <thead id="lpa-table-head">
+                <tr>
+                  <th scope="col" class="sortable" data-sort="name">LPA Name</th>
+                  <th scope="col" class="sortable" data-sort="plan_status_display">Plan Status</th>
+                  <th scope="col" class="center sortable" data-sort="last_adoption_year">Last Adopted</th>
+                  <th scope="col" class="center sortable" data-sort="years_since_adoption">Yrs Since</th>
+                  <th scope="col" class="center sortable" data-sort="plan_risk_score">Risk Score</th>
+                </tr>
+              </thead>
+              <tbody id="status-table-body">
+                <!-- JS will populate, including initial loading state -->
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-            <section class="summary-panel">
-                <div class="stats-panel">
-                    <!-- Stats remain the same -->
-                    <h3>Plan Coverage Statistics</h3>
-                    <div class="stats-grid stats-grid-5">
-                        <div class="stat-item"><span class="stat-value" id="stat-adopted-recent">--%</span><span class="stat-label">Adopted & Current</span></div>
-                        <div class="stat-item"><span class="stat-value" id="stat-just-adopted">--%</span><span class="stat-label">Just Adopted / Updating</span></div>
-                        <div class="stat-item"><span class="stat-value" id="stat-adopted-outdated">--%</span><span class="stat-label">Adopted >5 yrs</span></div>
-                        <div class="stat-item"><span class="stat-value" id="stat-emerging">--%</span><span class="stat-label">Emerging</span></div>
-                        <div class="stat-item"><span class="stat-value" id="stat-withdrawn">--%</span><span class="stat-label">Withdrawn / Vacuum</span></div>
-                    </div>
-                </div>
+        <!-- Card Container (Now initially empty) -->
+        <div id="lpa-cards-container" class="cards-container">
+          <!-- JS will populate, including initial loading state -->
+        </div>
+      </section>
+    </main>
 
-                <div id="selected-authority-details" class="details-panel" style="display: none;" aria-live="polite">
-                     <button id="close-details-btn" class="close-button" aria-label="Close Details">×</button>
-                     <h3>Selected Authority Details</h3>
-                     <div id="details-content-wrapper">
-                         <div class="detail-item">
-                            <span class="detail-label">LPA Name:</span>
-                            <span class="detail-value" id="details-lpa-name">--</span>
-                         </div>
-                         <div class="detail-item">
-                             <span class="detail-label">Plan Status:</span>
-                             <span class="detail-value" id="details-plan-status">--</span>
-                         </div>
-                          <div class="detail-item">
-                             <span class="detail-label">Risk Score:</span>
-                             <span class="detail-value" id="details-risk-score">--</span>
-                         </div>
-                         <div class="detail-item">
-                             <span class="detail-label">Years Since Adoption:</span>
-                             <span class="detail-value" id="details-years-since">--</span>
-                         </div>
-                         <div class="detail-item">
-                             <span class="detail-label">Update in Progress:</span>
-                             <span class="detail-value" id="details-update-progress">--</span>
-                         </div>
-                          <div class="detail-item">
-                             <span class="detail-label">NPPF Defaulting:</span>
-                             <span class="detail-value" id="details-nppf-default">--</span>
-                         </div>
-
-                         <h4>Notes:</h4>
-                         <p id="details-notes" class="detail-notes-text">--</p>
-
-                         <h4>References:</h4>
-                         <div id="details-references" class="detail-references-links">
-                             <p class="no-refs">No references available.</p>
-                         </div>
-                    </div>
-                </div>
-
-                 <!-- Table Panel -->
-                <div class="table-panel">
-                     <h3>LPA Details Table</h3>
-                     <p class="table-instructions">Click a row or header to sort.</p>
-                     <div class="table-wrapper">
-                         <table>
-                            <thead id="lpa-table-head">
-                                <tr>
-                                    <th scope="col" class="sortable" data-sort="name">LPA Name</th>
-                                    <th scope="col" class="sortable" data-sort="plan_status_display">Plan Status</th>
-                                    <th scope="col" class="center sortable" data-sort="last_adoption_year">Last Adopted</th>
-                                    <th scope="col" class="center sortable" data-sort="years_since_adoption">Yrs Since</th>
-                                    <th scope="col" class="center sortable" data-sort="plan_risk_score">Risk Score</th>
-                                </tr>
-                            </thead>
-                            <tbody id="status-table-body">
-                                <!-- JS will populate, including initial loading state -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Card Container (Now initially empty) -->
-                <div id="lpa-cards-container" class="cards-container">
-                    <!-- JS will populate, including initial loading state -->
-                </div>
-
-            </section>
-        </main>
-
-        <footer>
-             <!-- Footer remains the same -->
-             <p class="footer-text copyright">© 2025 The Spatial Ledger</p>
-             <p class="footer-text disclaimer"><strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is illustrative.</p>
-         </footer>
-
-    </div>
-    <script type="module" src="status-script.js"></script>
+    <footer>
+      <!-- Footer remains the same -->
+      <p class="footer-text copyright">© 2025 The Spatial Ledger</p>
+      <p class="footer-text disclaimer"><strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is illustrative.</p>
+    </footer>
+  </div>
+  <script type="module" src="status-script.js"></script>
 </body>
 </html>

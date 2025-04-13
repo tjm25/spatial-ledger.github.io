@@ -11,7 +11,7 @@ let sortColumn = 'name';
 let sortDirection = 'asc';
 
 // --- DOM Elements ---
-let tableBody, tableHead, searchInput, regionFilter, statusFilter, riskFilter;
+let tableBody, tableHead, searchInput, regionFilter, statusFilter, riskFilter, tiltedBalanceToggle;
 let detailsPanel, detailsLpaName, detailsPlanStatus, detailsRiskScore, detailsYearsSince;
 let detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences, closeDetailsBtn;
 let statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn;
@@ -55,6 +55,8 @@ function assignDOMElements() {
     regionFilter = document.getElementById('region-filter');
     statusFilter = document.getElementById('status-filter');
     riskFilter = document.getElementById('risk-filter');
+    // NEW: Tilted Balance toggle assignment
+    tiltedBalanceToggle = document.getElementById('tilted-balance-toggle');
     detailsPanel = document.getElementById('selected-authority-details');
     detailsLpaName = document.getElementById('details-lpa-name');
     detailsPlanStatus = document.getElementById('details-plan-status');
@@ -186,12 +188,16 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
             feature.properties.name = statusInfo.name;
             feature.properties.plan_status_display = statusInfo.plan_status_display;
             feature.properties.id = statusInfo.id;
+            // NEW: merge the nppf_defaulting flag
+            feature.properties.nppf_defaulting = statusInfo.nppf_defaulting;
         } else {
             console.warn(`No status data found for GeoJSON feature LPA ID: ${lpaId} (Name: ${feature.properties.LPA23NM}) after de-duplication.`);
             feature.properties.status_code = 'unknown';
             feature.properties.name = feature.properties.LPA23NM || 'Unknown LPA';
             feature.properties.plan_status_display = 'Unknown';
             feature.properties.id = `geojson-${lpaId}`;
+            // Default to false for safety
+            feature.properties.nppf_defaulting = false;
         }
     });
 
@@ -320,6 +326,9 @@ function addEventListeners() {
     if (regionFilter) regionFilter.addEventListener('change', debounceFilter);
     if (statusFilter) statusFilter.addEventListener('change', debounceFilter);
     if (riskFilter) riskFilter.addEventListener('change', debounceFilter);
+    // NEW: Listen for changes on the tilted balance toggle
+    if (tiltedBalanceToggle) tiltedBalanceToggle.addEventListener('change', debounceFilter);
+
     if (tableHead) tableHead.addEventListener('click', handleSortClick);
     if (tableBody) tableBody.addEventListener('click', handleTableClick);
     if (lpaCardsContainer) lpaCardsContainer.addEventListener('click', handleCardClick);
@@ -342,8 +351,44 @@ function applyFiltersAndRedraw() {
         return nameMatch && regionMatch && statusMatch && riskMatch;
     });
 
+    // NEW: Filter only LPAs with NPPF defaulting (tilted balance) if toggle is checked
+    if (tiltedBalanceToggle && tiltedBalanceToggle.checked) {
+        filteredLpaData = filteredLpaData.filter(lpa => lpa.nppf_defaulting === true);
+    }
+
     sortTableData();
     updateDashboard();
+
+    // NEW: Update the map styling to visually highlight tilt-related features
+    if (geojsonLayer) {
+        if (tiltedBalanceToggle && tiltedBalanceToggle.checked) {
+            // For each layer, de-emphasize those that are NOT in tilted balance mode
+            geojsonLayer.eachLayer(function(layer) {
+                if (layer.feature && typeof layer.feature.properties.nppf_defaulting !== 'undefined') {
+                    if (layer.feature.properties.nppf_defaulting === true) {
+                        // Normal style for LPAs with tilted balance (NPPF defaulting true)
+                        layer.setStyle({
+                            fillOpacity: 0.6,
+                            opacity: 0.8,
+                            color: '#555'
+                        });
+                    } else {
+                        // De-emphasized style for LPAs that do not have tilted balance
+                        layer.setStyle({
+                            fillOpacity: 0.2,
+                            opacity: 0.4,
+                            color: '#aaa'
+                        });
+                    }
+                }
+            });
+        } else {
+            // Reset to default style
+            geojsonLayer.eachLayer(function(layer) {
+                geojsonLayer.resetStyle(layer);
+            });
+        }
+    }
 
     if (detailsPanel.style.display !== 'none') {
         const selectedId = detailsPanel.dataset.lpaId;
