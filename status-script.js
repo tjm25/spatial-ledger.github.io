@@ -9,13 +9,14 @@ let geojsonLayer = null; // To hold the map layer
 let lpaLayerMapping = {}; // To quickly access layers by LPA ID for highlighting
 let sortColumn = 'name';
 let sortDirection = 'asc';
+let isNppfHighlightMode = false; // ADDED: State for highlight mode
 
 // --- DOM Elements ---
 let tableBody, tableHead, searchInput, regionFilter, statusFilter, riskFilter;
 let detailsPanel, detailsLpaName, detailsPlanStatus, detailsRiskScore, detailsYearsSince;
 let detailsUpdateProgress, detailsNppfDefault, detailsNotes, detailsReferences, closeDetailsBtn;
 let statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn;
-let exportCsvBtn, mapContainer, lpaCardsContainer;
+let exportCsvBtn, mapContainer, lpaCardsContainer, nppfHighlightToggle; // ADDED
 
 // --- Status Code to Color Mapping ---
 const statusColors = {
@@ -73,6 +74,7 @@ function assignDOMElements() {
     exportCsvBtn = document.getElementById('export-csv-btn');
     mapContainer = document.getElementById('map-container');
     lpaCardsContainer = document.getElementById('lpa-cards-container');
+    nppfHighlightToggle = document.getElementById('nppf-highlight-toggle'); // ADDED
 }
 
 /** Checks if critical DOM elements were found */
@@ -80,7 +82,8 @@ function checkCriticalElements() {
     const criticalElements = [
         tableBody, tableHead, searchInput, detailsPanel, detailsRiskScore,
         exportCsvBtn, mapContainer, lpaCardsContainer, closeDetailsBtn,
-        statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn
+        statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn,
+        nppfHighlightToggle // ADDED
     ];
     if (criticalElements.some(el => !el)) {
         console.error("Dashboard init failed: Critical elements missing.");
@@ -171,6 +174,7 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
         processedLpa.years_since_adoption = (typeof processedLpa.years_since_adoption === 'number')
             ? processedLpa.years_since_adoption
             : null;
+        processedLpa.nppf_defaulting = !!lpa.nppf_defaulting; // Ensure nppf_defaulting is strictly boolean
         return processedLpa;
     });
 
@@ -186,12 +190,14 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
             feature.properties.name = statusInfo.name;
             feature.properties.plan_status_display = statusInfo.plan_status_display;
             feature.properties.id = statusInfo.id;
+            feature.properties.nppf_defaulting = statusInfo.nppf_defaulting; // ADDED
         } else {
             console.warn(`No status data found for GeoJSON feature LPA ID: ${lpaId} (Name: ${feature.properties.LPA23NM}) after de-duplication.`);
             feature.properties.status_code = 'unknown';
             feature.properties.name = feature.properties.LPA23NM || 'Unknown LPA';
             feature.properties.plan_status_display = 'Unknown';
             feature.properties.id = `geojson-${lpaId}`;
+            feature.properties.nppf_defaulting = false; // ADDED
         }
     });
 
@@ -284,6 +290,11 @@ function onEachFeatureFunction(feature, layer) {
         const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
         if (currentSelectedId !== feature.properties.id) { geojsonLayer.resetStyle(e.target); }
     });
+    // ADDED: If feature is defaulting, add the class to the element
+    const element = layer.getElement ? layer.getElement() : null;
+    if (element && feature.properties.nppf_defaulting === true) {
+        element.classList.add('nppf-defaulting');
+    }
 }
 
 // --- Filter Population ---
@@ -325,6 +336,21 @@ function addEventListeners() {
     if (lpaCardsContainer) lpaCardsContainer.addEventListener('click', handleCardClick);
     if (closeDetailsBtn) closeDetailsBtn.addEventListener('click', hideDetails);
     if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportToCSV);
+    // ADDED: NPPF Highlight Toggle Listener
+    if (nppfHighlightToggle) nppfHighlightToggle.addEventListener('change', handleNppfToggle);
+}
+
+/** Handles the NPPF Highlight Toggle change */
+function handleNppfToggle(event) {
+    isNppfHighlightMode = event.target.checked;
+    console.log("NPPF Highlight Mode:", isNppfHighlightMode);
+    if (isNppfHighlightMode) {
+        document.body.classList.add('nppf-highlight-mode');
+    } else {
+        document.body.classList.remove('nppf-highlight-mode');
+    }
+    // Optionally re-apply map styles if needed:
+    // if (geojsonLayer) { geojsonLayer.setStyle(styleFunction); }
 }
 
 function applyFiltersAndRedraw() {
@@ -431,6 +457,10 @@ function formatStatusCode(statusCode) {
     }
 }
 
+/**
+ * Populates the table.
+ * UPDATED: Adds 'nppf-defaulting' class to rows when applicable.
+ */
 function populateTable(data) {
     if (!tableBody) return;
     tableBody.innerHTML = '';
@@ -442,6 +472,7 @@ function populateTable(data) {
         const row = tableBody.insertRow();
         row.dataset.lpaId = lpa.id;
         if (lpa.status_code) row.classList.add(`status-${lpa.status_code}`);
+        if (lpa.nppf_defaulting === true) row.classList.add('nppf-defaulting'); // ADDED
         createCell(row, lpa.name ?? 'N/A');
         createCell(row, lpa.plan_status_display);
         createCell(row, lpa.last_adoption_year ?? 'N/A', true);
@@ -450,6 +481,10 @@ function populateTable(data) {
     });
 }
 
+/**
+ * Populates the cards container.
+ * UPDATED: Adds 'nppf-defaulting' class to cards when applicable.
+ */
 function populateCards(data) {
     if (!lpaCardsContainer) return;
     lpaCardsContainer.innerHTML = '';
@@ -461,6 +496,7 @@ function populateCards(data) {
         const card = document.createElement('div');
         card.className = 'lpa-card';
         if (lpa.status_code) card.classList.add(`status-${lpa.status_code}`);
+        if (lpa.nppf_defaulting === true) card.classList.add('nppf-defaulting'); // ADDED
         card.dataset.lpaId = lpa.id;
         card.innerHTML = `
             <div class="lpa-card-header">${lpa.name ?? 'N/A'}</div>

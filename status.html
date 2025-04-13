@@ -14,7 +14,6 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
-
 </head>
 <body>
     <div class="container">
@@ -24,7 +23,6 @@
         </header>
 
         <section class="dashboard-filters">
-             <!-- Filters remain the same -->
             <div class="filter-item">
                 <label for="search-lpa">🔍 Search LPA...</label>
                 <input type="search" id="search-lpa" placeholder="Enter LPA name...">
@@ -41,12 +39,16 @@
                 <label for="risk-filter">Risk Filter</label>
                 <select id="risk-filter"><option value="">All Risks</option></select>
             </div>
+            <!-- ADDED: NPPF Highlight Toggle -->
+            <div class="filter-item filter-item-toggle">
+                 <input type="checkbox" id="nppf-highlight-toggle" name="nppf-highlight">
+                 <label for="nppf-highlight-toggle">🧭 Highlight "Tilted Balance"</label>
+            </div>
         </section>
 
         <main class="dashboard-main">
             <section class="map-panel">
-                 <!-- Map and Legend remain the same -->
-                <div id="map-container">
+                 <div id="map-container">
                      <div class="map-placeholder-visual"></div>
                      <p class="map-placeholder-text">Map View</p>
                 </div>
@@ -61,7 +63,6 @@
 
             <section class="summary-panel">
                 <div class="stats-panel">
-                    <!-- Stats remain the same -->
                     <h3>Plan Coverage Statistics</h3>
                     <div class="stats-grid stats-grid-5">
                         <div class="stat-item"><span class="stat-value" id="stat-adopted-recent">--%</span><span class="stat-label">Adopted & Current</span></div>
@@ -84,7 +85,7 @@
                              <span class="detail-label">Plan Status:</span>
                              <span class="detail-value" id="details-plan-status">--</span>
                          </div>
-                          <div class="detail-item">
+                         <div class="detail-item">
                              <span class="detail-label">Risk Score:</span>
                              <span class="detail-value" id="details-risk-score">--</span>
                          </div>
@@ -96,14 +97,12 @@
                              <span class="detail-label">Update in Progress:</span>
                              <span class="detail-value" id="details-update-progress">--</span>
                          </div>
-                          <div class="detail-item">
+                         <div class="detail-item">
                              <span class="detail-label">NPPF Defaulting:</span>
                              <span class="detail-value" id="details-nppf-default">--</span>
                          </div>
-
                          <h4>Notes:</h4>
                          <p id="details-notes" class="detail-notes-text">--</p>
-
                          <h4>References:</h4>
                          <div id="details-references" class="detail-references-links">
                              <p class="no-refs">No references available.</p>
@@ -126,27 +125,23 @@
                                     <th scope="col" class="center sortable" data-sort="plan_risk_score">Risk Score</th>
                                 </tr>
                             </thead>
-                            <tbody id="status-table-body">
-                                <!-- JS will populate, including initial loading state -->
-                            </tbody>
+                            <tbody id="status-table-body"></tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- Card Container (Now initially empty) -->
-                <div id="lpa-cards-container" class="cards-container">
-                    <!-- JS will populate, including initial loading state -->
-                </div>
+                <!-- Card Container -->
+                <div id="lpa-cards-container" class="cards-container"></div>
 
             </section>
         </main>
 
         <footer>
-             <!-- Footer remains the same -->
              <p class="footer-text copyright">© 2025 The Spatial Ledger</p>
-             <p class="footer-text disclaimer"><strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is illustrative.</p>
+             <p class="footer-text disclaimer">
+                <strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is illustrative.
+             </p>
          </footer>
-
     </div>
     <script type="module" src="status-script.js"></script>
 </body>
