@@ -15,42 +15,81 @@ let exportCsvBtn, mapContainer;
 
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded and parsed."); // Log that DOMContentLoaded fired
+
     // --- Assign DOM Elements NOW that the DOM is ready ---
     tableBody = document.getElementById('status-table-body');
+    console.log('tableBody:', tableBody);
+
     searchInput = document.getElementById('search-lpa');
+    console.log('searchInput:', searchInput);
+
     regionFilter = document.getElementById('region-filter');
+    console.log('regionFilter:', regionFilter);
+
     statusFilter = document.getElementById('status-filter');
+    console.log('statusFilter:', statusFilter);
+
     riskFilter = document.getElementById('risk-filter');
+    console.log('riskFilter:', riskFilter);
 
     detailsPanel = document.getElementById('selected-authority-details');
+    console.log('detailsPanel:', detailsPanel);
+
     detailsLpaName = document.getElementById('details-lpa-name');
+    console.log('detailsLpaName:', detailsLpaName);
+
     detailsPlanStatus = document.getElementById('details-plan-status');
+    console.log('detailsPlanStatus:', detailsPlanStatus);
+
     detailsStatusCode = document.getElementById('details-status-code');
+    console.log('detailsStatusCode:', detailsStatusCode);
+
     detailsYearsSince = document.getElementById('details-years-since');
+    console.log('detailsYearsSince:', detailsYearsSince);
+
     detailsUpdateProgress = document.getElementById('details-update-progress');
+    console.log('detailsUpdateProgress:', detailsUpdateProgress);
+
     detailsNppfDefault = document.getElementById('details-nppf-default');
+    console.log('detailsNppfDefault:', detailsNppfDefault);
+
     detailsNotes = document.getElementById('details-notes');
+    console.log('detailsNotes:', detailsNotes);
+
     detailsReferences = document.getElementById('details-references');
+    console.log('detailsReferences:', detailsReferences);
+
     closeDetailsBtn = document.getElementById('close-details-btn');
+    console.log('closeDetailsBtn:', closeDetailsBtn);
 
     statAdoptedCurrent = document.getElementById('stat-adopted-current');
+    console.log('statAdoptedCurrent:', statAdoptedCurrent);
+
     statAdoptedOutdated = document.getElementById('stat-adopted-outdated');
+    console.log('statAdoptedOutdated:', statAdoptedOutdated);
+
     statNoPlan = document.getElementById('stat-no-plan');
+    console.log('statNoPlan:', statNoPlan);
 
     exportCsvBtn = document.getElementById('export-csv-btn');
+    console.log('exportCsvBtn:', exportCsvBtn);
+
     mapContainer = document.getElementById('map-container');
+    console.log('mapContainer:', mapContainer);
+
 
     // --- Basic Check: Ensure critical elements were found ---
-    // You could add more checks here if needed
-    if (!tableBody || !searchInput || !detailsPanel || !exportCsvBtn || !mapContainer) {
-        console.error("Dashboard init failed: Critical DOM elements not found. Check HTML IDs.");
+    // You could add more checks here if needed, checking for null explicitly
+    if (!tableBody || !searchInput || !detailsPanel || !exportCsvBtn || !mapContainer || !closeDetailsBtn /* Add others if critical */) {
+        console.error("Dashboard init failed: One or more critical DOM elements were not found. Check the logs above for 'null' values and verify HTML IDs.");
         // Optionally display a user-facing error message on the page
         const container = document.querySelector('.container');
         if(container) {
              const errorMsg = document.createElement('p');
              errorMsg.className = 'error-message';
              errorMsg.style.margin = '20px'; // Add some margin for visibility
-             errorMsg.textContent = 'Error initializing dashboard components. Please check the console for details.';
+             errorMsg.textContent = 'Error initializing dashboard components. Please check the console for details (F12).';
              // Insert after the header or filters
              const header = document.querySelector('.dashboard-header');
              if(header) {
@@ -61,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return; // Stop initialization if critical elements are missing
     }
+    console.log("All expected DOM elements successfully selected (or passed initial check).");
 
     // --- Now safe to initialize map, fetch data, and add listeners ---
     initializeMap();
@@ -68,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addEventListeners(); // Add listeners now that elements are selected
 });
 
-// --- Functions --- (Keep the rest of the functions as they were in the previous correct version)
+// --- Functions --- (Keep the rest of the functions as they were)
 
 /**
  * Initializes a basic Leaflet map placeholder.
@@ -171,6 +211,7 @@ function populateSelect(selectElement, options, formatter = (val) => val) {
  * Called AFTER DOM elements are assigned in DOMContentLoaded
  */
 function addEventListeners() {
+    console.log("Attempting to add event listeners..."); // Log entry into function
     let filterTimeout;
     const debounceFilter = () => {
         clearTimeout(filterTimeout);
@@ -178,13 +219,54 @@ function addEventListeners() {
     };
 
     // Add checks before adding listeners, although they should exist if init didn't fail
-    if (searchInput) searchInput.addEventListener('input', debounceFilter);
-    if (regionFilter) regionFilter.addEventListener('change', debounceFilter);
-    if (statusFilter) statusFilter.addEventListener('change', debounceFilter);
-    if (riskFilter) riskFilter.addEventListener('change', debounceFilter);
-    if (tableBody) tableBody.addEventListener('click', handleTableClick);
-    if (closeDetailsBtn) closeDetailsBtn.addEventListener('click', hideDetails);
-    if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportToCSV); // This line should now work
+    if (searchInput) {
+        searchInput.addEventListener('input', debounceFilter);
+        console.log("Added 'input' listener to searchInput");
+    } else {
+        console.warn("Could not add listener: searchInput is null");
+    }
+
+    if (regionFilter) {
+        regionFilter.addEventListener('change', debounceFilter);
+        console.log("Added 'change' listener to regionFilter");
+    } else {
+        console.warn("Could not add listener: regionFilter is null");
+    }
+
+    if (statusFilter) {
+        statusFilter.addEventListener('change', debounceFilter);
+        console.log("Added 'change' listener to statusFilter");
+    } else {
+        console.warn("Could not add listener: statusFilter is null");
+    }
+
+    if (riskFilter) {
+        riskFilter.addEventListener('change', debounceFilter);
+        console.log("Added 'change' listener to riskFilter");
+    } else {
+        console.warn("Could not add listener: riskFilter is null");
+    }
+
+    if (tableBody) {
+        tableBody.addEventListener('click', handleTableClick);
+        console.log("Added 'click' listener to tableBody");
+    } else {
+        console.warn("Could not add listener: tableBody is null");
+    }
+
+    if (closeDetailsBtn) {
+        closeDetailsBtn.addEventListener('click', hideDetails);
+        console.log("Added 'click' listener to closeDetailsBtn");
+    } else {
+        console.warn("Could not add listener: closeDetailsBtn is null");
+    }
+
+    if (exportCsvBtn) {
+        exportCsvBtn.addEventListener('click', exportToCSV);
+        console.log("Added 'click' listener to exportCsvBtn"); // This line should now work
+    } else {
+        console.warn("Could not add listener: exportCsvBtn is null"); // This would explain the error
+    }
 }
 
 /**
@@ -362,7 +444,7 @@ function displayLpaDetails(lpaId) {
     detailsPanel.dataset.lpaId = lpaId; // Store which LPA is displayed
     detailsPanel.style.display = 'block';
     // Optional: Scroll the details panel into view if needed, especially on mobile
-    detailsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // detailsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Uncomment if needed
 
     // TODO: Highlight the selected row in the table
     // TODO: Pan/zoom the map to the selected LPA's feature if map is integrated
