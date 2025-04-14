@@ -2,13 +2,16 @@
 const statusDataURL = 'status-data.json';
 const geojsonURL = 'lpa_map.geojson'; // Path to your GeoJSON
 const currentYear = new Date().getFullYear();
-let allLpaData = []; // This will hold the DE-DUPLICATED data
+let allLpaData = []; // This will hold the de-duplicated data
 let filteredLpaData = [];
 let map = null;
 let geojsonLayer = null; // To hold the map layer
 let lpaLayerMapping = {}; // To quickly access layers by LPA ID for highlighting
 let sortColumn = 'name';
 let sortDirection = 'asc';
+
+// NEW: Global variable to track Tilted Balance Mode
+let tiltedBalanceMode = false;
 
 // --- DOM Elements ---
 let tableBody, tableHead, searchInput, regionFilter, statusFilter, riskFilter, tiltedBalanceToggle;
@@ -37,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchStatusData(statusDataURL),
         fetchGeojsonData(geojsonURL)
     ])
-    .then(([rawStatusData, geojsonData]) => { // Receive rawStatusData here
+    .then(([rawStatusData, geojsonData]) => {
         console.log("Both status and GeoJSON data fetched successfully.");
-        processAndInitializeDashboard(rawStatusData, geojsonData); // Pass raw data
+        processAndInitializeDashboard(rawStatusData, geojsonData);
     })
     .catch(error => {
         console.error("Error fetching initial data:", error);
@@ -93,7 +96,8 @@ function checkCriticalElements() {
             errorMsg.style.margin = '20px';
             errorMsg.textContent = 'Error initializing dashboard components. Check console (F12).';
             const header = document.querySelector('.dashboard-header');
-            if (header) header.parentNode.insertBefore(errorMsg, header.nextSibling); else container.prepend(errorMsg);
+            if (header) header.parentNode.insertBefore(errorMsg, header.nextSibling);
+            else container.prepend(errorMsg);
         }
         return false;
     }
@@ -142,15 +146,14 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
     console.log(`Received ${rawStatusData.length} raw status records.`);
 
     // --- De-duplication Step ---
-    const lpaMap = {}; // Use a map to store the best entry for each ID
+    const lpaMap = {};
     rawStatusData.forEach(lpa => {
         if (!lpa || !lpa.id) {
             console.warn("Skipping record with missing ID:", lpa);
-            return; // Skip records without an ID
+            return;
         }
         const existingEntry = lpaMap[lpa.id];
         if (!existingEntry || isMoreRecent(lpa.last_adoption_year, existingEntry.last_adoption_year)) {
-            // If no entry exists or the current LPA is more recent, store or replace it
             lpaMap[lpa.id] = lpa;
         }
     });
@@ -159,9 +162,8 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
     // --- End De-duplication Step ---
 
     // 1. Pre-process the de-duplicated Status Data
-    allLpaData = deDuplicatedStatusData.map((lpa, index) => {
+    allLpaData = deDuplicatedStatusData.map(lpa => {
         const processedLpa = { ...lpa };
-        // ID is guaranteed from de-duplication
         processedLpa.years_since_adoption = calculateYearsSince(processedLpa.last_adoption_year);
         processedLpa.plan_status_display = formatStatusCode(processedLpa.status_code);
         processedLpa.last_adoption_year = processedLpa.last_adoption_year ? parseInt(processedLpa.last_adoption_year, 10) : null;
@@ -196,7 +198,6 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
             feature.properties.name = feature.properties.LPA23NM || 'Unknown LPA';
             feature.properties.plan_status_display = 'Unknown';
             feature.properties.id = `geojson-${lpaId}`;
-            // Default to false for safety
             feature.properties.nppf_defaulting = false;
         }
     });
@@ -207,7 +208,7 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
     // 5. Populate Filters (based on de-duplicated data)
     populateFilters();
 
-    // 6. Apply Initial Sort & Render Dashboard (uses de-duplicated data)
+    // 6. Apply Initial Sort & Render Dashboard
     filteredLpaData = [...allLpaData];
     sortTableData();
     updateDashboard();
@@ -256,7 +257,7 @@ function initializeMapStructure() {
 
 function addMapOverlay(geojsonData) {
     if (!map) { console.error("Map not initialized, cannot add overlay."); return; }
-    lpaLayerMapping = {}; // Reset mapping
+    lpaLayerMapping = {};
     geojsonLayer = L.geoJSON(geojsonData, {
         style: styleFunction,
         onEachFeature: onEachFeatureFunction
@@ -283,12 +284,21 @@ function onEachFeatureFunction(feature, layer) {
         if (feature.properties.id) {
             console.log(`Map feature clicked: ${feature.properties.name}, ID: ${feature.properties.id}`);
             displayLpaDetails(feature.properties.id);
-        } else { console.warn("Clicked map feature missing consistent 'id' property."); }
+        } else {
+            console.warn("Clicked map feature missing consistent 'id' property.");
+        }
     });
-    layer.on('mouseover', (e) => { e.target.setStyle({ weight: 2, color: '#333', fillOpacity: 0.75 }); });
+    layer.on('mouseover', (e) => {
+        e.target.setStyle({ weight: 2, color: '#333', fillOpacity: 0.75 });
+    });
+    // NEW: Modify mouseout to respect Tilted Balance Mode
     layer.on('mouseout', (e) => {
+        // If tilted balance mode is active, do not reset style on mouseout
+        if (tiltedBalanceMode) return;
         const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
-        if (currentSelectedId !== feature.properties.id) { geojsonLayer.resetStyle(e.target); }
+        if (currentSelectedId !== feature.properties.id) {
+            geojsonLayer.resetStyle(e.target);
+        }
     });
 }
 
@@ -351,8 +361,10 @@ function applyFiltersAndRedraw() {
         return nameMatch && regionMatch && statusMatch && riskMatch;
     });
 
-    // NEW: Filter only LPAs with NPPF defaulting (tilted balance) if toggle is checked
-    if (tiltedBalanceToggle && tiltedBalanceToggle.checked) {
+    // Update global state for Tilted Balance Mode
+    tiltedBalanceMode = tiltedBalanceToggle && tiltedBalanceToggle.checked;
+    // If tilted balance mode is active, filter LPAs that have nppf_defaulting true
+    if (tiltedBalanceMode) {
         filteredLpaData = filteredLpaData.filter(lpa => lpa.nppf_defaulting === true);
     }
 
@@ -361,19 +373,18 @@ function applyFiltersAndRedraw() {
 
     // NEW: Update the map styling to visually highlight tilt-related features
     if (geojsonLayer) {
-        if (tiltedBalanceToggle && tiltedBalanceToggle.checked) {
-            // For each layer, de-emphasize those that are NOT in tilted balance mode
+        if (tiltedBalanceMode) {
             geojsonLayer.eachLayer(function(layer) {
                 if (layer.feature && typeof layer.feature.properties.nppf_defaulting !== 'undefined') {
                     if (layer.feature.properties.nppf_defaulting === true) {
-                        // Normal style for LPAs with tilted balance (NPPF defaulting true)
+                        // Normal style for LPAs with tilted balance
                         layer.setStyle({
                             fillOpacity: 0.6,
                             opacity: 0.8,
                             color: '#555'
                         });
                     } else {
-                        // De-emphasized style for LPAs that do not have tilted balance
+                        // De-emphasize features without tilted balance
                         layer.setStyle({
                             fillOpacity: 0.2,
                             opacity: 0.4,
@@ -383,7 +394,7 @@ function applyFiltersAndRedraw() {
                 }
             });
         } else {
-            // Reset to default style
+            // Reset to default style if the mode is off
             geojsonLayer.eachLayer(function(layer) {
                 geojsonLayer.resetStyle(layer);
             });
@@ -394,7 +405,9 @@ function applyFiltersAndRedraw() {
         const selectedId = detailsPanel.dataset.lpaId;
         if (selectedId && filteredLpaData.some(lpa => lpa.id === selectedId)) {
             highlightSelectedItem(selectedId);
-        } else { hideDetails(); }
+        } else {
+            hideDetails();
+        }
     }
 }
 
@@ -408,9 +421,10 @@ function sortTableData() {
         if (aIsNull) return sortDirection === 'asc' ? -1 : 1;
         if (bIsNull) return sortDirection === 'asc' ? 1 : -1;
         let comparison = 0;
-        if (typeof valA === 'number' && typeof valB === 'number') { comparison = valA - valB; }
-        else { 
-            valA = String(valA).toLowerCase(); 
+        if (typeof valA === 'number' && typeof valB === 'number') {
+            comparison = valA - valB;
+        } else {
+            valA = String(valA).toLowerCase();
             valB = String(valB).toLowerCase();
             comparison = valA.localeCompare(valB);
         }
@@ -423,8 +437,12 @@ function handleSortClick(event) {
     const header = event.target.closest('th');
     if (!header || !header.classList.contains('sortable') || !header.dataset.sort) return;
     const newSortColumn = header.dataset.sort;
-    if (newSortColumn === sortColumn) { sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'; }
-    else { sortColumn = newSortColumn; sortDirection = 'asc'; }
+    if (newSortColumn === sortColumn) {
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+        sortColumn = newSortColumn;
+        sortDirection = 'asc';
+    }
     sortTableData();
     updateDashboard();
 }
@@ -472,16 +490,17 @@ function formatStatusCode(statusCode) {
         case 'emerging_in_progress': return 'Emerging';
         case 'withdrawn_or_vacuum': return 'Withdrawn / Vacuum';
         case 'unknown':
-        default: return statusCode ? String(statusCode).replace(/_/g, ' ') : 'Unknown';
+        default:
+            return statusCode ? String(statusCode).replace(/_/g, ' ') : 'Unknown';
     }
 }
 
 function populateTable(data) {
     if (!tableBody) return;
     tableBody.innerHTML = '';
-    if (!data || data.length === 0) { 
-        tableBody.innerHTML = `<tr><td colspan="5" class="info-message">No LPAs match the current filters.</td></tr>`; 
-        return; 
+    if (!data || data.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="5" class="info-message">No LPAs match the current filters.</td></tr>`;
+        return;
     }
     data.forEach(lpa => {
         const row = tableBody.insertRow();
@@ -498,9 +517,9 @@ function populateTable(data) {
 function populateCards(data) {
     if (!lpaCardsContainer) return;
     lpaCardsContainer.innerHTML = '';
-    if (!data || data.length === 0) { 
-        lpaCardsContainer.innerHTML = `<p class="info-message">No LPAs match the current filters.</p>`; 
-        return; 
+    if (!data || data.length === 0) {
+        lpaCardsContainer.innerHTML = `<p class="info-message">No LPAs match the current filters.</p>`;
+        return;
     }
     data.forEach(lpa => {
         const card = document.createElement('div');
@@ -542,7 +561,7 @@ function handleCardClick(event) {
     displayLpaDetails(lpaId);
 }
 
-/** Finds LPA data by ID and displays it in the details panel. */
+/** Displays details of an LPA */
 function displayLpaDetails(lpaId) {
     console.log(`Attempting to display details for lpaId: ${lpaId}`);
     const lpa = allLpaData.find(item => item.id === lpaId);
@@ -552,7 +571,7 @@ function displayLpaDetails(lpaId) {
         detailsNppfDefault, detailsNotes, detailsReferences
     ];
     if (!lpa || detailElements.some(el => !el)) {
-        console.warn("Cannot display details because an LPA entry or one of the detail elements is missing.");
+        console.warn("Cannot display details; missing LPA entry or detail element.");
         return;
     }
     console.log("Found LPA data:", lpa);
@@ -560,18 +579,13 @@ function displayLpaDetails(lpaId) {
     detailsPlanStatus.textContent = lpa.plan_status ?? 'N/A';
     detailsYearsSince.textContent = lpa.years_since_adoption ?? 'N/A';
     detailsNotes.textContent = lpa.notes ?? 'No specific notes available.';
-    // Updated risk classification logic: scores 1–3 are low, 4–7 medium, and 8–10 high.
     const riskScore = lpa.plan_risk_score;
     let riskHtml = 'N/A';
     if (riskScore !== null && riskScore !== undefined) {
         let riskClass = 'risk-unknown';
-        if (riskScore <= 3) {
-            riskClass = 'risk-low';
-        } else if (riskScore <= 7) {
-            riskClass = 'risk-medium';
-        } else {
-            riskClass = 'risk-high';
-        }
+        if (riskScore <= 3) { riskClass = 'risk-low'; }
+        else if (riskScore <= 7) { riskClass = 'risk-medium'; }
+        else { riskClass = 'risk-high'; }
         riskHtml = `<span class="risk-emoji ${riskClass}"></span>${riskScore}`;
     }
     detailsRiskScore.innerHTML = riskHtml;
@@ -629,21 +643,20 @@ function hideDetails() {
     }
 }
 
-/** Adds selected class to the current item (row, card, and map feature) */
+/** Highlights the selected item in table, card, and map */
 function highlightSelectedItem(lpaId) {
     if (!lpaId) return;
     removeHighlights();
     const row = tableBody ? tableBody.querySelector(`tr[data-lpa-id="${lpaId}"]`) : null;
     const card = lpaCardsContainer ? lpaCardsContainer.querySelector(`.lpa-card[data-lpa-id="${lpaId}"]`) : null;
-    if (row) { 
-        console.log("Highlighting row:", lpaId); 
-        row.classList.add('selected-row'); 
+    if (row) {
+        console.log("Highlighting row:", lpaId);
+        row.classList.add('selected-row');
     }
-    if (card) { 
-        console.log("Highlighting card:", lpaId); 
-        card.classList.add('selected-card'); 
+    if (card) {
+        console.log("Highlighting card:", lpaId);
+        card.classList.add('selected-card');
     }
-    // Highlight map feature if available
     const layer = lpaLayerMapping[lpaId];
     if (layer) {
         console.log("Highlighting map layer:", lpaId);
@@ -658,7 +671,7 @@ function highlightSelectedItem(lpaId) {
     }
 }
 
-/** Removes selected class/style from any item (row, card, and map feature) */
+/** Removes highlights from previously selected items */
 function removeHighlights() {
     const selectedRow = tableBody ? tableBody.querySelector('.selected-row') : null;
     const selectedCard = lpaCardsContainer ? lpaCardsContainer.querySelector('.selected-card') : null;
@@ -674,7 +687,7 @@ function removeHighlights() {
 function calculateAndDisplayStats(data) {
     const total = data.length;
     const statElements = [statAdoptedRecent, statJustAdopted, statAdoptedOutdated, statEmerging, statWithdrawn];
-    if (statElements.some(el => !el)) { return; }
+    if (statElements.some(el => !el)) return;
     const zeroOutStats = () => statElements.forEach(el => el.textContent = '0%');
     if (total === 0) { zeroOutStats(); return; }
     let counts = { adopted_recent: 0, just_adopted_updating: 0, adopted_outdated: 0, emerging_in_progress: 0, withdrawn_or_vacuum: 0 };
@@ -688,17 +701,27 @@ function calculateAndDisplayStats(data) {
 }
 
 function exportToCSV() {
-    if (!filteredLpaData || filteredLpaData.length === 0) { 
-        alert("No data to export."); 
-        return; 
+    if (!filteredLpaData || filteredLpaData.length === 0) {
+        alert("No data to export.");
+        return;
     }
     console.log(`Exporting ${filteredLpaData.length} rows...`);
-    const headers = [ "ID", "LPA Name", "Region", "Plan Status Text", "Status Code", "Up-to-date?", "Last Adopted Year", "Years Since Adoption", "Update in Progress?", "NPPF Defaulting?", "Plan Risk Score", "Notes (Short)", "Notes (Full)", "References" ];
+    const headers = [
+        "ID", "LPA Name", "Region", "Plan Status Text", "Status Code",
+        "Up-to-date?", "Last Adopted Year", "Years Since Adoption",
+        "Update in Progress?", "NPPF Defaulting?", "Plan Risk Score",
+        "Notes (Short)", "Notes (Full)", "References"
+    ];
     const formatBooleanForCSV = (value) => (value === true ? 'Yes' : (value === false ? 'No' : ''));
     const dataRows = filteredLpaData.map(lpa => {
         const refs = (lpa.references && Array.isArray(lpa.references)) ? lpa.references.join('; ') : '';
         const years = calculateYearsSince(lpa.last_adoption_year);
-        return [ lpa.id, lpa.name, lpa.region, lpa.plan_status, lpa.status_code, formatBooleanForCSV(lpa.up_to_date), lpa.last_adoption_year, years ?? '', formatBooleanForCSV(lpa.update_in_progress), formatBooleanForCSV(lpa.nppf_defaulting), lpa.plan_risk_score, lpa.notes_short, lpa.notes, refs ].map(v => v ?? '');
+        return [
+            lpa.id, lpa.name, lpa.region, lpa.plan_status, lpa.status_code,
+            formatBooleanForCSV(lpa.up_to_date), lpa.last_adoption_year, years ?? '',
+            formatBooleanForCSV(lpa.update_in_progress), formatBooleanForCSV(lpa.nppf_defaulting), lpa.plan_risk_score,
+            lpa.notes_short, lpa.notes, refs
+        ].map(v => v ?? '');
     });
     const escapeCsvCell = (cell) => {
         const cellString = String(cell);
@@ -709,7 +732,9 @@ function exportToCSV() {
     };
     let csvContent = "data:text/csv;charset=utf-8,";
     csvContent += headers.map(escapeCsvCell).join(",") + "\r\n";
-    dataRows.forEach(rowArray => { csvContent += rowArray.map(escapeCsvCell).join(",") + "\r\n"; });
+    dataRows.forEach(rowArray => {
+        csvContent += rowArray.map(escapeCsvCell).join(",") + "\r\n";
+    });
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
