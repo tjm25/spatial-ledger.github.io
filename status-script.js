@@ -294,7 +294,6 @@ function onEachFeatureFunction(feature, layer) {
     // NEW: Modify mouseout to reapply the correct style in Tilted Balance Mode.
     layer.on('mouseout', (e) => {
         if (tiltedBalanceMode && layer.feature) {
-            // Reapply style according to nppf_defaulting
             if (layer.feature.properties.nppf_defaulting === true) {
                 layer.setStyle({ fillOpacity: 0.6, opacity: 0.8, color: '#555', weight: 1 });
             } else {
@@ -302,7 +301,6 @@ function onEachFeatureFunction(feature, layer) {
             }
             return;
         }
-        // Otherwise, if not in tilted balance mode, reset style unless selected.
         const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
         if (currentSelectedId !== feature.properties.id) {
             geojsonLayer.resetStyle(e.target);
@@ -371,7 +369,7 @@ function applyFiltersAndRedraw() {
 
     // Update global state for Tilted Balance Mode
     tiltedBalanceMode = tiltedBalanceToggle && tiltedBalanceToggle.checked;
-    // If tilted balance mode is active, filter LPAs that have nppf_defaulting true
+    // If tilted balance mode is active, filter LPAs that have nppf_defaulting true (affecting both table and map)
     if (tiltedBalanceMode) {
         filteredLpaData = filteredLpaData.filter(lpa => lpa.nppf_defaulting === true);
     }
@@ -379,7 +377,7 @@ function applyFiltersAndRedraw() {
     sortTableData();
     updateDashboard();
 
-    // NEW: Update the map styling to visually highlight tilt-related features
+    // Update map styling according to Tilted Balance Mode
     if (geojsonLayer) {
         if (tiltedBalanceMode) {
             geojsonLayer.eachLayer(function(layer) {
