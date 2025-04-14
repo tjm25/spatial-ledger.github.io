@@ -285,9 +285,7 @@ function onEachFeatureFunction(feature, layer) {
             console.log(`Map feature clicked: ${feature.properties.name}, ID: ${feature.properties.id}`);
             displayLpaDetails(feature.properties.id);
         } else {
-            
             console.warn("Clicked map feature missing consistent 'id' property.");
-       
         }
     });
     layer.on('mouseover', (e) => {
@@ -295,34 +293,11 @@ function onEachFeatureFunction(feature, layer) {
     });
     // NEW: Modify mouseout to respect Tilted Balance Mode
     layer.on('mouseout', (e) => {
-        // If tiltedBalanceMode is active, reapply the tilted style for this layer:
-        const tiltedBalanceMode = tiltedBalanceToggle && tiltedBalanceToggle.checked;
-        if (tiltedBalanceMode && layer.feature) {
-            if (layer.feature.properties.nppf_defaulting === true) {
-                layer.setStyle({
-                    fillOpacity: 0.6,
-                    opacity: 0.8,
-                    color: '#555',
-                    weight: 1
-                });
-            } else {
-                layer.setStyle({
-                    fillOpacity: 0.2,
-                    opacity: 0.4,
-                    color: '#aaa',
-                    weight: 1
-                });
-            }
-            return;
-        }
-        // Otherwise, if not in tilted balance mode, reset style unless this feature is selected
         // If tilted balance mode is active, do not reset style on mouseout
         if (tiltedBalanceMode) return;
         const currentSelectedId = detailsPanel ? detailsPanel.dataset.lpaId : null;
-        if (currentSelectedId !== layer.feature.properties.id) {
-           
+        if (currentSelectedId !== feature.properties.id) {
             geojsonLayer.resetStyle(e.target);
-       
         }
     });
 }
