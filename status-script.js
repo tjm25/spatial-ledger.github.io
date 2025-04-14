@@ -33,38 +33,29 @@ const statusColors = {
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM fully loaded and parsed.");
-  
-  // Assign DOM elements for dashboard and modal.
   assignDOMElements();
-  
   if (!checkCriticalElements()) return;
-  
-  // Initialize map structure.
   initializeMapStructure();
-  
-  // Load data: status data and GeoJSON.
   Promise.all([
     fetchStatusData(statusDataURL),
     fetchGeojsonData(geojsonURL)
   ])
-  .then(([rawStatusData, geojsonData]) => {
-    console.log("Both status and GeoJSON data fetched successfully.");
-    processAndInitializeDashboard(rawStatusData, geojsonData);
-  })
-  .catch(error => {
-    console.error("Error fetching initial data:", error);
-    displayLoadingError("Error loading dashboard data. Please try again later.");
-  });
+    .then(([rawStatusData, geojsonData]) => {
+      console.log("Both status and GeoJSON data fetched successfully.");
+      processAndInitializeDashboard(rawStatusData, geojsonData);
+    })
+    .catch(error => {
+      console.error("Error fetching initial data:", error);
+      displayLoadingError("Error loading dashboard data. Please try again later.");
+    });
 
   // --- Modal Logic ---
   const introModal = document.getElementById('intro-modal');
   const closeIntroBtn = document.getElementById('close-intro-modal');
   if (introModal && closeIntroBtn) {
-    // Show modal only if not seen before
     const hasSeenIntro = localStorage.getItem('hasSeenIntroModal');
     if (!hasSeenIntro) {
       introModal.classList.remove('hidden');
-      // Alternatively, you could set display = 'flex' directly.
       introModal.style.display = 'flex';
     }
     closeIntroBtn.addEventListener('click', () => {
@@ -133,8 +124,10 @@ function checkCriticalElements() {
       errorMsg.style.margin = '20px';
       errorMsg.textContent = 'Error initializing dashboard components. Check console (F12).';
       const header = document.querySelector('.dashboard-header');
-      if (header) header.parentNode.insertBefore(errorMsg, header.nextSibling);
-      else container.prepend(errorMsg);
+      if (header)
+        header.parentNode.insertBefore(errorMsg, header.nextSibling);
+      else
+        container.prepend(errorMsg);
     }
     return false;
   }
@@ -164,7 +157,8 @@ async function fetchStatusData(url) {
   console.log("Fetching status data...");
   displayLoadingError("Loading plan status data...", false);
   const response = await fetch(url);
-  if (!response.ok) throw new Error(`HTTP error fetching status data! status: ${response.status}`);
+  if (!response.ok)
+    throw new Error(`HTTP error fetching status data! status: ${response.status}`);
   return await response.json();
 }
 
@@ -172,7 +166,8 @@ async function fetchStatusData(url) {
 async function fetchGeojsonData(url) {
   console.log("Fetching GeoJSON data...");
   const response = await fetch(url);
-  if (!response.ok) throw new Error(`HTTP error fetching GeoJSON! status: ${response.status}`);
+  if (!response.ok)
+    throw new Error(`HTTP error fetching GeoJSON! status: ${response.status}`);
   return await response.json();
 }
 
@@ -183,6 +178,9 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
   console.log(`Received ${rawStatusData.length} raw status records.`);
 
   // --- De-duplication Step ---
+  // For records with the same ID:
+  // If the adoption years differ, choose the one with the more recent year.
+  // If they are the same (or if missing), choose the last record in the file.
   const lpaMap = {};
   rawStatusData.forEach(lpa => {
     if (!lpa || !lpa.id) {
@@ -190,7 +188,11 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
       return;
     }
     const existingEntry = lpaMap[lpa.id];
-    if (!existingEntry || isMoreRecent(lpa.last_adoption_year, existingEntry.last_adoption_year)) {
+    if (
+      !existingEntry ||
+      isMoreRecent(lpa.last_adoption_year, existingEntry.last_adoption_year) ||
+      (lpa.last_adoption_year === existingEntry.last_adoption_year)
+    ) {
       lpaMap[lpa.id] = lpa;
     }
   });
@@ -204,12 +206,14 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
     processedLpa.years_since_adoption = calculateYearsSince(processedLpa.last_adoption_year);
     processedLpa.plan_status_display = formatStatusCode(processedLpa.status_code);
     processedLpa.last_adoption_year = processedLpa.last_adoption_year ? parseInt(processedLpa.last_adoption_year, 10) : null;
-    if (isNaN(processedLpa.last_adoption_year)) processedLpa.last_adoption_year = null;
+    if (isNaN(processedLpa.last_adoption_year))
+      processedLpa.last_adoption_year = null;
     processedLpa.plan_risk_score =
       (processedLpa.plan_risk_score !== null && processedLpa.plan_risk_score !== undefined)
         ? parseInt(processedLpa.plan_risk_score, 10)
         : null;
-    if (isNaN(processedLpa.plan_risk_score)) processedLpa.plan_risk_score = null;
+    if (isNaN(processedLpa.plan_risk_score))
+      processedLpa.plan_risk_score = null;
     processedLpa.years_since_adoption =
       (typeof processedLpa.years_since_adoption === 'number')
         ? processedLpa.years_since_adoption
@@ -229,7 +233,7 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
       feature.properties.name = statusInfo.name;
       feature.properties.plan_status_display = statusInfo.plan_status_display;
       feature.properties.id = statusInfo.id;
-      // NEW: merge the nppf_defaulting flag
+      // NEW: Merge the nppf_defaulting flag
       feature.properties.nppf_defaulting = statusInfo.nppf_defaulting;
     } else {
       console.warn(`No status data found for GeoJSON feature LPA ID: ${lpaId} (Name: ${feature.properties.LPA23NM}) after de-duplication.`);
@@ -262,9 +266,7 @@ function processAndInitializeDashboard(rawStatusData, geojsonData) {
 function isMoreRecent(yearA, yearB) {
   const numA = (typeof yearA === 'number' && !isNaN(yearA)) ? yearA : null;
   const numB = (typeof yearB === 'number' && !isNaN(yearB)) ? yearB : null;
-  if (numA !== null && numB === null) return true;
-  if (numA === null && numB !== null) return false;
-  if (numA === null && numB === null) return false;
+  if (numA === null || numB === null) return false;
   return numA > numB;
 }
 
@@ -280,7 +282,8 @@ function initializeMapStructure() {
   try {
     map = L.map(mapContainer).setView([53.5, -1.5], 6); // Center on England/Wales
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      attribution:
+        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       detectRetina: true
     }).addTo(map);
     console.log("Leaflet map structure initialized.");
@@ -507,7 +510,8 @@ function updateDashboard() {
   if (isMobileView) {
     console.log("Rendering cards view");
     populateCards(filteredLpaData);
-    if (tableHead) tableHead.querySelectorAll('th.sortable').forEach(th => th.classList.remove('sort-asc', 'sort-desc'));
+    if (tableHead)
+      tableHead.querySelectorAll('th.sortable').forEach(th => th.classList.remove('sort-asc', 'sort-desc'));
   } else {
     console.log("Rendering table view");
     populateTable(filteredLpaData);
@@ -548,7 +552,8 @@ function populateTable(data) {
   data.forEach(lpa => {
     const row = tableBody.insertRow();
     row.dataset.lpaId = lpa.id;
-    if (lpa.status_code) row.classList.add(`status-${lpa.status_code}`);
+    if (lpa.status_code)
+      row.classList.add(`status-${lpa.status_code}`);
     createCell(row, lpa.name ?? 'N/A');
     createCell(row, lpa.plan_status_display);
     createCell(row, lpa.last_adoption_year ?? 'N/A', true);
@@ -567,7 +572,8 @@ function populateCards(data) {
   data.forEach(lpa => {
     const card = document.createElement('div');
     card.className = 'lpa-card';
-    if (lpa.status_code) card.classList.add(`status-${lpa.status_code}`);
+    if (lpa.status_code)
+      card.classList.add(`status-${lpa.status_code}`);
     card.dataset.lpaId = lpa.id;
     card.innerHTML = `
       <div class="lpa-card-header">${lpa.name ?? 'N/A'}</div>
@@ -690,7 +696,7 @@ function hideDetails() {
   }
 }
 
-/** Highlights the selected item in table, card, and map */
+/** Highlights the selected item in the table, card view, and map */
 function highlightSelectedItem(lpaId) {
   if (!lpaId) return;
   removeHighlights();
@@ -779,7 +785,8 @@ function exportToCSV() {
     return [
       lpa.id, lpa.name, lpa.region, lpa.plan_status, lpa.status_code,
       formatBooleanForCSV(lpa.up_to_date), lpa.last_adoption_year, years ?? '',
-      formatBooleanForCSV(lpa.update_in_progress), formatBooleanForCSV(lpa.nppf_defaulting), lpa.plan_risk_score,
+      formatBooleanForCSV(lpa.update_in_progress),
+      formatBooleanForCSV(lpa.nppf_defaulting), lpa.plan_risk_score,
       lpa.notes_short, lpa.notes, refs
     ].map(v => v ?? '');
   });

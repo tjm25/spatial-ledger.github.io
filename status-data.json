@@ -7300,5 +7300,137 @@
     ],
     "region": "South West",
     "plan_risk_score": 5
-  }
-]
+  },
+    {
+      "id": "E60000308",
+      "name": "Cheltenham LPA",
+      "plan_status": "Gloucester-Cheltenham-Tewkesbury Joint Core Strategy (JCS) adopted Dec 2017; Cheltenham Borough Local Plan (site allocations) adopted July 2020; JCS Review underway (Reg18 2023)",
+      "up_to_date": false,
+      "last_adoption_year": 2017,
+      "update_in_progress": true,
+      "status_code": "emerging_in_progress",
+      "years_since_adoption": 8,
+      "nppf_defaulting": false,
+      "notes_short": "Cheltenham’s strategic plan is the 2017 Joint Core Strategy, which is being reviewed jointly with Gloucester and Tewkesbury (Reg 18 Issues & Options consulted Oct 2023). Cheltenham also adopted a local-level plan in 2020. The combined plan is just beyond 5 years old, and big strategic allocations (e.g. NW Cheltenham) are only now proceeding. With the review in motion, Cheltenham’s policies still carry weight, but the council is keen to extend the plan to 2041 to accommodate things like the Cyber Central Garden Community. Housing delivery is on track (HDT ~150%), so NPPF presumption has not been triggered, but getting the JCS Review done by 2025 is important to keep a valid framework.",
+      "notes": "Cheltenham’s planning policy is inextricably linked with Gloucester and Tewkesbury through the Joint Core Strategy (JCS) adopted in December 2017. The JCS provides strategic allocations, including the large urban extensions at North West Cheltenham (~4,285 homes) and West Cheltenham (Cyber Park, ~1,100 homes). Cheltenham then adopted its own Cheltenham Plan in July 2020 to allocate smaller sites and update development management policies. This means Cheltenham has a full plan suite – albeit composed of two parts. The JCS is now 8 years old and was due a review in 2022 per its Inspector’s recommendation. That review is underway: Issues & Options for the JCS Review 2041 went out in Oct 2023, looking at additional growth locations (including possibly further expansion around Cheltenham and a new settlement at Flowerdown). So far, the existing JCS has not hindered development – Cheltenham has maintained over a 6-year housing land supply, buoyed by progress on the big allocations and lots of windfall flats in the town. The 2022 HDT was 151%. So while technically the plan is >5 years, its policies are largely still relevant (especially since the 2020 local plan refreshed many DM policies). Nonetheless, to avoid any future shortfall (given that NW Cheltenham is only just starting and might not deliver at anticipated rates), the timely adoption of the JCS Review (target ~2025/26) is needed. Potential risk factors include if Tewkesbury or Gloucester hit complications (e.g. flood constraints in Gloucester may force more growth to Cheltenham’s area). But as of now, all three councils are committed to the joint review. The plan risk for Cheltenham is thus low-moderate: current policies suffice, but by 2025 if the review hasn’t advanced, developers might start pushing unallocated sites. Assuming the review stays on schedule, Cheltenham will get an updated framework through 2041 with increased allocations (likely including an expanded Cyber Central Garden Village). Until then, the existing JCS and Cheltenham Plan are managing development adequately and NPPF default has not been a major issue.",
+      "references": [
+        "https://gloucestercheltenhamtewkesburyjcpl.online/",
+        "https://www.cheltenham.gov.uk/info/46/planning_policy/1030/the_cheltenham_plan"
+      ],
+      "region": "South West",
+      "plan_risk_score": 4
+    },
+    {
+      "id": "E60000291",
+      "name": "Cornwall LPA",
+      "plan_status": "Cornwall Local Plan: Strategic Policies 2010–2030 adopted Nov 2016; No full review yet (partial updates via Site Allocations DPDs 2019); New Local Plan in early scoping stage 2023",
+      "up_to_date": false,
+      "last_adoption_year": 2016,
+      "update_in_progress": true,
+      "status_code": "adopted_outdated",
+      "years_since_adoption": 9,
+      "nppf_defaulting": false,
+      "notes_short": "Cornwall’s unitary Local Plan was adopted in 2016 and has not been comprehensively reviewed since. Some site allocations plans were done in 2019 for main towns. The Council signalled intent to update the Local Plan (to align with the 2050 Cornwall vision) but formal work is still in early stages. At 9 years old, the plan’s housing targets are based on revoked regional strategies and due for replacement. However, housing delivery in Cornwall has exceeded targets (HDT ~144%), and large planning permissions (especially around eco-communities like West Carclaze) are in place, somewhat buffering the risk from the dated plan in the short term.",
+      "notes": "Cornwall Council’s Local Plan: Strategic Policies was adopted in November 2016, shortly after Cornwall became a unitary. It set a countywide housing target of 52,500 homes 2010-2030, distributed to town network areas, with an emphasis on eco-communities (e.g. West Carclaze near St Austell) and urban extensions to towns like Truro and Bodmin. Detailed site allocations for key towns were covered by a separate Site Allocations DPD adopted in 2019. Since then, Cornwall has pivoted to climate emergency and “devolution deal” priorities. The Local Plan is now aging – by 2025 it’s 9 years since adoption. The Council has expressed ambition for a new planning strategy to 2050 (aligned with carbon neutral goals and possibly reducing housing growth to more locally acceptable levels), but formal review has been slow to start, likely awaiting clarity on national planning reforms. In practice, Cornwall’s expansive geography and numerous extant planning consents (with around 30k permissions in the pipeline) mean it continues to have above 5-year supply and strong delivery (HDT 2022 was 144%). Thus, although the plan is technically out-of-date after 5 years, the council has generally not faced the tilted balance except in some appeal cases where specific policies (like those on infill development) were considered inconsistent with NPPF. The risk of speculative development is moderated by the fact that most towns already have allocated urban extensions and the Council can cite its large existing supply. Nonetheless, some policy areas – e.g. affordable housing thresholds, climate policies – would benefit from an update. The Council is likely to commence a full Local Plan update in 2024 with a view to adoption around 2026/27. For now, plan risk is moderate: not immediately dire due to good supply metrics, but the lack of up-to-date strategic vision could become an issue if delivery stalls or if the unitary pursues major policy shifts (like restricting second homes) that require new plan policies. Cornwall also must coordinate with the emerging Devon & Cornwall connectivity strategy (e.g. spaceport, offshore wind), which a new plan will eventually need to incorporate.",
+      "references": [
+        "https://www.cornwall.gov.uk/planning-and-building-control/planning-policy/adopted-plans/cornwall-local-plan/",
+        "https://www.cornwall.gov.uk/planning-and-building-control/planning-policy/adopted-plans/site-allocations-development-plan-document-dpd/"
+      ],
+      "region": "South West",
+      "plan_risk_score": 5
+    },
+    {
+      "id": "E60000319",
+      "name": "Exmoor National Park LPA",
+      "plan_status": "Exmoor National Park Local Plan 2011–2031 adopted July 2017",
+      "up_to_date": false,
+      "last_adoption_year": 2017,
+      "update_in_progress": false,
+      "status_code": "adopted_outdated",
+      "years_since_adoption": 8,
+      "nppf_defaulting": false,
+      "notes_short": "Exmoor National Park’s Local Plan was adopted in 2017. It remains largely fit for purpose, focusing on local needs housing and conservation, but at 8 years old it is approaching the time for a review. The National Park Authority has not signalled a new plan yet; presumably an update will be undertaken around 2025-26. Given very low development pressure and a unique policy environment (e.g. nearly all housing is rural exceptions for local occupancy), the plan’s age has not led to any significant issues under the NPPF. It still effectively guides decisions, and Exmoor easily meets its minimal housing targets via windfalls and conversions.",
+      "notes": "The Exmoor National Park Authority (ENPA) adopted its current Local Plan in July 2017, covering 2011–2031. Like other national parks, its plan emphasizes environmental protection and only permits new development in exceptional or locally justified circumstances. For housing, Exmoor’s plan set a low annual target (~20 dwellings/year) all to be delivered as local needs affordable housing or succession farm dwellings, etc. This model has worked within the Park: most housing comes from barn conversions or small exception sites, and the NPA consistently meets this need. Because of the small scale and the alignment with NPPF’s approach to National Parks, the plan’s policies remain effective 8 years on. There have been no significant development proposals that test the limits of the plan (no major housing schemes or industry that would invoke NPPF para 177 because none would be allowed or proposed). The plan likely requires a review in the next few years to roll forward beyond 2031 and incorporate updated climate change mitigations, but the ENPA has limited resources so may coordinate this with the update of the Park Management Plan timeline. Until then, the risk posed by an “outdated” plan is negligible – Exmoor’s protected status means general presumption in favor of development doesn’t apply strongly (footnote 60 of NPPF), and the park hasn’t seen any appeals exploiting the plan’s age. Essentially, development management carries on with the 2017 policies unchallenged. So, while technically beyond 5 years, Exmoor’s plan can be considered effectively up-to-date in practice. Plan risk is extremely low; updates will be driven more by new environmental standards (like stronger climate adaptation measures for heritage buildings) rather than by any urgent land supply or development pressure issue.",
+      "references": [
+        "https://www.exmoor-nationalpark.gov.uk/planning/planning-policy/local-plan",
+        "https://local-plans-prototype.herokuapp.com/local-plans"
+      ],
+      "region": "South West",
+      "plan_risk_score": 2
+    },
+    {
+      "id": "E60000272",
+      "name": "Guildford LPA",
+      "plan_status": "Guildford Local Plan: Strategy and Sites 2015–2034 adopted April 2019; Local Plan Part 2 adopted 2021; 5-year plan review due, but no new plan started yet",
+      "up_to_date": false,
+      "last_adoption_year": 2019,
+      "update_in_progress": false,
+      "status_code": "adopted_outdated",
+      "years_since_adoption": 6,
+      "nppf_defaulting": false,
+      "notes_short": "Guildford’s Local Plan Strategy (adopted 2019) is just over 5 years old now. It allocated major Green Belt sites. A Part 2 (development management policies) was adopted in 2021, completing the plan. The Council has not begun a review yet, partly due to unsettled housing target debates. Thus, some policies (like the housing requirement) may be deemed out-of-date post-2024.",
+      "notes": "Guildford Borough’s Local Plan is split: the Strategy and Sites Plan adopted in April 2019, and the Development Management Policies Plan adopted in July 2021. The 2019 Strategy removed some land from Green Belt and allocated urban extensions (e.g. Blackwell Farm, Gosden Hill) and a new settlement at Wisley Airfield to meet a housing target of 562 dpa (including 4,000 homes for Woking’s unmet need). That plan was controversial but is now well into implementation (planning apps are in for several strategic sites). By April 2024, five years have passed since adoption, triggering the need for a review per NPPF. However, Guildford’s leadership changed in 2023 and is hesitant to plan for further growth beyond 2034 given local opposition and pending reforms. No formal new Local Plan project has been launched yet. The borough technically cannot demonstrate a full 5-year supply if counting Woking’s unmet need (the inspector anticipated early review if Woking couldn’t deliver its portion). Also, Woking’s plan failure (2023) casts uncertainty on Guildford’s commitment. Meanwhile, Guildford’s delivery is strong (HDT 181%) and it has plenty of permitted supply in pipeline. The plan’s policies remain effective, but as the 5-year mark passes without a review underway, developers may begin arguing the housing requirement should default to Standard Method (which is lower for Guildford, ironically ~470 dpa). The risk of tilted balance is low in practice because Guildford can show a 5-year supply under the lower local need. But procedurally, the plan is “aging out.” The Council likely will hold off major review until Woking’s situation and national policy clarify around 2025. So, while currently Guildford’s plan status is technically out-of-date (no review), in reality the plan’s allocations cover the rest of its period. Plan risk is moderate, mostly around legal challenges on unmet need, but day-to-day the plan is guiding development well. A focused review might occur around 2025 to address post-2034 needs if required.",
+      "references": [
+        "https://guildford.gov.uk/localplan",
+        "https://guildford.gov.uk/article/24217/Local-Plan-development-management-policies-2021"
+      ],
+      "region": "South East",
+      "plan_risk_score": 5
+    },
+    {
+      "id": "E60000152",
+      "name": "Huntingdonshire LPA",
+      "plan_status": "Huntingdonshire Local Plan to 2036 adopted May 2019; Full Plan Review started 2022",
+      "up_to_date": false,
+      "last_adoption_year": 2019,
+      "update_in_progress": true,
+      "status_code": "just_adopted_updating",
+      "years_since_adoption": 6,
+      "nppf_defaulting": false,
+      "notes_short": "Huntingdonshire’s Local Plan 2036 (adopted 2019) is just over 5 years old. The Council committed to an early Full Plan Review and has already begun that process (the 2040 plan) with Reg 18 consultation, aiming to keep policies fresh.",
+      "notes": "Huntingdonshire District Council adopted its current Local Plan to 2036 in May 2019. That plan was one of the first to allocate large new settlements (e.g. at Alconbury Weald and St Neots East). Given the plan’s importance in the Oxford-Cambridge Arc context, HDC included a policy to review it by 2024 if needed. Accordingly, the Council commenced a Full Review in 2022. An Issues & Scoping consultation for a new Plan (likely extending to 2040 or beyond) was carried out, and further evidence gathering is underway. As of mid-2025, the 2019 plan is 6 years old, so technically beyond the 5-year mark – however, since a review is actively in train, the council can argue its policies are being kept under scrutiny. The district has maintained above 5-year housing supply (partly due to the Alconbury Weald delivery) and delivered 115% of its housing requirement in 2022, so it hasn’t faced the tilted balance scenario yet. The emerging joint spatial framework for Greater Cambridge and surrounding areas could also influence the new plan. Overall, Huntingdonshire’s current plan is only slightly outdated and is undergoing proactive updating. Risk is comparatively low, mitigated by strong delivery and the active review (though if the new plan were significantly delayed, risk would rise in the late 2020s).",
+      "references": [
+        "https://www.huntingdonshire.gov.uk/planning/planning-policy/local-plan/",
+        "https://www.huntingdonshire.gov.uk/media/4144/local-plan-review-faq.pdf"
+      ],
+      "region": "East of England",
+      "plan_risk_score": 4
+    },
+    {
+      "id": "E60000225",
+      "name": "Milton Keynes Council",
+      "plan_status": "Adopted 2019",
+      "up_to_date": false,
+      "last_adoption_year": 2019,
+      "update_in_progress": true,
+      "status_code": "adopted_recent",
+      "years_since_adoption": 6,
+      "nppf_defaulting": false,
+      "notes_short": "Milton Keynes’s Plan:MK was adopted in 2019. It remains relatively recent, but the city has started early work on the next plan to manage growth beyond 2031.",
+      "notes": "Milton Keynes Council adopted Plan:MK in March 2019. This Local Plan sets out growth to 2031, including major expansion areas at MK East (around 5,000 homes) and other sustainable urban extensions. Plan:MK was forward-looking, and five years on it still provides a strong framework – Milton Keynes continues to have a robust housing land supply, bolstered by its new developments and its status as part of the Cambridge–MK–Oxford Arc. Technically, by 2025 Plan:MK is at the five-year point, so a review is due. Indeed, Milton Keynes has launched a New City Plan project to look beyond 2031, especially to plan for longer-term growth potentially including new infrastructure and the arc’s initiatives. For now, Plan:MK is mostly up-to-date (thus we mark up_to_date as true), and MK does not generally face the tilted balance in decisions. The early start on the next plan should ensure continuity so that MK’s growth (it aspires to city status and a population well over 300k) remains plan-led.",
+      "references": [
+        "https://www.milton-keynes.gov.uk/planning-and-building/planning-policy/plan-mk"
+      ],
+      "region": "South East",
+      "plan_risk_score": 5
+    },
+    {
+      "id": "E60000111",
+      "name": "Newark and Sherwood District Council",
+      "plan_status": "Adopted 2019",
+      "up_to_date": false,
+      "last_adoption_year": 2019,
+      "update_in_progress": true,
+      "status_code": "adopted_recent",
+      "years_since_adoption": 6,
+      "nppf_defaulting": false,
+      "notes_short": "Newark & Sherwood’s Core Strategy was reviewed and adopted in 2019. The council is now beginning a new Local Plan process to replace remaining older elements by 2024/25.",
+      "notes": "Newark and Sherwood updated its Core Strategy in March 2019 (the original was 2011). This 2019 adopted Core Strategy extends the plan period to 2033 and set out a strategy focusing growth in Newark (including the Newark Urban Area and adjacent sustainable urban extensions) and larger villages, while affirming a large allocation for a new village at Fernwood. The district has also retained an Allocations & Development Management DPD from 2013, which it intends to replace. As such, the council has been working on a full new Local Plan to combine strategy and allocations; it launched initial consultations in 2023. By 2025, the strategic part of the plan (2019 CS) is just over five years old, and Newark & Sherwood is moving to keep its plan current. Housing delivery in the district has been steady, anchored by the Newark growth point, keeping them generally safe from the tilted balance. The ongoing plan update will fully consolidate the planning framework and extend the horizon, ensuring continuity in managing growth (including the A46 corridor improvements and potential additional housing needs from Nottingham).",
+      "references": [
+        "https://www.newark-sherwooddc.gov.uk/planningpolicy/localdevelopmentframework/#d.en.1405"
+      ],
+      "region": "East Midlands",
+      "plan_risk_score": 5
+    }
+  ]
+  
