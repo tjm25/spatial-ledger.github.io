@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
 </head>
 <body>
   <div class="container">
@@ -40,7 +40,7 @@
         <label for="risk-filter">Risk Filter</label>
         <select id="risk-filter"><option value="">All Risks</option></select>
       </div>
-      <!-- New Tilted Balance Toggle Filter -->
+      <!-- NEW: Tilted Balance Toggle -->
       <div class="filter-item">
         <label for="tilted-balance-toggle">Show Tilted Balance Only</label>
         <input type="checkbox" id="tilted-balance-toggle">
@@ -49,30 +49,44 @@
 
     <main class="dashboard-main">
       <section class="map-panel">
-        <!-- Map and Legend remain the same -->
+        <!-- Map and Legend -->
         <div id="map-container">
           <div class="map-placeholder-visual"></div>
           <p class="map-placeholder-text">Map View</p>
         </div>
         <div class="map-legend">
-          <label><span class="legend-color adopted_recent"></span>Adopted and current</label>
-          <label><span class="legend-color just_adopted_updating"></span>Just adopted / Updating</label>
-          <label><span class="legend-color adopted_outdated"></span>Adopted, but >5 yrs</label>
-          <label><span class="legend-color emerging_in_progress"></span>Emerging in preparation</label>
-          <label><span class="legend-color withdrawn_or_vacuum"></span>No current plan / Withdrawn</label>
+          <label><span class="legend-color adopted_recent"></span>Adopted &amp; Current</label>
+          <label><span class="legend-color just_adopted_updating"></span>Just Adopted / Updating</label>
+          <label><span class="legend-color adopted_outdated"></span>Adopted, but &gt;5 yrs</label>
+          <label><span class="legend-color emerging_in_progress"></span>Emerging</label>
+          <label><span class="legend-color withdrawn_or_vacuum"></span>Withdrawn / Vacuum</label>
         </div>
       </section>
 
       <section class="summary-panel">
         <div class="stats-panel">
-          <!-- Stats remain the same -->
           <h3>Plan Coverage Statistics</h3>
           <div class="stats-grid stats-grid-5">
-            <div class="stat-item"><span class="stat-value" id="stat-adopted-recent">--%</span><span class="stat-label">Adopted & Current</span></div>
-            <div class="stat-item"><span class="stat-value" id="stat-just-adopted">--%</span><span class="stat-label">Just Adopted / Updating</span></div>
-            <div class="stat-item"><span class="stat-value" id="stat-adopted-outdated">--%</span><span class="stat-label">Adopted >5 yrs</span></div>
-            <div class="stat-item"><span class="stat-value" id="stat-emerging">--%</span><span class="stat-label">Emerging</span></div>
-            <div class="stat-item"><span class="stat-value" id="stat-withdrawn">--%</span><span class="stat-label">Withdrawn / Vacuum</span></div>
+            <div class="stat-item">
+              <span class="stat-value" id="stat-adopted-recent">--%</span>
+              <span class="stat-label">Adopted &amp; Current</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="stat-just-adopted">--%</span>
+              <span class="stat-label">Just Adopted / Updating</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="stat-adopted-outdated">--%</span>
+              <span class="stat-label">Adopted &gt;5 yrs</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="stat-emerging">--%</span>
+              <span class="stat-label">Emerging</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="stat-withdrawn">--%</span>
+              <span class="stat-label">Withdrawn / Vacuum</span>
+            </div>
           </div>
         </div>
 
@@ -129,25 +143,56 @@
                 </tr>
               </thead>
               <tbody id="status-table-body">
-                <!-- JS will populate, including initial loading state -->
+                <!-- JavaScript populates this table -->
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Card Container (Now initially empty) -->
+        <!-- Card Container (for mobile view) -->
         <div id="lpa-cards-container" class="cards-container">
-          <!-- JS will populate, including initial loading state -->
+          <!-- JavaScript populates these cards -->
         </div>
       </section>
     </main>
 
     <footer>
-      <!-- Footer remains the same -->
       <p class="footer-text copyright">© 2025 The Spatial Ledger</p>
-      <p class="footer-text disclaimer"><strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is generated by AI.</p>
+      <p class="footer-text disclaimer">
+        <strong>Disclaimer:</strong> Status information is based on publicly available data and interpretations as of the last update and may change. Not legal/planning advice. See individual LPA pages for detailed analysis. Data is AI-generated.
+      </p>
     </footer>
   </div>
+
+  <!-- NEW: Intro Modal -->
+  <div id="intro-modal" class="intro-modal hidden">
+    <div class="intro-modal-content">
+      <button id="close-intro-modal" class="modal-close-btn" aria-label="Close intro modal">✖</button>
+      <h2>📜 What Does This Dashboard Show?</h2>
+      <p>This dashboard shows the state of Local Plans across England and Wales. Local Plans guide how and where homes, jobs, and infrastructure are built, influencing community planning and development.</p>
+
+      <h3>🏷️ Plan Status</h3>
+      <ul>
+        <li><strong>Adopted &amp; Current:</strong> The plan is up to date.</li>
+        <li><strong>Just Adopted / Updating:</strong> A new plan is being written or was recently adopted.</li>
+        <li><strong>Adopted &gt;5 yrs:</strong> The plan is over 5 years old and may be outdated.</li>
+        <li><strong>Emerging:</strong> A new plan is being drafted but not yet adopted.</li>
+        <li><strong>Withdrawn / Vacuum:</strong> There is currently no valid plan in place.</li>
+      </ul>
+
+      <h3>⚖️ Tilted Balance</h3>
+      <p>If a council lacks an up-to-date plan or enough housing land, national rules create a “tilted balance” where planning permission might be harder to refuse.</p>
+
+      <h3>🔥 Risk Score</h3>
+      <p>The risk score estimates the vulnerability of an area to legal or policy issues. Higher scores indicate a more precarious planning situation.</p>
+
+      <p style="margin-top: 1em;"><em>This is an unofficial tool built to promote planning transparency.</em></p>
+    </div>
+  </div>
+
+  <!-- NEW: Floating Help Button -->
+  <button id="help-button" class="floating-help-button" aria-label="Open help modal">❓ What does this mean?</button>
+
   <script type="module" src="status-script.js"></script>
 </body>
 </html>
